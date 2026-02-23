@@ -1,0 +1,117 @@
+slug: fashion-luxury
+name: Fashion / Luxury
+coined: true
+
+tagline: "The luxury of emptiness."
+
+prompt: |
+  Black (#000000) and white (#FFFFFF) dominant palette with near-black
+  (#1A1A1A) and light gray (#E0E0E0) for subtle contrast. Full-bleed
+  alternating black and white sections with massive padding (120px+).
+  Typography is Cormorant Garamond at weight 300 for thin serif headings
+  with letter-spacing: 0.3em and text-transform: uppercase. Body text
+  in Inter weight 300, minimal and sparse. No border-radius, no shadows,
+  no gradients except on photography placeholders. Dark gradient
+  rectangles as image placeholders with aspect-ratio. Stark contrast.
+  Enormous negative space. The Balenciaga / Celine / Saint Laurent
+  website look. Everything centered. Links are uppercase, letter-spaced,
+  no underlines. The page should feel 90% empty and impossibly expensive.
+
+about: |
+  Fashion / Luxury is the aesthetic of radical restraint deployed as a
+  status signal. Where minimalism removes ornament in pursuit of clarity,
+  fashion-luxury removes it in pursuit of exclusivity. The emptiness is
+  not functional — it is aspirational. It says: we have so much
+  confidence in what we are that we need almost nothing to say it.
+
+  This is the web design language of Balenciaga, Celine, Saint Laurent,
+  and every fashion house that discovered the same truth: on a screen,
+  nothing communicates expense like the willingness to waste space. A
+  single word in thin serif type, centered on a black field, surrounded
+  by 200 pixels of nothing — that is the entire vocabulary.
+
+characteristics:
+  - title: Thin Serif Typography
+    description: >
+      Headings set in a light-weight serif (300) with extreme
+      letter-spacing (0.2-0.4em) and uppercase transformation. The
+      type is so thin it almost disappears — and that fragility is
+      the point.
+  - title: Black and White Dominance
+    description: >
+      The palette is almost entirely #000000 and #FFFFFF, alternating
+      in full-bleed sections. Any additional color is limited to
+      near-black (#1A1A1A) or light gray (#E0E0E0). Color is not
+      absent — it is forbidden.
+  - title: Massive Negative Space
+    description: >
+      Padding of 120-200px between and within sections. Content
+      occupies a small fraction of the viewport. The emptiness is
+      not waste — it is the product.
+  - title: Full-Bleed Sections
+    description: >
+      Sections span the entire width of the viewport with no
+      container max-width on the background. Content may be
+      constrained, but the visual field is always edge-to-edge.
+  - title: Photography as Architecture
+    description: >
+      Large image placeholders with specific aspect ratios (16:9,
+      3:4) function as structural elements. Dark gradient rectangles
+      stand in for the editorial photography that would complete
+      the composition.
+  - title: Invisible Navigation
+    description: >
+      Navigation is reduced to the bare minimum — a wordmark and
+      a single link, set in tiny uppercase type. No hamburger menus,
+      no dropdowns, no icons. The navigation almost does not want
+      to be found.
+
+good_for:
+  - Fashion brand and lookbook sites
+  - Luxury product launches and campaigns
+  - High-end portfolio and photography sites
+  - Architecture and interior design studios
+  - Art gallery and exhibition pages
+
+not_for:
+  - E-commerce with complex product catalogs
+  - SaaS dashboards and productivity tools
+  - Content-heavy news and editorial sites
+  - Community platforms and social applications
+
+history: |
+  The fashion-luxury web aesthetic emerged in the early 2010s when
+  fashion houses began treating their websites as digital storefronts
+  rather than information portals. Hedi Slimane's redesign of the
+  Saint Laurent website in 2012 — stripping it to black backgrounds,
+  white Helvetica, and enormous photography — became a template that
+  the industry followed for a decade.
+
+  Phoebe Philo's Celine and Demna Gvasalia's Balenciaga pushed the
+  approach further, reducing their sites to near-empty canvases where
+  a single campaign image or product name occupied the entire viewport.
+  The aesthetic drew from print traditions — Fabien Baron's Harper's
+  Bazaar layouts, the white-space-as-luxury principle of high-end
+  magazine advertising — and translated them for screens.
+
+  By the late 2010s, the look had diffused beyond fashion into
+  architecture, hospitality, and any industry where perceived
+  exclusivity mattered more than information density. The irony is
+  that this aesthetic of radical simplicity requires enormous
+  discipline to execute: every margin, every font weight, every shade
+  of gray must be precisely calibrated, because there is nothing else
+  to look at.
+
+related:
+  - slug: minimalism
+    relationship: Philosophical cousin
+  - slug: editorial
+    relationship: Print ancestor
+  - slug: portfolio-cinematic
+    relationship: Narrative sibling
+  - slug: dark-mode
+    relationship: Shared palette
+  - slug: swiss-design
+    relationship: Typographic root
+  - slug: startup-minimal
+    relationship: Commercial counterpart

@@ -1,0 +1,115 @@
+slug: dashboard-realism
+name: Dashboard Realism
+coined: true
+
+tagline: "The metrics are beautiful. The data might even be real."
+
+prompt: |
+  Dark background #0F1117, card surfaces #1A1D27, elevated panels #2A2D3A.
+  Primary text #FFFFFF, secondary text rgba(255,255,255,0.5). Accent palette:
+  indigo #6366F1 (primary actions, chart highlights), green #10B981
+  (positive/success), red #EF4444 (negative/alerts), amber #F59E0B
+  (warnings). Font is Inter at 400, 500, 600, 700 — clean and neutral.
+  Cards use border-radius: 12px with border: 1px solid rgba(255,255,255,0.06)
+  and subtle box-shadow. Stat cards feature large numbers at 36px font-weight
+  700, colored status dots (8px circles), and mini CSS bar charts using
+  flexbox. Layout is a responsive grid — grid-template-columns for dashboard
+  panels. The feel is a polished Dribbble admin panel: data-rich, dark-themed,
+  analytics-forward, and suspiciously perfect.
+
+about: |
+  Dashboard Realism is the aesthetic of interfaces that exist primarily to be
+  screenshotted. It lives on Dribbble, Behance, and portfolio sites — a
+  vision of data visualization so clean and composed that no real dataset
+  could ever produce it. The numbers are always round. The charts always
+  trend upward. Every metric has a green arrow beside it.
+
+  The style emerged from the SaaS design boom of the late 2010s, when every
+  startup needed an admin panel and every designer needed a portfolio piece.
+  The result was a genre unto itself: dark backgrounds, neon accent colors,
+  card grids packed with stats, and bar charts that exist purely for
+  atmosphere. It is beautiful, functional-looking, and almost entirely
+  decorative — a theater of productivity rendered in indigo and emerald.
+
+characteristics:
+  - title: Stat Cards with Big Numbers
+    description: >
+      The signature element: a card showing a single metric in oversized
+      font-weight 700 type (36px+), a small label above, and a colored
+      percentage change indicator below. The number is always impressive.
+      The change is always positive.
+  - title: Dark Surface Hierarchy
+    description: >
+      The background is near-black (#0F1117), cards are dark gray (#1A1D27),
+      and elevated elements step up to #2A2D3A. Depth is communicated through
+      progressive lightening and razor-thin borders at rgba(255,255,255,0.06).
+  - title: CSS Chart Decorations
+    description: >
+      Mini bar charts, sparklines, and progress indicators built from pure
+      CSS — colored divs in flexbox rows, gradient fills, and rounded caps.
+      They look like real data but are entirely hardcoded and ornamental.
+  - title: Colored Status Dots
+    description: >
+      Small 8px circles in green, red, or amber appear next to labels to
+      indicate status. They sometimes pulse with a subtle animation. They
+      always suggest that something is being monitored in real time.
+  - title: Indigo as Primary Accent
+    description: >
+      The dominant accent color is a saturated indigo (#6366F1) — used for
+      buttons, chart highlights, active states, and subtle glows. It feels
+      more sophisticated than blue, more tech-forward than purple.
+  - title: Grid-Based Dashboard Layout
+    description: >
+      Content is organized in a responsive grid that mimics a real admin
+      panel: two or three columns of cards, varying heights, occasionally
+      a sidebar. The layout communicates information density even when the
+      information is fictional.
+
+good_for:
+  - SaaS product landing pages and marketing sites
+  - Admin panel and analytics UI design
+  - Developer tool dashboards
+  - Portfolio pieces demonstrating data visualization skill
+  - Dark-themed internal tools and monitoring interfaces
+
+not_for:
+  - Content-heavy reading experiences
+  - E-commerce or consumer-facing storefronts
+  - Brands that need warmth or personality
+  - Contexts where real, messy data must be honestly represented
+
+history: |
+  The roots of Dashboard Realism lie in the explosion of SaaS companies in
+  the mid-2010s. As every B2B startup built analytics dashboards, admin
+  panels, and monitoring tools, the design of these interfaces became a
+  genre with its own conventions. Stripe's dashboard, with its clean
+  typography and restrained dark accents, became an early benchmark. But
+  the aesthetic truly crystallized on Dribbble.
+
+  By 2018, Dribbble's trending page was dominated by dashboard concepts —
+  dark-themed admin panels with perfectly rounded numbers, gradient charts,
+  and impossibly clean layouts. Designers competed to create the most
+  visually striking analytics UI, detached from any real product or dataset.
+  The "dashboard shot" became a portfolio staple, a way to demonstrate
+  skill with grids, data visualization, and dark-mode color systems.
+
+  The style was amplified by UI kit marketplaces and design systems. Tools
+  like Figma made it trivially easy to duplicate card components, swap
+  accent colors, and produce variations. Tailwind CSS provided the utility
+  classes to build these interfaces quickly in code. The result was a
+  feedback loop: designers created idealized dashboards, developers built
+  them as templates, and the aesthetic spread into real products — which
+  then influenced more portfolio shots. Dashboard Realism became a
+  self-referential loop of interfaces designed to look like interfaces.
+
+related:
+  - slug: dark-mode
+    relationship: Foundation
+  - slug: flat-design
+    relationship: Structural ancestor
+  - slug: bento-grid
+    relationship: Layout cousin
+  - slug: minimalism
+    relationship: Shared restraint
+  - slug: corporate-friendly
+    relationship: Daylight counterpart

@@ -1,0 +1,103 @@
+slug: de-stijl
+name: De Stijl
+coined: false
+
+tagline: "Three colors, two axes, one philosophy. Everything else is noise."
+
+prompt: |
+  Strict Mondrian-inspired grid composition. Only primary colors: red
+  (#DE3831), blue (#1E3F8E), yellow (#F2CB05), plus black (#000) and
+  white (#FFF). Thick black grid lines (4-6px solid #000) divide the
+  layout into asymmetric rectangular blocks. Some blocks are filled with
+  a primary color, others left white. Right angles only — no curves, no
+  border-radius, no diagonals. Typography is a neutral sans-serif
+  (Inter, 400/700) that stays out of the way. No shadows, no gradients,
+  no textures. The layout itself is the artwork. Pure abstraction.
+  Art-as-architecture.
+
+about: |
+  De Stijl is reduction taken to its endpoint. You keep only what is
+  universal: horizontal lines, vertical lines, and three primary colors.
+  Everything else — curves, ornament, personal expression — is stripped
+  away. What remains is not minimal. It is absolute.
+
+  The style does not decorate a page. It turns the page into a
+  composition. Every section boundary is a black line. Every background
+  is a decision between red, blue, yellow, white, or nothing. The grid
+  is not a layout tool. The grid is the point.
+
+characteristics:
+  - title: Primary Colors Only
+    description: >
+      Red, blue, yellow, black, and white. No secondary colors, no
+      tints, no shades. Color is used in flat, solid blocks — never
+      blended, never gradient.
+  - title: Thick Black Grid Lines
+    description: >
+      4-6px solid black borders define every division. The line is
+      structure, not decoration. It separates and connects simultaneously.
+  - title: Asymmetric Rectangles
+    description: >
+      The composition is divided into rectangles of different sizes.
+      Balance comes from proportion, not symmetry. No two blocks are
+      the same.
+  - title: Right Angles Only
+    description: >
+      Zero border-radius. No circles, no curves, no diagonals. Every
+      edge meets at ninety degrees.
+  - title: Neutral Typography
+    description: >
+      Sans-serif at regular and bold weights. Type does not express —
+      it communicates. The geometry speaks; the text serves.
+  - title: No Depth
+    description: >
+      No shadows, no gradients, no textures, no transparency. Every
+      element is flat, opaque, and on the same plane. Depth is an
+      illusion this style refuses.
+
+good_for:
+  - Art galleries and museum sites
+  - Architecture and design studios
+  - Brand identities that want to signal rigor
+  - Editorial layouts where structure IS the story
+  - Portfolio sites for geometric or abstract work
+
+not_for:
+  - Warm or friendly consumer products
+  - Content-heavy applications — the grid fights with content
+  - Photography sites — images break the color constraint
+  - Anything requiring rounded, soft, or organic shapes
+  - E-commerce — too austere for conversion
+
+history: |
+  In 1917, Theo van Doesburg founded the journal De Stijl in Leiden,
+  the Netherlands. Around him gathered Piet Mondrian, Gerrit Rietveld,
+  Bart van der Leck, and others who believed art should abandon
+  representation entirely. They sought a visual language of pure
+  relationships — vertical against horizontal, primary color against
+  non-color.
+
+  Mondrian's grid paintings became the movement's most recognizable
+  output, but De Stijl was never just painting. Rietveld designed
+  furniture and architecture. Van Doesburg applied the principles to
+  typography, interiors, and stained glass. The movement insisted that
+  art, architecture, and design were the same discipline.
+
+  De Stijl dissolved as a formal group by 1931, but its ideas became
+  the foundation of modernist design. The Bauhaus absorbed its
+  principles. The International Style carried them into architecture.
+  And today, any time a designer reaches for a strict grid, flat
+  primary colors, and uncompromising geometry, they are working in
+  De Stijl's shadow.
+
+related:
+  - slug: bauhaus
+    relationship: Successor
+  - slug: swiss-design
+    relationship: Inheritor
+  - slug: flat-design
+    relationship: Digital echo
+  - slug: neubrutalism
+    relationship: Grandchild
+  - slug: minimalism
+    relationship: Shares reduction

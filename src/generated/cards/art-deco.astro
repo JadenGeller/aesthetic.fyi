@@ -1,0 +1,159 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-fan"></div>
+  <div class="card-corner-tl"></div>
+  <div class="card-corner-br"></div>
+  <div class="card-border-inner"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-rule">
+    <span class="card-diamond"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #1a1a1a;
+    color: #F5F0E8;
+    border: 1px solid #D4AF37;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .card:hover {
+    background: #222;
+  }
+
+  .card-fan {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background: conic-gradient(
+      from 255deg,
+      transparent 0deg,
+      rgba(212, 175, 55, 0.06) 3deg,
+      transparent 6deg,
+      transparent 12deg,
+      rgba(212, 175, 55, 0.06) 15deg,
+      transparent 18deg,
+      transparent 24deg,
+      rgba(212, 175, 55, 0.06) 27deg,
+      transparent 30deg,
+      transparent 36deg,
+      rgba(212, 175, 55, 0.06) 39deg,
+      transparent 42deg,
+      transparent 48deg,
+      rgba(212, 175, 55, 0.06) 51deg,
+      transparent 54deg,
+      transparent 60deg,
+      rgba(212, 175, 55, 0.06) 63deg,
+      transparent 66deg,
+      transparent 285deg
+    );
+    pointer-events: none;
+  }
+
+  .card-corner-tl,
+  .card-corner-br {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: #D4AF37;
+    border-style: solid;
+    pointer-events: none;
+  }
+
+  .card-corner-tl {
+    top: 10px;
+    left: 10px;
+    border-width: 1px 0 0 1px;
+  }
+
+  .card-corner-br {
+    bottom: 10px;
+    right: 10px;
+    border-width: 0 1px 1px 0;
+  }
+
+  .card-border-inner {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    color: #F5F0E8;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-rule::before,
+  .card-rule::after {
+    content: '';
+    flex: 1;
+    max-width: 40px;
+    height: 1px;
+    background: #D4AF37;
+  }
+
+  .card-diamond {
+    width: 6px;
+    height: 6px;
+    background: #D4AF37;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  .card-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    color: rgba(245, 240, 232, 0.7);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 240px;
+  }
+</style>

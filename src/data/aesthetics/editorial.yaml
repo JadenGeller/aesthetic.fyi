@@ -1,0 +1,116 @@
+slug: editorial
+name: Editorial / Magazine
+coined: true
+
+tagline: "The typography is the illustration."
+
+prompt: |
+  Warm off-white background (#F8F5F0) with near-black text (#1A1A1A).
+  Large serif display headings in Playfair Display at clamp(3rem, 6vw, 5rem),
+  body text in Source Serif 4 at 400/600 weight. Dramatic whitespace —
+  100px+ vertical padding between sections. Thin black horizontal rules
+  (1px solid #000) dividing content areas. Drop caps on opening paragraphs
+  using ::first-letter (float left, large serif, 3-4 lines tall). Pull
+  quotes in large italic Playfair Display, indented with a red (#CC0000)
+  left border. Multi-column text layouts using CSS columns or grid for
+  newspaper-style reading. Text-align justify for body copy. Red accent
+  (#CC0000) used sparingly for bylines, section labels, and decorative
+  rules. The overall feel is NYT Magazine meets Bloomberg Businessweek —
+  typographic, confident, and unhurried.
+
+about: |
+  Editorial design on the web borrows the best instincts of print
+  journalism: that type can be expressive without illustration, that
+  whitespace is not waste but emphasis, and that a well-set column of
+  text is itself a visual experience. The page breathes. The headline
+  commands. The body text rewards careful reading.
+
+  This is not minimalism — it is restraint in service of drama. Where
+  minimalism strips away, editorial design elevates what remains. A
+  120-point serif headline on a cream background says more than a dozen
+  gradient cards ever could. The grid is borrowed from the broadsheet
+  newspaper: asymmetric, multi-column, ruled by thin black lines that
+  separate without enclosing.
+
+characteristics:
+  - title: Commanding Serif Headlines
+    description: >
+      Display headings are set in large, high-contrast serif typefaces —
+      Playfair Display, Freight, or similar — at sizes that dominate the
+      page. The headline is the hero, not a background image.
+  - title: Drop Caps
+    description: >
+      Opening paragraphs begin with an oversized first letter, floated
+      left and spanning three or four lines of body text. A centuries-old
+      convention that instantly signals editorial authority.
+  - title: Thin Black Rules
+    description: >
+      Horizontal lines — 1px solid black — divide sections, separate
+      columns, and frame content. They are structural, never decorative,
+      and they give the page the unmistakable rhythm of a printed page.
+  - title: Multi-Column Layouts
+    description: >
+      Body text flows across two or three columns, mimicking newspaper
+      and magazine page composition. The grid is visible in the structure
+      but never in the decoration.
+  - title: Pull Quotes
+    description: >
+      Key phrases are extracted and set in large italic type, indented
+      or bordered, breaking the column flow to create visual punctuation.
+      They reward the scanner and anchor the skimmer.
+  - title: Dramatic Whitespace
+    description: >
+      Sections are separated by 100 pixels or more of empty space. The
+      page is never crowded. Every element has room to be regarded on its
+      own terms, like a photograph mounted with a wide mat.
+
+good_for:
+  - Long-form articles and essays
+  - Magazine and newspaper homepages
+  - Brand storytelling and about pages
+  - Portfolio case studies
+  - Cultural commentary and criticism sites
+
+not_for:
+  - Data-dense dashboards or admin panels
+  - E-commerce product grids
+  - Fast-paced social or feed-based interfaces
+  - Mobile-first apps where column layouts collapse
+
+history: |
+  Editorial web design descends directly from centuries of print
+  typography. The conventions — drop caps, pull quotes, justified
+  columns, thin rules — were established in European broadsheets
+  and literary magazines long before screens existed. When the web
+  arrived, it initially abandoned these traditions for the constraints
+  of early HTML: single-column, system fonts, no real typographic
+  control.
+
+  The turning point came in 2009-2012 with web fonts and CSS3. Google
+  Fonts and Typekit made professional serifs available for free. CSS
+  columns, media queries, and viewport units gave designers the layout
+  tools that print had always enjoyed. Publications like The New York
+  Times, The Guardian, and Bloomberg Businessweek began investing
+  heavily in digital editorial design — treating their websites not as
+  compromised versions of print but as a medium in their own right.
+
+  The Outline (2017) and other digital-native publications pushed
+  further, experimenting with brutalist editorial layouts that broke
+  grids intentionally. Today, editorial design on the web sits at a
+  confident maturity: it knows its print heritage, uses modern CSS to
+  honor it, and adds interactivity — scroll-triggered typography,
+  dynamic column reflow — that print never could.
+
+related:
+  - slug: swiss-design
+    relationship: Grid ancestor
+  - slug: minimalism
+    relationship: Shares restraint
+  - slug: dark-academia
+    relationship: Typographic cousin
+  - slug: fashion-luxury
+    relationship: Serif sibling
+  - slug: scroll-theater
+    relationship: Dramatic heir
+  - slug: dense-information
+    relationship: Column kin

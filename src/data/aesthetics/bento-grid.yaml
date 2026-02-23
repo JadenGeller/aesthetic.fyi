@@ -1,0 +1,112 @@
+slug: bento-grid
+name: Bento Grid
+coined: false
+
+tagline: "Every module knows its place."
+
+prompt: |
+  CSS grid layout with grid-template-areas and cells of varying sizes —
+  some span 2 columns, some span 2 rows, creating an asymmetric but
+  balanced composition. Background is #F5F5F7 (Apple light gray). Each
+  cell is a white (#FFFFFF) rounded card with border-radius: 16-20px,
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06), and generous padding (24-32px).
+  Gap between cells is 12-16px. Typography is Inter at weights 400, 500,
+  and 600 — no bold headlines, just quiet confidence. Text color is
+  #1D1D1F. No borders, no outlines. Each cell is self-contained with its
+  own heading, icon or visual, and brief copy. The overall feel is an
+  Apple keynote feature slide — modular, calm, polished, and effortlessly
+  organized.
+
+about: |
+  Bento grid treats the page like a lunchbox. Every piece of content gets
+  its own compartment — sized to fit, never spilling into another. The
+  layout does the work that headings and dividers do in other aesthetics.
+  You scan the grid and immediately know what goes with what, because the
+  container tells you.
+
+  The appeal is restraint without rigidity. Cells vary in size, creating
+  visual rhythm without breaking the grid's logic. A large cell gets your
+  attention first. Small cells offer supporting details. The hierarchy is
+  spatial, not typographic — and that makes the page feel calm even when
+  it carries a lot of information.
+
+characteristics:
+  - title: Asymmetric Grid Cells
+    description: >
+      Cells span different numbers of columns and rows. A 2x1 feature
+      cell sits next to two 1x1 supporting cells. The layout is varied
+      but never chaotic — every cell aligns to the same grid tracks.
+  - title: Large Border-Radius
+    description: >
+      border-radius: 16-20px on every cell. Corners are generously
+      rounded, giving each module a soft, approachable shape. No sharp
+      edges anywhere.
+  - title: Subtle Elevation
+    description: >
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06). Cards float just barely
+      above the background. The shadow is felt more than seen — depth
+      without drama.
+  - title: Light Neutral Background
+    description: >
+      The page background is a warm gray like #F5F5F7. Cards are pure
+      white. The contrast is minimal but enough to define each cell
+      without needing borders.
+  - title: Self-Contained Modules
+    description: >
+      Each cell is a complete unit — its own heading, its own content,
+      its own visual rhythm. Nothing references content in another cell.
+      The grid is a collection, not a flow.
+  - title: Quiet Typography
+    description: >
+      Inter at weight 400-600. No heavy display type. Headings are 500
+      or 600 weight, body is 400. The type steps back and lets the
+      layout structure do the talking.
+
+good_for:
+  - Product feature overviews and marketing pages
+  - Dashboard and analytics landing pages
+  - Portfolio showcases with mixed content types
+  - Documentation overview pages
+  - App store and product listing layouts
+
+not_for:
+  - Long-form editorial or essay content
+  - Narrative-driven experiences that need linear flow
+  - Dense data tables or spreadsheet-like interfaces
+  - Sites that need strong visual personality or edge
+
+history: |
+  The name comes from Japanese bento boxes — compartmentalized lunch
+  containers where rice, protein, vegetables, and pickles each get their
+  own section. The design pattern migrated to interfaces through Apple,
+  whose keynote slides and product pages have used asymmetric grids of
+  rounded-corner cards since at least 2019.
+
+  Apple's approach was not new in principle — dashboard and widget
+  layouts had used mixed-size grids for years. But Apple refined the
+  aesthetic: softer corners, lighter shadows, more whitespace, and a
+  deliberate sense of calm. When the design community started calling
+  this pattern "bento grid" around 2022, the name stuck because it
+  captured something the technical term "asymmetric card grid" did not —
+  the feeling of neat, satisfying organization.
+
+  By 2023, bento grids were everywhere: SaaS landing pages, developer
+  tool marketing sites, startup pitch decks. CSS grid's
+  grid-template-areas made the layout trivial to implement, and the
+  pattern's flexibility — any content fits in any cell — made it a
+  reliable default for feature pages. It is now one of the most
+  recognizable layout patterns in modern web design.
+
+related:
+  - slug: flat-design
+    relationship: Shares simplicity
+  - slug: minimalism
+    relationship: Philosophical kin
+  - slug: material-design
+    relationship: Shares elevation
+  - slug: dashboard-realism
+    relationship: Layout cousin
+  - slug: startup-minimal
+    relationship: Often paired
+  - slug: neumorphism
+    relationship: Softer sibling

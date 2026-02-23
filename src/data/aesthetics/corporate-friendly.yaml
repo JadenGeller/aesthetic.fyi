@@ -1,0 +1,121 @@
+slug: corporate-friendly
+name: Corporate Friendly
+coined: true
+
+tagline: "Designed to make work feel like play."
+
+prompt: |
+  White or very light (#F8F9FA) backgrounds. Cheerful accent palette:
+  purple #6C5CE7, teal #00B894, coral #FF6B6B, light blue #74B9FF. Dark
+  text #1A1A2E. Nunito Sans (400, 600, 700) for all type — rounded,
+  friendly, approachable. Cards with border-radius: 12px, gentle
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08). Pill-shaped buttons
+  (border-radius: 9999px) in solid accent colors with white text.
+  Abstract decorative CSS shapes — circles, rounded rectangles — in
+  pastel colors as background ornamentation. Gradient hero sections
+  (purple-to-blue or teal-to-blue). Simple CSS geometric illustrations
+  of people (circle heads, rounded-rectangle bodies). Clean, upbeat,
+  Slack-marketing-page energy.
+
+about: |
+  Corporate Friendly is the visual language of software that wants you
+  to forget you are working. It is the gradient hero with a cheerful
+  illustration, the rounded sans-serif that could never be threatening,
+  the pill button that practically begs you to click it. Every element
+  radiates approachability — the kind of warmth that has been focused-
+  grouped, A/B tested, and approved by three layers of stakeholders.
+
+  This is the aesthetic of Slack, Asana, Notion, Monday, and dozens of
+  other tools that have decided that productivity should feel like a
+  friendly conversation. It lives at the intersection of corporate
+  professionalism and startup playfulness. Nothing is too bold, nothing
+  too minimal. Every color is cheerful but not childish, every shape
+  rounded but not cartoonish. It is optimism by committee — and somehow,
+  it works.
+
+characteristics:
+  - title: Gradient Heroes
+    description: >
+      Hero sections use smooth linear gradients — purple to blue, teal to
+      coral — creating a warm, expansive entry point. The gradient signals
+      modernity and optimism without committing to a single brand color.
+  - title: Pill Buttons
+    description: >
+      Buttons use border-radius: 9999px, creating a fully rounded capsule
+      shape. They are solid-colored, white-text, and gently shadowed. The
+      shape says "I am interactive" without any aggressive edges.
+  - title: Rounded Cards
+    description: >
+      Content lives in cards with border-radius: 12px and soft box-shadows.
+      Cards float gently above the background, suggesting depth without
+      the heaviness of material elevation. Backgrounds are white or near-
+      white.
+  - title: CSS Illustrations
+    description: >
+      Simple geometric shapes — circles for heads, rounded rectangles for
+      bodies — stand in for people and objects. These friendly, abstract
+      figures communicate diversity and inclusion without depicting anyone
+      specific.
+  - title: Cheerful Palette
+    description: >
+      The color palette mixes purple, teal, coral, and light blue in
+      careful proportion. Each color is saturated enough to feel energetic
+      but muted enough to remain professional. White space keeps the
+      palette from becoming overwhelming.
+  - title: Friendly Typography
+    description: >
+      Fonts are rounded sans-serifs like Nunito Sans or Poppins. Weight
+      varies from 400 for body to 700 for headings. Letter-spacing is
+      natural, line-height is generous. The type feels conversational,
+      never clinical.
+
+good_for:
+  - SaaS product marketing pages
+  - Team collaboration and productivity tools
+  - Onboarding flows and feature tours
+  - B2B landing pages that need warmth
+  - Internal company portals and intranets
+
+not_for:
+  - Luxury, fashion, or editorial brands
+  - Developer-focused documentation
+  - Subversive or countercultural projects
+  - Anything that needs to feel raw, minimal, or edgy
+
+history: |
+  The Corporate Friendly aesthetic crystallized in the mid-2010s as SaaS
+  companies competed not just on features but on personality. Slack,
+  launching in 2013, was a turning point. Its playful copy, cheerful
+  color palette, and rounded UI elements proved that enterprise software
+  did not have to look like enterprise software. Users responded — and
+  competitors took notice.
+
+  By 2016, a visual formula had emerged. Gradient hero sections, abstract
+  geometric illustrations (popularized by artists like Alice Lee for
+  Slack and Pablo Stanley's open-source Humaaans), pill buttons, and
+  rounded sans-serif typography became the standard kit for any startup
+  that wanted to feel modern and approachable. Notion, Figma, Linear,
+  Monday.com, and Airtable each added their own spin, but the DNA was
+  recognizable.
+
+  The aesthetic drew criticism for its homogeneity — critics coined terms
+  like "Alegria" (after Facebook's illustration style) and "corporate
+  Memphis" to describe the generic, blobby people that populated every
+  landing page. But the formula persisted because it solved a real
+  design problem: how do you make complex, enterprise-grade software
+  feel inviting? The answer, apparently, is rounded corners, cheerful
+  gradients, and a lot of white space.
+
+related:
+  - slug: flat-design
+    relationship: Ancestor
+  - slug: material-design
+    relationship: Structural influence
+  - slug: startup-minimal
+    relationship: Shares SaaS context
+  - slug: claymorphism
+    relationship: Shares friendliness
+  - slug: bento-grid
+    relationship: Layout cousin
+  - slug: frutiger-aero
+    relationship: Tonal predecessor

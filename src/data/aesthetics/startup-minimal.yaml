@@ -1,0 +1,109 @@
+slug: startup-minimal
+name: Startup Minimal
+coined: true
+
+tagline: "Ship it clean. Raise the round."
+
+prompt: |
+  White #FFFFFF background. One font: Inter at weights 400, 500, 600, 700.
+  Primary accent indigo #6366F1, secondary purple #8B5CF6. Hero gradient
+  linear-gradient(135deg, #6366F1, #8B5CF6) on buttons and key elements.
+  Pill-shaped CTAs with border-radius: 9999px. Subtle box-shadow:
+  0 1px 3px rgba(0,0,0,0.1). Dark text #0F172A, secondary text #64748B.
+  Alternating white and #F8FAFC section backgrounds. "Trusted by" logo
+  bar with grayscale placeholder rectangles. Generous whitespace, centered
+  layout, max-width 1100px. The Stripe/Linear/Vercel landing page look.
+
+about: |
+  Startup Minimal is the unmarked uniform of the modern SaaS landing page.
+  White background, one sans-serif font, a single indigo-to-purple gradient
+  accent, and enough whitespace to land a helicopter. It is the aesthetic of
+  credibility-by-default: if your marketing page looks like this, investors
+  assume you know what you are doing.
+
+  The style is not really about minimalism. It is about conformity to a
+  specific template that signals competence. Every element — the pill-shaped
+  CTA, the "trusted by" logo bar, the alternating white-and-gray sections —
+  exists because Stripe did it first and everyone else followed. The look is
+  clean, professional, and almost aggressively generic. That is the point.
+  You are not here to be memorable. You are here to convert.
+
+characteristics:
+  - title: The One Font
+    description: >
+      Inter, and only Inter. Weights 400 through 700 for hierarchy. No
+      serif, no display face, no second font. The typography is invisible
+      on purpose — it should feel like the browser default, but better.
+  - title: Pill-Shaped CTAs
+    description: >
+      Buttons use border-radius: 9999px, creating the signature capsule
+      shape. Primary buttons get the indigo-purple gradient fill; secondary
+      buttons get a 1px border and transparent background. No sharp corners.
+  - title: Indigo-Purple Gradient
+    description: >
+      The accent gradient runs linear-gradient(135deg, #6366F1, #8B5CF6).
+      It appears on hero elements, primary buttons, and decorative touches.
+      It is the only visual luxury in an otherwise monochrome palette.
+  - title: Trusted-By Logo Bar
+    description: >
+      A horizontal row of company logos (or gray placeholder rectangles)
+      sits just below the hero. It says "real companies use this" without
+      you having to read a single testimonial. Social proof as decoration.
+  - title: Alternating Section Backgrounds
+    description: >
+      Sections alternate between pure white #FFFFFF and barely-there gray
+      #F8FAFC. The contrast is almost imperceptible but creates rhythm.
+      Each section is its own self-contained content block with generous
+      vertical padding.
+  - title: Generous Whitespace
+    description: >
+      Massive padding on all sides. Content lives in a centered column
+      no wider than 1100px. The emptiness is not wasted space — it is a
+      signal that you can afford to leave room. Density is for dashboards;
+      landing pages breathe.
+
+good_for:
+  - SaaS product marketing pages
+  - Developer tool landing pages
+  - B2B software websites
+  - Startup pitch sites and launch pages
+  - API documentation portals
+
+not_for:
+  - Brands that need to stand out visually
+  - Consumer products targeting younger audiences
+  - Creative portfolios or agencies
+  - Anything that requires warmth or personality
+
+history: |
+  Startup Minimal did not emerge from a design movement. It emerged from
+  a single website: Stripe. Around 2015-2016, Stripe's marketing site
+  established the template — white background, clean sans-serif type,
+  gradient accents, developer-focused copy, and an air of quiet technical
+  sophistication. The design was so effective at signaling "serious tech
+  company" that it became the default.
+
+  Linear, Vercel, Raycast, and dozens of other developer-focused startups
+  adopted and refined the look. Inter replaced system fonts. Indigo and
+  purple replaced Stripe's original green gradients. Tailwind CSS made
+  the palette and spacing system trivially reproducible, and suddenly
+  every YC company's landing page looked identical. The "trusted by"
+  logo bar became mandatory. The pill-shaped button became universal.
+
+  The aesthetic is now so dominant that deviating from it is itself a
+  statement. Choosing a serif font or a colored background for your
+  startup's homepage signals either supreme confidence or total naivety.
+  Startup Minimal is the path of least resistance, and for most
+  companies, that is exactly the right choice.
+
+related:
+  - slug: minimalism
+    relationship: Ancestor
+  - slug: flat-design
+    relationship: Foundation
+  - slug: dark-mode
+    relationship: Night variant
+  - slug: dev-docs
+    relationship: Sibling
+  - slug: corporate-friendly
+    relationship: Enterprise cousin

@@ -1,0 +1,69 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;600&display=swap" rel="stylesheet" />
+
+<div class="aero-card">
+  <div class="aero-shine" aria-hidden="true"></div>
+  <h3 class="name">{aesthetic.name}</h3>
+  <p class="tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .aero-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.15) 100%),
+      linear-gradient(135deg, #4A90D9 0%, #87CEEB 40%, #5CB85C 100%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-bottom-color: rgba(74, 144, 217, 0.2);
+    border-radius: 12px;
+    box-shadow:
+      0 4px 20px rgba(74, 144, 217, 0.18),
+      0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    color: #2C3E50;
+  }
+
+  .aero-shine {
+    position: absolute;
+    top: -30%;
+    left: 10%;
+    right: 10%;
+    height: 55%;
+    background: radial-gradient(ellipse at 50% 80%, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .name {
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -0.3px;
+    margin: 0 0 8px 0;
+    position: relative;
+    background: linear-gradient(135deg, #2C5F9E 0%, #3A7A3A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .tagline {
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #4A6274;
+    opacity: 0.85;
+    margin: 0;
+    position: relative;
+  }
+</style>

@@ -1,0 +1,752 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Karla:wght@400;700&display=swap" rel="stylesheet" />
+
+<div class="indie-page">
+  <!-- 1. Nav -->
+  <nav class="nav">
+    <span class="nav-sticker" aria-hidden="true">~</span>
+    <a href="/" class="nav-home">aesthetic.fyi</a>
+    <span class="nav-slash">/</span>
+    <span class="nav-current">{aesthetic.name}</span>
+    <span class="nav-sticker nav-sticker-right" aria-hidden="true">~</span>
+  </nav>
+
+  <!-- 2. Hero -->
+  <header class="hero">
+    <div class="hero-badge" aria-hidden="true">handmade with care</div>
+    <h1 class="hero-title">{aesthetic.name}</h1>
+    <p class="hero-tagline">{aesthetic.tagline}</p>
+    <div class="hero-webring" aria-hidden="true">
+      <span class="webring-arrow">&larr;</span>
+      <span class="webring-text">a member of the aesthetic webring</span>
+      <span class="webring-arrow">&rarr;</span>
+    </div>
+  </header>
+
+  <main class="content">
+    <!-- 3. What This Is -->
+    <section class="section section-left">
+      <h2 class="section-title">
+        <span class="title-sticker sticker-coral">01</span> What This Is
+      </h2>
+      <div class="section-panel">
+        {aesthetic.about.split('\n\n').map((paragraph: string) => (
+          <p class="body-text">{paragraph.trim()}</p>
+        ))}
+      </div>
+    </section>
+
+    <!-- 4. Characteristics -->
+    <section class="section section-center">
+      <h2 class="section-title">
+        <span class="title-sticker sticker-teal">02</span> Characteristics
+      </h2>
+      <div class="char-grid">
+        {aesthetic.characteristics.map((char: { title: string; description: string }, i: number) => (
+          <div class={`char-card char-rotate-${i % 4}`}>
+            <h3 class="char-title">{char.title}</h3>
+            <p class="char-desc">{char.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 5. Style Reference -->
+    <section class="section section-left">
+      <h2 class="section-title">
+        <span class="title-sticker sticker-yellow">03</span> Style Reference
+      </h2>
+      <div class="prompt-panel">
+        <pre class="prompt-text">{aesthetic.prompt}</pre>
+        <button class="copy-btn" data-prompt={aesthetic.prompt}>
+          copy to clipboard!
+        </button>
+      </div>
+    </section>
+
+    <!-- 6. When to Use -->
+    <section class="section section-center">
+      <h2 class="section-title">
+        <span class="title-sticker sticker-mint">04</span> When to Use
+      </h2>
+      <div class="usage-grid">
+        <div class="usage-col usage-good">
+          <h3 class="usage-heading">Good For</h3>
+          <ul class="usage-list">
+            {aesthetic.good_for.map((item: string) => (
+              <li class="usage-item">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="usage-col usage-not">
+          <h3 class="usage-heading">Not For</h3>
+          <ul class="usage-list">
+            {aesthetic.not_for.map((item: string) => (
+              <li class="usage-item">{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. History -->
+    <section class="section section-left">
+      <h2 class="section-title">
+        <span class="title-sticker sticker-coral">05</span> History
+      </h2>
+      <div class="section-panel">
+        {aesthetic.history.split('\n\n').map((paragraph: string) => (
+          <p class="body-text">{paragraph.trim()}</p>
+        ))}
+      </div>
+    </section>
+
+    <!-- 8. Related Styles -->
+    <section class="section section-center">
+      <h2 class="section-title">
+        <span class="title-sticker sticker-teal">06</span> Related Styles
+      </h2>
+      <div class="related-grid">
+        {aesthetic.related.map((rel: { slug: string; relationship: string }, i: number) => (
+          <a href={`/${rel.slug}`} class={`related-card related-rotate-${i % 3}`}>
+            <span class="related-name">{rel.slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+            <span class="related-rel">{rel.relationship}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. Footer -->
+  <footer class="footer">
+    <div class="footer-stamp" aria-hidden="true">
+      <span class="stamp-text">built by hand</span>
+    </div>
+    <p class="footer-text">aesthetic.fyi &mdash; a reference for web design aesthetics</p>
+    <p class="footer-small">view source. steal ideas. make your own thing.</p>
+    <div class="footer-webring" aria-hidden="true">
+      <span class="webring-btn">&laquo; prev</span>
+      <span class="webring-label">webring</span>
+      <span class="webring-btn">next &raquo;</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const copyButton = document.querySelector('.copy-btn');
+    if (copyButton) {
+      copyButton.addEventListener('click', async () => {
+        const prompt = copyButton.getAttribute('data-prompt');
+        if (prompt) {
+          try {
+            await navigator.clipboard.writeText(prompt);
+            const original = copyButton.textContent;
+            copyButton.textContent = 'copied!!';
+            copyButton.classList.add('copied');
+            setTimeout(() => {
+              copyButton.textContent = original;
+              copyButton.classList.remove('copied');
+            }, 2000);
+          } catch {
+            const textarea = document.createElement('textarea');
+            textarea.value = prompt || '';
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            const original = copyButton.textContent;
+            copyButton.textContent = 'copied!!';
+            copyButton.classList.add('copied');
+            setTimeout(() => {
+              copyButton.textContent = original;
+              copyButton.classList.remove('copied');
+            }, 2000);
+          }
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  /* =============================================
+     BASE
+     ============================================= */
+  .indie-page {
+    --bg: #FFFEF5;
+    --text: #333;
+    --coral: #FF6B6B;
+    --teal: #4ECDC4;
+    --yellow: #FFE66D;
+    --mint: #95E1D3;
+    --border: #333;
+
+    font-family: 'Karla', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg);
+    background-image: radial-gradient(circle, #ccc 1px, transparent 1px);
+    background-size: 24px 24px;
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* =============================================
+     NAV
+     ============================================= */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 20px;
+    border-bottom: 2px dashed var(--border);
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    background: var(--bg);
+  }
+
+  .nav-home {
+    color: var(--coral);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .nav-home:hover {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 4px;
+  }
+
+  .nav-slash {
+    color: #aaa;
+  }
+
+  .nav-current {
+    color: var(--teal);
+    font-weight: 700;
+  }
+
+  .nav-sticker {
+    color: var(--yellow);
+    font-size: 1.5rem;
+    transform: rotate(-8deg);
+    display: inline-block;
+  }
+
+  .nav-sticker-right {
+    transform: rotate(8deg);
+  }
+
+  /* =============================================
+     HERO
+     ============================================= */
+  .hero {
+    text-align: center;
+    padding: 60px 24px 48px;
+    position: relative;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--coral);
+    color: #fff;
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 4px 16px;
+    border-radius: 50px;
+    transform: rotate(-2deg);
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-title {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(3.2rem, 10vw, 6.5rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1;
+    margin: 0 0 16px 0;
+    transform: rotate(-1deg);
+  }
+
+  .hero-tagline {
+    font-family: 'Karla', system-ui, sans-serif;
+    font-size: 1.15rem;
+    color: #666;
+    margin: 0 auto 32px;
+    max-width: 520px;
+    line-height: 1.5;
+  }
+
+  .hero-webring {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 2px dashed var(--teal);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.05rem;
+    color: var(--teal);
+    transform: rotate(1deg);
+  }
+
+  .webring-arrow {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  /* =============================================
+     CONTENT
+     ============================================= */
+  .content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* =============================================
+     SECTIONS
+     ============================================= */
+  .section {
+    padding: 40px 0;
+  }
+
+  .section-left {
+    text-align: left;
+  }
+
+  .section-center {
+    text-align: center;
+  }
+
+  .section-title {
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 24px 0;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .title-sticker {
+    display: inline-block;
+    font-family: 'Karla', system-ui, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 50px;
+    color: var(--text);
+    transform: rotate(-3deg);
+    letter-spacing: 0.03em;
+  }
+
+  .sticker-coral { background: var(--coral); color: #fff; }
+  .sticker-teal { background: var(--teal); color: #fff; }
+  .sticker-yellow { background: var(--yellow); color: var(--text); }
+  .sticker-mint { background: var(--mint); color: var(--text); }
+
+  /* =============================================
+     PANELS
+     ============================================= */
+  .section-panel {
+    border: 2px dashed var(--border);
+    background: rgba(255, 255, 255, 0.7);
+    padding: 28px;
+    border-radius: 8px;
+    transform: rotate(0.3deg);
+    text-align: left;
+  }
+
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 0 0 16px 0;
+  }
+
+  .body-text:last-child {
+    margin-bottom: 0;
+  }
+
+  /* =============================================
+     CHARACTERISTICS
+     ============================================= */
+  .char-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    text-align: left;
+  }
+
+  .char-card {
+    border: 2px dashed var(--border);
+    background: rgba(255, 255, 255, 0.7);
+    padding: 24px;
+    border-radius: 8px;
+  }
+
+  .char-rotate-0 { transform: rotate(-0.5deg); border-radius: 8px 2px 8px 2px; }
+  .char-rotate-1 { transform: rotate(0.8deg); border-radius: 2px 8px 2px 12px; }
+  .char-rotate-2 { transform: rotate(-0.3deg); border-radius: 12px 4px 8px 4px; }
+  .char-rotate-3 { transform: rotate(1deg); border-radius: 4px 12px 4px 8px; }
+
+  .char-title {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--coral);
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+  }
+
+  .char-card:nth-child(2) .char-title { color: var(--teal); }
+  .char-card:nth-child(3) .char-title { color: #e0a030; }
+  .char-card:nth-child(4) .char-title { color: var(--coral); }
+  .char-card:nth-child(5) .char-title { color: #3bb5a8; }
+  .char-card:nth-child(6) .char-title { color: #d95555; }
+
+  .char-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+  }
+
+  /* =============================================
+     STYLE REFERENCE / PROMPT
+     ============================================= */
+  .prompt-panel {
+    border: 2px dashed var(--border);
+    background: rgba(255, 255, 255, 0.7);
+    padding: 28px;
+    border-radius: 4px 12px 4px 12px;
+    transform: rotate(-0.4deg);
+    text-align: left;
+  }
+
+  .prompt-text {
+    font-family: 'Karla', system-ui, sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0 0 24px 0;
+    padding: 0;
+    background: none;
+    border: none;
+  }
+
+  .copy-btn {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--coral);
+    border: 2px dashed var(--border);
+    padding: 8px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    transform: rotate(-1deg);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  .copy-btn:hover {
+    background: var(--teal);
+    transform: rotate(1deg) scale(1.05);
+  }
+
+  .copy-btn:active {
+    transform: rotate(0deg) scale(0.97);
+  }
+
+  .copy-btn.copied {
+    background: var(--mint);
+    color: var(--text);
+  }
+
+  /* =============================================
+     WHEN TO USE
+     ============================================= */
+  .usage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .usage-col {
+    border: 2px dashed var(--border);
+    background: rgba(255, 255, 255, 0.7);
+    padding: 24px;
+  }
+
+  .usage-good {
+    border-radius: 12px 4px 12px 4px;
+    transform: rotate(-0.5deg);
+  }
+
+  .usage-not {
+    border-radius: 4px 12px 4px 12px;
+    transform: rotate(0.5deg);
+  }
+
+  .usage-heading {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 14px 0;
+  }
+
+  .usage-good .usage-heading {
+    color: var(--teal);
+  }
+
+  .usage-not .usage-heading {
+    color: var(--coral);
+  }
+
+  .usage-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .usage-item {
+    font-size: 0.92rem;
+    color: #555;
+    padding: 6px 0 6px 22px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .usage-good .usage-item::before {
+    content: '~';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .usage-not .usage-item::before {
+    content: 'x';
+    position: absolute;
+    left: 2px;
+    color: var(--coral);
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  /* =============================================
+     RELATED STYLES
+     ============================================= */
+  .related-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 22px;
+    border: 2px dashed var(--border);
+    background: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  .related-rotate-0 { transform: rotate(-1deg); }
+  .related-rotate-1 { transform: rotate(0.8deg); }
+  .related-rotate-2 { transform: rotate(-0.5deg); }
+
+  .related-card:hover {
+    background: var(--yellow);
+    transform: rotate(0deg) scale(1.05);
+  }
+
+  .related-name {
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .related-rel {
+    font-family: 'Karla', system-ui, sans-serif;
+    font-size: 0.75rem;
+    color: #888;
+    letter-spacing: 0.02em;
+  }
+
+  /* =============================================
+     FOOTER
+     ============================================= */
+  .footer {
+    text-align: center;
+    padding: 40px 24px 60px;
+    border-top: 2px dashed var(--border);
+    margin-top: 20px;
+  }
+
+  .footer-stamp {
+    display: inline-block;
+    border: 2px dashed var(--teal);
+    border-radius: 50px;
+    padding: 6px 20px;
+    margin-bottom: 16px;
+    transform: rotate(-2deg);
+  }
+
+  .stamp-text {
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--teal);
+    letter-spacing: 0.03em;
+  }
+
+  .footer-text {
+    font-family: 'Karla', system-ui, sans-serif;
+    font-size: 0.92rem;
+    color: #666;
+    margin: 0 0 6px 0;
+  }
+
+  .footer-small {
+    font-family: 'Caveat', cursive;
+    font-size: 1.05rem;
+    color: #aaa;
+    margin: 0 0 20px 0;
+  }
+
+  .footer-webring {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    border: 2px dashed var(--border);
+    border-radius: 50px;
+    padding: 8px 20px;
+    transform: rotate(1deg);
+  }
+
+  .webring-btn {
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--coral);
+    cursor: pointer;
+  }
+
+  .webring-label {
+    font-family: 'Karla', system-ui, sans-serif;
+    font-size: 0.75rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* =============================================
+     RESPONSIVE
+     ============================================= */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 40px 20px 36px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 10vw, 4rem);
+    }
+
+    .content {
+      padding: 0 16px;
+    }
+
+    .section {
+      padding: 28px 0;
+    }
+
+    .char-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .usage-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-panel {
+      padding: 20px;
+    }
+
+    .prompt-panel {
+      padding: 20px;
+    }
+
+    .char-card {
+      padding: 20px;
+    }
+
+    .usage-col {
+      padding: 20px;
+    }
+
+    .related-grid {
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .nav {
+      font-size: 1.1rem;
+      gap: 6px;
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .copy-btn {
+      width: 100%;
+    }
+
+    .hero-webring {
+      font-size: 0.9rem;
+      padding: 6px 14px;
+      gap: 8px;
+    }
+
+    .footer-webring {
+      padding: 6px 14px;
+      gap: 10px;
+    }
+
+    .related-card {
+      width: 100%;
+    }
+  }
+</style>

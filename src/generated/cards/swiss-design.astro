@@ -1,0 +1,100 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-stripe"></div>
+  <div class="card-number">CH</div>
+  <div class="card-rule"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 0;
+    min-height: 220px;
+    padding: 28px;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .card:hover {
+    background: #000000;
+    color: #ffffff;
+  }
+
+  .card:hover .card-tagline {
+    color: #666;
+  }
+
+  .card:hover .card-rule {
+    background: #ff0000;
+    width: 40px;
+  }
+
+  .card-stripe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: #ff0000;
+  }
+
+  .card-number {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.04);
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+
+  .card-rule {
+    width: 24px;
+    height: 2px;
+    background: #ff0000;
+    margin-bottom: 14px;
+    transition: width 0.2s;
+  }
+
+  .card-name {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    margin: 0 0 8px 0;
+  }
+
+  .card-tagline {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+</style>

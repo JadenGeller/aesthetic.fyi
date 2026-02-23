@@ -1,0 +1,118 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Karla:wght@400;700&display=swap" rel="stylesheet" />
+
+<div class="indie-card">
+  <div class="card-dots" aria-hidden="true"></div>
+  <div class="card-sticker" aria-hidden="true">
+    <span class="sticker-text">handmade!</span>
+  </div>
+  <div class="card-doodle" aria-hidden="true">~</div>
+  <h3 class="name">{aesthetic.name}</h3>
+  <p class="tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .indie-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #FFFEF5;
+    background-image: radial-gradient(circle, #ccc 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #333;
+    border: 2px dashed #333;
+    border-radius: 8px 2px 12px 4px;
+  }
+
+  .card-dots {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .card-sticker {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    z-index: 1;
+    background: #FF6B6B;
+    padding: 3px 12px;
+    border-radius: 50px;
+    transform: rotate(3deg);
+  }
+
+  .sticker-text {
+    font-family: "Caveat", cursive;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+
+  .card-doodle {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-family: "Caveat", cursive;
+    font-size: 24px;
+    font-weight: 700;
+    color: #4ECDC4;
+    transform: rotate(-8deg);
+    z-index: 1;
+  }
+
+  .name {
+    position: relative;
+    z-index: 1;
+    font-family: "Caveat", cursive;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 6px 0;
+    color: #333;
+    transform: rotate(-1deg);
+  }
+
+  .tagline {
+    position: relative;
+    z-index: 1;
+    font-family: "Karla", system-ui, sans-serif;
+    font-size: 12px;
+    color: #777;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .indie-card:hover {
+    background-color: #FFE66D;
+    border-style: dashed;
+    border-color: #333;
+  }
+
+  .indie-card:hover .name {
+    color: #FF6B6B;
+  }
+
+  .indie-card:hover .sticker-text {
+    color: #fff;
+  }
+
+  .indie-card:hover .card-sticker {
+    background: #4ECDC4;
+    transform: rotate(-2deg);
+  }
+
+  .indie-card:hover .tagline {
+    color: #555;
+  }
+</style>

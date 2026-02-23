@@ -1,0 +1,758 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+
+<div class="oldweb-page">
+  <!-- Scanline overlay -->
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- 1. Nav -->
+  <nav class="nav">
+    <span class="nav-star">&#9733;</span>
+    <a href="/">aesthetic.fyi</a>
+    <span class="nav-sep">|</span>
+    <span class="nav-current">{aesthetic.name}</span>
+    <span class="nav-star">&#9733;</span>
+  </nav>
+
+  <!-- 2. Hero -->
+  <header class="hero">
+    <div class="hero-construction">&#9888; UNDER CONSTRUCTION &#9888;</div>
+    <h1 class="hero-title">{aesthetic.name}</h1>
+    <p class="hero-tagline">{aesthetic.tagline}</p>
+    <div class="hero-marquee">
+      <div class="marquee-track">
+        <span>&#9733; Welcome to my homepage &#9733; You are visitor #004,271 &#9733; Best viewed at 800x600 &#9733; Netscape Navigator recommended &#9733; Sign my guestbook &#9733; Last updated: Jan 14, 1998 &#9733;&nbsp;</span>
+        <span>&#9733; Welcome to my homepage &#9733; You are visitor #004,271 &#9733; Best viewed at 800x600 &#9733; Netscape Navigator recommended &#9733; Sign my guestbook &#9733; Last updated: Jan 14, 1998 &#9733;&nbsp;</span>
+      </div>
+    </div>
+  </header>
+
+  <hr class="divider" />
+
+  <main class="content">
+    <!-- 3. What This Is -->
+    <section class="section">
+      <h2 class="section-title">
+        <span class="title-deco">&#9658;</span> What This Is
+      </h2>
+      <div class="section-panel">
+        {aesthetic.about.split('\n\n').map((paragraph: string) => (
+          <p class="body-text">{paragraph.trim()}</p>
+        ))}
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- 4. Characteristics -->
+    <section class="section">
+      <h2 class="section-title">
+        <span class="title-deco">&#9658;</span> Characteristics
+      </h2>
+      <div class="char-grid">
+        {aesthetic.characteristics.map((char: { title: string; description: string }) => (
+          <div class="char-cell">
+            <h3 class="char-title">{char.title}</h3>
+            <p class="char-desc">{char.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- 5. Style Reference -->
+    <section class="section">
+      <h2 class="section-title">
+        <span class="title-deco">&#9658;</span> Style Reference
+      </h2>
+      <div class="prompt-panel">
+        <pre class="prompt-text">{aesthetic.prompt}</pre>
+        <button class="copy-btn" data-prompt={aesthetic.prompt}>
+          [ COPY TO CLIPBOARD ]
+        </button>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- 6. When to Use -->
+    <section class="section">
+      <h2 class="section-title">
+        <span class="title-deco">&#9658;</span> When to Use
+      </h2>
+      <div class="usage-table">
+        <div class="usage-col">
+          <h3 class="usage-heading usage-good">&#9745; Good For</h3>
+          <ul class="usage-list">
+            {aesthetic.good_for.map((item: string) => (
+              <li class="usage-item">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="usage-col">
+          <h3 class="usage-heading usage-not">&#9746; Not For</h3>
+          <ul class="usage-list">
+            {aesthetic.not_for.map((item: string) => (
+              <li class="usage-item">{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- 7. History -->
+    <section class="section">
+      <h2 class="section-title">
+        <span class="title-deco">&#9658;</span> History
+      </h2>
+      <div class="section-panel">
+        {aesthetic.history.split('\n\n').map((paragraph: string) => (
+          <p class="body-text">{paragraph.trim()}</p>
+        ))}
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- 8. Related Styles -->
+    <section class="section">
+      <h2 class="section-title">
+        <span class="title-deco">&#9658;</span> Related Styles
+      </h2>
+      <div class="related-grid">
+        {aesthetic.related.map((rel: { slug: string; relationship: string }) => (
+          <a href={`/${rel.slug}`} class="related-link">
+            <span class="related-name">&#9733; {rel.slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+            <span class="related-rel">{rel.relationship}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <hr class="divider" />
+
+  <!-- 9. Footer -->
+  <footer class="footer">
+    <div class="footer-badge">
+      <span class="badge-text">&#9733; aesthetic.fyi &#9733;</span>
+    </div>
+    <p class="footer-text">A reference for web design aesthetics</p>
+    <p class="footer-text footer-small">Made with &lt;table&gt; and &lt;font color&gt; in spirit</p>
+    <div class="visitor-counter" aria-hidden="true">
+      <span class="counter-label">VISITORS:</span>
+      <span class="counter-digits">
+        <span class="digit">0</span><span class="digit">0</span><span class="digit">4</span><span class="digit">2</span><span class="digit">7</span><span class="digit">1</span>
+      </span>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const copyButton = document.querySelector('.copy-btn');
+    if (copyButton) {
+      copyButton.addEventListener('click', async () => {
+        const prompt = copyButton.getAttribute('data-prompt');
+        if (prompt) {
+          try {
+            await navigator.clipboard.writeText(prompt);
+            const original = copyButton.textContent;
+            copyButton.textContent = '[ COPIED!! ]';
+            copyButton.classList.add('copied');
+            setTimeout(() => {
+              copyButton.textContent = original;
+              copyButton.classList.remove('copied');
+            }, 2000);
+          } catch {
+            const textarea = document.createElement('textarea');
+            textarea.value = prompt || '';
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            const original = copyButton.textContent;
+            copyButton.textContent = '[ COPIED!! ]';
+            copyButton.classList.add('copied');
+            setTimeout(() => {
+              copyButton.textContent = original;
+              copyButton.classList.remove('copied');
+            }, 2000);
+          }
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  /* ═══════════════════════════════════════════════
+     BASE & RESET
+     ═══════════════════════════════════════════════ */
+  .oldweb-page {
+    --navy: #000080;
+    --green: #00FF00;
+    --yellow: #FFFF00;
+    --cyan: #00FFFF;
+    --magenta: #FF00FF;
+    --silver: #C0C0C0;
+    --white: #FFFFFF;
+
+    font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+    background: var(--navy);
+    color: var(--green);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* Scanline overlay */
+  .scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px
+    );
+  }
+
+  /* ═══════════════════════════════════════════════
+     NAV
+     ═══════════════════════════════════════════════ */
+  .nav {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 16px 20px;
+    border-bottom: 3px ridge var(--silver);
+    background: rgba(0, 0, 0, 0.3);
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .nav a {
+    color: var(--cyan);
+    text-decoration: underline;
+    transition: none;
+  }
+
+  .nav a:hover {
+    color: var(--yellow);
+  }
+
+  .nav-star {
+    color: var(--yellow);
+  }
+
+  .nav-sep {
+    color: var(--silver);
+    margin: 0 8px;
+  }
+
+  .nav-current {
+    color: var(--green);
+  }
+
+  /* ═══════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════ */
+  .hero {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 60px 20px 40px;
+    border-bottom: 3px groove var(--silver);
+  }
+
+  .hero-construction {
+    font-family: 'VT323', monospace;
+    font-size: 1.4rem;
+    color: var(--yellow);
+    animation: blink-text 1s steps(1) infinite;
+    margin-bottom: 24px;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-title {
+    font-family: 'VT323', monospace;
+    font-size: clamp(3rem, 10vw, 7rem);
+    color: var(--cyan);
+    text-shadow:
+      0 0 10px var(--cyan),
+      0 0 30px rgba(0, 255, 255, 0.4),
+      0 0 60px rgba(0, 255, 255, 0.2);
+    line-height: 1;
+    margin: 0 0 20px 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .hero-tagline {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.15rem;
+    color: var(--green);
+    margin: 0 0 32px 0;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+  }
+
+  /* Marquee */
+  .hero-marquee {
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px inset var(--silver);
+    padding: 8px 0;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .marquee-track {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: marquee-scroll 20s linear infinite;
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    color: var(--yellow);
+  }
+
+  @keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ═══════════════════════════════════════════════
+     DIVIDERS
+     ═══════════════════════════════════════════════ */
+  .divider {
+    border: none;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      var(--magenta),
+      var(--cyan),
+      var(--green),
+      var(--yellow),
+      var(--magenta)
+    );
+    margin: 0;
+  }
+
+  /* ═══════════════════════════════════════════════
+     CONTENT
+     ═══════════════════════════════════════════════ */
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ═══════════════════════════════════════════════
+     SECTIONS
+     ═══════════════════════════════════════════════ */
+  .section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-family: 'VT323', monospace;
+    font-size: 1.8rem;
+    color: var(--yellow);
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+    margin: 0 0 24px 0;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .title-deco {
+    color: var(--magenta);
+    margin-right: 8px;
+  }
+
+  /* ═══════════════════════════════════════════════
+     PANELS
+     ═══════════════════════════════════════════════ */
+  .section-panel {
+    border: 3px ridge var(--silver);
+    background: rgba(0, 0, 0, 0.35);
+    padding: 28px;
+  }
+
+  .body-text {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--green);
+    margin: 0 0 16px 0;
+  }
+
+  .body-text:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ═══════════════════════════════════════════════
+     CHARACTERISTICS
+     ═══════════════════════════════════════════════ */
+  .char-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 3px ridge var(--silver);
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .char-cell {
+    padding: 24px;
+    border: 1px groove var(--silver);
+  }
+
+  .char-title {
+    font-family: 'VT323', monospace;
+    font-size: 1.3rem;
+    color: var(--cyan);
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+    margin: 0 0 10px 0;
+    letter-spacing: 0.05em;
+  }
+
+  .char-desc {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--silver);
+    margin: 0;
+  }
+
+  /* ═══════════════════════════════════════════════
+     STYLE REFERENCE / PROMPT
+     ═══════════════════════════════════════════════ */
+  .prompt-panel {
+    border: 3px ridge var(--silver);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 28px;
+  }
+
+  .prompt-text {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--green);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0 0 24px 0;
+    padding: 0;
+    background: none;
+    border: none;
+    text-shadow: 0 0 6px rgba(0, 255, 0, 0.3);
+  }
+
+  .copy-btn {
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    color: var(--navy);
+    background: var(--silver);
+    border: 2px outset var(--silver);
+    padding: 8px 24px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .copy-btn:hover {
+    background: var(--yellow);
+    color: var(--navy);
+  }
+
+  .copy-btn:active {
+    border-style: inset;
+  }
+
+  .copy-btn.copied {
+    background: var(--green);
+    color: var(--navy);
+  }
+
+  /* ═══════════════════════════════════════════════
+     WHEN TO USE
+     ═══════════════════════════════════════════════ */
+  .usage-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 3px ridge var(--silver);
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .usage-col {
+    padding: 24px;
+    border: 1px groove var(--silver);
+  }
+
+  .usage-heading {
+    font-family: 'VT323', monospace;
+    font-size: 1.3rem;
+    margin: 0 0 16px 0;
+    letter-spacing: 0.05em;
+  }
+
+  .usage-good {
+    color: var(--green);
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
+  }
+
+  .usage-not {
+    color: var(--magenta);
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.4);
+  }
+
+  .usage-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .usage-item {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--silver);
+    padding: 6px 0 6px 20px;
+    position: relative;
+  }
+
+  .usage-item::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--yellow);
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+  }
+
+  /* ═══════════════════════════════════════════════
+     RELATED STYLES
+     ═══════════════════════════════════════════════ */
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0;
+    border: 3px ridge var(--silver);
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .related-link {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px;
+    border: 1px groove var(--silver);
+    text-decoration: none;
+    transition: none;
+  }
+
+  .related-link:hover {
+    background: rgba(0, 255, 255, 0.1);
+  }
+
+  .related-link:hover .related-name {
+    color: var(--yellow);
+    text-shadow: 0 0 8px rgba(255, 255, 0, 0.5);
+  }
+
+  .related-name {
+    font-family: 'VT323', monospace;
+    font-size: 1.15rem;
+    color: var(--cyan);
+    text-decoration: underline;
+    letter-spacing: 0.03em;
+  }
+
+  .related-rel {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.78rem;
+    color: var(--silver);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* ═══════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════ */
+  .footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 40px 20px 60px;
+    border-top: 3px ridge var(--silver);
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .footer-badge {
+    display: inline-block;
+    border: 2px outset var(--silver);
+    background: var(--navy);
+    padding: 8px 24px;
+    margin-bottom: 16px;
+  }
+
+  .badge-text {
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    color: var(--yellow);
+    letter-spacing: 0.1em;
+    animation: blink-text 1.5s steps(1) infinite;
+  }
+
+  .footer-text {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.85rem;
+    color: var(--silver);
+    margin: 0 0 8px 0;
+  }
+
+  .footer-small {
+    font-size: 0.75rem;
+    color: rgba(192, 192, 192, 0.6);
+  }
+
+  /* Visitor counter */
+  .visitor-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 6px 12px;
+    border: 2px inset var(--silver);
+    background: #000;
+  }
+
+  .counter-label {
+    font-family: 'VT323', monospace;
+    font-size: 0.85rem;
+    color: var(--silver);
+    letter-spacing: 0.05em;
+  }
+
+  .counter-digits {
+    display: flex;
+    gap: 2px;
+  }
+
+  .digit {
+    display: inline-block;
+    width: 18px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    color: var(--green);
+    background: #001a00;
+    border: 1px inset #333;
+  }
+
+  /* ═══════════════════════════════════════════════
+     ANIMATIONS
+     ═══════════════════════════════════════════════ */
+  @keyframes blink-text {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+
+  /* ═══════════════════════════════════════════════
+     RESPONSIVE
+     ═══════════════════════════════════════════════ */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 40px 16px 32px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 10vw, 4rem);
+    }
+
+    .content {
+      padding: 0 16px;
+    }
+
+    .section {
+      padding: 28px 0;
+    }
+
+    .char-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .usage-table {
+      grid-template-columns: 1fr;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .section-panel {
+      padding: 20px;
+    }
+
+    .prompt-panel {
+      padding: 20px;
+    }
+
+    .char-cell {
+      padding: 18px;
+    }
+
+    .usage-col {
+      padding: 18px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .nav {
+      font-size: 1rem;
+    }
+
+    .hero-construction {
+      font-size: 1.1rem;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .copy-btn {
+      width: 100%;
+    }
+
+    .footer-badge {
+      padding: 6px 16px;
+    }
+  }
+</style>

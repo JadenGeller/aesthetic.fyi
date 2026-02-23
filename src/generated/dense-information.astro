@@ -1,0 +1,735 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+<div class="dense-page">
+  <!-- 1. Nav -->
+  <nav class="nav">
+    <span class="nav-links">
+      <a href="/" class="nav-link">aesthetic.fyi</a>
+      <span class="nav-sep">|</span>
+      <span class="nav-current">{aesthetic.name}</span>
+    </span>
+    <span class="nav-meta">density matters</span>
+  </nav>
+
+  <!-- 2. Hero -->
+  <header class="hero">
+    <table class="hero-table">
+      <tr>
+        <td class="hero-label">NAME</td>
+        <td class="hero-value hero-name">{aesthetic.name}</td>
+      </tr>
+      <tr>
+        <td class="hero-label">TAGLINE</td>
+        <td class="hero-value">{aesthetic.tagline}</td>
+      </tr>
+      <tr>
+        <td class="hero-label">TYPE</td>
+        <td class="hero-value">Web Design Aesthetic</td>
+      </tr>
+      <tr>
+        <td class="hero-label">STATUS</td>
+        <td class="hero-value"><span class="status-active">active</span> &mdash; widely used in data-driven interfaces</td>
+      </tr>
+    </table>
+  </header>
+
+  <main class="content">
+    <!-- 3. What This Is -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">What This Is</h2>
+      </div>
+      <div class="section-body">
+        {aesthetic.about.split('\n\n').map((paragraph: string) => (
+          <p class="body-text">{paragraph.trim()}</p>
+        ))}
+      </div>
+    </section>
+
+    <!-- 4. Characteristics -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Characteristics</h2>
+        <span class="section-count">{aesthetic.characteristics.length} items</span>
+      </div>
+      <div class="char-table">
+        <div class="char-header-row">
+          <span class="char-col-num">#</span>
+          <span class="char-col-title">Property</span>
+          <span class="char-col-desc">Description</span>
+        </div>
+        {aesthetic.characteristics.map((char: { title: string; description: string }, i: number) => (
+          <div class={`char-row ${i % 2 === 0 ? 'row-even' : 'row-odd'}`}>
+            <span class="char-col-num">{i + 1}.</span>
+            <span class="char-col-title char-title-text">{char.title}</span>
+            <span class="char-col-desc">{char.description}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 5. Style Reference -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Style Reference</h2>
+        <button class="copy-btn" data-prompt={aesthetic.prompt}>copy prompt</button>
+      </div>
+      <div class="prompt-box">
+        <pre class="prompt-text">{aesthetic.prompt}</pre>
+      </div>
+    </section>
+
+    <!-- 6. When to Use -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">When to Use</h2>
+      </div>
+      <div class="usage-grid">
+        <div class="usage-col">
+          <div class="usage-label usage-label-good">GOOD FOR</div>
+          {aesthetic.good_for.map((item: string, i: number) => (
+            <div class={`usage-row ${i % 2 === 0 ? 'row-even' : 'row-odd'}`}>
+              <span class="usage-bullet usage-bullet-good">+</span>
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+        <div class="usage-col">
+          <div class="usage-label usage-label-not">NOT FOR</div>
+          {aesthetic.not_for.map((item: string, i: number) => (
+            <div class={`usage-row ${i % 2 === 0 ? 'row-even' : 'row-odd'}`}>
+              <span class="usage-bullet usage-bullet-not">&ndash;</span>
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. History -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">History</h2>
+      </div>
+      <div class="section-body">
+        {aesthetic.history.split('\n\n').map((paragraph: string) => (
+          <p class="body-text">{paragraph.trim()}</p>
+        ))}
+      </div>
+    </section>
+
+    <!-- 8. Related Styles -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Related Styles</h2>
+        <span class="section-count">{aesthetic.related.length} links</span>
+      </div>
+      <div class="related-table">
+        <div class="related-header-row">
+          <span class="related-col-name">Aesthetic</span>
+          <span class="related-col-rel">Relationship</span>
+        </div>
+        {aesthetic.related.map((rel: { slug: string; relationship: string }, i: number) => (
+          <a href={`/${rel.slug}`} class={`related-row ${i % 2 === 0 ? 'row-even' : 'row-odd'}`}>
+            <span class="related-col-name related-link-text">{rel.slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+            <span class="related-col-rel">{rel.relationship}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. Footer -->
+  <footer class="footer">
+    <span class="footer-left">
+      <a href="/" class="footer-link">aesthetic.fyi</a>
+      <span class="footer-sep">|</span>
+      <span>A reference for web design aesthetics</span>
+    </span>
+    <span class="footer-right">
+      <a href="/" class="footer-link">&larr; all aesthetics</a>
+    </span>
+  </footer>
+</div>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const copyButton = document.querySelector('.copy-btn');
+    if (copyButton) {
+      copyButton.addEventListener('click', async () => {
+        const prompt = copyButton.getAttribute('data-prompt');
+        if (prompt) {
+          try {
+            await navigator.clipboard.writeText(prompt);
+            const original = copyButton.textContent;
+            copyButton.textContent = 'copied!';
+            copyButton.classList.add('copied');
+            setTimeout(() => {
+              copyButton.textContent = original;
+              copyButton.classList.remove('copied');
+            }, 2000);
+          } catch {
+            const textarea = document.createElement('textarea');
+            textarea.value = prompt || '';
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            const original = copyButton.textContent;
+            copyButton.textContent = 'copied!';
+            copyButton.classList.add('copied');
+            setTimeout(() => {
+              copyButton.textContent = original;
+              copyButton.classList.remove('copied');
+            }, 2000);
+          }
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  /* ============================================
+     BASE
+     ============================================ */
+  .dense-page {
+    font-family: Verdana, Geneva, 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.3;
+    background: #F6F6EF;
+    color: #000000;
+    min-height: 100vh;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+  }
+
+  a {
+    color: #0000FF;
+    text-decoration: underline;
+  }
+
+  a:visited {
+    color: #551A8B;
+  }
+
+  a:hover {
+    color: #0000CC;
+  }
+
+  /* ============================================
+     NAV
+     ============================================ */
+  .nav {
+    background: #FF6600;
+    padding: 4px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .nav-link {
+    color: #000000;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+
+  .nav-sep {
+    color: #000000;
+    opacity: 0.5;
+  }
+
+  .nav-current {
+    color: #000000;
+    font-size: 13px;
+  }
+
+  .nav-meta {
+    color: #000000;
+    font-size: 11px;
+    opacity: 0.6;
+  }
+
+  /* ============================================
+     HERO
+     ============================================ */
+  .hero {
+    background: #FFFFFF;
+    border-bottom: 1px solid #dddddd;
+    padding: 8px;
+  }
+
+  .hero-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .hero-table tr {
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .hero-table tr:last-child {
+    border-bottom: none;
+  }
+
+  .hero-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #828282;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 6px 12px 6px 4px;
+    white-space: nowrap;
+    vertical-align: top;
+    width: 70px;
+  }
+
+  .hero-value {
+    padding: 6px 4px;
+    color: #000000;
+  }
+
+  .hero-name {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .status-active {
+    color: #FFFFFF;
+    background: #FF6600;
+    padding: 1px 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  /* ============================================
+     CONTENT
+     ============================================ */
+  .content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 8px;
+  }
+
+  /* ============================================
+     SECTIONS
+     ============================================ */
+  .section {
+    margin-top: 12px;
+    border: 1px solid #dddddd;
+    background: #FFFFFF;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F0F0F0;
+    border-bottom: 1px solid #dddddd;
+    padding: 4px 8px;
+  }
+
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .section-count {
+    font-size: 11px;
+    color: #828282;
+  }
+
+  .section-body {
+    padding: 8px;
+  }
+
+  .body-text {
+    font-size: 13px;
+    line-height: 1.4;
+    color: #000000;
+    margin: 0 0 8px 0;
+  }
+
+  .body-text:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ============================================
+     CHARACTERISTICS TABLE
+     ============================================ */
+  .char-table {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .char-header-row {
+    display: grid;
+    grid-template-columns: 28px 160px 1fr;
+    gap: 0;
+    padding: 4px 8px;
+    background: #F0F0F0;
+    border-bottom: 1px solid #dddddd;
+    font-size: 10px;
+    font-weight: 700;
+    color: #828282;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .char-row {
+    display: grid;
+    grid-template-columns: 28px 160px 1fr;
+    gap: 0;
+    padding: 6px 8px;
+    border-bottom: 1px solid #eeeeee;
+    align-items: baseline;
+  }
+
+  .char-row:last-child {
+    border-bottom: none;
+  }
+
+  .char-col-num {
+    color: #828282;
+    font-size: 12px;
+  }
+
+  .char-col-title {
+    font-size: 13px;
+  }
+
+  .char-title-text {
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .char-col-desc {
+    font-size: 12px;
+    color: #444444;
+    line-height: 1.4;
+  }
+
+  /* ============================================
+     STYLE REFERENCE / PROMPT
+     ============================================ */
+  .prompt-box {
+    padding: 8px;
+    background: #FFFFFF;
+  }
+
+  .prompt-text {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #000000;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+  }
+
+  .copy-btn {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+    color: #0000FF;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+  }
+
+  .copy-btn:hover {
+    color: #0000CC;
+  }
+
+  .copy-btn.copied {
+    color: #FF6600;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  /* ============================================
+     WHEN TO USE
+     ============================================ */
+  .usage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .usage-col {
+    border-right: 1px solid #dddddd;
+  }
+
+  .usage-col:last-child {
+    border-right: none;
+  }
+
+  .usage-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 8px;
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .usage-label-good {
+    color: #006600;
+    background: #F0F0F0;
+  }
+
+  .usage-label-not {
+    color: #CC0000;
+    background: #F0F0F0;
+  }
+
+  .usage-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 1.4;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .usage-row:last-child {
+    border-bottom: none;
+  }
+
+  .usage-bullet {
+    font-weight: 700;
+    flex-shrink: 0;
+    font-size: 13px;
+  }
+
+  .usage-bullet-good {
+    color: #006600;
+  }
+
+  .usage-bullet-not {
+    color: #CC0000;
+  }
+
+  /* ============================================
+     RELATED STYLES
+     ============================================ */
+  .related-table {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .related-header-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4px 8px;
+    background: #F0F0F0;
+    border-bottom: 1px solid #dddddd;
+    font-size: 10px;
+    font-weight: 700;
+    color: #828282;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .related-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 4px 8px;
+    border-bottom: 1px solid #eeeeee;
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  .related-row:last-child {
+    border-bottom: none;
+  }
+
+  .related-row:hover {
+    background: #FFFFCC;
+  }
+
+  .related-link-text {
+    color: #0000FF;
+    text-decoration: underline;
+  }
+
+  .related-col-rel {
+    color: #828282;
+    font-size: 12px;
+  }
+
+  /* ============================================
+     ALTERNATING ROW COLORS
+     ============================================ */
+  .row-even {
+    background: #FFFFFF;
+  }
+
+  .row-odd {
+    background: #F6F6EF;
+  }
+
+  /* ============================================
+     FOOTER
+     ============================================ */
+  .footer {
+    margin-top: 12px;
+    background: #F0F0F0;
+    border-top: 1px solid #dddddd;
+    padding: 6px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: #828282;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .footer-link {
+    color: #0000FF;
+    text-decoration: underline;
+    font-size: 11px;
+  }
+
+  .footer-sep {
+    color: #cccccc;
+  }
+
+  .footer-right {
+    font-size: 11px;
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 768px) {
+    .char-header-row,
+    .char-row {
+      grid-template-columns: 24px 1fr;
+    }
+
+    .char-col-desc {
+      grid-column: 1 / -1;
+      padding-left: 24px;
+      margin-top: 2px;
+    }
+
+    .usage-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .usage-col {
+      border-right: none;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .usage-col:last-child {
+      border-bottom: none;
+    }
+
+    .related-header-row,
+    .related-row {
+      grid-template-columns: 1fr auto;
+    }
+
+    .hero-table {
+      font-size: 12px;
+    }
+
+    .hero-name {
+      font-size: 16px;
+    }
+
+    .nav-meta {
+      display: none;
+    }
+
+    .footer {
+      flex-direction: column;
+      gap: 4px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .dense-page {
+      font-size: 12px;
+    }
+
+    .content {
+      padding: 0 4px;
+    }
+
+    .hero-label {
+      font-size: 9px;
+      width: 55px;
+    }
+
+    .hero-name {
+      font-size: 14px;
+    }
+
+    .char-header-row {
+      display: none;
+    }
+
+    .char-row {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+
+    .char-col-num {
+      display: none;
+    }
+
+    .char-col-desc {
+      padding-left: 0;
+    }
+
+    .related-header-row {
+      display: none;
+    }
+
+    .section-header {
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+  }
+</style>

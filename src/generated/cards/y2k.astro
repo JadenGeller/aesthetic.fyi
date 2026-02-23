@@ -1,0 +1,113 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300&display=swap" rel="stylesheet" />
+
+<div class="y2k-card">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="chrome-bar"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .y2k-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(135deg, #0a0a2e 0%, #1a0a3e 50%, #0a1a3e 100%);
+    border: 1px solid rgba(192, 192, 192, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    color: #e0e0e0;
+  }
+
+  .y2k-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse at 30% 40%, rgba(0, 191, 255, 0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 60%, rgba(255, 105, 180, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .orb-1 {
+    width: 70px;
+    height: 70px;
+    top: 20px;
+    right: 24px;
+    background: radial-gradient(circle at 35% 35%,
+      rgba(255, 255, 255, 0.35),
+      rgba(0, 191, 255, 0.25) 40%,
+      rgba(255, 105, 180, 0.15) 70%,
+      transparent 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .orb-2 {
+    width: 36px;
+    height: 36px;
+    top: 50px;
+    right: 100px;
+    background: radial-gradient(circle at 35% 35%,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 105, 180, 0.2) 40%,
+      rgba(0, 191, 255, 0.1) 70%,
+      transparent 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .chrome-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00BFFF, #FF69B4, #00BFFF);
+    border-radius: 20px 20px 0 0;
+    z-index: 1;
+  }
+
+  .card-name {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    margin: 0 0 8px 0;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(135deg, #FFFFFF, #C0C0C0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+  }
+
+  .card-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    color: rgba(192, 192, 192, 0.65);
+    line-height: 1.5;
+  }
+</style>

@@ -1,0 +1,136 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-sidebar" aria-hidden="true">
+    <div class="card-sidebar-dot active"></div>
+    <div class="card-sidebar-dot"></div>
+    <div class="card-sidebar-dot"></div>
+    <div class="card-sidebar-dot"></div>
+  </div>
+  <div class="card-content">
+    <div class="card-breadcrumb" aria-hidden="true">
+      <span class="crumb">docs</span>
+      <span class="crumb-sep">/</span>
+      <span class="crumb-current">aesthetic</span>
+    </div>
+    <h3 class="card-name">{aesthetic.name}</h3>
+    <p class="card-tagline">{aesthetic.tagline}</p>
+    <div class="card-code" aria-hidden="true">
+      <span class="card-code-token">$ </span><span class="card-code-text">read the docs</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    background: #FAFAFA;
+    color: #0F172A;
+    min-height: 220px;
+    padding: 0;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid #E2E8F0;
+  }
+
+  .card-sidebar {
+    width: 44px;
+    min-width: 44px;
+    background: #1E293B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 10px;
+  }
+
+  .card-sidebar-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #475569;
+  }
+
+  .card-sidebar-dot.active {
+    background: #3B82F6;
+  }
+
+  .card-content {
+    flex: 1;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .card-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.68rem;
+    margin-bottom: auto;
+  }
+
+  .crumb {
+    color: #3B82F6;
+    font-weight: 400;
+  }
+
+  .crumb-sep {
+    color: #CBD5E1;
+  }
+
+  .crumb-current {
+    color: #94A3B8;
+    font-weight: 500;
+  }
+
+  .card-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    margin: 0;
+    line-height: 1.1;
+    color: #0F172A;
+  }
+
+  .card-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    margin: 0;
+    color: #64748B;
+    line-height: 1.4;
+  }
+
+  .card-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-top: 6px;
+    display: inline-flex;
+    align-self: flex-start;
+  }
+
+  .card-code-token {
+    color: #10B981;
+    font-weight: 400;
+  }
+
+  .card-code-text {
+    color: #475569;
+    font-weight: 400;
+  }
+</style>

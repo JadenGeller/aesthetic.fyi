@@ -1,0 +1,104 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+
+<div class="bauhaus-card">
+  <div class="card-circle" aria-hidden="true"></div>
+  <div class="card-triangle" aria-hidden="true"></div>
+  <div class="card-square" aria-hidden="true"></div>
+  <h3 class="name">{aesthetic.name}</h3>
+  <p class="tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .bauhaus-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #FFFFFF;
+    color: #000000;
+    border: 3px solid #000000;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .bauhaus-card:hover .card-circle {
+    transform: translate(-4px, 4px) scale(1.05);
+  }
+
+  .bauhaus-card:hover .card-square {
+    transform: rotate(20deg) scale(1.1);
+  }
+
+  .bauhaus-card:hover .card-triangle {
+    transform: translateY(-6px);
+  }
+
+  .card-circle {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #EB4034;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+  }
+
+  .card-triangle {
+    position: absolute;
+    top: 24px;
+    right: 100px;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 52px solid #F5C518;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+  }
+
+  .card-square {
+    position: absolute;
+    top: 60px;
+    right: 80px;
+    width: 50px;
+    height: 50px;
+    background: #2D5DA1;
+    opacity: 0.75;
+    transform: rotate(12deg);
+    transition: transform 0.3s ease;
+  }
+
+  .name {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    margin: 0 0 8px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tagline {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #555;
+    margin: 0;
+    line-height: 1.4;
+    max-width: 200px;
+    position: relative;
+    z-index: 1;
+  }
+</style>

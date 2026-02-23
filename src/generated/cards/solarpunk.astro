@@ -1,0 +1,116 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<div class="solar-card">
+  <div class="sunlight"></div>
+  <div class="leaf leaf-1"></div>
+  <div class="leaf leaf-2"></div>
+  <div class="vine"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .solar-card {
+    background: linear-gradient(160deg, #FFF8E1 0%, #F0F5E8 60%, #E8F5E9 100%);
+    color: #1A4D2E;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid rgba(76, 175, 80, 0.25);
+    box-shadow:
+      0 4px 20px rgba(76, 175, 80, 0.1),
+      inset 0 0 40px rgba(249, 199, 79, 0.06);
+  }
+
+  .sunlight {
+    position: absolute;
+    top: -30px;
+    right: -20px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(249, 199, 79, 0.2) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .leaf {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .leaf-1 {
+    top: 16px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    background: rgba(76, 175, 80, 0.12);
+    border-radius: 70% 30% 60% 40% / 40% 60% 30% 70%;
+    transform: rotate(25deg);
+  }
+
+  .leaf-2 {
+    top: 40px;
+    right: 52px;
+    width: 28px;
+    height: 28px;
+    background: rgba(46, 125, 50, 0.1);
+    border-radius: 60% 40% 70% 30% / 30% 70% 40% 60%;
+    transform: rotate(-20deg);
+  }
+
+  .vine {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    width: 3px;
+    height: 50px;
+    background: linear-gradient(180deg, #4CAF50, transparent);
+    border-radius: 3px;
+    opacity: 0.3;
+  }
+
+  .vine::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+    width: 16px;
+    height: 12px;
+    background: rgba(76, 175, 80, 0.2);
+    border-radius: 70% 30% 60% 40% / 40% 60% 30% 70%;
+    transform: rotate(40deg);
+  }
+
+  .card-name {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.5px;
+    margin: 0 0 6px 0;
+    color: #1A4D2E;
+    line-height: 1.15;
+    position: relative;
+    z-index: 2;
+  }
+
+  .card-tagline {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    color: rgba(26, 77, 46, 0.55);
+    line-height: 1.5;
+    position: relative;
+    z-index: 2;
+  }
+</style>

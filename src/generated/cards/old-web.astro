@@ -1,0 +1,129 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Courier+Prime&display=swap" rel="stylesheet" />
+
+<div class="oldweb-card">
+  <div class="card-scanlines" aria-hidden="true"></div>
+  <div class="card-badge" aria-hidden="true">
+    <span class="badge-blink">&#9733; NEW &#9733;</span>
+  </div>
+  <div class="card-counter" aria-hidden="true">
+    <span class="ctr-digit">0</span><span class="ctr-digit">4</span><span class="ctr-digit">2</span><span class="ctr-digit">7</span><span class="ctr-digit">1</span>
+  </div>
+  <h3 class="name">{aesthetic.name}</h3>
+  <p class="tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .oldweb-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #000080;
+    color: #00FF00;
+    border: 3px ridge #C0C0C0;
+    border-radius: 0;
+  }
+
+  .card-scanlines {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.12) 2px,
+      rgba(0, 0, 0, 0.12) 4px
+    );
+  }
+
+  .card-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 1;
+  }
+
+  .badge-blink {
+    font-family: "VT323", monospace;
+    font-size: 13px;
+    color: #FFFF00;
+    letter-spacing: 0.08em;
+    animation: card-blink 1s steps(1) infinite;
+  }
+
+  .card-counter {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    gap: 1px;
+    z-index: 1;
+  }
+
+  .ctr-digit {
+    display: inline-block;
+    width: 14px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    font-family: "VT323", monospace;
+    font-size: 12px;
+    color: #00FF00;
+    background: #001a00;
+    border: 1px inset #333;
+  }
+
+  .name {
+    position: relative;
+    z-index: 1;
+    font-family: "VT323", monospace;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    margin: 0 0 8px 0;
+    color: #00FFFF;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+
+  .tagline {
+    position: relative;
+    z-index: 1;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 12px;
+    color: #C0C0C0;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .oldweb-card:hover {
+    background: #000060;
+    border-color: #FFFF00;
+  }
+
+  .oldweb-card:hover .name {
+    color: #FFFF00;
+    text-shadow: 0 0 12px rgba(255, 255, 0, 0.6);
+  }
+
+  .oldweb-card:hover .tagline {
+    color: #00FF00;
+  }
+
+  @keyframes card-blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+</style>

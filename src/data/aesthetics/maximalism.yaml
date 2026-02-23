@@ -1,0 +1,107 @@
+slug: maximalism
+name: Maximalism
+coined: false
+
+tagline: "More is more is more is more is more."
+
+prompt: |
+  Layer everything. Use 4+ colors simultaneously — hot pink, electric
+  blue, lime green, orange, purple, gold — all at full saturation. Mix
+  3+ typefaces: a bold serif, a geometric sans, a script, and monospace
+  accents. Backgrounds use complex repeating-linear-gradient patterns
+  with stripes, checks, or zigzags. Elements overlap via negative
+  margins. Box-shadows are multiple and colorful. Borders mix dashed,
+  dotted, and double styles in different colors. Text-shadow in neon
+  hues. Decorative elements are rotated with transform. Sections each
+  have their own personality — different background, different palette,
+  different layout. Nothing matches on purpose. The page feels dense,
+  eclectic, and overwhelmingly expressive.
+
+about: |
+  Maximalism is the rejection of restraint. Where minimalism whispers,
+  maximalism screams — in six colors at once, across three typefaces,
+  over a background made of layered gradient stripes. Every element
+  gets its own moment. Every section is a new world.
+
+  This is design that trusts the viewer to handle intensity. It's not
+  chaos for the sake of chaos — it's abundance as philosophy. The page
+  fills every inch because every inch is an opportunity. You don't
+  create visual hierarchy by removing things. You create it by making
+  the important things louder than the already-loud things around them.
+
+characteristics:
+  - title: Color Overload
+    description: >
+      Four or more saturated colors at once. Hot pink next to electric
+      blue next to lime. No palette harmony — the clash is the point.
+  - title: Font Mixing
+    description: >
+      Serif, sans-serif, script, and monospace all on the same page.
+      Different sections get different type treatments. Headers in one
+      face, body in another, labels in a third.
+  - title: Pattern Backgrounds
+    description: >
+      repeating-linear-gradient stripes, checks, zigzags. Layered on
+      top of solid colors. Every section gets its own pattern.
+  - title: Overlapping Elements
+    description: >
+      Negative margins, absolute positioning, z-index stacking. Things
+      bleed into each other. Cards overlap their section boundaries.
+  - title: Mixed Border Styles
+    description: >
+      Dashed, dotted, double, solid — often on the same element. 3-5px
+      thick, in contrasting colors. border-radius varies wildly between
+      elements — some fully round, some razor sharp.
+  - title: Decorative Excess
+    description: >
+      Multiple box-shadows in different colors. Text-shadow on headings.
+      CSS animations on backgrounds. transform: rotate() on accent
+      elements. If a surface can be decorated, it is.
+
+good_for:
+  - Creative portfolios and artist sites
+  - Festival and event pages
+  - Music and entertainment brands
+  - Editorial and magazine layouts
+  - Any project that wants to feel alive and unapologetic
+
+not_for:
+  - Finance, healthcare, or government
+  - Long-form reading — density fights comprehension
+  - Accessibility-first projects — contrast ratios are hard to maintain
+  - Enterprise SaaS — users need calm repetition, not surprise
+  - Mobile-first products — small screens can't hold this much
+
+history: |
+  Maximalism in visual culture predates the web by centuries — think
+  Baroque architecture, Rococo interiors, Victorian pattern-on-pattern.
+  The core idea has always been the same: fill the space, celebrate
+  ornament, reject the notion that less is more.
+
+  On the web, maximalism re-emerged as a direct rebellion against the
+  flat-design era of 2013-2018, when every site looked like a Google
+  product. Designers started asking: what if we used all the CSS
+  properties, not just the tasteful ones? What if backgrounds had
+  patterns? What if borders clashed? The Memphis revival, the
+  psychedelic nostalgia wave, and the indie web movement all fed
+  maximalist energy back into digital design.
+
+  Today, maximalism lives in festival sites, fashion editorials, music
+  pages, and the portfolios of designers who want to prove they can do
+  more than white-space-and-sans-serif. It's the antidote to the
+  homogenized web — proof that CSS is an expressive medium, not just a
+  layout tool.
+
+related:
+  - slug: memphis
+    relationship: Color cousin
+  - slug: psychedelic
+    relationship: Shares intensity
+  - slug: minimalism
+    relationship: Opposite
+  - slug: old-web
+    relationship: Spiritual ancestor
+  - slug: y2k
+    relationship: Aesthetic sibling
+  - slug: indie-web
+    relationship: Shares rebellion

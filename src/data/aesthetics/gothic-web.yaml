@@ -1,0 +1,109 @@
+slug: gothic-web
+name: Gothic Web
+coined: false
+
+tagline: "From the shadows of cathedral code, darkness renders beautiful."
+
+prompt: |
+  Dark near-black background (#0D0D0D). Secondary panels in deep purple-black
+  (#1A0A1A). Accent colors: blood red (#8B0000) for borders and glowing
+  highlights, deep purple (#4A0E4A) for secondary accents, antique gold
+  (#C9A959) for ornamental borders and detail lines, parchment (#E8E0D0) for
+  body text. Cinzel (400, 700) for gothic serif headings — uppercase with wide
+  letter-spacing. Crimson Text (400, 400i, 600) for body copy. Double borders
+  in gold for section dividers. Pointed arch shapes via clip-path or
+  border-radius tricks on hero and section headers. text-shadow with dark red
+  glow (0 0 10px rgba(139,0,0,0.5)) on headings. Ornate CSS border patterns
+  using repeating gradients. Background gradients from near-black to
+  purple-black. Everything feels like a medieval manuscript illuminated by
+  candlelight on a screen.
+
+about: |
+  Gothic Web design draws from cathedral architecture, medieval manuscripts,
+  and the Romantic darkness of Victorian literature. It treats the browser
+  window like a vaulted hall — shadowed, ornate, and reverent. Every element
+  carries weight and ceremony.
+
+  The aesthetic refuses minimalism's stripped-down purity. Instead, it layers
+  decorative borders, deep color, and dramatic typography to create interfaces
+  that feel ancient and deliberate. Text glows like candlelight against void-dark
+  backgrounds. Gold accents trace the edges of panels like gilded page borders.
+  It is the web as illuminated manuscript — dense, beautiful, and unapologetically
+  theatrical.
+
+characteristics:
+  - title: Ornate Serif Typography
+    description: >
+      Headings use decorative serif faces like Cinzel — uppercase, widely
+      tracked, and heavy. Body text is set in classical serifs like Crimson
+      Text. Every letterform carries the gravity of carved stone.
+  - title: Dark Void Backgrounds
+    description: >
+      Near-black (#0D0D0D) and deep purple-black (#1A0A1A) backgrounds
+      swallow light. Content emerges from darkness like text on aged
+      parchment held near a flame.
+  - title: Blood Red & Gold Accents
+    description: >
+      Deep crimson (#8B0000) provides warmth through glowing text-shadows
+      and border highlights. Antique gold (#C9A959) traces ornamental lines,
+      double borders, and decorative separators.
+  - title: Pointed Arch Motifs
+    description: >
+      CSS clip-path and border-radius create pointed arch shapes — the
+      signature form of Gothic architecture — on hero sections, cards,
+      and decorative frames.
+  - title: Dramatic Shadows & Glow
+    description: >
+      Text-shadow in dark red creates a bleeding candlelight effect.
+      Box-shadows with warm color casts surround panels, giving depth
+      and a sense of flickering illumination.
+  - title: Ornamental Border Patterns
+    description: >
+      Double borders, gold ruling lines, and repeating-gradient patterns
+      simulate the decorative frames of medieval manuscripts and
+      cathedral stonework tracery.
+
+good_for:
+  - Portfolio sites for dark or dramatic creative work
+  - Literary and poetry publications
+  - Horror, fantasy, and gothic fiction projects
+  - Music and band pages (metal, darkwave, gothic rock)
+  - Artisan and handcraft brands with a dark identity
+
+not_for:
+  - SaaS dashboards or productivity tools
+  - Children's or family-oriented products
+  - E-commerce requiring fast, clean conversion flows
+  - Corporate or enterprise branding
+  - Accessibility-critical interfaces — low contrast and ornament can hinder readability
+
+history: |
+  Gothic architecture emerged in 12th-century France with pointed arches,
+  ribbed vaults, and flying buttresses — structures designed to draw the eye
+  upward toward divine light. The same era produced illuminated manuscripts:
+  hand-lettered texts surrounded by ornate borders in gold leaf, deep blue,
+  and vermillion.
+
+  On the web, gothic aesthetics first appeared in the late-1990s personal
+  homepage era — dark backgrounds, animated flame GIFs, and heavy metal fan
+  pages. The look was crude but sincere. As CSS matured, designers could
+  achieve the ornamental quality the aesthetic demands: custom fonts via
+  @font-face, complex gradients, clip-path geometry, and layered shadows.
+
+  Today Gothic Web lives in a refined space between historical reference and
+  modern craft. It draws from the same visual vocabulary as dark academia and
+  steampunk but pushes further into decorative excess. Its closest digital
+  relatives are dark-mode design (shared darkness, different intent) and
+  art-deco (shared love of ornamentation, different geometry).
+
+related:
+  - slug: dark-mode
+    relationship: Shares the void
+  - slug: dark-academia
+    relationship: Literary sibling
+  - slug: steampunk
+    relationship: Victorian cousin
+  - slug: art-deco
+    relationship: Ornamental parallel
+  - slug: cyberpunk
+    relationship: Dark contrast

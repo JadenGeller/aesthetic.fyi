@@ -1,0 +1,108 @@
+slug: art-deco
+name: Art Deco
+coined: false
+
+tagline: "Geometry is glamour. Every line knows exactly where it's going."
+
+prompt: |
+  Gold (#D4AF37) on black (#1a1a1a) or cream (#F5F0E8). Geometric
+  symmetry everywhere — centered layouts, mirrored elements, balanced
+  compositions. Sunburst and fan patterns via CSS conic-gradient or
+  repeating linear-gradient. Borders are thin gold lines, 1-2px solid,
+  often doubled or tripled for ornamental effect. Typography is elegant
+  serif — Playfair Display for headings, Cormorant Garamond for body.
+  Headings are uppercase with letter-spacing: 0.2-0.3em. Chevron and
+  stepped geometric shapes built with CSS borders and transforms.
+  Decorative corner ornaments using ::before/::after pseudo-elements.
+  Palette is restrained: black, gold, cream, dark gray. The mood is
+  luxury, precision, and confidence. Nothing is casual.
+
+about: |
+  Art Deco on the web is controlled extravagance. Every element sits on
+  an invisible grid of perfect symmetry. Gold lines divide space with
+  surgical precision. Typography stands tall and unhurried, spaced wide
+  enough to breathe but never enough to wander.
+
+  This is design that knows its worth. It doesn't beg for attention — it
+  commands a room by standing still. The geometry isn't decorative filler.
+  It's the structure itself, elevated to ornament. When you design in Art
+  Deco, you're making a promise: nothing here is accidental.
+
+characteristics:
+  - title: Gold on Dark
+    description: >
+      The signature palette. #D4AF37 gold against #1a1a1a black or
+      #2C2C2C dark gray. Cream (#F5F0E8) for lighter sections. Color
+      is restrained — three or four values, never more.
+  - title: Geometric Symmetry
+    description: >
+      Every layout is centered and balanced. Elements mirror across
+      vertical axes. Sunburst and fan motifs radiate from center points
+      using conic-gradient or repeating-linear-gradient.
+  - title: Ornamental Borders
+    description: >
+      Thin gold lines — 1-2px solid #D4AF37. Often doubled or tripled
+      with small gaps between them. Corner ornaments built with
+      ::before/::after using border and transform properties.
+  - title: Elegant Serif Type
+    description: >
+      Playfair Display for headings, Cormorant Garamond for body.
+      Headings are uppercase with letter-spacing 0.2-0.3em. Weight is
+      light to medium — never heavy. The type whispers power.
+  - title: Stepped Forms
+    description: >
+      Chevrons, ziggurats, and stepped shapes via CSS clip-path or
+      nested elements with incremental sizing. The stepped silhouette
+      is the most recognizable Art Deco motif.
+  - title: Luxury Spacing
+    description: >
+      Generous padding, wide margins, dramatic whitespace between
+      sections. Nothing is crowded. Every element has room to be
+      admired on its own terms.
+
+good_for:
+  - Luxury brand and product sites
+  - Event and gala invitations
+  - High-end restaurant and hotel sites
+  - Portfolio sites for architects and jewelers
+  - Awards ceremonies and film festival sites
+
+not_for:
+  - Casual or playful apps
+  - Developer tools or technical documentation
+  - Budget or discount brands — the luxury codes conflict
+  - Dense data dashboards — the spacing is too generous
+  - Children's products or education platforms
+
+history: |
+  Art Deco emerged in Paris in the 1920s, crystallized at the 1925
+  Exposition Internationale des Arts Decoratifs. It fused the geometric
+  abstraction of Cubism with the luxury materials of traditional French
+  decorative arts — and then it went everywhere. The Chrysler Building.
+  Miami Beach hotels. Hollywood movie palaces. Jewelry, furniture,
+  fashion, ocean liners.
+
+  What made it spread was its versatility within constraint. The grammar
+  is strict — symmetry, geometry, stepped forms, radiating lines — but
+  it can be applied to anything from a skyscraper to a cocktail shaker.
+  It's ornament that follows rules, which is why it translates so cleanly
+  to CSS. The sunburst is a gradient. The stepped form is nested divs.
+  The gold border is a border.
+
+  On the web, Art Deco appears whenever a brand needs to signal
+  sophistication without stuffiness. It's the aesthetic of the boutique
+  hotel landing page, the awards show microsite, the luxury product
+  reveal. It never really went away — it just waits for occasions worthy
+  of its precision.
+
+related:
+  - slug: fashion-luxury
+    relationship: Shares luxury codes
+  - slug: mid-century-modern
+    relationship: Successor era
+  - slug: bauhaus
+    relationship: Contemporary rival
+  - slug: swiss-design
+    relationship: Shares geometric rigor
+  - slug: minimalism
+    relationship: Shares restraint

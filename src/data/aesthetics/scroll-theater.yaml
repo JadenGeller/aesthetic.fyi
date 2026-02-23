@@ -1,0 +1,114 @@
+slug: scroll-theater
+name: Scroll Theater
+coined: true
+
+tagline: "One idea at a time. Full screen. No distractions."
+
+prompt: |
+  Black background (#000000) with white text (#FFFFFF), alternating with
+  white background (#000000 text) sections. Each section fills the full
+  viewport (min-height: 100vh) and centers a single idea — one heading,
+  one sentence, or one statistic. Typography is Inter at weights 300,
+  600, and 700, sized with clamp(2rem, 5vw, 4rem) for headings. CSS
+  scroll-snap-type: y mandatory on the scroll container. Dramatic
+  padding (100px+ vertical). One accent color: #0071E3 (Apple blue)
+  used sparingly for links and CTAs. No decorative elements. The page
+  should feel like an Apple product keynote — cinematic, paced, and
+  confident. Each viewport makes exactly one statement.
+
+about: |
+  Scroll Theater is the web page as keynote presentation. Every section
+  claims the entire viewport, centers a single thought, and waits for
+  the user to advance. There are no sidebars, no competing columns, no
+  density. Just one idea, given the full weight of the screen.
+
+  It is the aesthetic of confidence — the belief that what you are saying
+  is important enough to deserve an entire viewport. Apple perfected it
+  for product launches. Now it appears everywhere a brand wants to feel
+  inevitable: automotive reveals, fashion drops, architectural portfolios,
+  and startup landing pages that believe their product changes everything.
+
+characteristics:
+  - title: Full-Viewport Sections
+    description: >
+      Every section is min-height: 100vh with flexbox centering. The
+      content lives in the exact center of the screen. Nothing competes
+      for attention. One viewport, one idea.
+  - title: Cinematic Typography
+    description: >
+      Headings are enormous — clamp(2rem, 5vw, 4rem) or larger. Thin
+      weight (300) for elegance, bold weight (700) for impact. The text
+      itself is the visual. No imagery required.
+  - title: Alternating Contrast
+    description: >
+      Sections alternate between black-on-white and white-on-black.
+      This creates rhythm without decoration and ensures each new
+      section feels like a scene change.
+  - title: Scroll Snapping
+    description: >
+      CSS scroll-snap-type: y mandatory locks each section into place.
+      The user does not scroll smoothly — they advance from statement
+      to statement, like slides in a deck.
+  - title: Dramatic Whitespace
+    description: >
+      Padding measured in 100px or more. Content occupies perhaps 20%
+      of the viewport. The remaining 80% is intentional emptiness that
+      gives weight to the words.
+  - title: Restrained Accent
+    description: >
+      A single accent color — typically a saturated blue (#0071E3) —
+      appears only on interactive elements. It is the only color that
+      is not black, white, or gray. Its rarity makes it powerful.
+
+good_for:
+  - Product launch pages and reveals
+  - Brand storytelling and manifestos
+  - Architectural and automotive showcases
+  - Portfolio pieces for creative agencies
+  - Fundraising and investor pitch sites
+
+not_for:
+  - Content-heavy editorial or documentation
+  - E-commerce with browsable catalogs
+  - Dashboards and data-dense applications
+  - Sites where users need to scan and compare
+  - Accessibility-critical interfaces (scroll-snap can disorient)
+
+history: |
+  Scroll Theater descends from the cinematic tradition of presentation
+  design — Keynote slides, TED talks, and the full-bleed billboards of
+  mid-century advertising. The idea that one message deserves one frame
+  is older than the web.
+
+  On the web, Apple's product pages became the canonical example. The
+  2013 Mac Pro page — a black cylinder floating in darkness, one feature
+  per scroll — established the template. Each viewport was a statement.
+  The scroll was the transition. No navigation was needed because the
+  only direction was forward.
+
+  By the late 2010s, JavaScript libraries like ScrollMagic, GSAP
+  ScrollTrigger, and Locomotive Scroll industrialized the pattern.
+  Parallax effects, pinned sections, and scroll-driven animations
+  became standard. But the core of Scroll Theater is not the
+  animation — it is the pacing. Even without JavaScript, a page
+  with full-viewport sections and scroll-snap achieves the essential
+  rhythm: one idea, one screen, one moment.
+
+  Today the aesthetic is everywhere high-end brands need to feel
+  cinematic — Tesla, Porsche, Bang & Olufsen, and countless agency
+  portfolios. It has also become the default for startup landing pages
+  that want to signal ambition. The risk is that the form can outweigh
+  the content: when every section demands a full viewport, the ideas
+  had better be worth the real estate.
+
+related:
+  - slug: minimalism
+    relationship: Philosophical parent
+  - slug: portfolio-cinematic
+    relationship: Close sibling
+  - slug: startup-minimal
+    relationship: Commercial cousin
+  - slug: dark-mode
+    relationship: Shares palette
+  - slug: editorial
+    relationship: Opposite pacing

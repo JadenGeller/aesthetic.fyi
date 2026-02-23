@@ -1,0 +1,103 @@
+slug: vaporwave
+name: Vaporwave
+coined: false
+
+tagline: "Ｉｔ＇ｓ  ａｌｌ  ｉｎ  ｙｏｕｒ  ｈｅａｄ."
+
+prompt: |
+  Pastel pink-to-cyan-to-purple gradient backgrounds. Glitch text
+  effects via CSS text-shadow with multiple colored offsets (pink, cyan).
+  Retro Windows 95 UI elements — inset borders, beveled buttons, system
+  font labels. Fonts: a heavy display sans-serif for headings, a
+  monospace pixel font for accents, and a clean sans-serif for body text.
+  Fullwidth Unicode characters for decorative display text. Repeating
+  scanline overlays using repeating-linear-gradient. Color palette:
+  #FF71CE pink, #01CDFE cyan, #B967FF purple, #05FFA1 mint, #FFFB96
+  pale yellow. The mood is nostalgic, ironic, and dreamy — the internet
+  remembering a commercial utopia that never existed.
+
+about: |
+  Vaporwave is the internet's fever dream about a past that never
+  happened. It takes the visual language of early-90s corporate design —
+  marble busts, Windows dialog boxes, Japanese text, shopping mall
+  muzak — and distorts it until it becomes beautiful and sad at the
+  same time.
+
+  As a web aesthetic, it trades in gradient washes, glitch artifacts,
+  and retro system UI. Nothing loads fast. Nothing is optimized for
+  conversion. The page exists to feel like a place you half-remember,
+  rendered in pink and teal and the low hum of a CRT monitor.
+
+characteristics:
+  - title: Gradient Washes
+    description: >
+      Linear gradients from pink through cyan to purple blanket entire
+      sections. Color doesn't serve hierarchy — it serves mood.
+  - title: Glitch Text
+    description: >
+      Multiple text-shadows in offset neon colors create a chromatic
+      aberration effect. Headings look like they're being received
+      through a bad signal.
+  - title: Scanline Overlay
+    description: >
+      A repeating-linear-gradient of thin semi-transparent lines laid
+      over content simulates a CRT monitor. Everything feels screened.
+  - title: Retro System UI
+    description: >
+      Inset borders, beveled edges, and system-font labels evoke
+      Windows 95 dialog boxes and toolbar buttons.
+  - title: Fullwidth Characters
+    description: >
+      Unicode fullwidth Latin letters (Ａ Ｂ Ｃ) stretch display text
+      into something monumental and slightly alien.
+  - title: Neon on Dark
+    description: >
+      Key accents glow in mint green, hot pink, and cyan against dark
+      or gradient backgrounds. The palette is warm nostalgia meeting
+      cold digital light.
+
+good_for:
+  - Music and audio project sites
+  - Art portfolios and experimental galleries
+  - Personal sites with a retro or ironic tone
+  - Event pages for creative communities
+  - Zine-style editorial content
+
+not_for:
+  - Enterprise SaaS or B2B marketing
+  - Healthcare, finance, or accessibility-critical apps
+  - E-commerce with real conversion goals
+  - Long-form documentation or knowledge bases
+
+history: |
+  Vaporwave began as a micro-genre of electronic music around 2010-2011,
+  built on slowed-down samples of 80s and 90s smooth jazz, elevator
+  music, and corporate hold music. Artists like Macintosh Plus and
+  SAINT PEPSI turned forgotten consumer culture into something
+  hauntingly beautiful.
+
+  The visual aesthetic followed the music. Album covers pulled from
+  early internet clip art, Greek statuary, Japanese kanji, pastel
+  sunsets, and the chrome-and-marble fantasy of a shopping mall that
+  exists outside of time. By 2014, it had become one of the most
+  recognizable internet aesthetics — a strange loop where the internet
+  mourned its own lost innocence.
+
+  On the web, vaporwave translates to gradient-drenched layouts,
+  glitch typography, and deliberate anachronism. It's one of the few
+  aesthetics that is explicitly about nostalgia as a design principle.
+  Its children include synthwave (which took the neon and made it
+  cooler) and Y2K (which shares the retro-digital palette but aims
+  for optimism over melancholy).
+
+related:
+  - slug: synthwave
+    relationship: Neon sibling
+  - slug: y2k
+    relationship: Retro cousin
+  - slug: cyberpunk
+    relationship: Dystopian neighbor
+  - slug: old-web
+    relationship: Source material
+  - slug: retro-terminal
+    relationship: Shared CRT glow

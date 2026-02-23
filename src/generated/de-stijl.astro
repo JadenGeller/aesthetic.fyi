@@ -1,0 +1,1070 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+<div class="page">
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">aesthetic.fyi</a>
+      <div class="nav-divider"></div>
+      <a href={`/${aesthetic.slug}`} class="nav-current">{aesthetic.name}</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-block-red"></div>
+      <div class="hero-block-main">
+        <span class="hero-label">Web Aesthetic</span>
+        <h1 class="hero-title">{aesthetic.name}</h1>
+        <p class="hero-tagline">{aesthetic.tagline}</p>
+      </div>
+      <div class="hero-block-yellow"></div>
+      <div class="hero-block-blue"></div>
+      <div class="hero-block-white"></div>
+    </div>
+  </section>
+
+  <!-- WHAT THIS IS -->
+  <section class="section about-section">
+    <div class="about-grid">
+      <div class="about-sidebar-top"></div>
+      <div class="about-content-area">
+        <span class="section-label">What This Is</span>
+        <h2 class="section-heading">Philosophy</h2>
+        <div class="about-content">
+          {aesthetic.about.split('\n\n').map((paragraph: string) => (
+            <p class="about-paragraph">{paragraph}</p>
+          ))}
+        </div>
+      </div>
+      <div class="about-sidebar-bottom"></div>
+    </div>
+  </section>
+
+  <!-- CHARACTERISTICS -->
+  <section class="section characteristics-section">
+    <div class="section-inner">
+      <span class="section-label">Design Tokens</span>
+      <h2 class="section-heading">Characteristics</h2>
+      <div class="characteristics-grid">
+        {aesthetic.characteristics.map((char: { title: string; description: string }, i: number) => (
+          <div class={`char-card char-card-${i % 6}`}>
+            <span class="char-number">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="char-title">{char.title}</h3>
+            <p class="char-description">{char.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- STYLE REFERENCE -->
+  <section class="section prompt-section">
+    <div class="prompt-grid">
+      <div class="prompt-accent-block"></div>
+      <div class="prompt-main">
+        <span class="section-label">Copy & Paste</span>
+        <h2 class="section-heading">Style Reference</h2>
+        <div class="prompt-block">
+          <div class="prompt-header">
+            <span class="prompt-header-label">PROMPT</span>
+            <button class="copy-button" data-prompt={aesthetic.prompt}>Copy</button>
+          </div>
+          <p class="prompt-text">{aesthetic.prompt}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN TO USE -->
+  <section class="section use-section">
+    <div class="section-inner">
+      <span class="section-label">When to Use</span>
+      <h2 class="section-heading">Use Cases</h2>
+      <div class="use-grid">
+        <div class="use-column use-good">
+          <h3 class="use-column-heading">Good for</h3>
+          <ul class="use-list">
+            {aesthetic.good_for.map((item: string) => (
+              <li class="use-item use-item-good">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="use-column use-bad">
+          <h3 class="use-column-heading">Not for</h3>
+          <ul class="use-list">
+            {aesthetic.not_for.map((item: string) => (
+              <li class="use-item use-item-bad">{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="section history-section">
+    <div class="history-grid">
+      <div class="history-content-area">
+        <span class="section-label">Origins</span>
+        <h2 class="section-heading">History</h2>
+        <div class="history-content">
+          {aesthetic.history.split('\n\n').map((paragraph: string) => (
+            <p class="history-paragraph">{paragraph}</p>
+          ))}
+        </div>
+      </div>
+      <div class="history-sidebar">
+        <div class="history-block-blue"></div>
+        <div class="history-block-white"></div>
+        <div class="history-block-red"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED STYLES -->
+  <section class="section related-section">
+    <div class="section-inner">
+      <span class="section-label">Explore</span>
+      <h2 class="section-heading">Related Styles</h2>
+      <div class="related-grid">
+        {aesthetic.related.map((rel: { slug: string; relationship: string }, i: number) => (
+          <a href={`/${rel.slug}`} class={`related-card related-card-${i % 5}`}>
+            <span class="related-relationship">{rel.relationship}</span>
+            <span class="related-name">{rel.slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+            <span class="related-arrow">&rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-block-yellow"></div>
+      <div class="footer-main">
+        <a href="/" class="footer-logo">aesthetic.fyi</a>
+        <span class="footer-tagline">Every web aesthetic, demonstrated.</span>
+        <a href="/" class="footer-back">&larr; Back to all aesthetics</a>
+      </div>
+      <div class="footer-block-red"></div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.querySelector('.copy-button');
+    if (copyButton) {
+      copyButton.addEventListener('click', () => {
+        const prompt = copyButton.getAttribute('data-prompt') || '';
+        navigator.clipboard.writeText(prompt).then(() => {
+          const original = copyButton.textContent;
+          copyButton.textContent = 'Copied!';
+          copyButton.classList.add('copied');
+          setTimeout(() => {
+            copyButton.textContent = original;
+            copyButton.classList.remove('copied');
+          }, 2000);
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  /* ========================================
+     RESET & BASE
+     ======================================== */
+  .page {
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ========================================
+     NAV
+     ======================================== */
+  .nav {
+    border-bottom: 5px solid #000;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .nav-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #000;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-right: 5px solid #000;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-logo:hover {
+    background: #F2CB05;
+  }
+
+  .nav-divider {
+    width: 0;
+  }
+
+  .nav-current {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #000;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-right: 5px solid #000;
+  }
+
+  .nav-current:hover {
+    background: #DE3831;
+    color: #fff;
+  }
+
+  /* ========================================
+     HERO — Mondrian Composition
+     ======================================== */
+  .hero {
+    border-bottom: 5px solid #000;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr 200px;
+    grid-template-rows: auto auto;
+    min-height: 420px;
+  }
+
+  .hero-block-red {
+    background: #DE3831;
+    border-right: 5px solid #000;
+    border-bottom: 5px solid #000;
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 120px;
+  }
+
+  .hero-block-main {
+    padding: 60px 48px;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-block-yellow {
+    background: #F2CB05;
+    border-left: 5px solid #000;
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+
+  .hero-block-blue {
+    background: #1E3F8E;
+    border-right: 5px solid #000;
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 180px;
+  }
+
+  .hero-block-white {
+    display: none;
+  }
+
+  .hero-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #000;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.95;
+    margin: 0 0 24px 0;
+    letter-spacing: -0.03em;
+    color: #000;
+  }
+
+  .hero-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 560px;
+    color: #000;
+  }
+
+  /* ========================================
+     SECTIONS — SHARED
+     ======================================== */
+  .section {
+    border-bottom: 5px solid #000;
+  }
+
+  .section-inner {
+    padding: 64px 48px;
+  }
+
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #000;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .section-heading {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.05;
+    margin: 0 0 40px 0;
+    letter-spacing: -0.02em;
+    color: #000;
+  }
+
+  /* ========================================
+     ABOUT — Grid composition with sidebar blocks
+     ======================================== */
+  .about-section {
+    background: #fff;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 1fr auto;
+  }
+
+  .about-sidebar-top {
+    background: #F2CB05;
+    border-right: 5px solid #000;
+    border-bottom: 5px solid #000;
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 200px;
+  }
+
+  .about-sidebar-bottom {
+    background: #fff;
+    border-right: 5px solid #000;
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 80px;
+  }
+
+  .about-content-area {
+    padding: 64px 48px;
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+  .about-content {
+    max-width: 680px;
+  }
+
+  .about-paragraph {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    margin: 0 0 24px 0;
+    color: #000;
+  }
+
+  .about-paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     CHARACTERISTICS — Mondrian card grid
+     ======================================== */
+  .characteristics-section {
+    background: #fff;
+  }
+
+  .characteristics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 5px solid #000;
+  }
+
+  .char-card {
+    padding: 32px 28px 28px;
+    position: relative;
+    border-right: 5px solid #000;
+    border-bottom: 5px solid #000;
+  }
+
+  .char-card:nth-child(3n) {
+    border-right: none;
+  }
+
+  .char-card:nth-child(n+4) {
+    border-bottom: none;
+  }
+
+  /* 3 columns, 2 rows — last row has no bottom border */
+  .char-card:nth-last-child(-n+3):nth-child(n+4) {
+    border-bottom: none;
+  }
+
+  .char-card-0 {
+    background: #DE3831;
+    color: #fff;
+  }
+
+  .char-card-1 {
+    background: #fff;
+    color: #000;
+  }
+
+  .char-card-2 {
+    background: #1E3F8E;
+    color: #fff;
+  }
+
+  .char-card-3 {
+    background: #F2CB05;
+    color: #000;
+  }
+
+  .char-card-4 {
+    background: #fff;
+    color: #000;
+  }
+
+  .char-card-5 {
+    background: #DE3831;
+    color: #fff;
+  }
+
+  .char-number {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 16px;
+    opacity: 0.7;
+  }
+
+  .char-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.01em;
+  }
+
+  .char-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ========================================
+     STYLE REFERENCE / PROMPT — with accent block
+     ======================================== */
+  .prompt-section {
+    background: #fff;
+  }
+
+  .prompt-grid {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+  }
+
+  .prompt-main {
+    padding: 64px 48px;
+  }
+
+  .prompt-accent-block {
+    background: #1E3F8E;
+    border-left: 5px solid #000;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .prompt-block {
+    border: 5px solid #000;
+  }
+
+  .prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    border-bottom: 5px solid #000;
+    background: #F2CB05;
+  }
+
+  .prompt-header-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #000;
+  }
+
+  .copy-button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    background: #fff;
+    color: #000;
+    border: 3px solid #000;
+    padding: 8px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .copy-button:hover {
+    background: #000;
+    color: #fff;
+  }
+
+  .copy-button:active {
+    background: #DE3831;
+    color: #fff;
+  }
+
+  .copy-button.copied {
+    background: #1E3F8E;
+    color: #fff;
+  }
+
+  .prompt-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #000;
+    padding: 28px 24px;
+    margin: 0;
+    white-space: pre-wrap;
+    background: #fff;
+  }
+
+  /* ========================================
+     WHEN TO USE — Two columns with Mondrian treatment
+     ======================================== */
+  .use-section {
+    background: #fff;
+  }
+
+  .use-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 5px solid #000;
+  }
+
+  .use-column {
+    /* no extra border on outer edges since parent has border */
+  }
+
+  .use-good {
+    border-right: 5px solid #000;
+  }
+
+  .use-column-heading {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 18px 24px;
+    border-bottom: 5px solid #000;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .use-good .use-column-heading {
+    background: #1E3F8E;
+    color: #fff;
+  }
+
+  .use-bad .use-column-heading {
+    background: #DE3831;
+    color: #fff;
+  }
+
+  .use-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+  }
+
+  .use-item {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 14px 24px;
+    border-bottom: 3px solid #000;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #000;
+  }
+
+  .use-item:last-child {
+    border-bottom: none;
+  }
+
+  .use-item-good::before {
+    content: '+';
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1E3F8E;
+    flex-shrink: 0;
+  }
+
+  .use-item-bad::before {
+    content: '\2013';
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #DE3831;
+    flex-shrink: 0;
+  }
+
+  /* ========================================
+     HISTORY — Grid with sidebar accent
+     ======================================== */
+  .history-section {
+    background: #fff;
+  }
+
+  .history-grid {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+  }
+
+  .history-content-area {
+    padding: 64px 48px;
+  }
+
+  .history-sidebar {
+    border-left: 5px solid #000;
+    display: grid;
+    grid-template-rows: 1fr 60px 1fr;
+  }
+
+  .history-block-blue {
+    background: #1E3F8E;
+    border-bottom: 5px solid #000;
+  }
+
+  .history-block-white {
+    background: #fff;
+    border-bottom: 5px solid #000;
+  }
+
+  .history-block-red {
+    background: #DE3831;
+  }
+
+  .history-content {
+    max-width: 680px;
+  }
+
+  .history-paragraph {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0 0 24px 0;
+    color: #000;
+  }
+
+  .history-paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     RELATED STYLES — Grid cards
+     ======================================== */
+  .related-section {
+    background: #F2CB05;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0;
+    border: 5px solid #000;
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 24px;
+    background: #fff;
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    border-right: 5px solid #000;
+    border-bottom: 5px solid #000;
+  }
+
+  .related-card:last-child {
+    border-right: none;
+  }
+
+  .related-card:hover {
+    background: #000;
+    color: #fff;
+  }
+
+  .related-card:hover .related-relationship {
+    color: #F2CB05;
+  }
+
+  .related-card-0 {
+    background: #fff;
+  }
+
+  .related-card-1 {
+    background: #fff;
+  }
+
+  .related-card-2 {
+    background: #fff;
+  }
+
+  .related-card-3 {
+    background: #fff;
+  }
+
+  .related-card-4 {
+    background: #fff;
+  }
+
+  .related-relationship {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #1E3F8E;
+  }
+
+  .related-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+  }
+
+  .related-arrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  /* ========================================
+     FOOTER — Mondrian composition
+     ======================================== */
+  .footer {
+    background: #000;
+    border-top: 5px solid #000;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr 100px;
+    min-height: 200px;
+  }
+
+  .footer-block-yellow {
+    background: #F2CB05;
+    border-right: 5px solid #000;
+  }
+
+  .footer-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .footer-block-red {
+    background: #DE3831;
+    border-left: 5px solid #000;
+  }
+
+  .footer-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 3px solid #fff;
+    letter-spacing: 0.02em;
+  }
+
+  .footer-logo:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  .footer-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #999;
+  }
+
+  .footer-back {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 3px solid #fff;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-back:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+    }
+
+    .hero-block-red {
+      display: none;
+    }
+
+    .hero-block-yellow {
+      display: none;
+    }
+
+    .hero-block-blue {
+      display: none;
+    }
+
+    .hero-block-main {
+      grid-column: 1;
+      grid-row: 1;
+      padding: 48px 24px;
+      border-bottom: 5px solid #000;
+      background: #fff;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-sidebar-top {
+      display: none;
+    }
+
+    .about-sidebar-bottom {
+      display: none;
+    }
+
+    .about-content-area {
+      padding: 48px 24px;
+    }
+
+    .section-inner {
+      padding: 48px 24px;
+    }
+
+    .characteristics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .char-card {
+      border-right: none;
+      border-bottom: 5px solid #000;
+    }
+
+    .char-card:last-child {
+      border-bottom: none;
+    }
+
+    .prompt-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .prompt-accent-block {
+      display: none;
+    }
+
+    .prompt-main {
+      padding: 48px 24px;
+    }
+
+    .use-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .use-good {
+      border-right: none;
+      border-bottom: 5px solid #000;
+    }
+
+    .history-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .history-sidebar {
+      display: none;
+    }
+
+    .history-content-area {
+      padding: 48px 24px;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .related-card {
+      border-right: none;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-block-yellow {
+      display: none;
+    }
+
+    .footer-block-red {
+      display: none;
+    }
+
+    .footer-main {
+      padding: 48px 24px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-block-main {
+      padding: 36px 16px;
+    }
+
+    .about-content-area {
+      padding: 36px 16px;
+    }
+
+    .section-inner {
+      padding: 36px 16px;
+    }
+
+    .prompt-main {
+      padding: 36px 16px;
+    }
+
+    .history-content-area {
+      padding: 36px 16px;
+    }
+
+    .nav-logo {
+      font-size: 0.8rem;
+      padding: 10px 14px;
+    }
+
+    .nav-current {
+      font-size: 0.8rem;
+      padding: 10px 14px;
+    }
+
+    .char-card {
+      padding: 24px 20px 20px;
+    }
+
+    .copy-button {
+      padding: 6px 14px;
+      font-size: 0.7rem;
+    }
+
+    .prompt-header {
+      padding: 12px 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .prompt-text {
+      padding: 20px 16px;
+      font-size: 0.85rem;
+    }
+
+    .use-item {
+      padding: 12px 16px;
+      font-size: 0.9rem;
+    }
+
+    .related-card {
+      padding: 18px 16px;
+    }
+
+    .footer-main {
+      padding: 36px 16px;
+    }
+  }
+</style>

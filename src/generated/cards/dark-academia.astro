@@ -1,0 +1,87 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-texture"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-rule"></div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #1C1A17;
+    color: #E8DCC8;
+    border: 1px solid rgba(201, 169, 89, 0.25);
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    border-color: rgba(201, 169, 89, 0.5);
+    box-shadow: 0 4px 24px rgba(28, 26, 23, 0.6);
+  }
+
+  .card-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(201, 169, 89, 0.015) 3px,
+        rgba(201, 169, 89, 0.015) 4px
+      ),
+      radial-gradient(ellipse at 30% 20%, rgba(201, 169, 89, 0.04), transparent 70%);
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    margin: 0 0 8px 0;
+    color: #E8DCC8;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-rule {
+    width: 36px;
+    height: 1px;
+    background: rgba(201, 169, 89, 0.4);
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-tagline {
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    color: rgba(232, 220, 200, 0.6);
+    line-height: 1.55;
+    position: relative;
+    z-index: 1;
+    max-width: 260px;
+  }
+</style>

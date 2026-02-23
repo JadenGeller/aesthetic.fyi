@@ -1,0 +1,113 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-kidney" aria-hidden="true"></div>
+  <div class="card-starburst" aria-hidden="true"></div>
+  <div class="card-rule"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #F5E6D0;
+    color: #5C3D2E;
+    border: 1px solid rgba(92, 61, 46, 0.2);
+    border-radius: 10px 3px 10px 3px;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(92, 61, 46, 0.15);
+  }
+
+  .card-kidney {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 70px;
+    height: 44px;
+    background: #D4652A;
+    opacity: 0.2;
+    border-radius: 70% 30% 60% 40% / 30% 60% 40% 70%;
+    transform: rotate(-12deg);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .card:hover .card-kidney {
+    opacity: 0.35;
+    transform: rotate(-8deg);
+  }
+
+  .card-starburst {
+    position: absolute;
+    top: 24px;
+    right: 100px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .card-starburst::before,
+  .card-starburst::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #C5A83B;
+    opacity: 0.35;
+  }
+
+  .card-starburst::before {
+    width: 1.5px;
+    height: 32px;
+    transform: translate(-50%, -50%);
+  }
+
+  .card-starburst::after {
+    width: 32px;
+    height: 1.5px;
+    transform: translate(-50%, -50%);
+  }
+
+  .card-rule {
+    width: 32px;
+    height: 2px;
+    background: #C5A83B;
+    margin-bottom: 14px;
+  }
+
+  .card-name {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+    margin: 0 0 8px 0;
+    color: #5C3D2E;
+    line-height: 1.15;
+  }
+
+  .card-tagline {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    color: #7A6B5D;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+</style>

@@ -1,0 +1,112 @@
+slug: cottagecore
+name: Cottagecore
+coined: false
+
+tagline: "Slow down. The bread is rising, the garden is blooming, and nothing here needs to be optimized."
+
+prompt: |
+  Warm cream (#FDF8F0) background with warm brown (#5C4A3A) text. Soft
+  tan borders (#E0D5C5) and dashed inner frames (1px dashed #D4C4AA)
+  via ::before pseudo-elements. Headings in Instrument Serif (400,
+  italic) — warm and slightly old-fashioned. Body text in Lora (400,
+  400 italic) for a readable, book-like feel. Border-radius 8-12px on
+  containers for rounded, handcrafted softness. Muted accent text in
+  #9A8672. Heading color #6B5744. Small CSS flower-like dots using
+  radial-gradient as decorative flourishes. Gentle shadows (0 2px 12px
+  rgba(92,74,58,0.06)). Generous padding, unhurried spacing. The mood
+  is pastoral, handmade, nostalgic — like a warm kitchen on a rainy
+  afternoon. Nothing is loud. Everything is tended.
+
+about: |
+  Cottagecore on the web is the rejection of speed. Where most digital
+  aesthetics chase sharpness and efficiency, cottagecore invites you to
+  sit down, pour some tea, and stay awhile. The rounded borders, the
+  warm cream backgrounds, the soft serif type — they all say the same
+  thing: there is no rush here.
+
+  This is design that values warmth over precision, character over
+  consistency. The dashed borders feel hand-drawn, like something
+  stitched rather than engineered. The muted palette comes from nature
+  — soil, cream, dried flowers, linen. Every element carries a quiet
+  intention, like a jar of preserves labeled in careful handwriting.
+
+characteristics:
+  - title: Warm Cream Palette
+    description: >
+      #FDF8F0 warm cream backgrounds, #5C4A3A brown text, #E0D5C5 soft
+      tan borders. The colors come from the natural world — linen,
+      beeswax, dried lavender, wooden shelves. Nothing is pure white
+      or pure black.
+  - title: Dashed Borders
+    description: >
+      1px dashed #D4C4AA inner frames created with ::before pseudo-elements.
+      They feel hand-stitched rather than machine-cut. Border-radius
+      8-12px softens every container, rounding the edges like worn
+      pottery.
+  - title: Serif Typography
+    description: >
+      Instrument Serif for headings — warm, slightly italic, with a
+      calligraphic quality. Lora for body text — readable, book-like,
+      gentle on the eyes. No sans-serif anywhere. The type has the
+      warmth of a handwritten letter.
+  - title: Floral Flourishes
+    description: >
+      Small CSS dots and circles via radial-gradient suggest flowers
+      and botanical motifs without literal imagery. These decorative
+      accents appear at section dividers and corners — subtle, never
+      overwhelming.
+  - title: Generous Warmth
+    description: >
+      Padding is abundant. Sections breathe. Shadows are soft and warm
+      (rgba with brown tones, not gray). Nothing is cramped or hurried.
+      The layout has the rhythm of a slow afternoon.
+  - title: Italic Accents
+    description: >
+      Taglines, labels, and secondary text are set in italic — giving
+      them the quality of handwritten notes, marginalia, or the gentle
+      emphasis of a whispered aside. It adds intimacy to the page.
+
+good_for:
+  - Personal blogs and journals
+  - Recipe and cooking sites
+  - Small craft and handmade shops
+  - Botanical and gardening resources
+  - Wedding and event invitations
+
+not_for:
+  - High-performance SaaS dashboards
+  - Developer tooling and technical docs
+  - Fintech or enterprise platforms
+  - Gaming or esports brands
+  - Fast-paced news or media sites
+
+history: |
+  Cottagecore emerged in the late 2010s on Tumblr and Instagram as a
+  romanticized vision of rural life — baking bread, tending gardens,
+  wearing flowing linen. It was a reaction to the hyperconnected,
+  always-on digital culture, a longing for simplicity that existed
+  more in imagination than in any historical reality.
+
+  The aesthetic exploded during 2020 when lockdowns made domestic life
+  the only life. Suddenly everyone was making sourdough and learning to
+  embroider. Taylor Swift released folklore and evermore, albums that
+  sounded like cottagecore felt. The aesthetic became a cultural moment,
+  not just a visual style.
+
+  On the web, cottagecore translates into warm palettes, soft serifs,
+  and an emphasis on slowness. It rejects the clean efficiency of
+  startup minimalism and the aggressive energy of brutalism. Instead,
+  it says: this page was made with care, like a hand-knit sweater. It
+  does not need to be fast. It needs to be warm.
+
+related:
+  - slug: dark-academia
+    relationship: Shares nostalgic warmth
+  - slug: indie-web
+    relationship: Values personal expression
+  - slug: organic-tech
+    relationship: Nature-inspired design
+  - slug: minimalism
+    relationship: Shares quiet restraint
+  - slug: skeuomorphism
+    relationship: Values material texture

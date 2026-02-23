@@ -1,0 +1,111 @@
+slug: dark-mode
+name: Dark Mode
+coined: false
+
+tagline: "The screen breathes out. Your eyes breathe in."
+
+prompt: |
+  Dark gray backgrounds — #000000 base, #1C1C1E surfaces, #2C2C2E elevated
+  panels — never pure black alone. Text is #F5F5F7 (primary) and #98989D
+  (secondary). Accent color is iOS blue #0A84FF, used sparingly for
+  interactive elements and subtle glows. Font is Inter at weights 400, 500,
+  600 — a stand-in for SF Pro. Border-radius 12–14px on cards and panels.
+  Borders are 1px solid rgba(255,255,255,0.08). Elevation is communicated
+  through progressively lighter surface colors, not shadows. Hover states
+  increase brightness slightly. The whole interface feels like a well-lit
+  room at midnight — comfortable, modern, and endlessly viewable.
+
+about: |
+  Dark mode is not the absence of design — it is the careful inversion of
+  it. Every decision that works in light must be re-examined: contrast
+  ratios flip, elevation reverses from shadow to luminance, and color
+  saturation must be tuned down to avoid searing the eye. The result, when
+  done well, is an interface that feels quieter, more focused, and strangely
+  more intimate than its light counterpart.
+
+  Apple's implementation in iOS 13 codified the modern standard. Dark mode
+  is not "black mode." Backgrounds are dark gray (#1C1C1E), not #000000,
+  because pure black next to any color creates halation on OLED screens.
+  Surfaces float above the background by being slightly lighter — the
+  opposite of light mode's shadow-based elevation. Text is off-white, not
+  pure white, to reduce glare. Every shade is deliberate.
+
+characteristics:
+  - title: Elevated Surfaces
+    description: >
+      Hierarchy is built through luminance, not shadow. The base background
+      is near-black, cards are dark gray, and modals are slightly lighter
+      still. Each layer glows faintly upward instead of casting down.
+  - title: Muted Accent Glow
+    description: >
+      The primary accent (#0A84FF) appears in buttons, links, and toggles,
+      often accompanied by a soft box-shadow glow — rgba(10,132,255,0.2) —
+      that suggests the element is backlit rather than raised.
+  - title: Reduced Contrast Text
+    description: >
+      Primary text is #F5F5F7, not pure white. Secondary text drops to
+      #98989D. The goal is comfortable reading over long sessions, not
+      maximum contrast.
+  - title: Subtle Borders
+    description: >
+      Dividers and card edges use 1px solid borders in low-opacity white —
+      rgba(255,255,255,0.08) — just enough to separate without drawing
+      attention. No hard lines.
+  - title: Generous Radius
+    description: >
+      Border-radius of 12–14px softens every container. Buttons, cards,
+      inputs, and modals all share this rounded vocabulary, echoing the
+      physical feel of modern Apple hardware.
+  - title: Brightness Hover States
+    description: >
+      Interactive elements respond to hover by increasing background
+      brightness rather than changing color. The effect is a gentle "light
+      up" — as if the surface is reacting to proximity.
+
+good_for:
+  - Nighttime and low-light interfaces
+  - Developer tools, code editors, and terminals
+  - Media-heavy apps where content should dominate
+  - OLED screens that benefit from darker pixels
+  - Long-session productivity apps
+
+not_for:
+  - Print-oriented or document-heavy layouts
+  - Brands that rely on bright, colorful identity
+  - Contexts requiring maximum accessibility contrast
+  - Audiences who associate dark UIs with complexity
+
+history: |
+  Dark interfaces predate light ones. Early CRTs displayed green or amber
+  phosphor text on black — the original "dark mode" was just how screens
+  worked. The Xerox Alto and Apple Macintosh introduced the white-page
+  metaphor in the 1980s, and for three decades, light backgrounds became
+  synonymous with computing itself.
+
+  The return began quietly. Code editors never fully abandoned dark themes —
+  Sublime Text's Monokai, Atom's One Dark, and VS Code's defaults kept the
+  tradition alive among developers. But the mainstream pivot came in 2018–19
+  when Apple shipped system-wide dark mode in macOS Mojave and iOS 13,
+  followed immediately by Google's Android 10. Overnight, dark mode went
+  from developer preference to consumer expectation.
+
+  The design challenge was harder than it looked. Simply inverting colors
+  produced interfaces that were harsh, illegible, or flat. Apple and Google
+  both published extensive guidance: use dark grays instead of pure black,
+  reduce color saturation, communicate elevation through lighter surfaces
+  rather than darker shadows. Material Design introduced "dark surface"
+  overlays — semi-transparent white layers whose opacity increases with
+  elevation. The result was a new design language that respected the physics
+  of light on screens rather than treating dark mode as a simple CSS filter.
+
+related:
+  - slug: minimalism
+    relationship: Shares restraint
+  - slug: retro-terminal
+    relationship: Ancestor
+  - slug: cyberpunk
+    relationship: Neon cousin
+  - slug: flat-design
+    relationship: Structural kin
+  - slug: neumorphism
+    relationship: Elevation dialog

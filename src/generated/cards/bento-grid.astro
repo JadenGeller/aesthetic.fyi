@@ -1,0 +1,80 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-grid" aria-hidden="true">
+    <div class="mini-cell mini-cell-lg"></div>
+    <div class="mini-cell mini-cell-sm"></div>
+    <div class="mini-cell mini-cell-sm"></div>
+    <div class="mini-cell mini-cell-md"></div>
+    <div class="mini-cell mini-cell-sm"></div>
+  </div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #F5F5F7;
+    color: #1D1D1F;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+  }
+
+  .card-grid {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: grid;
+    grid-template-columns: 40px 40px 40px;
+    grid-template-rows: 28px 28px;
+    gap: 6px;
+    pointer-events: none;
+  }
+
+  .mini-cell {
+    background: #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  .mini-cell-lg {
+    grid-column: span 2;
+    border-radius: 8px;
+  }
+
+  .mini-cell-md {
+    grid-column: span 2;
+    border-radius: 8px;
+  }
+
+  .card-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    margin: 0 0 6px 0;
+    line-height: 1.1;
+    color: #1D1D1F;
+  }
+
+  .card-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    margin: 0;
+    color: #86868B;
+    line-height: 1.4;
+  }
+</style>

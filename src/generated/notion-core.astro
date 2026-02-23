@@ -1,0 +1,954 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lora:wght@400;700&display=swap" rel="stylesheet" />
+
+<div class="page">
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">aesthetic.fyi</a>
+      <span class="nav-divider">/</span>
+      <a href={`/${aesthetic.slug}`} class="nav-current">{aesthetic.name}</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="page-icon" aria-hidden="true"></div>
+      <h1 class="hero-title">{aesthetic.name}</h1>
+      <p class="hero-tagline">{aesthetic.tagline}</p>
+      <div class="hero-properties">
+        <div class="property-row">
+          <span class="property-label">Type</span>
+          <span class="property-value">Web Aesthetic</span>
+        </div>
+        <div class="property-row">
+          <span class="property-label">Coined</span>
+          <span class="property-value">{aesthetic.coined ? 'Yes' : 'No'}</span>
+        </div>
+        <div class="property-row">
+          <span class="property-label">Status</span>
+          <span class="property-value property-tag">Active</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="content-wrap"><hr class="divider" /></div>
+
+  <!-- WHAT THIS IS -->
+  <section class="section about-section">
+    <div class="section-inner">
+      <div class="toggle-heading">
+        <span class="toggle-icon" aria-hidden="true"></span>
+        <h2 class="section-title">What This Is</h2>
+      </div>
+      <div class="toggle-content">
+        {aesthetic.about.split('\n\n').map((paragraph: string) => (
+          <div class="content-block">
+            <p class="body-text">{paragraph}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="content-wrap"><hr class="divider" /></div>
+
+  <!-- CHARACTERISTICS -->
+  <section class="section characteristics-section">
+    <div class="section-inner">
+      <div class="toggle-heading">
+        <span class="toggle-icon" aria-hidden="true"></span>
+        <h2 class="section-title">Characteristics</h2>
+      </div>
+      <div class="toggle-content">
+        {aesthetic.characteristics.map((char: { title: string; description: string }, i: number) => (
+          <div class="content-block char-block">
+            <div class="char-header">
+              <span class="char-bullet" aria-hidden="true"></span>
+              <h3 class="char-title">{char.title}</h3>
+            </div>
+            <p class="char-description">{char.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="content-wrap"><hr class="divider" /></div>
+
+  <!-- STYLE REFERENCE -->
+  <section class="section prompt-section">
+    <div class="section-inner">
+      <div class="toggle-heading">
+        <span class="toggle-icon" aria-hidden="true"></span>
+        <h2 class="section-title">Style Reference</h2>
+      </div>
+      <div class="toggle-content">
+        <div class="prompt-block">
+          <div class="prompt-header">
+            <span class="prompt-label">Prompt</span>
+            <button class="copy-button" data-prompt={aesthetic.prompt}>Copy</button>
+          </div>
+          <p class="prompt-text">{aesthetic.prompt}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="content-wrap"><hr class="divider" /></div>
+
+  <!-- WHEN TO USE -->
+  <section class="section use-section">
+    <div class="section-inner">
+      <div class="toggle-heading">
+        <span class="toggle-icon" aria-hidden="true"></span>
+        <h2 class="section-title">When to Use</h2>
+      </div>
+      <div class="toggle-content">
+        <div class="use-grid">
+          <div class="use-column">
+            <div class="use-column-header">
+              <span class="use-dot use-dot-good" aria-hidden="true"></span>
+              <h3 class="use-heading">Good for</h3>
+            </div>
+            <ul class="use-list">
+              {aesthetic.good_for.map((item: string) => (
+                <li class="use-item content-block">{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="use-column">
+            <div class="use-column-header">
+              <span class="use-dot use-dot-not" aria-hidden="true"></span>
+              <h3 class="use-heading">Not for</h3>
+            </div>
+            <ul class="use-list">
+              {aesthetic.not_for.map((item: string) => (
+                <li class="use-item content-block">{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="content-wrap"><hr class="divider" /></div>
+
+  <!-- HISTORY -->
+  <section class="section history-section">
+    <div class="section-inner">
+      <div class="toggle-heading">
+        <span class="toggle-icon" aria-hidden="true"></span>
+        <h2 class="section-title">History</h2>
+      </div>
+      <div class="toggle-content">
+        {aesthetic.history.split('\n\n').map((paragraph: string) => (
+          <div class="content-block">
+            <p class="body-text">{paragraph}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="content-wrap"><hr class="divider" /></div>
+
+  <!-- RELATED STYLES -->
+  <section class="section related-section">
+    <div class="section-inner">
+      <div class="toggle-heading">
+        <span class="toggle-icon" aria-hidden="true"></span>
+        <h2 class="section-title">Related Styles</h2>
+      </div>
+      <div class="toggle-content">
+        <div class="related-grid">
+          {aesthetic.related.map((rel: { slug: string; relationship: string }) => (
+            <a href={`/${rel.slug}`} class="related-card content-block">
+              <div class="related-inner">
+                <span class="related-icon" aria-hidden="true"></span>
+                <div class="related-text">
+                  <span class="related-name">{rel.slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+                  <span class="related-relationship">{rel.relationship}</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <hr class="divider" />
+      <div class="footer-content">
+        <a href="/" class="footer-logo">aesthetic.fyi</a>
+        <span class="footer-tagline">Every web aesthetic, demonstrated.</span>
+        <a href="/" class="footer-back">&larr; All aesthetics</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.querySelector('.copy-button');
+    if (copyButton) {
+      copyButton.addEventListener('click', () => {
+        const prompt = copyButton.getAttribute('data-prompt') || '';
+        navigator.clipboard.writeText(prompt).then(() => {
+          const original = copyButton.textContent;
+          copyButton.textContent = 'Copied';
+          copyButton.classList.add('copied');
+          setTimeout(() => {
+            copyButton.textContent = original;
+            copyButton.classList.remove('copied');
+          }, 2000);
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  /* ========================================
+     RESET & BASE
+     ======================================== */
+  .page {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    background-color: #FFFFFF;
+    color: #37352F;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.7;
+  }
+
+  /* ========================================
+     NAV
+     ======================================== */
+  .nav {
+    background: #FFFFFF;
+    border-bottom: 1px solid #E9E5E0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .nav-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #37352F;
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.1s;
+  }
+
+  .nav-logo:hover {
+    background: #F7F6F3;
+  }
+
+  .nav-divider {
+    font-size: 0.875rem;
+    color: #E9E5E0;
+    margin: 0 2px;
+  }
+
+  .nav-current {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: #9B9A97;
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.1s;
+  }
+
+  .nav-current:hover {
+    background: #F7F6F3;
+    color: #37352F;
+  }
+
+  /* ========================================
+     HERO
+     ======================================== */
+  .hero {
+    padding: 80px 24px 32px;
+  }
+
+  .hero-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .page-icon {
+    width: 78px;
+    height: 78px;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #F7F6F3 0%, #E9E5E0 100%);
+    border-radius: 4px;
+    position: relative;
+  }
+
+  .page-icon::before {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 16px;
+    width: 46px;
+    height: 4px;
+    background: #9B9A97;
+    border-radius: 2px;
+  }
+
+  .page-icon::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 16px;
+    width: 32px;
+    height: 4px;
+    background: #C4C2BF;
+    border-radius: 2px;
+  }
+
+  .hero-title {
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 6vw, 3.25rem);
+    line-height: 1.2;
+    margin: 0 0 8px 0;
+    color: #37352F;
+  }
+
+  .hero-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #9B9A97;
+    margin: 0 0 24px 0;
+  }
+
+  /* Property table */
+  .hero-properties {
+    border-top: 1px solid #E9E5E0;
+    padding-top: 12px;
+  }
+
+  .property-row {
+    display: flex;
+    align-items: center;
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: background 0.1s;
+  }
+
+  .property-row:hover {
+    background: #F7F6F3;
+  }
+
+  .property-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: #9B9A97;
+    width: 120px;
+    flex-shrink: 0;
+  }
+
+  .property-value {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: #37352F;
+  }
+
+  .property-tag {
+    background: #DBEDDB;
+    color: #37352F;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+
+  /* ========================================
+     DIVIDERS
+     ======================================== */
+  .content-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #E9E5E0;
+    margin: 0;
+  }
+
+  /* ========================================
+     SECTIONS - SHARED
+     ======================================== */
+  .section {
+    padding: 32px 24px;
+  }
+
+  .section-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .toggle-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.1s;
+  }
+
+  .toggle-heading:hover {
+    background: #F7F6F3;
+  }
+
+  .toggle-icon {
+    width: 0;
+    height: 0;
+    border-left: 6px solid #9B9A97;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    flex-shrink: 0;
+    transform: rotate(90deg);
+  }
+
+  .section-title {
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin: 0;
+    color: #37352F;
+  }
+
+  .toggle-content {
+    padding-left: 22px;
+  }
+
+  /* ========================================
+     CONTENT BLOCKS
+     ======================================== */
+  .content-block {
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.1s;
+  }
+
+  .content-block:hover {
+    background: #F7F6F3;
+  }
+
+  .body-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0 0 4px 0;
+    color: #37352F;
+  }
+
+  .body-text:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     CHARACTERISTICS
+     ======================================== */
+  .char-block {
+    margin-bottom: 8px;
+  }
+
+  .char-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .char-bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #37352F;
+    flex-shrink: 0;
+  }
+
+  .char-title {
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0;
+    color: #37352F;
+    line-height: 1.4;
+  }
+
+  .char-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+    color: #37352F;
+    padding-left: 14px;
+  }
+
+  /* ========================================
+     STYLE REFERENCE / PROMPT
+     ======================================== */
+  .prompt-block {
+    background: #F7F6F3;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    border-bottom: 1px solid #E9E5E0;
+  }
+
+  .prompt-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #9B9A97;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .copy-button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    background: #FFFFFF;
+    color: #37352F;
+    border: 1px solid #E9E5E0;
+    border-radius: 4px;
+    padding: 4px 12px;
+    cursor: pointer;
+    transition: background 0.1s;
+  }
+
+  .copy-button:hover {
+    background: #E9E5E0;
+  }
+
+  .copy-button.copied {
+    background: #2EAADC;
+    color: #FFFFFF;
+    border-color: #2EAADC;
+  }
+
+  .prompt-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #37352F;
+    padding: 14px;
+    margin: 0;
+    white-space: pre-wrap;
+  }
+
+  /* ========================================
+     WHEN TO USE
+     ======================================== */
+  .use-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .use-column-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding: 4px 0;
+  }
+
+  .use-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .use-dot-good {
+    background: #4DAB9A;
+  }
+
+  .use-dot-not {
+    background: #E16259;
+  }
+
+  .use-heading {
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0;
+    color: #37352F;
+  }
+
+  .use-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .use-item {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.925rem;
+    line-height: 1.6;
+    padding: 6px 8px;
+    color: #37352F;
+    border-radius: 4px;
+    transition: background 0.1s;
+  }
+
+  .use-item:hover {
+    background: #F7F6F3;
+  }
+
+  /* ========================================
+     HISTORY
+     ======================================== */
+  /* Uses shared content-block and body-text styles */
+
+  /* ========================================
+     RELATED STYLES
+     ======================================== */
+  .related-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .related-card {
+    display: block;
+    text-decoration: none;
+    color: #37352F;
+    border-radius: 4px;
+    padding: 8px 8px;
+    transition: background 0.1s;
+  }
+
+  .related-card:hover {
+    background: #F7F6F3;
+  }
+
+  .related-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .related-icon {
+    width: 24px;
+    height: 24px;
+    background: #F7F6F3;
+    border: 1px solid #E9E5E0;
+    border-radius: 4px;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .related-icon::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 12px;
+    height: 3px;
+    background: #9B9A97;
+    border-radius: 1px;
+  }
+
+  .related-icon::after {
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: 5px;
+    width: 8px;
+    height: 3px;
+    background: #C4C2BF;
+    border-radius: 1px;
+  }
+
+  .related-text {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .related-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #37352F;
+    text-decoration: underline;
+    text-decoration-color: #E9E5E0;
+    text-underline-offset: 2px;
+  }
+
+  .related-card:hover .related-name {
+    text-decoration-color: #2EAADC;
+    color: #2EAADC;
+  }
+
+  .related-relationship {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #9B9A97;
+  }
+
+  /* ========================================
+     FOOTER
+     ======================================== */
+  .footer {
+    padding: 32px 24px 64px;
+  }
+
+  .footer-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 32px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #37352F;
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    transition: background 0.1s;
+  }
+
+  .footer-logo:hover {
+    background: #F7F6F3;
+  }
+
+  .footer-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: #9B9A97;
+  }
+
+  .footer-back {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: #2EAADC;
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    transition: background 0.1s;
+  }
+
+  .footer-back:hover {
+    background: #F7F6F3;
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 60px 20px 24px;
+    }
+
+    .section {
+      padding: 24px 20px;
+    }
+
+    .content-wrap {
+      padding: 0 20px;
+    }
+
+    .toggle-content {
+      padding-left: 14px;
+    }
+
+    .use-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .nav-inner {
+      padding: 10px 16px;
+    }
+
+    .page-icon {
+      width: 60px;
+      height: 60px;
+    }
+
+    .page-icon::before {
+      top: 14px;
+      left: 12px;
+      width: 36px;
+      height: 3px;
+    }
+
+    .page-icon::after {
+      top: 23px;
+      left: 12px;
+      width: 24px;
+      height: 3px;
+    }
+
+    .property-label {
+      width: 100px;
+    }
+
+    .footer {
+      padding: 24px 20px 48px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 48px 16px 20px;
+    }
+
+    .section {
+      padding: 20px 16px;
+    }
+
+    .content-wrap {
+      padding: 0 16px;
+    }
+
+    .nav-inner {
+      padding: 8px 12px;
+      gap: 4px;
+    }
+
+    .nav-logo {
+      font-size: 0.8rem;
+    }
+
+    .nav-current {
+      font-size: 0.8rem;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .toggle-content {
+      padding-left: 8px;
+    }
+
+    .property-label {
+      width: 80px;
+      font-size: 0.8rem;
+    }
+
+    .property-value {
+      font-size: 0.8rem;
+    }
+
+    .prompt-text {
+      font-size: 0.85rem;
+      padding: 12px;
+    }
+
+    .prompt-header {
+      padding: 8px 12px;
+    }
+
+    .copy-button {
+      padding: 3px 10px;
+      font-size: 0.75rem;
+    }
+
+    .use-item {
+      font-size: 0.875rem;
+      padding: 5px 6px;
+    }
+
+    .related-card {
+      padding: 6px;
+    }
+
+    .footer {
+      padding: 20px 16px 40px;
+    }
+
+    .page-icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    .page-icon::before {
+      top: 11px;
+      left: 10px;
+      width: 28px;
+      height: 3px;
+    }
+
+    .page-icon::after {
+      top: 19px;
+      left: 10px;
+      width: 18px;
+      height: 3px;
+    }
+  }
+</style>

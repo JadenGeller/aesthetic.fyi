@@ -1,0 +1,114 @@
+slug: solarpunk
+name: Solarpunk
+coined: false
+
+tagline: "A future where the garden grew back through the server rack."
+
+prompt: |
+  Warm cream-to-light-green gradient backgrounds (linear-gradient(160deg,
+  #FFF8E1, #F0F5E8)). Deep green (#1A4D2E) and leaf green (#4CAF50) as
+  primary accent colors, sunflower yellow (#F9C74F) for highlights, forest
+  green (#2E7D32) for headings. Rounded organic typeface (Quicksand, weights
+  400/500/700) for all text. Organic border-radius shapes imitating leaves
+  (border-radius: 70% 30% 60% 40% / 40% 60% 30% 70%). Green accent borders
+  with soft shadows tinted green (box-shadow: 0 4px 20px rgba(76,175,80,0.15)).
+  CSS leaf and vine decorative elements using positioned and rotated
+  pseudo-elements with border-radius and green backgrounds. Radial-gradient
+  sunlight effects (radial-gradient(circle at 30% 20%, rgba(249,199,79,0.15),
+  transparent 60%)). Everything feels hopeful, sun-drenched, and alive —
+  like an interface growing out of a moss-covered solar panel.
+
+about: |
+  Solarpunk design imagines a future where technology serves nature instead
+  of consuming it. Every surface glows with warm sunlight, every shape curves
+  like a leaf, and the color palette reads like a walk through a garden at
+  golden hour. It's the visual language of optimistic futurism — a world
+  where solar panels are covered in moss and server farms are greenhouses.
+
+  Where cyberpunk shows you the wires and warns you to worry, solarpunk
+  shows you the roots and tells you to hope. Interfaces in this style feel
+  alive, organic, and welcoming. Rounded corners become leaf shapes, shadows
+  carry a green tint, and backgrounds glow with the warmth of afternoon sun
+  filtering through canopy. It's design that believes the future can be
+  beautiful if we build it that way.
+
+characteristics:
+  - title: Organic Shapes
+    description: >
+      Border-radius values like 70% 30% 60% 40% create leaf-like and
+      petal-like forms. Nothing is a perfect rectangle. Cards, buttons,
+      and containers curve like living things — smooth, asymmetric,
+      and naturally balanced.
+  - title: Warm Sunlight Gradients
+    description: >
+      Backgrounds use cream-to-green gradients and radial sunlight effects
+      (radial-gradient with rgba gold). The page feels bathed in late
+      afternoon light, warm and inviting, like sunbeams through a greenhouse.
+  - title: Nature Palette
+    description: >
+      Deep green (#1A4D2E), leaf green (#4CAF50), forest (#2E7D32),
+      sunflower yellow (#F9C74F), warm cream (#FFF8E1), and pale green
+      (#F0F5E8). Every color exists in a garden. No neon, no void.
+  - title: Green-Tinted Shadows
+    description: >
+      box-shadow uses rgba green values instead of grey or black. Shadows
+      feel like dappled light through leaves rather than hard edges.
+      Elements float on a bed of green luminance.
+  - title: Leaf and Vine Decorations
+    description: >
+      CSS pseudo-elements create leaf shapes, vine lines, and botanical
+      ornaments using rotated divs with organic border-radius and green
+      backgrounds. Purely decorative, entirely CSS.
+  - title: Rounded Typography
+    description: >
+      Quicksand — a geometric sans-serif with fully rounded terminals —
+      gives all text an organic, approachable quality. It feels handmade
+      but precise, like lettering on a seed packet.
+
+good_for:
+  - Sustainability and environmental organizations
+  - Community and cooperative platforms
+  - Wellness, gardening, and lifestyle brands
+  - Educational sites about ecology or renewable energy
+  - Optimistic tech startups with a green mission
+
+not_for:
+  - Corporate finance or enterprise dashboards
+  - Anything requiring a dark, dramatic, or edgy tone
+  - Developer tools or technical documentation
+  - Luxury and high-fashion brands
+  - Dense data visualization or information-heavy UIs
+
+history: |
+  The term "solarpunk" first appeared in a 2008 blog post, but the movement
+  crystallized around 2014 when a Tumblr post titled "Here's a thing I've
+  had around in my head for a while" outlined an aesthetic and philosophy
+  combining Art Nouveau, ecological sustainability, and Afrofuturism. It
+  was a direct reaction to cyberpunk's pessimism — same future, different
+  outcome.
+
+  Visually, solarpunk draws from Art Nouveau's organic curves, Studio
+  Ghibli's lush natural worlds, and the real-world aesthetics of community
+  gardens, solar farms, and green architecture. On the web, it translates
+  to warm palettes, rounded organic shapes, and interfaces that feel grown
+  rather than engineered. It shares DNA with Frutiger Aero's nature-tech
+  optimism but replaces the corporate gloss with handmade warmth.
+
+  As climate anxiety has grown, so has solarpunk's cultural presence. It
+  appears in fiction (Becky Chambers' novels), architecture (Singapore's
+  Gardens by the Bay), and increasingly in web design for sustainability
+  brands, cooperatives, and community platforms. It's the rare aesthetic
+  that carries an explicit ethical position: the future can be green,
+  equitable, and beautiful — and design should show that.
+
+related:
+  - slug: frutiger-aero
+    relationship: Corporate ancestor
+  - slug: cyberpunk
+    relationship: Dystopian opposite
+  - slug: organic-tech
+    relationship: Shared philosophy
+  - slug: cottagecore
+    relationship: Pastoral cousin
+  - slug: steampunk
+    relationship: Retro-tech sibling

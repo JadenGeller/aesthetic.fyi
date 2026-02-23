@@ -1,0 +1,109 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-rule-top"></div>
+  <div class="card-dropcap" aria-hidden="true">E</div>
+  <div class="card-bottom">
+    <div class="card-accent-rule"></div>
+    <h3 class="card-name">{aesthetic.name}</h3>
+    <p class="card-tagline">{aesthetic.tagline}</p>
+  </div>
+</div>
+
+<style>
+  .card {
+    background: #F8F5F0;
+    color: #1A1A1A;
+    border: 1px solid #000000;
+    border-radius: 0;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.25s, color 0.25s;
+  }
+
+  .card:hover {
+    background: #1A1A1A;
+    color: #F8F5F0;
+  }
+
+  .card:hover .card-tagline {
+    color: #999;
+  }
+
+  .card:hover .card-accent-rule {
+    width: 48px;
+    background: #CC0000;
+  }
+
+  .card:hover .card-dropcap {
+    color: rgba(255, 255, 255, 0.04);
+  }
+
+  .card-rule-top {
+    position: absolute;
+    top: 0;
+    left: 28px;
+    right: 28px;
+    height: 1px;
+    background: #000000;
+  }
+
+  .card-dropcap {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.05);
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: -0.03em;
+    transition: color 0.25s;
+  }
+
+  .card-bottom {
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-accent-rule {
+    width: 28px;
+    height: 2px;
+    background: #CC0000;
+    margin-bottom: 14px;
+    transition: width 0.25s;
+  }
+
+  .card-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.01em;
+  }
+
+  .card-tagline {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+    transition: color 0.25s;
+  }
+</style>

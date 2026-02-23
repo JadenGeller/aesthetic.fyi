@@ -1,0 +1,110 @@
+slug: psychedelic
+name: Psychedelic
+coined: false
+
+tagline: "Turn on, tune in, scroll down."
+
+prompt: |
+  Rainbow gradient backgrounds using conic-gradient(from 0deg, red,
+  orange, yellow, green, blue, violet, red) and repeating-conic-gradient
+  for spiral/target patterns. Animated hue-rotate filter cycling through
+  the full spectrum (10s infinite linear). Wavy, melting text effects via
+  CSS animation on transform and letter-spacing. Organic circular shapes
+  with border-radius: 50%. Text-shadow with multiple rainbow-colored
+  offsets for a chromatic halo effect. Fonts: a heavy rounded display
+  face (Righteous or Bungee Shade) for headings, system sans-serif for
+  body. Over-the-top color — nothing muted, nothing restrained. The mood
+  is trippy, expansive, and kaleidoscopic. 1960s counterculture poster
+  art translated into CSS.
+
+about: |
+  Psychedelic design refuses the idea that a screen should sit still.
+  Color cycles, patterns spiral, text warps — every surface vibrates
+  with energy. The goal is sensory saturation, not information hierarchy.
+  You don't scan a psychedelic page. You let it wash over you.
+
+  It comes from a tradition that saw visual intensity as a gateway to
+  expanded consciousness. On the web, that translates to conic gradients
+  that spin like mandalas, hue-rotation that makes backgrounds breathe,
+  and typography that melts and reforms. The palette is the full rainbow,
+  used simultaneously, without apology.
+
+characteristics:
+  - title: Conic Rainbow Gradients
+    description: >
+      conic-gradient(from 0deg, red, orange, yellow, green, blue, violet,
+      red) creates circular rainbow sweeps. Used on backgrounds, cards,
+      and decorative elements for kaleidoscopic color fields.
+  - title: Hue-Rotate Animation
+    description: >
+      filter: hue-rotate() animated from 0deg to 360deg on a 10-second
+      loop makes static gradients shift through the entire spectrum
+      continuously, giving backgrounds an alive, breathing quality.
+  - title: Wavy Melting Text
+    description: >
+      CSS keyframe animations on transform: translateY() and rotate()
+      applied to individual letters or words create undulating, liquid
+      typography that feels like it's dissolving and reforming.
+  - title: Spiral Target Patterns
+    description: >
+      repeating-conic-gradient with alternating color stops produces
+      hypnotic bullseye and spiral patterns. Layered with rotation
+      animation for optical illusion depth.
+  - title: Rainbow Text Shadows
+    description: >
+      Multiple text-shadow declarations at different offsets in red,
+      orange, yellow, green, blue, and violet create a chromatic halo
+      around headings — every letter radiates its own rainbow.
+  - title: Organic Circles
+    description: >
+      border-radius: 50% on oversized containers and decorative elements.
+      Nothing is rectangular. Shapes float, overlap, and bleed into each
+      other like oil on water.
+
+good_for:
+  - Music and festival event pages
+  - Art and creative portfolio sites
+  - Cannabis and counterculture brands
+  - Experimental and interactive web art
+  - Album or mixtape landing pages
+
+not_for:
+  - Corporate or enterprise interfaces
+  - Healthcare, finance, or government
+  - Long-form reading or documentation
+  - Accessibility-critical applications
+  - E-commerce with conversion goals
+
+history: |
+  Psychedelic visual culture exploded in San Francisco and London in the
+  mid-1960s, inseparable from the counterculture, LSD, and rock music.
+  Concert posters by Wes Wilson, Victor Moscoso, and Bonnie MacLean
+  defined the look: hand-lettered type that melted into itself, vibrating
+  complementary colors, Art Nouveau curves pushed to the point of
+  illegibility. The goal was to create images that mirrored altered
+  states of perception.
+
+  The style waned in the 1970s but never disappeared. It resurfaced in
+  rave culture flyers of the early 1990s, in the liquid light shows of
+  electronica, and in the maximalist corners of web design where CSS
+  gradients and animation made screen-based psychedelia possible for the
+  first time without images.
+
+  On the modern web, psychedelic design uses conic and radial gradients
+  to simulate the kaleidoscopic color fields that poster artists once
+  achieved with split-fountain printing. Hue-rotate animation replaces
+  the optical vibration of complementary colors. The aesthetic remains
+  deliberately overwhelming — a rejection of the clean, scannable,
+  conversion-optimized page in favor of pure visual experience.
+
+related:
+  - slug: vaporwave
+    relationship: Retro color sibling
+  - slug: maximalism
+    relationship: Shared intensity
+  - slug: synthwave
+    relationship: Neon cousin
+  - slug: art-deco
+    relationship: Pattern ancestor
+  - slug: memphis
+    relationship: Color rebel kin

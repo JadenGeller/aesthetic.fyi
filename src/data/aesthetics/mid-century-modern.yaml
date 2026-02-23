@@ -1,0 +1,112 @@
+slug: mid-century-modern
+name: Mid-Century Modern
+coined: false
+
+tagline: "Warm materials, clean lines, and the belief that good design should feel like home."
+
+prompt: |
+  Warm cream background (#F5E6D0) with earth-tone accents — olive green
+  (#2C3E2D), burnt orange (#D4652A), mustard yellow (#C5A83B), and wood
+  brown (#5C3D2E). Organic shapes via asymmetric border-radius (70% 30%
+  60% 40% / 30% 60% 40% 70% for amoeba/kidney forms). Typography is
+  Josefin Sans (300, 400, 700) — a retro geometric sans-serif with
+  mid-century feel. Layouts are clean and horizontal with generous
+  whitespace. Decorative atomic-age motifs: starburst/asterisk shapes
+  built with CSS ::before/::after using thin borders and rotation,
+  boomerang curves, tapered legs. Color blocks in warm tones with
+  rounded organic edges. No sharp corners on decorative elements. Thin
+  horizontal rules as dividers. The overall feel is warm, optimistic,
+  domestic, and retro — a 1950s living room translated to the screen.
+
+about: |
+  Mid-Century Modern on the web is warmth with structure. Every element
+  sits on clean horizontal lines, but the shapes are organic — kidney
+  forms, tapered edges, curves that feel handmade rather than computed.
+  The palette comes from natural materials: wood grain brown, olive leaf
+  green, fired clay orange, harvest wheat yellow.
+
+  Designing in this style means resisting the cold precision that digital
+  tools default to. You round corners unevenly. You let shapes breathe
+  asymmetrically. You pick colors that could exist in a ceramic glaze or
+  a woven textile. The result feels like a space you'd want to sit in —
+  inviting, considered, quietly confident that form and function are the
+  same thing.
+
+characteristics:
+  - title: Warm Earth Palette
+    description: >
+      Cream (#F5E6D0), olive (#2C3E2D), burnt orange (#D4652A), mustard
+      (#C5A83B), wood brown (#5C3D2E). Colors reference natural materials
+      — clay, wood, leather, linen. No cool grays, no neon.
+  - title: Organic Shapes
+    description: >
+      Asymmetric border-radius values (70% 30% 60% 40% / 30% 60% 40%
+      70%) create kidney, boomerang, and amoeba forms. Shapes feel
+      handcrafted, never perfectly circular or rectangular.
+  - title: Atomic Decorations
+    description: >
+      Starburst and asterisk motifs built with CSS pseudo-elements —
+      thin lines rotated at 45-degree increments, radiating from a
+      center point. The signature decorative element of the era.
+  - title: Clean Horizontal Lines
+    description: >
+      Thin horizontal rules (1-2px) in muted tones divide sections
+      and create rhythm. Layouts are predominantly horizontal, with
+      elements arranged along clear baselines.
+  - title: Retro Geometric Type
+    description: >
+      Josefin Sans at weights 300 and 700. Geometric letterforms with
+      a 1950s feel — tall x-height, clean curves, slightly condensed.
+      Headings are light-weight or bold, never medium.
+  - title: Tapered and Splayed Forms
+    description: >
+      Elements angle outward slightly, like furniture legs. Borders
+      taper, containers splay, shapes widen at the base. CSS transforms
+      with slight perspective create the characteristic stance.
+
+good_for:
+  - Interior design and furniture brand sites
+  - Architecture and real estate portfolios
+  - Boutique hotel and restaurant pages
+  - Lifestyle and home goods e-commerce
+  - Design studio and agency portfolios
+
+not_for:
+  - High-tech or AI product marketing
+  - Gaming and entertainment platforms
+  - Dense data dashboards or admin panels
+  - Youth-oriented or trend-chasing brands
+  - Developer tools and technical documentation
+
+history: |
+  Mid-Century Modern emerged in postwar America, roughly 1945-1969, when
+  designers like Charles and Ray Eames, Eero Saarinen, and Arne Jacobsen
+  brought Bauhaus principles home — literally. They kept the functional
+  geometry but added warmth: plywood instead of steel, earth tones instead
+  of primary colors, organic curves instead of strict right angles. The
+  style optimized for domestic comfort, not industrial production.
+
+  The aesthetic spread through mass-market furniture, suburban architecture,
+  and magazines like House Beautiful. It was democratic modernism — good
+  design made affordable and approachable. The kidney-shaped coffee table,
+  the Eames lounge chair, the starburst clock became icons because they
+  made abstraction feel friendly.
+
+  On the web, Mid-Century Modern appears whenever a brand wants to signal
+  taste without coldness. It's the aesthetic of the design-conscious home
+  goods company, the boutique hotel, the architecture firm that values
+  livability over spectacle. The warm palette and organic shapes translate
+  directly to CSS — and they make screens feel less like screens and more
+  like spaces you'd actually want to inhabit.
+
+related:
+  - slug: bauhaus
+    relationship: Direct ancestor
+  - slug: art-deco
+    relationship: Predecessor era
+  - slug: minimalism
+    relationship: Shares restraint
+  - slug: organic-tech
+    relationship: Digital descendant
+  - slug: cottagecore
+    relationship: Shares warmth

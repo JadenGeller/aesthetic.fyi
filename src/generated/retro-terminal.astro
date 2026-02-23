@@ -1,0 +1,770 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+
+<div class="page">
+  <div class="scanlines"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">aesthetic.fyi</a>
+      <span class="nav-divider">/</span>
+      <a href={`/${aesthetic.slug}`} class="nav-current">{aesthetic.slug}</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-label">$ cat /aesthetics/{aesthetic.slug}</span>
+      <h1 class="hero-title">{aesthetic.name}<span class="cursor"></span></h1>
+      <p class="hero-tagline">{aesthetic.tagline}</p>
+    </div>
+  </section>
+
+  <!-- WHAT THIS IS -->
+  <section class="section about-section">
+    <div class="section-inner">
+      <span class="section-label">$ cat README.md</span>
+      <h2 class="section-heading">> What This Is<span class="cursor"></span></h2>
+      <div class="about-content">
+        {aesthetic.about.split('\n\n').map((paragraph: string) => (
+          <p class="about-paragraph">{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARACTERISTICS -->
+  <section class="section characteristics-section">
+    <div class="section-inner">
+      <span class="section-label">$ ls --characteristics</span>
+      <h2 class="section-heading">> Design Tokens<span class="cursor"></span></h2>
+      <div class="characteristics-grid">
+        {aesthetic.characteristics.map((char: { title: string; description: string }, i: number) => (
+          <div class="char-card">
+            <span class="char-number">[{String(i).padStart(2, '0')}]</span>
+            <h3 class="char-title">{char.title}</h3>
+            <p class="char-description">{char.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- STYLE REFERENCE -->
+  <section class="section prompt-section">
+    <div class="section-inner">
+      <span class="section-label">$ cat prompt.txt</span>
+      <h2 class="section-heading">> Style Reference<span class="cursor"></span></h2>
+      <div class="prompt-block">
+        <div class="prompt-header">
+          <span class="prompt-header-label">PROMPT.TXT</span>
+          <button class="copy-button" data-prompt={aesthetic.prompt}>[ COPY ]</button>
+        </div>
+        <p class="prompt-text">{aesthetic.prompt}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN TO USE -->
+  <section class="section use-section">
+    <div class="section-inner">
+      <span class="section-label">$ diff good_for.txt not_for.txt</span>
+      <h2 class="section-heading">> When to Use<span class="cursor"></span></h2>
+      <div class="use-grid">
+        <div class="use-column use-good">
+          <h3 class="use-column-heading">// GOOD_FOR</h3>
+          <ul class="use-list">
+            {aesthetic.good_for.map((item: string) => (
+              <li class="use-item use-item-good">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="use-column use-bad">
+          <h3 class="use-column-heading">// NOT_FOR</h3>
+          <ul class="use-list">
+            {aesthetic.not_for.map((item: string) => (
+              <li class="use-item use-item-bad">{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="section history-section">
+    <div class="section-inner">
+      <span class="section-label">$ history --verbose</span>
+      <h2 class="section-heading">> Origins<span class="cursor"></span></h2>
+      <div class="history-content">
+        {aesthetic.history.split('\n\n').map((paragraph: string) => (
+          <p class="history-paragraph">{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED STYLES -->
+  <section class="section related-section">
+    <div class="section-inner">
+      <span class="section-label">$ find /aesthetics --related</span>
+      <h2 class="section-heading">> Related Styles<span class="cursor"></span></h2>
+      <div class="related-grid">
+        {aesthetic.related.map((rel: { slug: string; relationship: string }) => (
+          <a href={`/${rel.slug}`} class="related-card">
+            <span class="related-relationship">[{rel.relationship}]</span>
+            <span class="related-name">{rel.slug}</span>
+            <span class="related-arrow">-&gt;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">aesthetic.fyi</a>
+      <span class="footer-tagline">Every web aesthetic, demonstrated.</span>
+      <a href="/" class="footer-back">&lt;-- Back to all aesthetics</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.querySelector('.copy-button');
+    if (copyButton) {
+      copyButton.addEventListener('click', () => {
+        const prompt = copyButton.getAttribute('data-prompt') || '';
+        navigator.clipboard.writeText(prompt).then(() => {
+          const original = copyButton.textContent;
+          copyButton.textContent = '[ COPIED ]';
+          copyButton.classList.add('copied');
+          setTimeout(() => {
+            copyButton.textContent = original;
+            copyButton.classList.remove('copied');
+          }, 2000);
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  /* ========================================
+     RESET & BASE
+     ======================================== */
+  .page {
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: #0a0a0a;
+    color: #00FF41;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+  }
+
+  /* CRT Scanline Overlay */
+  .scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px
+    );
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* Blinking Cursor */
+  @keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 0.6em;
+    height: 1em;
+    background: #00FF41;
+    margin-left: 4px;
+    vertical-align: baseline;
+    animation: blink 1s step-end infinite;
+    box-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+  }
+
+  /* ========================================
+     NAV
+     ======================================== */
+  .nav {
+    border-bottom: 1px solid rgba(0, 255, 65, 0.3);
+    background: #0a0a0a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-logo {
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    color: #00FF41;
+    text-decoration: none;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+    padding: 4px 12px;
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    transition: border-color 0.2s, text-shadow 0.2s;
+  }
+
+  .nav-logo:hover {
+    border-color: #00FF41;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.7);
+  }
+
+  .nav-divider {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    color: rgba(0, 255, 65, 0.3);
+    margin: 0 4px;
+  }
+
+  .nav-current {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+    color: #00FF41;
+    text-decoration: none;
+    padding: 4px 12px;
+    border: 1px solid rgba(0, 255, 65, 0.15);
+    transition: border-color 0.2s;
+  }
+
+  .nav-current:hover {
+    border-color: rgba(0, 255, 65, 0.5);
+  }
+
+  /* ========================================
+     HERO
+     ======================================== */
+  .hero {
+    border-bottom: 1px solid rgba(0, 255, 65, 0.3);
+    padding: 80px 24px 72px;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: rgba(0, 255, 65, 0.5);
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    font-family: 'VT323', monospace;
+    font-weight: 400;
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    line-height: 0.95;
+    margin: 0 0 24px 0;
+    color: #00FF41;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5), 0 0 20px rgba(0, 255, 65, 0.2);
+  }
+
+  .hero-tagline {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 700px;
+    color: rgba(0, 255, 65, 0.7);
+  }
+
+  /* ========================================
+     SECTIONS - SHARED
+     ======================================== */
+  .section {
+    padding: 80px 24px;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.3);
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: rgba(0, 255, 65, 0.4);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .section-heading {
+    font-family: 'VT323', monospace;
+    font-weight: 400;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin: 0 0 48px 0;
+    color: #00FF41;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+  }
+
+  /* ========================================
+     ABOUT
+     ======================================== */
+  .about-content {
+    max-width: 740px;
+  }
+
+  .about-paragraph {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 0 0 24px 0;
+    color: rgba(0, 255, 65, 0.85);
+  }
+
+  .about-paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     CHARACTERISTICS
+     ======================================== */
+  .characteristics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+
+  .char-card {
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    padding: 28px 24px 24px;
+    position: relative;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .char-card:hover {
+    border-color: #00FF41;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.15);
+  }
+
+  .char-number {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: rgba(0, 255, 65, 0.4);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .char-title {
+    font-family: 'VT323', monospace;
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin: 0 0 10px 0;
+    color: #00FF41;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.4);
+  }
+
+  .char-description {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+    color: rgba(0, 255, 65, 0.7);
+  }
+
+  /* ========================================
+     STYLE REFERENCE / PROMPT
+     ======================================== */
+  .prompt-block {
+    border: 1px solid rgba(0, 255, 65, 0.3);
+  }
+
+  .prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.3);
+    background: rgba(0, 255, 65, 0.05);
+  }
+
+  .prompt-header-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: rgba(0, 255, 65, 0.6);
+  }
+
+  .copy-button {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.8rem;
+    background: transparent;
+    color: #00FF41;
+    border: 1px solid rgba(0, 255, 65, 0.4);
+    padding: 6px 16px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    letter-spacing: 0.05em;
+  }
+
+  .copy-button:hover {
+    background: rgba(0, 255, 65, 0.1);
+    border-color: #00FF41;
+  }
+
+  .copy-button:active {
+    background: rgba(0, 255, 65, 0.2);
+  }
+
+  .copy-button.copied {
+    background: rgba(0, 255, 65, 0.15);
+    border-color: #00FF41;
+  }
+
+  .prompt-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: rgba(0, 255, 65, 0.8);
+    padding: 24px;
+    margin: 0;
+    white-space: pre-wrap;
+  }
+
+  /* ========================================
+     WHEN TO USE
+     ======================================== */
+  .use-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .use-column {
+    border: 1px solid rgba(0, 255, 65, 0.3);
+  }
+
+  .use-column-heading {
+    font-family: 'VT323', monospace;
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.3);
+    color: #00FF41;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.4);
+  }
+
+  .use-good .use-column-heading {
+    background: rgba(0, 255, 65, 0.08);
+  }
+
+  .use-bad .use-column-heading {
+    background: rgba(255, 80, 80, 0.08);
+  }
+
+  .use-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .use-item {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding: 12px 24px;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: rgba(0, 255, 65, 0.8);
+  }
+
+  .use-item:last-child {
+    border-bottom: none;
+  }
+
+  .use-item-good::before {
+    content: '+';
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #00FF41;
+    flex-shrink: 0;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+  }
+
+  .use-item-bad::before {
+    content: '-';
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 1rem;
+    color: rgba(255, 80, 80, 0.8);
+    flex-shrink: 0;
+  }
+
+  /* ========================================
+     HISTORY
+     ======================================== */
+  .history-content {
+    max-width: 740px;
+  }
+
+  .history-paragraph {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 0 0 24px 0;
+    color: rgba(0, 255, 65, 0.85);
+  }
+
+  .history-paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     RELATED STYLES
+     ======================================== */
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    text-decoration: none;
+    color: #00FF41;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    position: relative;
+  }
+
+  .related-card:hover {
+    border-color: #00FF41;
+    background: rgba(0, 255, 65, 0.05);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.15);
+  }
+
+  .related-relationship {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: rgba(0, 255, 65, 0.4);
+  }
+
+  .related-name {
+    font-family: 'VT323', monospace;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #00FF41;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.4);
+  }
+
+  .related-arrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 1rem;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    color: rgba(0, 255, 65, 0.4);
+  }
+
+  .related-card:hover .related-arrow {
+    color: #00FF41;
+  }
+
+  /* ========================================
+     FOOTER
+     ======================================== */
+  .footer {
+    padding: 60px 24px;
+    border-top: 1px solid rgba(0, 255, 65, 0.3);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    color: #00FF41;
+    text-decoration: none;
+    padding: 6px 16px;
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+    transition: border-color 0.2s;
+  }
+
+  .footer-logo:hover {
+    border-color: #00FF41;
+  }
+
+  .footer-tagline {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: rgba(0, 255, 65, 0.3);
+  }
+
+  .footer-back {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: rgba(0, 255, 65, 0.6);
+    text-decoration: none;
+    padding: 6px 16px;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .footer-back:hover {
+    border-color: rgba(0, 255, 65, 0.5);
+    color: #00FF41;
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 56px 20px 48px;
+    }
+
+    .section {
+      padding: 56px 20px;
+    }
+
+    .section-heading {
+      margin-bottom: 32px;
+    }
+
+    .characteristics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .use-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .prompt-text {
+      font-size: 0.8rem;
+      padding: 16px;
+    }
+
+    .prompt-header {
+      padding: 12px 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-inner {
+      padding: 12px 16px;
+    }
+
+    .footer {
+      padding: 40px 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 40px 16px 36px;
+    }
+
+    .section {
+      padding: 40px 16px;
+    }
+
+    .nav-inner {
+      padding: 10px 12px;
+      gap: 6px;
+    }
+
+    .nav-logo {
+      font-size: 1rem;
+      padding: 3px 8px;
+    }
+
+    .nav-current {
+      font-size: 0.8rem;
+      padding: 3px 8px;
+    }
+
+    .char-card {
+      padding: 20px 16px 16px;
+    }
+
+    .copy-button {
+      padding: 5px 12px;
+      font-size: 0.75rem;
+    }
+
+    .use-item {
+      padding: 10px 16px;
+      font-size: 0.85rem;
+    }
+
+    .related-card {
+      padding: 16px;
+    }
+  }
+</style>

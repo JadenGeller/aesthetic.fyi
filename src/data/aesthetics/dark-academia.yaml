@@ -1,0 +1,93 @@
+slug: dark-academia
+name: Dark Academia
+coined: false
+
+tagline: "The margins are full of notes. The lamp is low. Knowledge lives in the space between reverence and obsession."
+
+prompt: |
+  Dark warm background (#1C1A17) with cream parchment text (#E8DCC8). Secondary
+  panels in deep brown (#2C2520) with subtle repeating-linear-gradient for aged
+  paper texture. Accent gold (#C9A959) for borders and decorative lines via
+  border: 1px solid rgba(201,169,89,0.3). Olive (#5C6B4F) for secondary
+  accents. Cormorant Garamond (400, 400i, 600) for headings — elegant, slightly
+  italic, classical. EB Garamond (400, 400i) for body text — dense, readable,
+  book-like. Small uppercase labels with letter-spacing: 0.2em and font-style:
+  italic for marginalia feel. Warm box-shadows (0 4px 24px rgba(28,26,23,0.6))
+  on panels. Serif everywhere. The mood is scholarly, moody, candlelit — like
+  annotating Dostoevsky in a wood-paneled library at midnight.
+
+about: |
+  Dark Academia on the web is the aesthetic of knowledge pursued in dim light. It borrows from old libraries, leather-bound volumes, and the romantic idea that learning is a sacred, slightly dangerous act. The palette is drawn from aged paper, dark wood, and the green-gold of reading lamps. Typography is classical and dense, set in serifs that recall centuries of printed thought.
+
+  This is not design that moves fast. It lingers. Paragraphs are wide and unhurried, borders are thin and gold-touched, shadows are warm rather than cool. Every element suggests a room where someone has been reading for hours — marginalia in the gutters, a half-drunk cup of coffee, the smell of old paper. The interface becomes the study itself: a place built for concentration, not conversion.
+
+characteristics:
+  - title: Warm Dark Palette
+    description: >
+      #1C1A17 dark brown-black backgrounds and #2C2520 panel surfaces. The
+      darkness is warm, not cold — more aged walnut than void. #E8DCC8
+      cream text sits like ink on parchment. Nothing is pure black or
+      pure white.
+  - title: Classical Serif Typography
+    description: >
+      Cormorant Garamond for headings — elegant, with italic variants
+      that feel handwritten. EB Garamond for body text — dense and
+      readable, the typeface of serious books. Sans-serif is absent
+      entirely. Every letterform evokes the printed page.
+  - title: Gold & Olive Accents
+    description: >
+      #C9A959 gold traces borders, dividers, and decorative details like
+      the gilding on a leather-bound spine. #5C6B4F olive appears in
+      secondary text and subtle backgrounds — the green of library
+      lamps and ivy-covered walls.
+  - title: Aged Paper Texture
+    description: >
+      Subtle repeating-linear-gradient patterns on panels simulate the
+      grain of old paper. Combined with warm shadows (box-shadow with
+      brown-tinted rgba), surfaces feel like pages rather than screens.
+  - title: Italic Marginalia
+    description: >
+      Labels, annotations, and secondary text use font-style: italic
+      with generous letter-spacing — evoking handwritten notes in book
+      margins. These small typographic details create intimacy and the
+      sense of a personal, annotated reading experience.
+  - title: Columnar & Bookish Layout
+    description: >
+      Content is organized in narrow, readable columns with generous
+      line-height. Max-widths constrain text blocks to book-like
+      proportions. The layout borrows from editorial design and
+      scholarly journals — dense but never cramped.
+
+good_for:
+  - Literary magazines and book review sites
+  - Academic portfolios and research blogs
+  - Poetry and creative writing publications
+  - Antiquarian bookshop and rare book dealer sites
+  - Philosophy, humanities, and liberal arts programs
+
+not_for:
+  - SaaS dashboards or productivity tools
+  - Children's or youth-oriented products
+  - E-commerce requiring high-conversion checkout flows
+  - Tech startups seeking modern, clean branding
+
+history: |
+  Dark Academia emerged as an aesthetic movement on Tumblr in the mid-2010s, crystallizing around a romanticized vision of elite Western education — tweed jackets, classical literature, Gothic university buildings, and the pursuit of knowledge as an almost spiritual vocation. It drew from the visual language of films like Dead Poets Society and The Secret History by Donna Tartt.
+
+  The aesthetic exploded on TikTok and Instagram around 2019-2020, coinciding with a broader cultural nostalgia for analog experiences. During lockdowns, the appeal of imagining oneself in a candlelit library — surrounded by leather-bound books and handwritten letters — became a powerful escapist fantasy. The visual vocabulary expanded: brown and olive palettes, serif typography, classical art references, Latin phrases.
+
+  On the web, Dark Academia translates into warm darkness, classical serifs, and a deliberate rejection of Silicon Valley's clean sans-serif minimalism. It shares DNA with cottagecore's nostalgia and gothic web's darkness, but its defining quality is intellectual aspiration — the belief that beautiful design and serious thought belong together. The page becomes the study, the screen becomes the desk, and the reader becomes the scholar.
+
+related:
+  - slug: gothic-web
+    relationship: Shares the darkness
+  - slug: cottagecore
+    relationship: Nostalgic sibling
+  - slug: art-deco
+    relationship: Ornamental kinship
+  - slug: editorial
+    relationship: Typographic cousin
+  - slug: steampunk
+    relationship: Period-inspired peer
+  - slug: minimalism
+    relationship: Philosophical opposite

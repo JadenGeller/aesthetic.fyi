@@ -1,0 +1,103 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="scanlines"></div>
+  <div class="card-prompt">$ ls aesthetics/</div>
+  <h3 class="card-name">{aesthetic.name}<span class="cursor"></span></h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  @keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+
+  .card {
+    background: #0a0a0a;
+    color: #00FF41;
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    border-radius: 0;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    border-color: #00FF41;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.15), inset 0 0 15px rgba(0, 255, 65, 0.03);
+  }
+
+  .scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .card-prompt {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(0, 255, 65, 0.3);
+    position: absolute;
+    top: 20px;
+    left: 28px;
+    z-index: 2;
+  }
+
+  .card-name {
+    font-family: 'VT323', monospace;
+    font-weight: 400;
+    font-size: 28px;
+    margin: 0 0 8px 0;
+    color: #00FF41;
+    line-height: 1.1;
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+    z-index: 2;
+    position: relative;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 0.55em;
+    height: 0.85em;
+    background: #00FF41;
+    margin-left: 3px;
+    vertical-align: baseline;
+    animation: blink 1s step-end infinite;
+    box-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+  }
+
+  .card-tagline {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    color: rgba(0, 255, 65, 0.6);
+    line-height: 1.5;
+    z-index: 2;
+    position: relative;
+  }
+</style>

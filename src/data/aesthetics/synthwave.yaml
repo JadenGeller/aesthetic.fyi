@@ -1,0 +1,107 @@
+slug: synthwave
+name: Synthwave
+coined: false
+
+tagline: "The sun already set. The grid goes on forever."
+
+prompt: |
+  Dark purple-black background (#1a0a2e). Neon pink (#ff6ec7) and cyan
+  (#00fff5) as primary accent colors, with orange (#ffa500) for warmth.
+  A perspective grid receding to the horizon using repeating gradients
+  and CSS perspective/rotateX transforms. Sunset gradient band (orange
+  to pink to purple) along the horizon line. Chrome/metallic text
+  effects via linear-gradient on headings with -webkit-background-clip:
+  text. Glow on interactive elements via text-shadow and box-shadow with
+  neon pink or cyan at varying blur radii. Typography is Syne (700-800)
+  for display and Orbitron for labels and UI. Mood is nocturnal,
+  cinematic, retro-futurist.
+
+about: |
+  Synthwave is a visual language borrowed from a decade that never
+  actually existed. It takes the popular imagination of the 1980s --
+  neon signs, VHS scanlines, chrome sports cars, grid-horizon sunsets --
+  and distills it into a design vocabulary that feels more like a memory
+  of a movie than a memory of reality.
+
+  On the web, synthwave means dark backgrounds, electric color, and a
+  persistent sense of depth. The perspective grid receding into the
+  distance isn't decoration; it's the spatial grammar of the whole
+  aesthetic. Everything glows a little, because in this world the light
+  comes from the objects, not from the sky.
+
+characteristics:
+  - title: Neon Glow
+    description: >
+      Text and borders emit light through layered text-shadow and
+      box-shadow in pink and cyan. The glow is the primary source of
+      visual energy.
+  - title: Perspective Grid
+    description: >
+      A flat grid plane transformed via CSS perspective and rotateX,
+      stretching to an implied horizon. It anchors the scene in
+      three-dimensional space.
+  - title: Sunset Horizon
+    description: >
+      A horizontal band of gradient color -- orange through pink to
+      deep purple -- sits on the horizon line, mimicking an eternal
+      80s dusk.
+  - title: Chrome Typography
+    description: >
+      Display headings use linear-gradient fills clipped to text,
+      creating a metallic or iridescent sheen that catches the
+      imaginary light.
+  - title: Dark Canvas
+    description: >
+      Backgrounds are deep purple-black (#1a0a2e or similar), making
+      every neon element pop. There is no white space -- only dark
+      space.
+  - title: Retro-Futurist Type
+    description: >
+      Geometric, wide-set typefaces like Orbitron and heavy display
+      fonts like Syne evoke computer terminals and sci-fi movie titles
+      from a future that was imagined in 1984.
+
+good_for:
+  - Music, audio, and nightlife brands
+  - Portfolio sites for creative or AV work
+  - Game landing pages and entertainment sites
+  - Event pages for concerts, festivals, and launches
+  - Side projects and personal pages that want atmosphere
+
+not_for:
+  - Enterprise SaaS or B2B dashboards
+  - E-commerce with large product catalogs
+  - Healthcare, finance, or government
+  - Long-form text-heavy content -- the glow tires the eye
+
+history: |
+  Synthwave as a visual style emerged alongside the music genre of the
+  same name in the early 2010s. Producers like Kavinsky, Perturbator,
+  and Carpenter Brut were creating electronic music that sounded like
+  imaginary 1980s film soundtracks, and the album art followed suit:
+  chrome lettering, sunset gradients, wireframe landscapes, DeLoreans.
+
+  The look drew on genuine 80s sources -- Tron's glowing circuits, the
+  neon signage of Miami Vice, the airbrush art of Syd Mead and Hajime
+  Sorayama -- but filtered them through 2010s nostalgia into something
+  more stylized than the originals ever were. By 2016, "synthwave
+  aesthetic" had become a recognizable genre on Tumblr, Reddit, and
+  design communities.
+
+  On the web, the style peaked around 2018-2020, when CSS grid,
+  custom properties, and performant box-shadows made it feasible to
+  build full-page neon experiences without canvas or WebGL. It remains
+  one of the most distinctive dark-mode aesthetics, trading the
+  restraint of typical dark UI for unapologetic atmosphere.
+
+related:
+  - slug: vaporwave
+    relationship: Sibling genre
+  - slug: cyberpunk
+    relationship: Shares neon DNA
+  - slug: retro-terminal
+    relationship: CRT cousin
+  - slug: dark-mode
+    relationship: Shares dark canvas
+  - slug: y2k
+    relationship: Parallel nostalgia

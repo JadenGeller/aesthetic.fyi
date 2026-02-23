@@ -1,0 +1,103 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet" />
+
+<div class="clay-card">
+  <div class="clay-blob clay-blob-1" aria-hidden="true"></div>
+  <div class="clay-blob clay-blob-2" aria-hidden="true"></div>
+  <div class="clay-blob clay-blob-3" aria-hidden="true"></div>
+  <h3 class="name">{aesthetic.name}</h3>
+  <p class="tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .clay-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #F0E6FF;
+    border-radius: 28px;
+    box-shadow:
+      8px 8px 16px rgba(0, 0, 0, 0.1),
+      inset -4px -4px 8px rgba(0, 0, 0, 0.05),
+      inset 4px 4px 8px rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .clay-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      12px 12px 24px rgba(0, 0, 0, 0.12),
+      inset -4px -4px 8px rgba(0, 0, 0, 0.05),
+      inset 4px 4px 8px rgba(255, 255, 255, 0.8);
+  }
+
+  .clay-blob {
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  .clay-blob-1 {
+    top: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    background: #FFD6E0;
+    box-shadow:
+      4px 4px 10px rgba(0, 0, 0, 0.08),
+      inset -3px -3px 6px rgba(0, 0, 0, 0.05),
+      inset 3px 3px 6px rgba(255, 255, 255, 0.8);
+  }
+
+  .clay-blob-2 {
+    top: 32px;
+    right: 82px;
+    width: 32px;
+    height: 32px;
+    background: #D4F0FF;
+    box-shadow:
+      3px 3px 8px rgba(0, 0, 0, 0.08),
+      inset -2px -2px 4px rgba(0, 0, 0, 0.05),
+      inset 2px 2px 4px rgba(255, 255, 255, 0.8);
+  }
+
+  .clay-blob-3 {
+    top: 18px;
+    right: 120px;
+    width: 24px;
+    height: 24px;
+    background: #FFF3D6;
+    border-radius: 50%;
+    box-shadow:
+      3px 3px 6px rgba(0, 0, 0, 0.08),
+      inset -2px -2px 4px rgba(0, 0, 0, 0.04),
+      inset 2px 2px 4px rgba(255, 255, 255, 0.9);
+  }
+
+  .name {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    color: #5a3a6a;
+    margin: 0 0 8px 0;
+    line-height: 1.1;
+  }
+
+  .tagline {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #8a6a9a;
+    margin: 0;
+    line-height: 1.5;
+  }
+</style>

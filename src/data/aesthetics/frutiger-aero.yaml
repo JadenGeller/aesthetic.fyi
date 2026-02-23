@@ -1,0 +1,118 @@
+slug: frutiger-aero
+name: Frutiger Aero
+coined: false
+
+tagline: "Nature rendered in plastic. Optimism you could wipe clean."
+
+prompt: |
+  Glossy surfaces with white-to-transparent linear gradients overlaid
+  (linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.2))).
+  Sky blue (#4A90D9), leaf green (#5CB85C), and water teal (#87CEEB) as
+  primary palette on white or near-white backgrounds. Clean humanist
+  sans-serif typography (Source Sans 3 or Frutiger-family) at weights
+  300-600. Rounded corners (border-radius 8-12px). Soft box-shadows
+  with blue or green tint. Blue-to-sky gradients (linear-gradient(135deg,
+  #4A90D9, #87CEEB)) for hero sections and buttons. Glossy button
+  highlights using radial-gradient from white at top. Subtle
+  backdrop-filter blur for glass panels. Everything feels fresh,
+  eco-friendly, and plastic-smooth — like a Windows Vista sidebar
+  gadget selling you a greener future.
+
+about: |
+  Frutiger Aero is the look of technology when it still believed in
+  nature. Every surface is glossy, every gradient goes from blue to
+  sky, and somewhere in the background there's a leaf, a water droplet,
+  or a rolling green hill. It's the visual language of an era that
+  thought technology and ecology could merge into something beautiful
+  and clean.
+
+  The style dominated consumer tech from roughly 2004 to 2013. You saw
+  it in Windows Vista and 7's Aero Glass, in Intel and HP marketing, in
+  stock photography of hands cupping saplings, in every "green tech"
+  startup landing page. It was earnest, optimistic, and completely
+  sincere — which is why it feels nostalgic now. Nobody designs like
+  this ironically. When it shows up, it means someone genuinely
+  believes technology can be friendly.
+
+characteristics:
+  - title: Glossy Surfaces
+    description: >
+      linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.2))
+      overlaid on colored elements. Every button, card, and panel has a
+      wet-looking highlight at the top that fades to transparent.
+  - title: Nature Palette
+    description: >
+      Sky blue (#4A90D9), leaf green (#5CB85C), water teal (#87CEEB),
+      mint tint (#E8F5E9), and glossy white. Colors reference sky,
+      grass, and water. No neon, no darkness.
+  - title: Aero Glass
+    description: >
+      backdrop-filter: blur(12-20px) with semi-transparent white or blue
+      backgrounds. Panels feel like frosted glass windows floating over
+      a nature scene. Direct descendant of Windows Aero.
+  - title: Soft Shadows
+    description: >
+      box-shadow with blue or green tint, moderate blur (8-16px), low
+      offset. Shadows feel like light filtering through leaves, not
+      hard directional light.
+  - title: Humanist Sans-Serif
+    description: >
+      Frutiger, Source Sans, Segoe UI — warm, readable, friendly
+      typefaces. Weight 300 for body, 600 for headings. Never condensed,
+      never geometric. The typography feels approachable.
+  - title: Rounded Everything
+    description: >
+      border-radius 8-12px on cards, buttons, and panels. No sharp
+      corners. Combined with the gloss, elements feel like smooth
+      plastic pebbles. Organic but manufactured.
+
+good_for:
+  - Eco-friendly and sustainability brands
+  - Consumer electronics marketing
+  - Health and wellness apps
+  - Educational software and e-learning
+  - Nostalgic or retro-tech projects
+
+not_for:
+  - Anything targeting a post-2015 design-savvy audience
+  - Developer tools or technical documentation
+  - Luxury or high-fashion brands
+  - Minimalist or content-first sites
+  - Dark-themed interfaces
+
+history: |
+  The name "Frutiger Aero" comes from two sources: Adrian Frutiger, the
+  Swiss typeface designer whose humanist sans-serifs (Frutiger, Avenir)
+  defined the era's typography, and Windows Aero, Microsoft's glossy
+  translucent UI framework introduced with Windows Vista in 2006. The
+  term was retroactively applied by internet aesthetics communities
+  around 2017-2019 to describe a visual trend that had already peaked
+  and faded.
+
+  The style emerged in the mid-2000s when consumer tech companies
+  wanted to look both cutting-edge and environmentally conscious.
+  Apple's Aqua interface (2000) pioneered the gloss, but Frutiger Aero
+  added the nature layer — green gradients, blue skies, water imagery,
+  leaves and bubbles. It appeared in Windows Vista/7, Intel Centrino
+  ads, HP TouchSmart marketing, and thousands of eco-tech corporate
+  sites.
+
+  Flat design killed it. When iOS 7 launched in 2013, gradients and
+  gloss became instant markers of the old web. Frutiger Aero went from
+  ubiquitous to invisible almost overnight. Its rediscovery as a named
+  aesthetic in the late 2010s gave it a second life as a nostalgia
+  object — proof that every visual era gets its revival.
+
+related:
+  - slug: skeuomorphism
+    relationship: Ancestor
+  - slug: glassmorphism
+    relationship: Spiritual successor
+  - slug: flat-design
+    relationship: What killed it
+  - slug: y2k
+    relationship: Preceded by
+  - slug: solarpunk
+    relationship: Shares optimism
+  - slug: material-design
+    relationship: Replaced by

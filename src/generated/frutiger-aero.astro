@@ -1,0 +1,828 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+
+<div class="aero-page">
+  <!-- Background: sky gradient with soft cloud shapes -->
+  <div class="bg-sky" aria-hidden="true">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="bg-grass"></div>
+  </div>
+
+  <!-- 1. Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">aesthetic.fyi</a>
+      <span class="nav-current">{aesthetic.name}</span>
+    </div>
+  </nav>
+
+  <!-- 2. Hero -->
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">{aesthetic.name}</h1>
+      <p class="hero-tagline">{aesthetic.tagline}</p>
+    </div>
+  </header>
+
+  <main class="content">
+    <!-- 3. What This Is -->
+    <section class="section about-section">
+      <h2 class="section-title">What This Is</h2>
+      <div class="aero-panel about-panel">
+        {aesthetic.about.split('\n\n').map((paragraph: string) => (
+          <p class="body-text">{paragraph}</p>
+        ))}
+      </div>
+    </section>
+
+    <!-- 4. Characteristics -->
+    <section class="section characteristics-section">
+      <h2 class="section-title">Characteristics</h2>
+      <div class="characteristics-grid">
+        {aesthetic.characteristics.map((char: { title: string; description: string }) => (
+          <div class="aero-card characteristic-card">
+            <h3 class="card-title">{char.title}</h3>
+            <p class="card-description">{char.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 5. Style Reference -->
+    <section class="section prompt-section">
+      <h2 class="section-title">Style Reference</h2>
+      <div class="aero-panel prompt-panel">
+        <pre class="prompt-text">{aesthetic.prompt}</pre>
+        <button class="copy-button" data-prompt={aesthetic.prompt}>
+          Copy prompt
+        </button>
+      </div>
+    </section>
+
+    <!-- 6. When to Use -->
+    <section class="section usage-section">
+      <h2 class="section-title">When to Use</h2>
+      <div class="aero-panel usage-panel">
+        <div class="usage-columns">
+          <div class="usage-column">
+            <h3 class="usage-heading good-heading">Good for</h3>
+            <ul class="usage-list">
+              {aesthetic.good_for.map((item: string) => (
+                <li class="usage-item good-item">{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="usage-divider" aria-hidden="true"></div>
+          <div class="usage-column">
+            <h3 class="usage-heading not-heading">Not for</h3>
+            <ul class="usage-list">
+              {aesthetic.not_for.map((item: string) => (
+                <li class="usage-item not-item">{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. History -->
+    <section class="section history-section">
+      <h2 class="section-title">History</h2>
+      <div class="aero-panel history-panel">
+        {aesthetic.history.split('\n\n').map((paragraph: string) => (
+          <p class="body-text">{paragraph}</p>
+        ))}
+      </div>
+    </section>
+
+    <!-- 8. Related Styles -->
+    <section class="section related-section">
+      <h2 class="section-title">Related Styles</h2>
+      <div class="related-grid">
+        {aesthetic.related.map((rel: { slug: string; relationship: string }) => (
+          <a href={`/${rel.slug}`} class="aero-card related-card">
+            <span class="related-name">{rel.slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+            <span class="related-relationship">{rel.relationship}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">aesthetic.fyi</a>
+      <p class="footer-tagline">Every web aesthetic, demonstrated.</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const copyButton = document.querySelector('.copy-button');
+    if (copyButton) {
+      copyButton.addEventListener('click', async () => {
+        const prompt = copyButton.getAttribute('data-prompt');
+        if (prompt) {
+          try {
+            await navigator.clipboard.writeText(prompt);
+            const original = copyButton.textContent;
+            copyButton.textContent = 'Copied!';
+            copyButton.classList.add('copied');
+            setTimeout(() => {
+              copyButton.textContent = original;
+              copyButton.classList.remove('copied');
+            }, 2000);
+          } catch {
+            const textarea = document.createElement('textarea');
+            textarea.value = prompt || '';
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            const original = copyButton.textContent;
+            copyButton.textContent = 'Copied!';
+            copyButton.classList.add('copied');
+            setTimeout(() => {
+              copyButton.textContent = original;
+              copyButton.classList.remove('copied');
+            }, 2000);
+          }
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  /* ═══════════════════════════════════════════════
+     BASE & RESET
+     ═══════════════════════════════════════════════ */
+  .aero-page {
+    --sky-blue: #4A90D9;
+    --leaf-green: #5CB85C;
+    --light-sky: #87CEEB;
+    --glossy-white: #FFFFFF;
+    --mint-tint: #E8F5E9;
+    --text-dark: #2C3E50;
+    --text-medium: #4A6274;
+    --text-light: #6B8399;
+
+    font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+    font-weight: 400;
+    color: var(--text-dark);
+    background: linear-gradient(180deg, #D6EEFF 0%, #B8E0F7 30%, #E8F5E9 70%, #C8E6C9 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ═══════════════════════════════════════════════
+     SKY BACKGROUND & CLOUDS
+     ═══════════════════════════════════════════════ */
+  .bg-sky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: linear-gradient(180deg, #7FBFEE 0%, #B5DCF5 35%, #D6EEFF 60%, #E8F5E9 85%, #C8E6C9 100%);
+  }
+
+  .cloud {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.3) 60%, transparent 75%);
+    filter: blur(2px);
+  }
+
+  .cloud-1 {
+    width: 400px;
+    height: 140px;
+    top: 6%;
+    left: 10%;
+    opacity: 0.7;
+    animation: drift-cloud 60s linear infinite;
+  }
+
+  .cloud-2 {
+    width: 300px;
+    height: 100px;
+    top: 14%;
+    right: 15%;
+    opacity: 0.5;
+    animation: drift-cloud 80s linear infinite reverse;
+  }
+
+  .cloud-3 {
+    width: 350px;
+    height: 120px;
+    top: 25%;
+    left: 45%;
+    opacity: 0.4;
+    animation: drift-cloud 70s linear infinite;
+  }
+
+  .bg-grass {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(180deg, transparent 0%, rgba(139, 195, 74, 0.15) 40%, rgba(104, 159, 56, 0.25) 100%);
+  }
+
+  @keyframes drift-cloud {
+    0% { transform: translateX(-10%); }
+    50% { transform: translateX(10%); }
+    100% { transform: translateX(-10%); }
+  }
+
+  /* ═══════════════════════════════════════════════
+     GLOSSY MIXIN — reusable gloss overlay
+     ═══════════════════════════════════════════════ */
+
+  /* ═══════════════════════════════════════════════
+     NAV
+     ═══════════════════════════════════════════════ */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 24px;
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 28px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.55) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-bottom-color: rgba(74, 144, 217, 0.15);
+    border-radius: 12px;
+    box-shadow:
+      0 2px 12px rgba(74, 144, 217, 0.12),
+      0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  }
+
+  .nav-logo {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--sky-blue);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-logo:hover {
+    opacity: 0.7;
+  }
+
+  .nav-current {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    letter-spacing: 0.02em;
+  }
+
+  /* ═══════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════ */
+  .hero {
+    position: relative;
+    z-index: 1;
+    padding: 100px 24px 70px;
+    text-align: center;
+  }
+
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 48px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.35) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-bottom-color: rgba(74, 144, 217, 0.12);
+    border-radius: 16px;
+    box-shadow:
+      0 8px 32px rgba(74, 144, 217, 0.12),
+      0 2px 0 rgba(255, 255, 255, 0.95) inset;
+  }
+
+  .hero-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: clamp(2.6rem, 7vw, 4.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px 0;
+    background: linear-gradient(135deg, #4A90D9 0%, #3D7ABF 40%, #5CB85C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-tagline {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+    color: var(--text-medium);
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+
+  /* ═══════════════════════════════════════════════
+     CONTENT WRAPPER
+     ═══════════════════════════════════════════════ */
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ═══════════════════════════════════════════════
+     SECTION TITLES
+     ═══════════════════════════════════════════════ */
+  .section {
+    margin-bottom: 64px;
+  }
+
+  .section-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.4rem, 3vw, 1.85rem);
+    color: var(--sky-blue);
+    margin: 0 0 24px 0;
+    letter-spacing: -0.01em;
+  }
+
+  /* ═══════════════════════════════════════════════
+     AERO PANELS — glossy glass containers
+     ═══════════════════════════════════════════════ */
+  .aero-panel {
+    position: relative;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.5) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-bottom-color: rgba(74, 144, 217, 0.1);
+    border-radius: 12px;
+    box-shadow:
+      0 4px 20px rgba(74, 144, 217, 0.1),
+      0 1px 0 rgba(255, 255, 255, 0.9) inset;
+    padding: 36px;
+    transition: box-shadow 0.4s ease;
+  }
+
+  .aero-panel:hover {
+    box-shadow:
+      0 6px 28px rgba(74, 144, 217, 0.16),
+      0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  }
+
+  .aero-card {
+    position: relative;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.55) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-bottom-color: rgba(74, 144, 217, 0.1);
+    border-radius: 10px;
+    box-shadow:
+      0 3px 14px rgba(74, 144, 217, 0.08),
+      0 1px 0 rgba(255, 255, 255, 0.9) inset;
+    padding: 28px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .aero-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 8px 24px rgba(74, 144, 217, 0.16),
+      0 1px 0 rgba(255, 255, 255, 0.95) inset;
+  }
+
+  /* ═══════════════════════════════════════════════
+     BODY TEXT
+     ═══════════════════════════════════════════════ */
+  .body-text {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-dark);
+    margin: 0 0 18px 0;
+  }
+
+  .body-text:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ═══════════════════════════════════════════════
+     ABOUT
+     ═══════════════════════════════════════════════ */
+  .about-panel {
+    max-width: 780px;
+  }
+
+  /* ═══════════════════════════════════════════════
+     CHARACTERISTICS
+     ═══════════════════════════════════════════════ */
+  .characteristics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+  }
+
+  .characteristic-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--sky-blue);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .card-description {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-medium);
+    margin: 0;
+  }
+
+  /* ═══════════════════════════════════════════════
+     STYLE REFERENCE / PROMPT
+     ═══════════════════════════════════════════════ */
+  .prompt-panel {
+    position: relative;
+    background: linear-gradient(180deg, rgba(232, 245, 233, 0.85) 0%, rgba(255, 255, 255, 0.6) 100%);
+    border-color: rgba(92, 184, 92, 0.25);
+  }
+
+  .prompt-text {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0 0 24px 0;
+    padding: 0;
+    background: none;
+    border: none;
+  }
+
+  .copy-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    background: linear-gradient(180deg, #6BC46B 0%, #4A9F4A 100%);
+    border: 1px solid rgba(92, 184, 92, 0.5);
+    border-top-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 11px 24px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow:
+      0 3px 10px rgba(92, 184, 92, 0.25),
+      0 1px 0 rgba(255, 255, 255, 0.4) inset;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .copy-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 45%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.35), transparent);
+    border-radius: 0 0 50% 50%;
+    pointer-events: none;
+  }
+
+  .copy-button:hover {
+    background: linear-gradient(180deg, #7DD07D 0%, #5CB85C 100%);
+    box-shadow:
+      0 4px 16px rgba(92, 184, 92, 0.35),
+      0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    transform: translateY(-1px);
+  }
+
+  .copy-button:active {
+    transform: translateY(1px);
+    box-shadow:
+      0 1px 4px rgba(92, 184, 92, 0.2),
+      0 1px 0 rgba(255, 255, 255, 0.3) inset;
+  }
+
+  .copy-button.copied {
+    background: linear-gradient(180deg, #5AADD9 0%, #4A90D9 100%);
+    border-color: rgba(74, 144, 217, 0.5);
+  }
+
+  /* ═══════════════════════════════════════════════
+     WHEN TO USE
+     ═══════════════════════════════════════════════ */
+  .usage-columns {
+    display: flex;
+    gap: 36px;
+  }
+
+  .usage-column {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .usage-divider {
+    width: 1px;
+    background: linear-gradient(180deg, transparent 0%, rgba(74, 144, 217, 0.2) 50%, transparent 100%);
+    align-self: stretch;
+    flex-shrink: 0;
+  }
+
+  .usage-heading {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: 0 0 18px 0;
+    letter-spacing: 0.01em;
+  }
+
+  .good-heading {
+    color: var(--leaf-green);
+  }
+
+  .not-heading {
+    color: #C0392B;
+  }
+
+  .usage-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .usage-item {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-medium);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .usage-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
+
+  .good-item::before {
+    background: radial-gradient(circle, var(--leaf-green) 30%, rgba(92, 184, 92, 0.3) 100%);
+    box-shadow: 0 0 4px rgba(92, 184, 92, 0.3);
+  }
+
+  .not-item::before {
+    background: radial-gradient(circle, #C0392B 30%, rgba(192, 57, 43, 0.3) 100%);
+    box-shadow: 0 0 4px rgba(192, 57, 43, 0.2);
+  }
+
+  /* ═══════════════════════════════════════════════
+     HISTORY
+     ═══════════════════════════════════════════════ */
+  .history-panel {
+    max-width: 780px;
+  }
+
+  /* ═══════════════════════════════════════════════
+     RELATED STYLES
+     ═══════════════════════════════════════════════ */
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-decoration: none;
+    padding: 22px 24px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(232, 245, 233, 0.6) 100%);
+    border-color: rgba(92, 184, 92, 0.18);
+  }
+
+  .related-card:hover {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(214, 238, 255, 0.7) 100%);
+    border-color: rgba(74, 144, 217, 0.3);
+  }
+
+  .related-name {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    transition: color 0.3s ease;
+  }
+
+  .related-card:hover .related-name {
+    color: var(--sky-blue);
+  }
+
+  .related-relationship {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    font-size: 0.82rem;
+    color: var(--text-light);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ═══════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════ */
+  .footer {
+    position: relative;
+    z-index: 1;
+    padding: 0 24px 40px;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 32px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.4) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    box-shadow:
+      0 2px 12px rgba(74, 144, 217, 0.08),
+      0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-logo {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--sky-blue);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  .footer-logo:hover {
+    opacity: 1;
+  }
+
+  .footer-tagline {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin: 0;
+  }
+
+  /* ═══════════════════════════════════════════════
+     RESPONSIVE
+     ═══════════════════════════════════════════════ */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 72px 24px 48px;
+    }
+
+    .hero-inner {
+      padding: 40px 28px;
+    }
+
+    .aero-panel {
+      padding: 28px 22px;
+    }
+
+    .aero-card {
+      padding: 22px 18px;
+    }
+
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .usage-columns {
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .usage-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(74, 144, 217, 0.2) 50%, transparent 100%);
+      align-self: auto;
+    }
+
+    .related-grid {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .related-card {
+      padding: 18px 16px;
+    }
+
+    .footer-inner {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+      padding: 22px 20px;
+    }
+
+    .nav-inner {
+      padding: 12px 20px;
+    }
+
+    .cloud-1 { width: 250px; height: 90px; }
+    .cloud-2 { width: 200px; height: 70px; }
+    .cloud-3 { width: 220px; height: 80px; }
+  }
+
+  @media (max-width: 420px) {
+    .hero-title {
+      font-size: 2.2rem;
+    }
+
+    .hero-tagline {
+      font-size: 0.95rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+    }
+
+    .characteristics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .copy-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

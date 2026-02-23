@@ -1,0 +1,928 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+<div class="page">
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">aesthetic.fyi</a>
+      <span class="nav-divider">/</span>
+      <a href={`/${aesthetic.slug}`} class="nav-current">{aesthetic.name}</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid-floor"></div>
+    <div class="hero-horizon"></div>
+    <div class="hero-inner">
+      <span class="hero-label">Web Aesthetic</span>
+      <h1 class="hero-title">{aesthetic.name}</h1>
+      <p class="hero-tagline">{aesthetic.tagline}</p>
+    </div>
+  </section>
+
+  <!-- WHAT THIS IS -->
+  <section class="section about-section">
+    <div class="section-inner">
+      <span class="section-label">// What This Is</span>
+      <h2 class="section-heading">Philosophy</h2>
+      <div class="about-content">
+        {aesthetic.about.split('\n\n').map((paragraph: string) => (
+          <p class="about-paragraph">{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARACTERISTICS -->
+  <section class="section characteristics-section">
+    <div class="section-inner">
+      <span class="section-label">// Design Tokens</span>
+      <h2 class="section-heading">Characteristics</h2>
+      <div class="characteristics-grid">
+        {aesthetic.characteristics.map((char: { title: string; description: string }, i: number) => (
+          <div class={`char-card char-card-${i % 3}`}>
+            <span class="char-number">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="char-title">{char.title}</h3>
+            <p class="char-description">{char.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- STYLE REFERENCE -->
+  <section class="section prompt-section">
+    <div class="section-inner">
+      <span class="section-label">// Copy & Paste</span>
+      <h2 class="section-heading">Style Reference</h2>
+      <div class="prompt-block">
+        <div class="prompt-header">
+          <span class="prompt-header-label">PROMPT</span>
+          <button class="copy-button" data-prompt={aesthetic.prompt}>Copy</button>
+        </div>
+        <p class="prompt-text">{aesthetic.prompt}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN TO USE -->
+  <section class="section use-section">
+    <div class="section-inner">
+      <span class="section-label">// When to Use</span>
+      <h2 class="section-heading">Use Cases</h2>
+      <div class="use-grid">
+        <div class="use-column use-good">
+          <h3 class="use-column-heading">Good for</h3>
+          <ul class="use-list">
+            {aesthetic.good_for.map((item: string) => (
+              <li class="use-item use-item-good">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="use-column use-bad">
+          <h3 class="use-column-heading">Not for</h3>
+          <ul class="use-list">
+            {aesthetic.not_for.map((item: string) => (
+              <li class="use-item use-item-bad">{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="section history-section">
+    <div class="section-inner">
+      <span class="section-label">// Origins</span>
+      <h2 class="section-heading">History</h2>
+      <div class="history-content">
+        {aesthetic.history.split('\n\n').map((paragraph: string) => (
+          <p class="history-paragraph">{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED STYLES -->
+  <section class="section related-section">
+    <div class="section-inner">
+      <span class="section-label">// Explore</span>
+      <h2 class="section-heading">Related Styles</h2>
+      <div class="related-grid">
+        {aesthetic.related.map((rel: { slug: string; relationship: string }) => (
+          <a href={`/${rel.slug}`} class="related-card">
+            <span class="related-relationship">{rel.relationship}</span>
+            <span class="related-name">{rel.slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+            <span class="related-arrow">&rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">aesthetic.fyi</a>
+      <span class="footer-tagline">Every web aesthetic, demonstrated.</span>
+      <a href="/" class="footer-back">&larr; Back to all aesthetics</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.querySelector('.copy-button');
+    if (copyButton) {
+      copyButton.addEventListener('click', () => {
+        const prompt = copyButton.getAttribute('data-prompt') || '';
+        navigator.clipboard.writeText(prompt).then(() => {
+          const original = copyButton.textContent;
+          copyButton.textContent = 'Copied!';
+          copyButton.classList.add('copied');
+          setTimeout(() => {
+            copyButton.textContent = original;
+            copyButton.classList.remove('copied');
+          }, 2000);
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  /* ========================================
+     RESET & BASE
+     ======================================== */
+  .page {
+    font-family: 'Syne', sans-serif;
+    background-color: #1a0a2e;
+    color: #e0d6f0;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ========================================
+     NAV
+     ======================================== */
+  .nav {
+    border-bottom: 1px solid rgba(255, 110, 199, 0.3);
+    background: rgba(26, 10, 46, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #00fff5;
+    text-decoration: none;
+    padding: 6px 14px;
+    border: 1px solid #00fff5;
+    text-shadow: 0 0 8px rgba(0, 255, 245, 0.6);
+    box-shadow: 0 0 10px rgba(0, 255, 245, 0.2), inset 0 0 10px rgba(0, 255, 245, 0.05);
+    transition: box-shadow 0.3s, text-shadow 0.3s;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .nav-logo:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 245, 0.4), inset 0 0 20px rgba(0, 255, 245, 0.1);
+    text-shadow: 0 0 14px rgba(0, 255, 245, 0.9);
+  }
+
+  .nav-divider {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: rgba(185, 103, 255, 0.5);
+    margin: 0 4px;
+  }
+
+  .nav-current {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #ff6ec7;
+    text-decoration: none;
+    padding: 6px 14px;
+    border: 1px solid rgba(255, 110, 199, 0.4);
+    text-shadow: 0 0 8px rgba(255, 110, 199, 0.5);
+    transition: box-shadow 0.3s, text-shadow 0.3s;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .nav-current:hover {
+    box-shadow: 0 0 16px rgba(255, 110, 199, 0.3);
+    text-shadow: 0 0 12px rgba(255, 110, 199, 0.8);
+  }
+
+  /* ========================================
+     HERO
+     ======================================== */
+  .hero {
+    position: relative;
+    padding: 120px 24px 100px;
+    overflow: hidden;
+    background: linear-gradient(
+      to bottom,
+      #1a0a2e 0%,
+      #1a0a2e 50%,
+      #2d1150 70%,
+      #1a0a2e 100%
+    );
+  }
+
+  .hero-grid-floor {
+    position: absolute;
+    bottom: 0;
+    left: -50%;
+    right: -50%;
+    height: 55%;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        rgba(255, 110, 199, 0.15) 0px,
+        transparent 1px,
+        transparent 60px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        rgba(255, 110, 199, 0.15) 0px,
+        transparent 1px,
+        transparent 40px
+      );
+    transform: perspective(400px) rotateX(55deg);
+    transform-origin: center top;
+  }
+
+  .hero-horizon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 6px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      #ffa500 15%,
+      #ff6ec7 40%,
+      #b967ff 60%,
+      #ff6ec7 80%,
+      #ffa500 95%,
+      transparent 100%
+    );
+    box-shadow:
+      0 0 30px rgba(255, 110, 199, 0.6),
+      0 0 60px rgba(255, 110, 199, 0.3),
+      0 0 100px rgba(185, 103, 255, 0.2);
+    z-index: 1;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-label {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #1a0a2e;
+    background: #00fff5;
+    padding: 6px 16px;
+    display: inline-block;
+    margin-bottom: 28px;
+    box-shadow: 0 0 16px rgba(0, 255, 245, 0.4);
+  }
+
+  .hero-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    line-height: 0.95;
+    margin: 0 0 28px 0;
+    letter-spacing: -0.02em;
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #e0d6f0 25%,
+      #ff6ec7 60%,
+      #ffa500 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 30px rgba(255, 110, 199, 0.4));
+  }
+
+  .hero-tagline {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 600px;
+    color: #b967ff;
+    text-shadow: 0 0 20px rgba(185, 103, 255, 0.4);
+    letter-spacing: 0.03em;
+  }
+
+  /* ========================================
+     SECTIONS - SHARED
+     ======================================== */
+  .section {
+    padding: 80px 24px;
+    border-bottom: 1px solid rgba(255, 110, 199, 0.2);
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 400;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #00fff5;
+    display: block;
+    margin-bottom: 12px;
+    text-shadow: 0 0 10px rgba(0, 255, 245, 0.5);
+  }
+
+  .section-heading {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.05;
+    margin: 0 0 48px 0;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 110, 199, 0.3);
+  }
+
+  /* ========================================
+     ABOUT
+     ======================================== */
+  .about-section {
+    background: #1a0a2e;
+  }
+
+  .about-content {
+    max-width: 740px;
+  }
+
+  .about-paragraph {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin: 0 0 24px 0;
+    color: #c9b8e8;
+  }
+
+  .about-paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     CHARACTERISTICS
+     ======================================== */
+  .characteristics-section {
+    background: #140828;
+  }
+
+  .characteristics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .char-card {
+    padding: 32px 28px 28px;
+    position: relative;
+    border: 1px solid rgba(255, 110, 199, 0.3);
+    background: rgba(26, 10, 46, 0.6);
+    transition: box-shadow 0.3s, border-color 0.3s;
+  }
+
+  .char-card:hover {
+    border-color: rgba(255, 110, 199, 0.6);
+  }
+
+  .char-card-0 {
+    box-shadow: 0 0 20px rgba(255, 110, 199, 0.15);
+  }
+  .char-card-0:hover {
+    box-shadow: 0 0 30px rgba(255, 110, 199, 0.3);
+  }
+
+  .char-card-1 {
+    box-shadow: 0 0 20px rgba(0, 255, 245, 0.1);
+    border-color: rgba(0, 255, 245, 0.3);
+  }
+  .char-card-1:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 245, 0.25);
+    border-color: rgba(0, 255, 245, 0.6);
+  }
+
+  .char-card-2 {
+    box-shadow: 0 0 20px rgba(185, 103, 255, 0.1);
+    border-color: rgba(185, 103, 255, 0.3);
+  }
+  .char-card-2:hover {
+    box-shadow: 0 0 30px rgba(185, 103, 255, 0.25);
+    border-color: rgba(185, 103, 255, 0.6);
+  }
+
+  .char-number {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: #1a0a2e;
+    background: #ff6ec7;
+    padding: 4px 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: 0 0 12px rgba(255, 110, 199, 0.4);
+  }
+
+  .char-card-1 .char-number {
+    background: #00fff5;
+    box-shadow: 0 0 12px rgba(0, 255, 245, 0.4);
+  }
+
+  .char-card-2 .char-number {
+    background: #b967ff;
+    box-shadow: 0 0 12px rgba(185, 103, 255, 0.4);
+  }
+
+  .char-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin: 0 0 12px 0;
+    color: #ffffff;
+  }
+
+  .char-description {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0;
+    color: #a898c8;
+  }
+
+  /* ========================================
+     STYLE REFERENCE / PROMPT
+     ======================================== */
+  .prompt-section {
+    background: #1a0a2e;
+  }
+
+  .prompt-block {
+    border: 1px solid rgba(0, 255, 245, 0.3);
+    background: rgba(20, 8, 40, 0.8);
+    box-shadow: 0 0 30px rgba(0, 255, 245, 0.08);
+  }
+
+  .prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    border-bottom: 1px solid rgba(0, 255, 245, 0.2);
+    background: rgba(0, 255, 245, 0.05);
+  }
+
+  .prompt-header-label {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #00fff5;
+    text-shadow: 0 0 8px rgba(0, 255, 245, 0.5);
+  }
+
+  .copy-button {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    background: transparent;
+    color: #ff6ec7;
+    border: 1px solid #ff6ec7;
+    padding: 8px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 8px rgba(255, 110, 199, 0.5);
+    box-shadow: 0 0 10px rgba(255, 110, 199, 0.2);
+    transition: box-shadow 0.3s, text-shadow 0.3s, background 0.3s;
+  }
+
+  .copy-button:hover {
+    box-shadow: 0 0 20px rgba(255, 110, 199, 0.4);
+    text-shadow: 0 0 14px rgba(255, 110, 199, 0.9);
+    background: rgba(255, 110, 199, 0.1);
+  }
+
+  .copy-button:active {
+    background: rgba(255, 110, 199, 0.2);
+  }
+
+  .copy-button.copied {
+    color: #00fff5;
+    border-color: #00fff5;
+    text-shadow: 0 0 8px rgba(0, 255, 245, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 245, 0.2);
+  }
+
+  .prompt-text {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 400;
+    font-size: 0.85rem;
+    line-height: 1.85;
+    color: #c9b8e8;
+    padding: 28px 24px;
+    margin: 0;
+    white-space: pre-wrap;
+    letter-spacing: 0.02em;
+  }
+
+  /* ========================================
+     WHEN TO USE
+     ======================================== */
+  .use-section {
+    background: #140828;
+  }
+
+  .use-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .use-column {
+    border: 1px solid rgba(255, 110, 199, 0.2);
+    background: rgba(26, 10, 46, 0.5);
+  }
+
+  .use-column-heading {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 18px 24px;
+    border-bottom: 1px solid rgba(255, 110, 199, 0.2);
+    letter-spacing: -0.01em;
+  }
+
+  .use-good .use-column-heading {
+    color: #00fff5;
+    text-shadow: 0 0 12px rgba(0, 255, 245, 0.4);
+    background: rgba(0, 255, 245, 0.05);
+    border-bottom-color: rgba(0, 255, 245, 0.2);
+  }
+
+  .use-bad .use-column-heading {
+    color: #ff6ec7;
+    text-shadow: 0 0 12px rgba(255, 110, 199, 0.4);
+    background: rgba(255, 110, 199, 0.05);
+    border-bottom-color: rgba(255, 110, 199, 0.2);
+  }
+
+  .use-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .use-item {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 14px 24px;
+    border-bottom: 1px solid rgba(185, 103, 255, 0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #c9b8e8;
+  }
+
+  .use-item:last-child {
+    border-bottom: none;
+  }
+
+  .use-item-good::before {
+    content: '+';
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #00fff5;
+    text-shadow: 0 0 8px rgba(0, 255, 245, 0.5);
+    flex-shrink: 0;
+  }
+
+  .use-item-bad::before {
+    content: '\2013';
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #ff6ec7;
+    text-shadow: 0 0 8px rgba(255, 110, 199, 0.5);
+    flex-shrink: 0;
+  }
+
+  /* ========================================
+     HISTORY
+     ======================================== */
+  .history-section {
+    background: #1a0a2e;
+  }
+
+  .history-content {
+    max-width: 740px;
+  }
+
+  .history-paragraph {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0 0 24px 0;
+    color: #c9b8e8;
+  }
+
+  .history-paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     RELATED STYLES
+     ======================================== */
+  .related-section {
+    background: #140828;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 24px;
+    border: 1px solid rgba(185, 103, 255, 0.3);
+    background: rgba(26, 10, 46, 0.6);
+    text-decoration: none;
+    color: #e0d6f0;
+    transition: box-shadow 0.3s, border-color 0.3s, transform 0.2s;
+    position: relative;
+  }
+
+  .related-card:hover {
+    border-color: rgba(255, 110, 199, 0.6);
+    box-shadow: 0 0 25px rgba(255, 110, 199, 0.2);
+    transform: translateY(-3px);
+  }
+
+  .related-card:active {
+    transform: translateY(0);
+  }
+
+  .related-relationship {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #00fff5;
+    text-shadow: 0 0 6px rgba(0, 255, 245, 0.4);
+  }
+
+  .related-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: #ffffff;
+  }
+
+  .related-arrow {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #ff6ec7;
+    text-shadow: 0 0 8px rgba(255, 110, 199, 0.5);
+  }
+
+  /* ========================================
+     FOOTER
+     ======================================== */
+  .footer {
+    background: #0e0520;
+    padding: 60px 24px;
+    border-top: 1px solid rgba(255, 110, 199, 0.2);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #00fff5;
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 1px solid rgba(0, 255, 245, 0.4);
+    text-shadow: 0 0 8px rgba(0, 255, 245, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 245, 0.15);
+    transition: box-shadow 0.3s, text-shadow 0.3s;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .footer-logo:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 245, 0.3);
+    text-shadow: 0 0 14px rgba(0, 255, 245, 0.8);
+  }
+
+  .footer-tagline {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: rgba(185, 103, 255, 0.5);
+  }
+
+  .footer-back {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: #ff6ec7;
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 1px solid rgba(255, 110, 199, 0.4);
+    text-shadow: 0 0 8px rgba(255, 110, 199, 0.4);
+    transition: box-shadow 0.3s, text-shadow 0.3s;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .footer-back:hover {
+    box-shadow: 0 0 16px rgba(255, 110, 199, 0.3);
+    text-shadow: 0 0 12px rgba(255, 110, 199, 0.8);
+  }
+
+  /* ========================================
+     GLOW PULSE ANIMATION
+     ======================================== */
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .hero-horizon {
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 80px 20px 72px;
+    }
+
+    .section {
+      padding: 56px 20px;
+    }
+
+    .section-heading {
+      margin-bottom: 32px;
+    }
+
+    .characteristics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .use-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .prompt-text {
+      font-size: 0.75rem;
+      padding: 20px 16px;
+    }
+
+    .prompt-header {
+      padding: 12px 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-inner {
+      padding: 12px 16px;
+    }
+
+    .footer {
+      padding: 40px 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 60px 16px 52px;
+    }
+
+    .section {
+      padding: 40px 16px;
+    }
+
+    .nav-inner {
+      padding: 10px 12px;
+      gap: 6px;
+    }
+
+    .nav-logo {
+      font-size: 0.75rem;
+      padding: 5px 10px;
+    }
+
+    .nav-current {
+      font-size: 0.7rem;
+      padding: 5px 10px;
+    }
+
+    .char-card {
+      padding: 24px 20px 20px;
+    }
+
+    .copy-button {
+      padding: 6px 14px;
+      font-size: 0.65rem;
+    }
+
+    .use-item {
+      padding: 12px 16px;
+      font-size: 0.9rem;
+    }
+
+    .related-card {
+      padding: 18px;
+    }
+  }
+</style>

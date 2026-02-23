@@ -1,0 +1,154 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<div class="dash-card">
+  <div class="card-metrics" aria-hidden="true">
+    <div class="metric">
+      <span class="metric-value">24.8k</span>
+      <span class="metric-change metric-up">+12%</span>
+    </div>
+    <div class="mini-chart">
+      <div class="chart-bar" style="height: 45%;"></div>
+      <div class="chart-bar" style="height: 60%;"></div>
+      <div class="chart-bar" style="height: 35%;"></div>
+      <div class="chart-bar chart-bar-accent" style="height: 80%;"></div>
+      <div class="chart-bar" style="height: 55%;"></div>
+      <div class="chart-bar" style="height: 70%;"></div>
+      <div class="chart-bar chart-bar-accent" style="height: 90%;"></div>
+    </div>
+  </div>
+  <div class="card-status" aria-hidden="true">
+    <span class="dot"></span>
+    <span class="dot dot-green"></span>
+    <span class="dot dot-amber"></span>
+  </div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .dash-card {
+    background: #1A1D27;
+    color: #FFFFFF;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .card-metrics {
+    position: absolute;
+    top: 24px;
+    left: 28px;
+    right: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    pointer-events: none;
+  }
+
+  .metric {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .metric-value {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+  }
+
+  .metric-change {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .metric-up {
+    color: #10B981;
+    background: rgba(16, 185, 129, 0.12);
+  }
+
+  .mini-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 36px;
+  }
+
+  .chart-bar {
+    width: 6px;
+    background: rgba(99, 102, 241, 0.35);
+    border-radius: 2px 2px 0 0;
+  }
+
+  .chart-bar-accent {
+    background: #6366F1;
+    box-shadow: 0 0 6px rgba(99, 102, 241, 0.3);
+  }
+
+  .card-status {
+    position: absolute;
+    top: 68px;
+    left: 28px;
+    display: flex;
+    gap: 6px;
+    pointer-events: none;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #6366F1;
+    box-shadow: 0 0 4px rgba(99, 102, 241, 0.4);
+  }
+
+  .dot-green {
+    background: #10B981;
+    box-shadow: 0 0 4px rgba(16, 185, 129, 0.4);
+  }
+
+  .dot-amber {
+    background: #F59E0B;
+    box-shadow: 0 0 4px rgba(245, 158, 11, 0.4);
+  }
+
+  .card-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    margin: 0 0 6px 0;
+    line-height: 1.15;
+    color: #FFFFFF;
+    position: relative;
+    z-index: 2;
+  }
+
+  .card-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.5;
+    position: relative;
+    z-index: 2;
+  }
+</style>

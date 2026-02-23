@@ -1,0 +1,84 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet" />
+
+<div class="neu-card">
+  <div class="neu-circle" aria-hidden="true"></div>
+  <div class="neu-pill" aria-hidden="true"></div>
+  <h3 class="name">{aesthetic.name}</h3>
+  <p class="tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .neu-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #e0e0e0;
+    border-radius: 20px;
+    box-shadow:
+      8px 8px 16px #bebebe,
+      -8px -8px 16px #ffffff;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .neu-card:hover {
+    box-shadow:
+      4px 4px 10px #bebebe,
+      -4px -4px 10px #ffffff;
+  }
+
+  .neu-circle {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    background: #e0e0e0;
+    border-radius: 50%;
+    box-shadow:
+      inset 4px 4px 8px #bebebe,
+      inset -4px -4px 8px #ffffff;
+  }
+
+  .neu-pill {
+    position: absolute;
+    top: 32px;
+    right: 84px;
+    width: 36px;
+    height: 18px;
+    background: #e0e0e0;
+    border-radius: 50px;
+    box-shadow:
+      3px 3px 6px #bebebe,
+      -3px -3px 6px #ffffff;
+  }
+
+  .name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    color: #777;
+    margin: 0 0 8px 0;
+    line-height: 1.1;
+    text-shadow: 1px 1px 2px #ffffff, -1px -1px 2px #bebebe;
+  }
+
+  .tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+    line-height: 1.5;
+  }
+</style>

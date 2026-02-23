@@ -1,0 +1,829 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+<div class="docs-page">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="/" class="sidebar-logo">aesthetic.fyi</a>
+    </div>
+    <nav class="sidebar-nav">
+      <span class="sidebar-section-label">On this page</span>
+      <a href="#overview" class="sidebar-link active">Overview</a>
+      <a href="#characteristics" class="sidebar-link">Characteristics</a>
+      <a href="#style-reference" class="sidebar-link">Style Reference</a>
+      <a href="#when-to-use" class="sidebar-link">When to Use</a>
+      <a href="#history" class="sidebar-link">History</a>
+      <a href="#related" class="sidebar-link">Related Styles</a>
+      <span class="sidebar-section-label">Explore</span>
+      <a href="/" class="sidebar-link">&larr; All aesthetics</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <!-- NAV / BREADCRUMB -->
+    <nav class="breadcrumb-bar">
+      <div class="breadcrumb-inner">
+        <a href="/" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="/" class="breadcrumb-link">Aesthetics</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">{aesthetic.name}</span>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="overview">
+      <h1 class="hero-title">{aesthetic.name}</h1>
+      <p class="hero-tagline">{aesthetic.tagline}</p>
+      <div class="hero-badge">
+        <span class="badge-dot" aria-hidden="true"></span>
+        <span class="badge-text">Design Aesthetic</span>
+      </div>
+    </section>
+
+    <!-- WHAT THIS IS -->
+    <section class="section" id="about">
+      <h2 class="section-heading">What This Is</h2>
+      <div class="about-content">
+        {aesthetic.about.split('\n\n').map((paragraph: string) => (
+          <p class="body-text">{paragraph}</p>
+        ))}
+      </div>
+    </section>
+
+    <!-- CHARACTERISTICS -->
+    <section class="section" id="characteristics">
+      <h2 class="section-heading">Characteristics</h2>
+      <div class="characteristics-list">
+        {aesthetic.characteristics.map((char: { title: string; description: string }, i: number) => (
+          <div class="char-item">
+            <div class="char-header">
+              <span class="char-number">{String(i + 1).padStart(2, '0')}</span>
+              <h3 class="char-title">{char.title}</h3>
+            </div>
+            <p class="char-description">{char.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- STYLE REFERENCE -->
+    <section class="section" id="style-reference">
+      <h2 class="section-heading">Style Reference</h2>
+      <p class="section-intro">Copy this prompt to recreate the <code class="inline-code">{aesthetic.name}</code> aesthetic in any AI design tool or style guide.</p>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="code-header-left">
+            <span class="code-lang">PROMPT</span>
+          </div>
+          <button class="copy-button" data-prompt={aesthetic.prompt}>Copy</button>
+        </div>
+        <pre class="code-body">{aesthetic.prompt}</pre>
+      </div>
+    </section>
+
+    <!-- WHEN TO USE -->
+    <section class="section" id="when-to-use">
+      <h2 class="section-heading">When to Use</h2>
+      <div class="use-grid">
+        <div class="use-block">
+          <h3 class="use-label use-label-good">Good for</h3>
+          <ul class="use-list">
+            {aesthetic.good_for.map((item: string) => (
+              <li class="use-item use-item-good">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="use-block">
+          <h3 class="use-label use-label-not">Not for</h3>
+          <ul class="use-list">
+            {aesthetic.not_for.map((item: string) => (
+              <li class="use-item use-item-not">{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORY -->
+    <section class="section" id="history">
+      <h2 class="section-heading">History</h2>
+      <div class="history-content">
+        {aesthetic.history.split('\n\n').map((paragraph: string) => (
+          <p class="body-text">{paragraph}</p>
+        ))}
+      </div>
+    </section>
+
+    <!-- RELATED STYLES -->
+    <section class="section" id="related">
+      <h2 class="section-heading">Related Styles</h2>
+      <div class="related-grid">
+        {aesthetic.related.map((rel: { slug: string; relationship: string }) => (
+          <a href={`/${rel.slug}`} class="related-card">
+            <span class="related-relationship">{rel.relationship}</span>
+            <span class="related-name">{rel.slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+            <span class="related-arrow">&rarr;</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <a href="/" class="footer-logo">aesthetic.fyi</a>
+        <span class="footer-tagline">Every web aesthetic, demonstrated.</span>
+        <a href="/" class="footer-back">&larr; All aesthetics</a>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.querySelector('.copy-button');
+    if (copyButton) {
+      copyButton.addEventListener('click', () => {
+        const prompt = copyButton.getAttribute('data-prompt') || '';
+        navigator.clipboard.writeText(prompt).then(() => {
+          const original = copyButton.textContent;
+          copyButton.textContent = 'Copied!';
+          copyButton.classList.add('copied');
+          setTimeout(() => {
+            copyButton.textContent = original;
+            copyButton.classList.remove('copied');
+          }, 2000);
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  /* ========================================
+     BASE
+     ======================================== */
+  .docs-page {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    background: #FAFAFA;
+    color: #0F172A;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ========================================
+     SIDEBAR
+     ======================================== */
+  .sidebar {
+    width: 240px;
+    min-width: 240px;
+    background: #1E293B;
+    color: #94A3B8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-header {
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  }
+
+  .sidebar-logo {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #F8FAFC;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .sidebar-logo:hover {
+    color: #FFFFFF;
+  }
+
+  .sidebar-nav {
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-section-label {
+    font-weight: 500;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748B;
+    padding: 16px 20px 6px;
+  }
+
+  .sidebar-section-label:first-child {
+    padding-top: 4px;
+  }
+
+  .sidebar-link {
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: #94A3B8;
+    text-decoration: none;
+    padding: 7px 20px;
+    line-height: 1.4;
+    border-left: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .sidebar-link:hover {
+    color: #E2E8F0;
+  }
+
+  .sidebar-link.active {
+    color: #FFFFFF;
+    border-left-color: #3B82F6;
+    font-weight: 500;
+  }
+
+  /* ========================================
+     CONTENT AREA
+     ======================================== */
+  .content {
+    margin-left: 240px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* ========================================
+     BREADCRUMB NAV
+     ======================================== */
+  .breadcrumb-bar {
+    background: #FFFFFF;
+    border-bottom: 1px solid #E2E8F0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .breadcrumb-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+  }
+
+  .breadcrumb-link {
+    color: #3B82F6;
+    text-decoration: none;
+    font-weight: 400;
+  }
+
+  .breadcrumb-link:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumb-sep {
+    color: #CBD5E1;
+    font-size: 0.8rem;
+  }
+
+  .breadcrumb-current {
+    color: #64748B;
+    font-weight: 500;
+  }
+
+  /* ========================================
+     HERO
+     ======================================== */
+  .hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 56px 40px 40px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .hero-title {
+    font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    line-height: 1.1;
+    margin: 0 0 12px 0;
+    color: #0F172A;
+    letter-spacing: -0.025em;
+  }
+
+  .hero-tagline {
+    font-weight: 400;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: #475569;
+    margin: 0 0 20px 0;
+    max-width: 560px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #64748B;
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 5px 14px;
+  }
+
+  .badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #10B981;
+  }
+
+  /* ========================================
+     SECTIONS
+     ======================================== */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 40px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .section:last-of-type {
+    border-bottom: none;
+  }
+
+  .section-heading {
+    font-weight: 600;
+    font-size: 1.55rem;
+    line-height: 1.2;
+    margin: 0 0 8px 0;
+    color: #0F172A;
+    letter-spacing: -0.015em;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E2E8F0;
+    margin-bottom: 28px;
+  }
+
+  .section-intro {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+  }
+
+  /* ========================================
+     ABOUT
+     ======================================== */
+  .about-content {
+    max-width: 680px;
+  }
+
+  .body-text {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.75;
+    margin: 0 0 18px 0;
+    color: #334155;
+  }
+
+  .body-text:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     INLINE CODE
+     ======================================== */
+  .inline-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+    background: #ECFDF5;
+    color: #059669;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-weight: 400;
+  }
+
+  /* ========================================
+     CHARACTERISTICS
+     ======================================== */
+  .characteristics-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .char-item {
+    padding: 22px 0;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .char-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .char-item:first-child {
+    padding-top: 0;
+  }
+
+  .char-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .char-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #3B82F6;
+    background: #EFF6FF;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .char-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: 0;
+    color: #0F172A;
+    letter-spacing: -0.01em;
+  }
+
+  .char-description {
+    font-weight: 400;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin: 0;
+    color: #475569;
+    padding-left: 52px;
+  }
+
+  /* ========================================
+     CODE BLOCK / STYLE REFERENCE
+     ======================================== */
+  .code-block {
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #F1F5F9;
+  }
+
+  .code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    background: #F8FAFC;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .code-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .code-lang {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #64748B;
+  }
+
+  .copy-button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.75rem;
+    background: #FFFFFF;
+    color: #3B82F6;
+    border: 1px solid #E2E8F0;
+    border-radius: 4px;
+    padding: 5px 14px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .copy-button:hover {
+    background: #EFF6FF;
+    border-color: #3B82F6;
+  }
+
+  .copy-button.copied {
+    background: #ECFDF5;
+    color: #059669;
+    border-color: #10B981;
+  }
+
+  .code-body {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #334155;
+    padding: 20px;
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background: #F1F5F9;
+  }
+
+  /* ========================================
+     WHEN TO USE
+     ======================================== */
+  .use-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .use-block {
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #FFFFFF;
+  }
+
+  .use-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin: 0;
+    padding: 12px 18px;
+    letter-spacing: 0.01em;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  .use-label-good {
+    color: #059669;
+    background: #ECFDF5;
+  }
+
+  .use-label-not {
+    color: #DC2626;
+    background: #FEF2F2;
+  }
+
+  .use-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .use-item {
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 10px 18px;
+    border-bottom: 1px solid #F1F5F9;
+    color: #334155;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .use-item:last-child {
+    border-bottom: none;
+  }
+
+  .use-item-good::before {
+    content: '\2713';
+    color: #10B981;
+    font-weight: 600;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    margin-top: 1px;
+  }
+
+  .use-item-not::before {
+    content: '\2717';
+    color: #EF4444;
+    font-weight: 600;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    margin-top: 1px;
+  }
+
+  /* ========================================
+     HISTORY
+     ======================================== */
+  .history-content {
+    max-width: 680px;
+  }
+
+  /* ========================================
+     RELATED STYLES
+     ======================================== */
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 18px 20px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #0F172A;
+    position: relative;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .related-card:hover {
+    border-color: #3B82F6;
+    box-shadow: 0 1px 3px rgba(59, 130, 246, 0.1);
+  }
+
+  .related-relationship {
+    font-weight: 400;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #94A3B8;
+  }
+
+  .related-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #0F172A;
+    letter-spacing: -0.01em;
+  }
+
+  .related-arrow {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-size: 0.95rem;
+    color: #CBD5E1;
+  }
+
+  .related-card:hover .related-arrow {
+    color: #3B82F6;
+  }
+
+  /* ========================================
+     FOOTER
+     ======================================== */
+  .footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 40px;
+    border-top: 1px solid #E2E8F0;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #0F172A;
+    text-decoration: none;
+  }
+
+  .footer-logo:hover {
+    color: #3B82F6;
+  }
+
+  .footer-tagline {
+    font-weight: 400;
+    font-size: 0.82rem;
+    color: #94A3B8;
+  }
+
+  .footer-back {
+    font-weight: 500;
+    font-size: 0.82rem;
+    color: #3B82F6;
+    text-decoration: none;
+    padding: 6px 16px;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .footer-back:hover {
+    background: #EFF6FF;
+    border-color: #3B82F6;
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 900px) {
+    .sidebar {
+      display: none;
+    }
+
+    .content {
+      margin-left: 0;
+    }
+
+    .breadcrumb-inner {
+      padding: 12px 24px;
+    }
+
+    .hero {
+      padding: 40px 24px 32px;
+    }
+
+    .section {
+      padding: 36px 24px;
+    }
+
+    .use-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .char-description {
+      padding-left: 0;
+      margin-top: 4px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .breadcrumb-inner {
+      padding: 10px 16px;
+      font-size: 0.75rem;
+    }
+
+    .hero {
+      padding: 32px 16px 24px;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .section {
+      padding: 28px 16px;
+    }
+
+    .section-heading {
+      font-size: 1.3rem;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .code-body {
+      font-size: 0.78rem;
+      padding: 16px;
+    }
+
+    .code-header {
+      padding: 8px 12px;
+    }
+
+    .copy-button {
+      padding: 4px 10px;
+      font-size: 0.7rem;
+    }
+
+    .footer {
+      padding: 32px 16px;
+    }
+
+    .use-item {
+      font-size: 0.85rem;
+      padding: 8px 14px;
+    }
+  }
+</style>

@@ -1,0 +1,110 @@
+slug: portfolio-cinematic
+name: Portfolio Cinematic
+coined: true
+
+tagline: "The work speaks. The page just holds the silence around it."
+
+prompt: |
+  Near-black background #0A0A0A with dark panel surfaces #1A1A1A. Text is
+  #FFFFFF primary and #E0E0E0 muted. One warm accent: #C9A96E (gold) for
+  links and highlights. Typography is Cormorant at weights 300, 400, 600
+  for elegant serif headings — set large via clamp(2rem, 4vw, 4rem) with
+  generous letter-spacing (0.04-0.08em). Inter 300/400 for minimal body
+  text. Full-width sections with simulated photography: complex radial
+  gradients suggesting spotlights and moody lighting on dark backgrounds.
+  Letterbox aspect-ratio boxes (21/9, 16/9) as image placeholders with
+  gradient overlays fading to black at edges. Minimal borders, no
+  decoration. The feel is a photographer's portfolio — dramatic, cinematic,
+  and self-assured. Every element has room to breathe.
+
+about: |
+  Portfolio Cinematic is the aesthetic of someone who believes the work is
+  the message. The page itself barely exists — just enough structure to
+  hold images in darkness, just enough typography to name them. Everything
+  else is negative space, dramatic lighting, and silence.
+
+  This is how photographers, directors, and creative agencies present
+  themselves online. The design says: we don't need to explain. We don't
+  need color. We don't need animation. The work is right there, enormous
+  and undeniable, floating in a void of near-black. Your eye has nowhere
+  to go but into the image. That's the point.
+
+characteristics:
+  - title: Near-Black Atmosphere
+    description: >
+      The base background is #0A0A0A — not pure black, but close enough to
+      swallow everything around it. Panels surface at #1A1A1A, just barely
+      distinguishable. The darkness itself is the design.
+  - title: Cinematic Lighting
+    description: >
+      Radial gradients simulate spotlights and dramatic studio lighting.
+      Warm pools of light emerge from darkness, creating depth and mood
+      without any actual images. The CSS becomes a lighting rig.
+  - title: Thin Serif Typography
+    description: >
+      Cormorant at light weight (300-400) set at large sizes with wide
+      letter-spacing. The type is elegant and restrained — never bold,
+      never loud. It reads like a title card in a film.
+  - title: Letterbox Framing
+    description: >
+      Aspect-ratio boxes at 21/9 and 16/9 simulate cinematic frames. These
+      placeholder regions use gradient overlays that fade to black at the
+      edges, suggesting photographs that bleed into the void.
+  - title: Gold Accent Restraint
+    description: >
+      The single warm accent #C9A96E appears only on links, navigation
+      highlights, and the occasional rule. It suggests gallery lighting —
+      warm, directional, and deliberate. Never overused.
+  - title: Dramatic Negative Space
+    description: >
+      Sections breathe with extreme vertical padding. Elements float in
+      isolation. The generous emptiness communicates confidence — only
+      someone sure of their work leaves this much room around it.
+
+good_for:
+  - Photography and videography portfolios
+  - Creative agency and studio sites
+  - Film and documentary project pages
+  - Architecture and interior design showcases
+  - High-end personal portfolio sites
+
+not_for:
+  - Content-heavy blogs or documentation
+  - E-commerce with many product listings
+  - Playful or colorful brand identities
+  - Data-dense dashboards or tools
+  - Accessibility-first projects requiring high contrast ratios
+
+history: |
+  The cinematic portfolio aesthetic traces back to the early days of Flash,
+  when photographers first discovered they could make their websites feel
+  like galleries. Sites like those built on Indexhibit (2006) and Cargo
+  Collective (2009) codified the template: black background, grid of
+  images, almost nothing else. The photographer's portfolio became the
+  web's purest expression of "let the work speak."
+
+  The dark-background portfolio persisted through every design trend
+  because it solved a real problem: images look better on black. Color
+  science explains it — dark surrounds increase perceived contrast and
+  saturation. Museums figured this out centuries ago. Photographers'
+  websites just brought the gallery wall to the browser.
+
+  Modern implementations add cinematic language: letterbox aspect ratios
+  borrowed from film, dramatic lighting gradients that suggest studio
+  setups, and typography drawn from title cards and film credits. The
+  aesthetic has evolved from "black background with images" to a full
+  cinematic vocabulary — one that communicates not just that the work
+  exists, but that it was created by someone who understands visual
+  storytelling at every level, including the container it lives in.
+
+related:
+  - slug: dark-mode
+    relationship: Shares the darkness
+  - slug: minimalism
+    relationship: Shares the restraint
+  - slug: fashion-luxury
+    relationship: Shares the confidence
+  - slug: editorial
+    relationship: Shares the typography
+  - slug: scroll-theater
+    relationship: Shares the drama

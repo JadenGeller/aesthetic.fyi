@@ -1,0 +1,114 @@
+slug: notion-core
+name: Notion-core
+coined: true
+
+tagline: "Your workspace is your aesthetic."
+
+prompt: |
+  Off-white background (#FFFFFF) with Notion's signature dark text (#37352F).
+  Serif headings in Charter or Lora (400, 700), sans-serif body in Inter
+  (400, 500). Max-width ~720px centered — the narrow-page feel of a Notion
+  document. Content blocks with 12-16px padding that highlight on hover
+  (background: #F7F6F3). Horizontal dividers as thin 1px #E9E5E0 lines.
+  Toggle-like sections with small triangular markers. Inline property rows
+  (label: value pairs in a table-like layout). Generous line-height (1.7).
+  Muted secondary text in #9B9A97. Accent links in #2EAADC. No shadows,
+  no gradients, no border-radius. Block-based structure where every element
+  feels like a movable content block. The productivity-tool-as-design-system.
+
+about: |
+  Notion-core is the aesthetic of the productivity tool elevated to a
+  design philosophy. It takes the interface conventions of Notion — the
+  block-based editor, the property tables, the toggle lists, the serif-
+  meets-sans typography — and treats them as a legitimate visual language
+  for the web.
+
+  It is not about mimicking Notion pixel-for-pixel. It is about absorbing
+  its principles: that content should be structured in discrete blocks,
+  that hierarchy comes from indentation and type scale rather than color
+  or ornament, and that a page should feel like a living document you
+  could rearrange at any moment. The result is a calm, structured,
+  productivity-zen aesthetic where whitespace does the heavy lifting
+  and every element knows exactly where it belongs.
+
+characteristics:
+  - title: Block-Based Layout
+    description: >
+      Every piece of content — paragraphs, headings, lists, properties —
+      lives in its own discrete block. Blocks have subtle hover states
+      (background: #F7F6F3) and feel like individual, movable units.
+  - title: Serif + Sans Typography
+    description: >
+      Headings in a serif face (Charter, Lora) for warmth and authority.
+      Body text in Inter for clarity. This mix mirrors Notion's own
+      typographic identity and gives the page a document-like quality.
+  - title: Narrow Centered Column
+    description: >
+      Content sits in a ~720px max-width column, centered on the page.
+      This constraint creates the focused, distraction-free reading
+      experience of a Notion page or a well-set book.
+  - title: Inline Property Tables
+    description: >
+      Key-value pairs displayed in a two-column layout — label on the
+      left in muted text, value on the right. This pattern, borrowed
+      from Notion's database properties, turns metadata into a design
+      element.
+  - title: Toggle Sections
+    description: >
+      Sections styled to resemble Notion's toggle blocks — a small
+      triangular indicator beside the heading, content indented beneath.
+      Information is visually organized into collapsible-looking groups.
+  - title: Structured Whitespace
+    description: >
+      Generous but deliberate spacing. Line-height of 1.7, section gaps
+      of 32-48px, and block padding of 12-16px. The whitespace is not
+      empty — it is the grid that makes the content legible.
+
+good_for:
+  - Knowledge bases and documentation sites
+  - Personal wikis and digital gardens
+  - Internal tools and team dashboards
+  - Note-taking and writing applications
+  - Project management interfaces
+
+not_for:
+  - High-energy marketing and landing pages
+  - Entertainment and media-heavy sites
+  - E-commerce with dense product grids
+  - Portfolio sites that need visual drama
+
+history: |
+  Notion launched in 2016 as a note-taking and project management tool,
+  but its influence on web design emerged gradually. By 2019, its
+  block-based editor and clean, serif-headed aesthetic had become
+  instantly recognizable — a visual shorthand for "organized thinking."
+  Designers began recreating Notion's look outside of the tool itself,
+  applying its property tables, toggle lists, and narrow-column layouts
+  to personal sites, blogs, and documentation.
+
+  The term "Notion-core" crystallized around 2021-2022 as part of a
+  broader wave of productivity-tool aesthetics. Where previous design
+  movements drew from art, architecture, or subculture, Notion-core
+  drew from software. It said: the interface of a well-designed tool
+  is itself a valid design language. The off-white backgrounds, the
+  serif headings, the hover-highlighted content blocks — these were
+  not just UI patterns but aesthetic choices that communicated calm,
+  competence, and intellectual rigor.
+
+  Notion-core sits at the intersection of minimalism and dev-docs,
+  borrowing the whitespace discipline of the former and the structured
+  information hierarchy of the latter. It is the aesthetic of people
+  who organize their lives in databases and find beauty in a well-
+  structured page.
+
+related:
+  - slug: minimalism
+    relationship: Spiritual ancestor
+  - slug: dev-docs
+    relationship: Structural cousin
+  - slug: startup-minimal
+    relationship: Commercial sibling
+  - slug: dark-academia
+    relationship: Serif kindred
+  - slug: bento-grid
+    relationship: Layout counterpart

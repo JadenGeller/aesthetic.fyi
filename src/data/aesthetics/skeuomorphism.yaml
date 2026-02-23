@@ -1,0 +1,107 @@
+slug: skeuomorphism
+name: Skeuomorphism
+coined: false
+
+tagline: "If it looks like you can touch it, you already understand it."
+
+prompt: |
+  Interfaces that mimic real-world materials and objects. Leather textures
+  via repeating CSS gradients, brushed-metal surfaces with layered
+  linear-gradients, buttons with 3D depth from inset/outset borders and
+  multi-layer box-shadows. Glossy highlights using angled white-to-transparent
+  gradients. Warm palette: tans, browns, chrome silvers, muted greens.
+  Serif typography (Georgia, Palatino) for richness, system-ui for UI.
+  Text-shadow for embossed/debossed lettering. Think iOS 6, early macOS,
+  rich Corinthian leather. Every pixel earns its keep.
+
+about: |
+  Skeuomorphism is the belief that the best way to teach someone a new
+  interface is to remind them of something they already know. A notepad
+  app looks like a notepad. A bookshelf app looks like a bookshelf. The
+  calendar has stitched leather binding because real calendars sit on
+  real desks.
+
+  It's not nostalgia — it's empathy. When computing was new and touch
+  screens were alien, skeuomorphism bridged the gap between atoms and
+  pixels. It said: you already know how this works. The affordance is
+  the design. The texture is the invitation.
+
+characteristics:
+  - title: Real-World Textures
+    description: >
+      Linen, leather, wood grain, brushed metal — all recreated with
+      CSS gradients and repeating patterns. The screen pretends to be
+      a physical surface.
+  - title: 3D Depth & Lighting
+    description: >
+      Consistent light source casting shadows and highlights. Buttons
+      look raised. Pressed states look sunken. Everything obeys a
+      shared physics.
+  - title: Glossy Highlights
+    description: >
+      Angled white-to-transparent gradients across buttons and toolbars.
+      The gloss implies a curved, polished surface catching light.
+  - title: Rich Borders
+    description: >
+      Light on top, dark on bottom — the classic beveled edge that gives
+      every element the illusion of three-dimensional mass.
+  - title: Embossed Typography
+    description: >
+      Text-shadow with a light offset below creates the illusion of
+      letters pressed into a surface. Dark text on warm backgrounds
+      feels carved, not printed.
+  - title: Warm Material Palette
+    description: >
+      Browns, tans, warm grays, olive greens, chrome silvers. Every
+      color references a physical material — nothing is arbitrary.
+
+good_for:
+  - Educational apps and onboarding flows
+  - Audio and music production interfaces
+  - Specialty tools that reference physical counterparts
+  - Novelty and nostalgia-driven experiences
+  - Interfaces for older or less tech-savvy audiences
+
+not_for:
+  - Data-dense dashboards — textures add visual noise
+  - Content-heavy reading experiences
+  - Modern SaaS products expecting a clean brand
+  - Responsive-first designs — textures fight small screens
+  - Any context where speed of comprehension trumps delight
+
+history: |
+  Skeuomorphism dominated digital interface design from the birth of the
+  GUI through the early 2010s. Xerox PARC, the original Macintosh, and
+  NeXT all leaned on real-world metaphors — the desktop, the trash can,
+  the folder. But it was Apple under Scott Forstall that pushed
+  skeuomorphism to its most lavish extreme.
+
+  iOS 1 through iOS 6 was a masterclass in faux-materiality. The Notes
+  app had a torn-paper edge. Game Center wore green felt. The Podcasts
+  app featured a reel-to-reel tape deck that actually spun. Every app
+  was a diorama of the thing it replaced.
+
+  In 2013, Jony Ive took over software design at Apple, and iOS 7
+  stripped it all away overnight — flat colors, thin type, no textures.
+  Microsoft's Metro (2012) and Google's Material Design (2014) had
+  already been pushing flatter directions. Skeuomorphism fell out of
+  mainstream favor almost instantly.
+
+  But it never truly died. It lives on in audio plugins that replicate
+  vintage hardware, in game UIs, and in the growing "faux-analog"
+  revival among designers who are tired of every interface looking like
+  a white rectangle with a sans-serif font.
+
+related:
+  - slug: flat-design
+    relationship: Successor that rejected it
+  - slug: material-design
+    relationship: Kept the physics, lost the leather
+  - slug: neumorphism
+    relationship: Soft revival
+  - slug: glassmorphism
+    relationship: Translucent descendant
+  - slug: steampunk
+    relationship: Shares material obsession
+  - slug: dashboard-realism
+    relationship: Functional cousin

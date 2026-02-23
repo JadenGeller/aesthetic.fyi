@@ -1,0 +1,122 @@
+slug: indie-web
+name: Indie Web
+coined: false
+
+tagline: "I made this site by hand and you can view source to prove it."
+
+prompt: |
+  Warm white (#FFFEF5) background with a subtle CSS dot-grid pattern
+  (radial-gradient dots in #ddd, spaced ~24px apart). Dark text (#333).
+  Accent colors: coral (#FF6B6B), teal (#4ECDC4), yellow (#FFE66D),
+  mint (#95E1D3) — cheerful, personal, deliberately uncoordinated.
+  Headings in Caveat (700) — a handwritten Google Font that feels like
+  marker on paper. Body text in Karla (400) or system-ui for friendly
+  readability. Dashed borders (2px dashed #333) everywhere instead of
+  solid lines. Elements rotated slightly (transform: rotate(-1deg) to
+  rotate(2deg)) for a wonky, hand-placed feel. Border-radius varies
+  wildly — some elements fully rounded (50px), others square (0),
+  others softly rounded (8px). Sticker-like decorative labels with
+  colored backgrounds and slight rotation. No drop shadows — flat but
+  imperfect. Mixed alignment (some sections centered, some left-aligned).
+  The vibe is a personal blog built on a weekend, proudly handmade,
+  linked from a webring, full of personality.
+
+about: |
+  The indie web aesthetic is what happens when someone builds a website
+  because they want to, not because they have to. It's the visual
+  language of personal sites, digital gardens, and pages linked from
+  webrings — places where the builder's personality is the design system.
+
+  Nothing is perfectly aligned. Borders are dashed because solid borders
+  feel too corporate. Colors are cheerful but don't follow a strict
+  palette — they feel chosen by mood, not by a brand guidelines PDF.
+  The typography mixes handwritten fonts with friendly sans-serifs,
+  like someone scribbling notes in the margins of a printed page.
+  Everything is slightly tilted, slightly off-grid, slightly imperfect
+  — and that's the whole point.
+
+characteristics:
+  - title: Dashed Borders Everywhere
+    description: >
+      2px dashed #333 borders replace solid lines throughout the design.
+      They feel hand-drawn, like someone traced the edges with a marker
+      and a not-quite-steady hand. The effect is immediate: this was
+      made by a person, not a design tool.
+  - title: Wonky Rotation
+    description: >
+      Elements are rotated between -1deg and 2deg with CSS transforms.
+      Nothing sits perfectly straight. Cards tilt one way, headings
+      lean another. The layout feels hand-placed, like sticky notes
+      on a bulletin board or stickers on a laptop lid.
+  - title: Handwritten Type
+    description: >
+      Caveat or similar handwritten Google Fonts for headings and
+      accents. The text looks like someone wrote it with a thick marker.
+      Body text stays readable in a friendly sans-serif like Karla or
+      system-ui — but the headings carry all the personality.
+  - title: Sticker Decorations
+    description: >
+      Small colored labels and badges with bright backgrounds (coral,
+      teal, yellow, mint) and slight rotation act like stickers slapped
+      onto the page. They label sections, highlight features, or just
+      add visual play — decorative and functional at the same time.
+  - title: Dot-Grid Background
+    description: >
+      A subtle CSS dot-grid pattern on the page background, made with
+      radial-gradient. It recalls graph paper, bullet journals, and
+      the tactile feel of physical notebooks. The grid is visible but
+      never distracting — a texture, not a structure.
+  - title: Mixed Alignment
+    description: >
+      Some sections are centered, some are left-aligned, some have
+      generous margins on one side. The layout doesn't follow a single
+      grid system. It feels organic, like content was placed where it
+      felt right rather than where a framework dictated.
+
+good_for:
+  - Personal blogs and digital gardens
+  - Portfolio sites for creative individuals
+  - Small community projects and webrings
+  - Zines, newsletters, and indie publications
+  - Hobbyist and fan sites
+
+not_for:
+  - Enterprise SaaS platforms
+  - Financial services or banking
+  - Government or institutional sites
+  - High-stakes e-commerce
+  - Corporate marketing pages
+
+history: |
+  The indie web isn't a movement that was designed — it's one that
+  grew. Its roots trace to the original web of the mid-1990s, when
+  every homepage was personal by default. But while the old web's
+  aesthetic came from technical limitation, the indie web's aesthetic
+  comes from intentional choice.
+
+  The IndieWeb movement (capitalized, with its own principles and
+  community) began around 2011, championing personal domains, owning
+  your content, and building tools that put people before platforms.
+  Alongside it, a broader cultural shift emerged: people tired of
+  posting on identical social media templates wanted their own spaces
+  again. Platforms like Neocities (2013), Bear Blog, and Micro.blog
+  gave them homes.
+
+  Visually, the indie web borrows from many eras — the hand-built
+  energy of GeoCities, the zine aesthetics of Tumblr, the warmth of
+  personal blogs. But it adds a self-aware playfulness: dashed borders,
+  wobbly layouts, and handwritten fonts that say "I know this isn't
+  polished, and I like it that way." It's a rejection of the slick,
+  optimized, conversion-funnel web in favor of something more human.
+
+related:
+  - slug: old-web
+    relationship: Spiritual ancestor
+  - slug: cottagecore
+    relationship: Shares handmade warmth
+  - slug: maximalism
+    relationship: Shares expressive excess
+  - slug: brutalism
+    relationship: Shares anti-polish stance
+  - slug: startup-minimal
+    relationship: Aesthetic opposite

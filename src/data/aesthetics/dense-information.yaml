@@ -1,0 +1,116 @@
+slug: dense-information
+name: Dense Information
+coined: true
+
+tagline: "Maximum data per pixel."
+
+prompt: |
+  Light backgrounds — #F6F6EF (Hacker News beige) or plain white #FFFFFF.
+  Text in #000000 at 11–13px using Verdana, Geneva, or system sans-serif.
+  Links in #0000FF, underlined, no decoration beyond color. Line-height 1.3,
+  tight margins (4–8px padding). Alternating row backgrounds with #F0F0F0
+  and #FFFFFF. Orange accent #FF6600 for highlights and active states.
+  Gray metadata text in #828282. No box-shadow, no border-radius, no
+  gradients. Borders are 1px solid #ddd at most. Multi-column layouts
+  using CSS grid or tables. Maximum content per viewport. The page is a
+  spreadsheet, a terminal, a feed — not a brochure.
+
+about: |
+  Dense information design treats screen space as a scarce resource. Every
+  pixel must earn its place by conveying data, not decoration. The goal is
+  to show the maximum amount of useful content above the fold, trusting
+  users to scan, filter, and find what they need without hand-holding.
+  Think Bloomberg terminals, Hacker News, old Reddit, Craigslist, Wikipedia
+  edit histories, and financial dashboards.
+
+  This is the anti-aesthetic aesthetic. There are no hero sections, no
+  whitespace-as-breathing-room, no oversized type for "impact." Instead,
+  there are rows of data, tightly packed lists, small but legible type,
+  and an interface that rewards the power user who wants to see everything
+  at once. It is function-forward by design and by conviction — the belief
+  that showing more information is always better than showing less.
+
+characteristics:
+  - title: Tiny Type at High Density
+    description: >
+      Font sizes range from 11px to 13px. Line-height sits at 1.2–1.4.
+      Padding and margins are 4–8px. Every element is packed tight, and
+      the page shows more content in one viewport than most sites show
+      in three scrolls.
+  - title: Alternating Row Backgrounds
+    description: >
+      Lists and tables use alternating #FFFFFF and #F0F0F0 rows to aid
+      scanning without wasting space on borders or gaps. The zebra stripe
+      pattern is the only visual affordance needed.
+  - title: Blue Underlined Links
+    description: >
+      Links are #0000FF and underlined — the browser default, the oldest
+      convention on the web. No hover animations, no color shifts beyond
+      a visited state in purple. Clickability is communicated through
+      convention, not decoration.
+  - title: Gray Metadata
+    description: >
+      Timestamps, usernames, point counts, and secondary information are
+      rendered in #828282 — visually present but subordinate. The hierarchy
+      is content first, metadata second, achieved purely through color
+      weight.
+  - title: No Decoration Whatsoever
+    description: >
+      Zero border-radius. Zero box-shadow. Zero gradients. Zero text-shadow.
+      No rounded corners, no card elevation, no frosted glass. If CSS
+      property exists solely for visual flair, it is not used.
+  - title: Multi-Column Data Layouts
+    description: >
+      Content fills the viewport edge-to-edge. Grids, tables, and
+      multi-column flows pack information laterally as well as vertically.
+      Sidebars carry real content, not decoration. Nothing is wasted.
+
+good_for:
+  - Data dashboards and analytics tools
+  - News aggregators and link-listing sites
+  - Developer documentation and API references
+  - Admin panels and internal tools
+  - Financial terminals and trading interfaces
+
+not_for:
+  - Marketing landing pages that need to persuade
+  - Consumer products targeting non-technical audiences
+  - Portfolio or brand sites where impression matters
+  - Mobile-first experiences with limited screen width
+
+history: |
+  Dense information design is not a movement — it is a default. Before CSS
+  made decoration easy, the web was inherently dense. Early HTML rendered
+  text at small sizes, links in blue, backgrounds in white, and layouts in
+  tables. The information-dense page was not a choice; it was the only
+  option.
+
+  Hacker News (launched 2007) froze this aesthetic in amber. Paul Graham
+  built it with a single table layout, 11px Verdana, and #FF6600 orange
+  — and never changed it. Craigslist (1995) did the same: blue links,
+  no images, pure function. Old Reddit (2005) packed headlines, metadata,
+  vote counts, and comment links into tight rows that power users loved.
+  Bloomberg Terminal (1981) established the archetype in finance: green on
+  black, then dense white-on-gray, every pixel dedicated to market data.
+
+  As the web moved toward whitespace-heavy, mobile-first design in the
+  2010s, dense information became countercultural. But it never disappeared.
+  Wikipedia, GitHub issue lists, Stack Overflow question pages, and every
+  serious data tool still prioritize density over aesthetics. The revival
+  of interest in tools like Hacker News clones, TUI interfaces, and
+  "boring technology" suggests that density is not a relic — it is a
+  permanent alternative to the decorative web.
+
+related:
+  - slug: retro-terminal
+    relationship: Shares data-first ethos
+  - slug: dev-docs
+    relationship: Shares functional minimalism
+  - slug: old-web
+    relationship: Shares raw HTML roots
+  - slug: flat-design
+    relationship: Shares anti-decoration stance
+  - slug: minimalism
+    relationship: Different philosophy of less
+  - slug: dashboard-realism
+    relationship: Shares data display patterns

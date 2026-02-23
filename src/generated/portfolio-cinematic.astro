@@ -1,0 +1,796 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+
+<div class="cinema-page">
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">aesthetic.fyi</a>
+      <span class="nav-divider">/</span>
+      <a href={`/${aesthetic.slug}`} class="nav-current">{aesthetic.name}</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-spotlight" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1 class="hero-title">{aesthetic.name}</h1>
+      <div class="hero-rule"></div>
+      <p class="hero-tagline">{aesthetic.tagline}</p>
+    </div>
+    <div class="hero-frame" aria-hidden="true">
+      <div class="hero-frame-inner"></div>
+    </div>
+  </section>
+
+  <!-- WHAT THIS IS -->
+  <section class="section about-section">
+    <div class="section-inner">
+      <h2 class="section-heading">What This Is</h2>
+      <div class="about-content">
+        {aesthetic.about.split('\n\n').map((paragraph: string) => (
+          <p class="body-text">{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARACTERISTICS -->
+  <section class="section characteristics-section">
+    <div class="section-inner">
+      <h2 class="section-heading">Characteristics</h2>
+      <div class="characteristics-grid">
+        {aesthetic.characteristics.map((char: { title: string; description: string }, i: number) => (
+          <div class="char-card">
+            <span class="char-number">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="char-title">{char.title}</h3>
+            <p class="char-description">{char.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- STYLE REFERENCE -->
+  <section class="section prompt-section">
+    <div class="section-inner">
+      <h2 class="section-heading">Style Reference</h2>
+      <div class="prompt-block">
+        <div class="prompt-header">
+          <span class="prompt-label">Prompt</span>
+          <button class="copy-button" data-prompt={aesthetic.prompt}>Copy</button>
+        </div>
+        <pre class="prompt-text">{aesthetic.prompt}</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN TO USE -->
+  <section class="section use-section">
+    <div class="section-inner">
+      <h2 class="section-heading">When to Use</h2>
+      <div class="use-columns">
+        <div class="use-column use-column-good">
+          <h3 class="use-heading use-heading-good">Good for</h3>
+          <ul class="use-list">
+            {aesthetic.good_for.map((item: string) => (
+              <li class="use-item use-item-good">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="use-column use-column-not">
+          <h3 class="use-heading use-heading-not">Not for</h3>
+          <ul class="use-list">
+            {aesthetic.not_for.map((item: string) => (
+              <li class="use-item use-item-not">{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="section history-section">
+    <div class="section-inner">
+      <h2 class="section-heading">History</h2>
+      <div class="history-content">
+        {aesthetic.history.split('\n\n').map((paragraph: string) => (
+          <p class="body-text">{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED STYLES -->
+  <section class="section related-section">
+    <div class="section-inner">
+      <h2 class="section-heading">Related Styles</h2>
+      <div class="related-grid">
+        {aesthetic.related.map((rel: { slug: string; relationship: string }) => (
+          <a href={`/${rel.slug}`} class="related-card">
+            <span class="related-relationship">{rel.relationship}</span>
+            <span class="related-name">{rel.slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+            <span class="related-arrow">&rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">aesthetic.fyi</a>
+      <span class="footer-tagline">Every web aesthetic, demonstrated.</span>
+      <a href="/" class="footer-back">&larr; All aesthetics</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.querySelector('.copy-button');
+    if (copyButton) {
+      copyButton.addEventListener('click', () => {
+        const prompt = copyButton.getAttribute('data-prompt') || '';
+        navigator.clipboard.writeText(prompt).then(() => {
+          const original = copyButton.textContent;
+          copyButton.textContent = 'Copied';
+          copyButton.classList.add('copied');
+          setTimeout(() => {
+            copyButton.textContent = original;
+            copyButton.classList.remove('copied');
+          }, 2000);
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  /* ========================================
+     BASE
+     ======================================== */
+  .cinema-page {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    background: #0A0A0A;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ========================================
+     NAV
+     ======================================== */
+  .nav {
+    background: rgba(10, 10, 10, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant', Georgia, serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.3s ease;
+  }
+
+  .nav-logo:hover {
+    color: #C9A96E;
+  }
+
+  .nav-divider {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.2);
+    margin: 0 4px;
+  }
+
+  .nav-current {
+    font-family: 'Cormorant', Georgia, serif;
+    font-weight: 300;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.3s ease;
+  }
+
+  .nav-current:hover {
+    color: #C9A96E;
+  }
+
+  /* ========================================
+     HERO
+     ======================================== */
+  .hero {
+    background: #0A0A0A;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .hero-spotlight {
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(
+      ellipse 60% 40% at 50% 30%,
+      rgba(201, 169, 110, 0.06) 0%,
+      rgba(201, 169, 110, 0.02) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant', Georgia, serif;
+    font-weight: 300;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    line-height: 1;
+    margin: 0 0 28px 0;
+    color: #FFFFFF;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-rule {
+    width: 60px;
+    height: 1px;
+    background: #C9A96E;
+    margin: 0 auto 28px;
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant', Georgia, serif;
+    font-weight: 300;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    line-height: 1.6;
+    color: #E0E0E0;
+    margin: 0 auto;
+    max-width: 520px;
+    font-style: italic;
+  }
+
+  .hero-frame {
+    margin: 60px auto 0;
+    max-width: 1000px;
+    aspect-ratio: 21 / 9;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero-frame-inner {
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(ellipse 50% 70% at 30% 40%, rgba(201, 169, 110, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 70% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 50% at 50% 80%, rgba(201, 169, 110, 0.04) 0%, transparent 60%),
+      linear-gradient(to right, #0A0A0A 0%, transparent 15%, transparent 85%, #0A0A0A 100%),
+      linear-gradient(to bottom, transparent 0%, transparent 70%, #0A0A0A 100%),
+      #111111;
+  }
+
+  /* ========================================
+     SECTIONS - SHARED
+     ======================================== */
+  .section {
+    padding: 96px 24px;
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-heading {
+    font-family: 'Cormorant', Georgia, serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    margin: 0 0 48px 0;
+    color: #FFFFFF;
+    letter-spacing: 0.04em;
+  }
+
+  /* ========================================
+     ABOUT
+     ======================================== */
+  .about-section {
+    background: #0A0A0A;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .about-content {
+    max-width: 680px;
+  }
+
+  .body-text {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    margin: 0 0 24px 0;
+    color: #E0E0E0;
+  }
+
+  .body-text:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     CHARACTERISTICS
+     ======================================== */
+  .characteristics-section {
+    background: #0F0F0F;
+  }
+
+  .characteristics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .char-card {
+    padding: 36px 32px;
+    background: #0F0F0F;
+    position: relative;
+  }
+
+  .char-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      ellipse 80% 80% at 20% 20%,
+      rgba(201, 169, 110, 0.03) 0%,
+      transparent 60%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .char-card:hover::before {
+    opacity: 1;
+  }
+
+  .char-number {
+    font-family: 'Cormorant', Georgia, serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    color: #C9A96E;
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .char-title {
+    font-family: 'Cormorant', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0 0 12px 0;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+  }
+
+  .char-description {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+    color: #E0E0E0;
+  }
+
+  /* ========================================
+     STYLE REFERENCE / PROMPT
+     ======================================== */
+  .prompt-section {
+    background: #0A0A0A;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .prompt-block {
+    background: #1A1A1A;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .prompt-label {
+    font-family: 'Cormorant', Georgia, serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+  }
+
+  .copy-button {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    background: transparent;
+    color: #C9A96E;
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    padding: 8px 22px;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+
+  .copy-button:hover {
+    background: rgba(201, 169, 110, 0.08);
+    border-color: rgba(201, 169, 110, 0.5);
+  }
+
+  .copy-button.copied {
+    color: #FFFFFF;
+    background: rgba(201, 169, 110, 0.15);
+    border-color: #C9A96E;
+  }
+
+  .prompt-text {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 1.85;
+    color: #E0E0E0;
+    padding: 28px;
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* ========================================
+     WHEN TO USE
+     ======================================== */
+  .use-section {
+    background: #0F0F0F;
+  }
+
+  .use-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .use-column {
+    overflow: hidden;
+    background: #0F0F0F;
+  }
+
+  .use-heading {
+    font-family: 'Cormorant', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.15rem;
+    letter-spacing: 0.06em;
+    margin: 0;
+    padding: 20px 28px;
+    color: #FFFFFF;
+  }
+
+  .use-heading-good {
+    border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+  }
+
+  .use-heading-not {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .use-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .use-item {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 16px 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #E0E0E0;
+  }
+
+  .use-item:last-child {
+    border-bottom: none;
+  }
+
+  .use-item-good::before {
+    content: '\2014';
+    font-weight: 300;
+    color: #C9A96E;
+    flex-shrink: 0;
+  }
+
+  .use-item-not::before {
+    content: '\2014';
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.25);
+    flex-shrink: 0;
+  }
+
+  /* ========================================
+     HISTORY
+     ======================================== */
+  .history-section {
+    background: #0A0A0A;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .history-content {
+    max-width: 680px;
+  }
+
+  /* ========================================
+     RELATED STYLES
+     ======================================== */
+  .related-section {
+    background: #0F0F0F;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 28px;
+    background: #0F0F0F;
+    text-decoration: none;
+    color: #FFFFFF;
+    position: relative;
+    transition: background 0.3s ease;
+  }
+
+  .related-card:hover {
+    background: #1A1A1A;
+  }
+
+  .related-relationship {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #C9A96E;
+  }
+
+  .related-name {
+    font-family: 'Cormorant', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+  }
+
+  .related-arrow {
+    font-size: 1rem;
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    color: rgba(255, 255, 255, 0.15);
+    transition: color 0.3s ease;
+  }
+
+  .related-card:hover .related-arrow {
+    color: #C9A96E;
+  }
+
+  /* ========================================
+     FOOTER
+     ======================================== */
+  .footer {
+    background: #0A0A0A;
+    padding: 64px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.3s ease;
+  }
+
+  .footer-logo:hover {
+    color: #C9A96E;
+  }
+
+  .footer-tagline {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.04em;
+  }
+
+  .footer-back {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    color: #C9A96E;
+    text-decoration: none;
+    padding: 10px 24px;
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+
+  .footer-back:hover {
+    background: rgba(201, 169, 110, 0.06);
+    border-color: rgba(201, 169, 110, 0.4);
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 80px 20px 60px;
+    }
+
+    .hero-frame {
+      margin-top: 40px;
+      aspect-ratio: 16 / 9;
+    }
+
+    .section {
+      padding: 64px 20px;
+    }
+
+    .section-heading {
+      margin-bottom: 36px;
+    }
+
+    .characteristics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .use-columns {
+      grid-template-columns: 1fr;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .prompt-header {
+      padding: 14px 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .prompt-text {
+      padding: 20px;
+      font-size: 0.85rem;
+    }
+
+    .nav-inner {
+      padding: 14px 16px;
+    }
+
+    .footer {
+      padding: 48px 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 60px 16px 48px;
+    }
+
+    .section {
+      padding: 48px 16px;
+    }
+
+    .nav-inner {
+      padding: 12px 12px;
+      gap: 6px;
+    }
+
+    .nav-logo {
+      font-size: 0.9rem;
+    }
+
+    .nav-current {
+      font-size: 0.85rem;
+    }
+
+    .char-card {
+      padding: 28px 22px;
+    }
+
+    .copy-button {
+      padding: 7px 16px;
+      font-size: 0.75rem;
+    }
+
+    .use-item {
+      padding: 14px 20px;
+      font-size: 0.9rem;
+    }
+
+    .related-card {
+      padding: 22px;
+    }
+
+    .hero-frame {
+      aspect-ratio: 16 / 9;
+    }
+  }
+</style>

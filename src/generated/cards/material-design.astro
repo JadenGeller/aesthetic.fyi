@@ -1,0 +1,89 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet" />
+
+<div class="material-card">
+  <div class="material-card-bar"></div>
+  <div class="material-card-fab" aria-hidden="true">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5v14M5 12h14" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <h3 class="material-card-name">{aesthetic.name}</h3>
+  <p class="material-card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .material-card {
+    background: #FFFFFF;
+    color: #121212;
+    border-radius: 4px;
+    box-shadow:
+      0 1px 3px 0 rgba(0, 0, 0, 0.12),
+      0 1px 2px 0 rgba(0, 0, 0, 0.08);
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .material-card:hover {
+    box-shadow:
+      0 8px 10px 1px rgba(0, 0, 0, 0.14),
+      0 3px 14px 2px rgba(0, 0, 0, 0.12),
+      0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  }
+
+  .material-card-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: #6200EE;
+  }
+
+  .material-card-fab {
+    position: absolute;
+    top: 36px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    background: #03DAC6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 3px 5px -1px rgba(0, 0, 0, 0.2),
+      0 6px 10px 0 rgba(0, 0, 0, 0.14),
+      0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  .material-card-name {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 0.005em;
+    margin: 0 0 8px 0;
+    color: #121212;
+    line-height: 1.2;
+  }
+
+  .material-card-tagline {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.5;
+  }
+</style>

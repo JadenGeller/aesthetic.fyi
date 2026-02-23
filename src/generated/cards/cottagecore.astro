@@ -1,0 +1,113 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-flowers"></div>
+  <div class="card-frame"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-dots">
+    <span class="card-dot"></span>
+    <span class="card-dot"></span>
+    <span class="card-dot"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #FDF8F0;
+    color: #5C4A3A;
+    border: 1px solid #E0D5C5;
+    border-radius: 10px;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, border-color 0.3s;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 20px rgba(92, 74, 58, 0.08);
+    border-color: #D4C4AA;
+  }
+
+  .card-flowers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(circle 3px at 12% 18%, #D4C4AA 50%, transparent 50%),
+      radial-gradient(circle 2px at 13% 20%, #D4C4AA 50%, transparent 50%),
+      radial-gradient(circle 2px at 11% 16%, #D4C4AA 50%, transparent 50%),
+      radial-gradient(circle 3px at 88% 22%, #D4C4AA 50%, transparent 50%),
+      radial-gradient(circle 2px at 89% 24%, #D4C4AA 50%, transparent 50%),
+      radial-gradient(circle 2px at 87% 20%, #D4C4AA 50%, transparent 50%);
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .card-frame {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 1px dashed #D4C4AA;
+    border-radius: 8px;
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0 0 6px 0;
+    color: #6B5744;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #D4C4AA;
+  }
+
+  .card-tagline {
+    font-family: 'Lora', serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    color: #9A8672;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

@@ -1,0 +1,108 @@
+slug: material-design
+name: Material Design
+coined: false
+
+tagline: "Surfaces with purpose. Elevation with meaning."
+
+prompt: |
+  Cards and surfaces at distinct elevation levels using layered box-shadows
+  (0 2px 4px rgba(0,0,0,0.14), 0 3px 4px rgba(0,0,0,0.12), 0 1px 5px
+  rgba(0,0,0,0.2)). Primary color #6200EE with secondary accent #03DAC6.
+  White (#FFFFFF) card surfaces on a light grey (#FAFAFA) background.
+  Typography is Roboto at weights 300, 400, 500, 700. Border-radius 4px on
+  cards and buttons. 8px spacing grid for all padding and margins. FAB
+  (floating action button) as a 56px circle with elevation shadow. Ripple
+  effect on interactive elements. Elevation increases on hover to signal
+  interactivity. Systematic, structured, intentional.
+
+about: |
+  Material Design treats UI as physical surfaces. Every card, every button,
+  every toolbar exists at a specific height above the canvas. That height
+  is not decorative — it encodes hierarchy. The app bar sits above the
+  content. The FAB floats above everything. A dialog rises to demand
+  attention. You never wonder what's on top because the shadows tell you.
+
+  The system is opinionated by design. It picks your type scale, your
+  spacing grid, your motion curves. That rigidity is the point. When every
+  decision is pre-made, consistency becomes the default. Teams of fifty
+  ship interfaces that look like one person built them.
+
+characteristics:
+  - title: Elevation Shadows
+    description: >
+      Multi-layer box-shadows at 0dp, 2dp, 4dp, 8dp, 16dp, 24dp. Each level
+      uses two or three shadow layers with different offsets, blurs, and
+      opacities to simulate realistic light.
+  - title: 8px Grid
+    description: >
+      All spacing — padding, margins, component sizes — snaps to multiples
+      of 8px. Type baselines sit on a 4px grid. The result is vertical
+      rhythm that holds across every screen.
+  - title: Bold Primary Color
+    description: >
+      A single saturated primary (#6200EE) used for app bars, FABs, and
+      active states. A contrasting secondary (#03DAC6) for accents. Surfaces
+      stay white or light grey.
+  - title: Roboto Typography
+    description: >
+      Roboto in weights 300-700. Headlines at 500 or 700, body at 400,
+      captions at 300. The type scale follows a fixed set of sizes with
+      specific letter-spacing values.
+  - title: Component-Driven Layout
+    description: >
+      Cards, chips, lists, bottom sheets, FABs — a finite set of named
+      components, each with exact specs for height, padding, icon size,
+      and touch target.
+  - title: Motion with Purpose
+    description: >
+      Transitions follow standard easing (cubic-bezier(0.4, 0, 0.2, 1)).
+      Duration 200-300ms for most interactions. Elevation changes animate
+      smoothly. Nothing moves without a reason.
+
+good_for:
+  - Enterprise and productivity apps
+  - Android applications and cross-platform tools
+  - Admin dashboards and data-heavy interfaces
+  - Design systems that need rigid consistency
+  - Teams that want pre-made decisions
+
+not_for:
+  - Brands that need a unique visual identity
+  - Editorial or storytelling sites
+  - Luxury or fashion — too systematic
+  - Sites that want to feel handcrafted or organic
+
+history: |
+  Google introduced Material Design at I/O 2014, positioning it as a
+  unified design language across Android, Chrome OS, and the web. Matias
+  Duarte, the VP of design, framed it as "quantum paper" — surfaces that
+  could split, join, and move in z-space while obeying physical rules.
+  The paper metaphor was literal: shadows behaved like real light sources,
+  and surfaces could not pass through each other.
+
+  Material 1.0 was prescriptive. It told you exactly what shade of blue
+  to use, how tall your toolbar should be, and how fast your transitions
+  should run. That rigidity helped Google unify a fragmented Android
+  ecosystem, but it also meant every Material app looked like a Google
+  app. Critics called it "Google's brand guidelines disguised as a design
+  system."
+
+  Material Design 2 (2018) and Material Design 3 (2021, also called
+  Material You) loosened the grip. Dynamic color theming, rounder shapes,
+  and more expressive typography gave teams room to differentiate. But
+  the bones — elevation, the 8px grid, the component library — remain
+  the most widely adopted design system in the world.
+
+related:
+  - slug: flat-design
+    relationship: Predecessor
+  - slug: skeuomorphism
+    relationship: Ancestor
+  - slug: neumorphism
+    relationship: Soft cousin
+  - slug: glassmorphism
+    relationship: Shares depth
+  - slug: minimalism
+    relationship: Shares restraint
+  - slug: dashboard-realism
+    relationship: Applied in

@@ -1,0 +1,110 @@
+slug: old-web
+name: Old Web
+coined: false
+
+tagline: "Under construction since 1996."
+
+prompt: |
+  Navy blue backgrounds (#000080). Bright neon text in lime green, cyan,
+  yellow, and magenta against dark backgrounds. Monospaced fonts everywhere
+  — Courier or system monospace. No border-radius. Borders use ridge,
+  groove, or inset styles in silver (#C0C0C0). Tiled background patterns
+  or repeating CSS gradients that mimic scanlines. Blinking or flashing
+  elements. Marquee-style horizontal scrolling text via CSS animation.
+  Table-based grid layouts. Visitor counter badges. "Under construction"
+  banners. Text-shadow glow effects in neon colors. Horizontal rules
+  rendered as colorful decorative separators. No whitespace discipline —
+  elements crowd together. GIF-energy animations. The page feels hand-built,
+  personal, and unapologetically chaotic.
+
+about: |
+  The old web aesthetic is a love letter to the internet of 1995–2001, when
+  personal homepages lived on GeoCities, Angelfire, and Tripod. Every page
+  was a declaration of identity — cluttered with animated GIFs, visitor
+  counters, guestbook links, and "under construction" signs. There were no
+  design systems, no component libraries, no best practices. There was just
+  HTML, a dream, and a 28.8k modem.
+
+  The beauty of old web design is its sincerity. Nobody was optimizing for
+  conversion. Nobody was A/B testing button colors. People built pages because
+  they had something to say, or something to share, or just because they
+  could. The result was chaotic, garish, and deeply human — the exact
+  opposite of the sanitized, corporate web we live on today.
+
+characteristics:
+  - title: Neon on Navy
+    description: >
+      Bright lime green, cyan, yellow, and magenta text on deep navy blue
+      or black backgrounds. High contrast, zero subtlety. Text-shadow glow
+      effects make everything feel like a neon sign in a digital void.
+  - title: Ridge and Groove Borders
+    description: >
+      Borders use the CSS ridge, groove, or inset styles — the kind of
+      3D beveled edges that made elements look like they were physically
+      embedded in the page. Silver (#C0C0C0) is the border color of choice.
+  - title: Tiled Backgrounds
+    description: >
+      Repeating patterns, starfields, or scanline gradients tile across
+      the entire page. The background is never plain — it's a texture,
+      a pattern, a statement.
+  - title: Marquee and Blink
+    description: >
+      Text scrolls horizontally. Elements blink on and off. CSS animations
+      recreate the energy of the <marquee> and <blink> tags that defined
+      an era of the web.
+  - title: Table Layouts
+    description: >
+      Content organized in rigid table-like grids with visible cell borders.
+      No flexbox, no CSS grid philosophy — just rows and columns with thick
+      beveled edges, like a spreadsheet wearing a party hat.
+  - title: DIY Badges and Counters
+    description: >
+      Visitor counters, "Best Viewed in Netscape" badges, guestbook links,
+      and webrings. Small decorative elements that signal community and
+      personal ownership of digital space.
+
+good_for:
+  - Retro-themed projects and nostalgia pieces
+  - Personal homepages that reject modern polish
+  - Game jam sites and indie game pages
+  - Internet history exhibits and archives
+  - Ironic or satirical corporate commentary
+
+not_for:
+  - Any professional or commercial product
+  - Accessibility-focused projects (blinking, low contrast)
+  - Mobile-first audiences
+  - Content that needs to build trust or credibility
+
+history: |
+  The old web aesthetic isn't a designed style — it's the natural result
+  of what happened when ordinary people got access to HTML for the first
+  time. Between 1994 and 2001, services like GeoCities (founded 1994,
+  acquired by Yahoo in 1999, shut down in 2009) gave millions of people
+  free web hosting and a WYSIWYG editor. The results were glorious chaos.
+
+  Every page was a personal statement. Animated GIF collections, MIDI
+  background music, hit counters, guestbooks, and webrings connected
+  communities of hobbyists, fans, and dreamers. The <blink> tag (Netscape,
+  1994) and <marquee> tag (Internet Explorer, 1995) became symbols of
+  the era — technically pointless, aesthetically aggressive, and beloved
+  by millions.
+
+  As CSS matured and web standards emerged in the early 2000s, the old
+  web style was actively rejected by professional designers. But it never
+  truly died. The indie web movement, Neocities (founded 2013), and a
+  growing nostalgia for pre-corporate internet have brought it back — not
+  as a standard, but as a statement. Building an old web page today is
+  an act of resistance against the homogenized, algorithm-driven web.
+
+related:
+  - slug: retro-terminal
+    relationship: Shares monospace DNA
+  - slug: indie-web
+    relationship: Spiritual descendant
+  - slug: maximalism
+    relationship: Shares visual excess
+  - slug: cyberpunk
+    relationship: Shares neon palette
+  - slug: vaporwave
+    relationship: Shares retro nostalgia

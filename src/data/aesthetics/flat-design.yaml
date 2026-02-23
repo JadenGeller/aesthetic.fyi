@@ -1,0 +1,99 @@
+slug: flat-design
+name: Flat Design
+coined: false
+
+tagline: "No depth. All signal."
+
+prompt: |
+  No box-shadows, no gradients, no text-shadows. Solid background colors
+  from a bright palette — blue #3498db, green #2ecc71, orange #e67e22,
+  red #e74c3c, purple #9b59b6 — on white #ffffff. Sans-serif type (Inter
+  or Roboto) at weight 400 for body and 700 for headings. Border-radius
+  no greater than 4px. Buttons are solid color rectangles with white text
+  and color-only hover states. Everything is intentionally 2D, geometric,
+  and surface-level.
+
+about: |
+  Flat design is a rejection of ornament. It strips away every visual
+  trick — shadows, gradients, textures, bevels — and leaves only color,
+  typography, and layout. If an element exists, it earns its space through
+  content, not decoration. The interface is a poster, not a diorama.
+
+  The confidence required is enormous. Without depth cues or material
+  metaphors, hierarchy must come from size, weight, and color alone. There
+  is nowhere to hide a weak layout. Flat design trusts the grid, trusts
+  the type, and trusts the user to read the page without being spoonfed
+  affordances.
+
+characteristics:
+  - title: Zero Shadows
+    description: >
+      No box-shadow, no text-shadow, no drop-shadow anywhere. Depth is
+      not simulated — the design lives entirely on one plane.
+  - title: Solid Color Fills
+    description: >
+      Backgrounds are single solid colors, never gradients. Buttons,
+      cards, and sections use flat fills from a bold, saturated palette.
+  - title: Minimal Border-Radius
+    description: >
+      border-radius never exceeds 4px. Corners are sharp or barely
+      softened. No pills, no circles for containers.
+  - title: Bold Sans-Serif Type
+    description: >
+      Font-family is a geometric sans-serif like Inter or Roboto.
+      Font-weight 700 for headings, 400 for body. No serifs, no scripts.
+  - title: Color-Only Hover States
+    description: >
+      Buttons and links change background-color or opacity on hover.
+      No transform, no shadow, no scale. The interaction is a color shift.
+  - title: Geometric Simplicity
+    description: >
+      Shapes are rectangles and circles. Layouts are grid-based. No
+      organic curves, no skewed elements, no decorative illustrations.
+
+good_for:
+  - Mobile apps and responsive interfaces
+  - Admin panels and internal tools
+  - Operating system and platform UI
+  - Content-heavy sites that need fast scanning
+  - Design systems and component libraries
+
+not_for:
+  - Luxury or premium branding — too utilitarian
+  - Sites that need strong visual affordances for accessibility
+  - Immersive or storytelling experiences
+  - Audiences unfamiliar with digital interfaces
+
+history: |
+  Flat design emerged as a direct counter to skeuomorphism, the dominant
+  UI paradigm of the 2000s. Microsoft fired the first shot with Metro
+  (later Modern UI) in Windows Phone 7 in 2010, replacing glossy icons
+  and faux-leather textures with solid color tiles and clean typography.
+  The design language prioritized content over chrome.
+
+  Apple followed in 2013 when Jony Ive redesigned iOS 7, stripping away
+  every texture, gradient, and shadow in one of the most dramatic visual
+  overhauls in tech history. Overnight, the entire mobile industry went
+  flat. Google joined with Material Design in 2014, though it cheated
+  slightly by reintroducing elevation and shadow — a concession that pure
+  flat design sometimes made interfaces harder to parse.
+
+  The backlash was real. Users struggled with clickability. Flat buttons
+  looked like labels. Important controls disappeared into the layout.
+  These problems led to "flat 2.0" — a pragmatic middle ground with
+  subtle shadows and clearer affordances — but the original flat ethos
+  remains the bedrock of modern interface design.
+
+related:
+  - slug: material-design
+    relationship: Evolution
+  - slug: skeuomorphism
+    relationship: Opposite
+  - slug: minimalism
+    relationship: Shares restraint
+  - slug: swiss-design
+    relationship: Ancestor
+  - slug: neubrutalism
+    relationship: Shares flatness
+  - slug: bauhaus
+    relationship: Philosophical kin

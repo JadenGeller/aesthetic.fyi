@@ -1,0 +1,125 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+<div class="cyber-card">
+  <div class="scanlines"></div>
+  <div class="corner-cut top-right"></div>
+  <div class="corner-cut bottom-left"></div>
+  <div class="accent-line"></div>
+  <div class="glitch-bar"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .cyber-card {
+    background: #0a0a0f;
+    color: #e0e0e0;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 28px 100%, 0 calc(100% - 28px));
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow:
+      0 0 12px rgba(0, 255, 255, 0.15),
+      inset 0 0 30px rgba(0, 255, 255, 0.03);
+  }
+
+  .scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 255, 0.015) 2px,
+      rgba(0, 255, 255, 0.015) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .corner-cut.top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.4);
+    border-left: 1px solid rgba(0, 255, 255, 0.4);
+    pointer-events: none;
+  }
+
+  .corner-cut.bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    border-top: 1px solid rgba(0, 255, 255, 0.4);
+    border-right: 1px solid rgba(0, 255, 255, 0.4);
+    pointer-events: none;
+  }
+
+  .accent-line {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 40px;
+    height: 3px;
+    background: #FF00FF;
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.6);
+  }
+
+  .glitch-bar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 255, 255, 0.06);
+    animation: glitch-sweep 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes glitch-sweep {
+    0%, 100% { transform: translateY(-40px); opacity: 0; }
+    10% { opacity: 1; }
+    50% { transform: translateY(60px); opacity: 0.5; }
+    90% { opacity: 0; }
+  }
+
+  .card-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 6px 0;
+    color: #00FFFF;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+    line-height: 1.1;
+    position: relative;
+    z-index: 2;
+  }
+
+  .card-tagline {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+    position: relative;
+    z-index: 2;
+  }
+</style>

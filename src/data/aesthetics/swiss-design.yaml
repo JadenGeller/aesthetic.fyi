@@ -1,0 +1,99 @@
+slug: swiss-design
+name: Swiss / International Style
+coined: false
+
+tagline: "The grid is not a constraint. It is the design."
+
+prompt: |
+  Strict mathematical grid with asymmetric column layout. Helvetica or
+  Inter as the sole typeface. Black text on white background with red
+  (#ff0000) as the only accent color — used sparingly for rules and
+  indicators. Headings are uppercase with wide letter-spacing (0.1-0.2em).
+  Hierarchy through font-weight (400 vs 700) and size, never decoration.
+  No rounded corners, no shadows, no gradients. Thin horizontal rules
+  as dividers. Large faded numbers as section markers. Flush-left,
+  ragged-right text. Generous white space within a rigid structure.
+  Objective, systematic, authoritative.
+
+about: |
+  Swiss design treats the grid as architecture. Every element has a
+  position because the system dictates it, not because it "looks right."
+  The designer's hand disappears behind the structure, and what remains
+  is pure information.
+
+  This is design as engineering. Typography is not chosen for mood — it's
+  chosen for legibility. Color is not applied for expression — it's
+  reserved for function. The result is a page that communicates with
+  ruthless clarity, where the layout itself becomes the message.
+
+characteristics:
+  - title: Mathematical Grid
+    description: >
+      Content is locked to a strict columnar grid, often asymmetric.
+      The grid is not hidden — it's the visible skeleton of the design.
+  - title: Helvetica Lineage
+    description: >
+      A single sans-serif typeface used throughout. No serifs, no
+      display fonts. Hierarchy comes from weight and scale alone.
+  - title: Uppercase & Letterspaced
+    description: >
+      Headings and labels are set in uppercase with wide letter-spacing,
+      creating rhythm without ornament.
+  - title: Red as Signal
+    description: >
+      Red is the only accent color, used for horizontal rules, markers,
+      and functional indicators. Never decorative.
+  - title: Objective Photography
+    description: >
+      When images appear, they are documentary and uncropped, placed on
+      the grid like any other element. No filters, no stylization.
+  - title: Asymmetric Balance
+    description: >
+      Layouts are deliberately off-center. A narrow column alongside a
+      wide one creates tension and directs the eye without symmetry.
+
+good_for:
+  - Corporate identity and brand systems
+  - Editorial and magazine layouts
+  - Wayfinding and signage systems
+  - Data-heavy dashboards and reports
+  - Institutional and government sites
+
+not_for:
+  - Playful consumer brands
+  - Emotional storytelling or narrative sites
+  - Maximalist editorial — it demands restraint
+  - Sites targeting young or casual audiences
+
+history: |
+  Swiss design crystallized in the 1950s at the Basel School of Design
+  and the Zurich School of Arts and Crafts. Josef Muller-Brockmann,
+  Armin Hofmann, and Emil Ruder codified its principles: mathematical
+  grids, objective photography, and sans-serif typography — especially
+  Helvetica, released by the Haas foundry in 1957.
+
+  The movement rejected the expressive, illustrative traditions of
+  earlier graphic design. It pursued a "universal" visual language that
+  could communicate across cultures without relying on cultural context.
+  The grid wasn't a tool — it was an ideology.
+
+  By the 1960s, the International Typographic Style had spread globally,
+  becoming the default for corporate identity (IBM, Lufthansa, the New
+  York City subway system). Its influence never fully waned. Modern
+  frameworks like Material Design and most "clean" UI patterns are
+  direct descendants. When you center-align nothing and left-align
+  everything, you're speaking Swiss.
+
+related:
+  - slug: bauhaus
+    relationship: Philosophical ancestor
+  - slug: minimalism
+    relationship: Shares restraint
+  - slug: flat-design
+    relationship: Descendant
+  - slug: de-stijl
+    relationship: Grid kin
+  - slug: editorial
+    relationship: Typographic ally
+  - slug: material-design
+    relationship: Corporate heir

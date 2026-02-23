@@ -1,0 +1,78 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400&family=Inter:wght@300&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-spotlight" aria-hidden="true"></div>
+  <div class="card-frame" aria-hidden="true"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #0A0A0A;
+    color: #FFFFFF;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .card-spotlight {
+    position: absolute;
+    top: -40px;
+    left: 30%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(
+      ellipse 60% 50% at 50% 40%,
+      rgba(201, 169, 110, 0.08) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  .card-frame {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    height: 60px;
+    background:
+      radial-gradient(ellipse 40% 80% at 30% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 60%),
+      radial-gradient(ellipse 30% 70% at 70% 50%, rgba(201, 169, 110, 0.03) 0%, transparent 50%),
+      linear-gradient(to right, #0A0A0A 0%, transparent 10%, transparent 90%, #0A0A0A 100%),
+      #111111;
+    aspect-ratio: 21 / 9;
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-family: 'Cormorant', Georgia, serif;
+    font-weight: 300;
+    font-size: 26px;
+    letter-spacing: 0.04em;
+    margin: 0 0 8px 0;
+    line-height: 1.1;
+    color: #FFFFFF;
+  }
+
+  .card-tagline {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    margin: 0;
+    color: #E0E0E0;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+  }
+</style>

@@ -1,0 +1,90 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-badge" aria-hidden="true">SaaS</div>
+  <div class="card-logos" aria-hidden="true">
+    <div class="card-logo-bar"></div>
+    <div class="card-logo-bar card-logo-wide"></div>
+    <div class="card-logo-bar"></div>
+  </div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #ffffff;
+    color: #0F172A;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+
+  .card-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    color: #6366F1;
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 9999px;
+    padding: 4px 12px;
+    letter-spacing: 0.03em;
+  }
+
+  .card-logos {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .card-logo-bar {
+    width: 32px;
+    height: 10px;
+    background: #CBD5E1;
+    border-radius: 3px;
+    opacity: 0.45;
+  }
+
+  .card-logo-bar.card-logo-wide {
+    width: 44px;
+  }
+
+  .card-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: -0.5px;
+    margin: 0 0 8px 0;
+    line-height: 1.1;
+    color: #0F172A;
+  }
+
+  .card-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    margin: 0;
+    color: #64748B;
+    line-height: 1.4;
+  }
+</style>

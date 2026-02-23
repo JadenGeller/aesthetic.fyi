@@ -1,0 +1,109 @@
+slug: claymorphism
+name: Claymorphism
+coined: false
+
+tagline: "Soft shapes you want to squeeze. Depth you can almost touch."
+
+prompt: |
+  Background color #F0E6FF (soft lavender). Elements are pastel-colored
+  blocks — pink (#FFD6E0), blue (#D4F0FF), yellow (#FFF3D6), mint (#D6FFE6)
+  — with very rounded corners (border-radius 24-32px). Depth comes from a
+  triple box-shadow: outer shadow 8px 8px 16px rgba(0,0,0,0.1), inner dark
+  shadow inset -4px -4px 8px rgba(0,0,0,0.05), and inner light highlight
+  inset 4px 4px 8px rgba(255,255,255,0.8). This combination makes elements
+  look inflated, puffy, and 3D — like clay or Play-Doh pressed into shape.
+  Typography is Nunito (400/600/800), a rounded sans-serif that matches the
+  bubbly forms. Everything feels tactile, playful, and squeezable.
+
+about: |
+  Claymorphism takes the soft-surface idea from neumorphism and inflates it.
+  Where neumorphism extrudes shapes from a single gray plane, claymorphism
+  gives each element its own pastel color and puffs it up like a balloon.
+  The inner highlight on one side and inner shadow on the other create the
+  illusion of a rounded, three-dimensional surface — as if the interface
+  were sculpted from modeling clay.
+
+  The appeal is immediate and physical. These elements look like they could
+  be picked up and squeezed. The pastel palette keeps everything friendly
+  and approachable, while the inflated shapes add a sense of fun that flat
+  or glass-based styles can't match. It's a style that invites interaction
+  by making digital surfaces feel like toys.
+
+characteristics:
+  - title: Inflated Surfaces
+    description: >
+      Elements appear puffy and balloon-like through a combination of outer
+      shadow (8px 8px 16px rgba(0,0,0,0.1)) and inner highlights
+      (inset 4px 4px 8px rgba(255,255,255,0.8)). The surface bulges outward.
+  - title: Pastel Color Blocks
+    description: >
+      Each element gets its own soft pastel fill — pink, blue, yellow, mint.
+      Unlike neumorphism's monochrome, claymorphism uses color to distinguish
+      elements and create a playful, candy-like palette.
+  - title: Inner Shadow Depth
+    description: >
+      A subtle inner shadow (inset -4px -4px 8px rgba(0,0,0,0.05)) on the
+      opposite side of the highlight gives each element a rounded, sculpted
+      feel. The two inset shadows together simulate curvature.
+  - title: Very Rounded Corners
+    description: >
+      border-radius 24-32px on all elements. Corners are so rounded that
+      small elements become pill-shaped or nearly circular. Sharp edges
+      would destroy the clay illusion.
+  - title: Rounded Typography
+    description: >
+      Nunito or similar rounded sans-serif at weight 600-800 for headings.
+      The letterforms echo the rounded shapes of the UI elements, reinforcing
+      the bubbly, playful tone throughout.
+  - title: Soft Lavender Background
+    description: >
+      The page background is a warm pastel (#F0E6FF) rather than neutral
+      gray. This sets the entire interface in a colorful, friendly
+      atmosphere that complements the pastel element fills.
+
+good_for:
+  - Children's apps and educational platforms
+  - Playful brand landing pages
+  - Onboarding flows and walkthroughs
+  - Widget-based dashboards with personality
+  - Social media and messaging UI accents
+
+not_for:
+  - Enterprise and B2B interfaces — too playful for serious contexts
+  - Data-dense applications — inflated elements waste space
+  - Accessibility-first design — pastel-on-pastel contrast can be low
+  - Editorial or content-heavy sites — the style competes with text
+
+history: |
+  Claymorphism emerged in 2021-2022 as a playful evolution of neumorphism.
+  Designers on Dribbble and Behance began experimenting with what would
+  happen if neumorphism's extruded surfaces were given individual colors
+  and made even rounder. The term gained traction through CSS tutorial
+  channels and design trend roundups that identified it as a distinct
+  micro-trend.
+
+  The style drew inspiration from 3D illustration trends that were already
+  popular — Blender renders of soft, rounded, pastel-colored objects had
+  been dominating social media and product marketing. Claymorphism brought
+  that same clay-render aesthetic to CSS, proving you could approximate
+  the look of 3D modeling with nothing more than box-shadows and
+  border-radius.
+
+  Unlike neumorphism, which struggled with usability in production,
+  claymorphism's use of distinct colors for each element improves
+  scannability. The pastel fills create clearer visual boundaries than
+  shadow-only differentiation. Still, the style works best in small doses
+  — a hero section, a set of feature cards, or a playful widget — rather
+  than as a full application framework.
+
+related:
+  - slug: neumorphism
+    relationship: Parent
+  - slug: skeuomorphism
+    relationship: Grandparent
+  - slug: glassmorphism
+    relationship: Sibling
+  - slug: flat-design
+    relationship: Reacted against
+  - slug: y2k
+    relationship: Shares playfulness

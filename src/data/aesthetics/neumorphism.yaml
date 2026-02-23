@@ -1,0 +1,108 @@
+slug: neumorphism
+name: Neumorphism
+coined: false
+
+tagline: "Soft light on quiet surfaces. Depth without edges."
+
+prompt: |
+  Background color #e0e0e0 on the body AND on all elements — everything
+  is the same color. Depth comes only from dual box-shadows: one dark
+  (#bebebe) and one light (#ffffff), offset in opposite directions.
+  Raised elements: box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff.
+  Pressed elements: box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff.
+  Border-radius 16-24px on everything. No borders, no outlines. Typography
+  is light-to-regular weight sans-serif (Inter 300/400/600). Colors are
+  monochrome grays — no accent colors. The UI feels soft, tactile, quiet.
+
+about: |
+  Neumorphism is an exercise in restraint. There's one color — the
+  background gray — and everything on the page is made of it. Buttons,
+  cards, inputs, containers: they're all the same surface, separated only
+  by the way light falls on them. Two shadows do all the work. One dark
+  shadow pushes the element down into space; one bright highlight lifts
+  the opposite edge toward the light source. The result is a surface
+  that appears gently extruded, like clay pressed from within.
+
+  The appeal is tactile. Neumorphic interfaces feel like they could be
+  touched — run your finger across them and you'd feel the ridges. But
+  this tactility comes at a cost: without color or border to mark
+  boundaries, elements can blend together. The style demands generous
+  spacing and simple layouts. It works best when there's very little on
+  the page, and what's there is given room to breathe.
+
+characteristics:
+  - title: Dual Shadows
+    description: >
+      Every raised element uses two box-shadows: a dark one
+      (8px 8px 16px #bebebe) and a light one (-8px -8px 16px #ffffff).
+      This pair simulates a single light source hitting soft material.
+  - title: Monochrome Surface
+    description: >
+      Background and element color are identical — typically #e0e0e0.
+      There are no fills, no accent colors, no gradients. Depth is the
+      only visual variable.
+  - title: Inset for Pressed States
+    description: >
+      Pressed or active elements swap to inset shadows:
+      box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff.
+      The element appears pushed into the surface.
+  - title: Generous Radius
+    description: >
+      border-radius 16-24px on all elements. Sharp corners would break
+      the soft illusion. Every shape is rounded and pillow-like.
+  - title: No Borders
+    description: >
+      No outlines, no strokes, no visible edges. The boundary of an
+      element is defined entirely by its shadow, not by a drawn line.
+  - title: Light Typography
+    description: >
+      Sans-serif at weight 300-400 for body, 600 for headings. Color is
+      #6b6b6b to #888 — muted against the gray background. Type whispers.
+
+good_for:
+  - Calculator and utility apps
+  - Music players and media controls
+  - Smart home dashboards
+  - Settings panels and toggles
+  - Personal portfolio hero sections
+
+not_for:
+  - Text-heavy content — low contrast makes reading tiring
+  - E-commerce — products need visual hierarchy and color
+  - Accessibility-critical interfaces — shadow-only boundaries fail WCAG
+  - Complex multi-level navigation
+
+history: |
+  Neumorphism appeared in late 2019 as a Dribbble trend, coined by
+  combining "new" and "skeuomorphism." Designer Alexander Plyuto posted
+  a series of soft-UI concepts that went viral, and the style exploded
+  across design communities within weeks. It was a reaction to the
+  flatness that had dominated UI since iOS 7 — designers wanted depth
+  back, but not the heavy textures and gradients of old skeuomorphism.
+
+  The idea was simple: what if you made everything out of the same
+  material? No layered cards, no floating elements, just a single clay
+  surface with shapes pushed out of it. CSS made it easy — two shadows
+  and a border-radius were all you needed. Figma and Dribbble filled
+  with calculators, music players, and login forms rendered in soft gray.
+
+  But neumorphism struggled in production. The low contrast between
+  elements made interfaces hard to scan. Buttons didn't look clickable.
+  Accessibility audits flagged the shadow-only affordances. The style
+  remains influential as a design exercise and works beautifully in
+  constrained contexts — a single widget, a hero section, a media
+  player — but few full applications have shipped in pure neumorphism.
+
+related:
+  - slug: skeuomorphism
+    relationship: Ancestor
+  - slug: glassmorphism
+    relationship: Sibling
+  - slug: flat-design
+    relationship: Reacted against
+  - slug: claymorphism
+    relationship: Descendant
+  - slug: minimalism
+    relationship: Shares restraint
+  - slug: material-design
+    relationship: Shadow cousin

@@ -1,0 +1,84 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=VT323&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-scanlines" aria-hidden="true"></div>
+  <div class="card-grid" aria-hidden="true"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: linear-gradient(135deg, #FF71CE 0%, #01CDFE 50%, #B967FF 100%);
+    color: #fff;
+    border: none;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-scanlines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.08) 0px,
+      rgba(0, 0, 0, 0.08) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  }
+
+  .card-grid {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    background-size: 40px 14px;
+    transform: perspective(200px) rotateX(55deg);
+    transform-origin: bottom center;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .card-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    letter-spacing: -0.5px;
+    margin: 0 0 8px 0;
+    line-height: 1.1;
+    position: relative;
+    z-index: 2;
+    text-shadow:
+      2px 2px 0px rgba(255, 113, 206, 0.8),
+      -1px -1px 0px rgba(1, 205, 254, 0.8);
+  }
+
+  .card-tagline {
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.4;
+    position: relative;
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+</style>

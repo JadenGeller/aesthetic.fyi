@@ -1,0 +1,110 @@
+slug: y2k
+name: Y2K
+coined: false
+
+tagline: "The future was chrome and it loaded in 56k."
+
+prompt: |
+  Chrome and metallic surfaces via CSS linear-gradient(135deg, #C0C0C0,
+  #E8E8E8, #C0C0C0). Iridescent color shifts using animated hue-rotate
+  on gradient backgrounds (blue to pink to green). Bubbly, inflated
+  shapes with large border-radius and glossy highlights via
+  radial-gradient. Translucent plastic panels using rgba backgrounds
+  with backdrop-filter: blur. Color palette: #C0C0C0 silver, #00BFFF
+  electric blue, #FF69B4 hot pink, #E0E0E0 light gray, iridescent
+  gradients. Fonts: Orbitron or Audiowide for futuristic display
+  headings, Inter for clean body text. The mood is millennium
+  optimism — everything is shiny, bubbly, and about to connect to
+  the future through a translucent iMac.
+
+about: |
+  Y2K is the aesthetic of the turn of the millennium — the brief,
+  ecstatic window between 1998 and 2003 when the future felt chrome,
+  bubbly, and within reach. It's the visual language of first-generation
+  iMacs, inflatable furniture, butterfly clips, and websites that
+  believed bandwidth would eventually be infinite.
+
+  On the web, Y2K translates to metallic gradients, iridescent color
+  shifts, rounded-everything, and translucent panels that look like
+  they were injection-molded from tinted polycarbonate. Nothing has
+  edges. Everything catches the light. The design philosophy is
+  optimism made physical — or at least digital.
+
+characteristics:
+  - title: Chrome Surfaces
+    description: >
+      Metallic linear gradients from silver to white to silver simulate
+      brushed chrome. Everything looks like it could be a door handle
+      on a concept car from 1999.
+  - title: Iridescent Shifts
+    description: >
+      Gradient backgrounds cycle through blue, pink, and green using
+      hue-rotate animations. Colors change depending on where you
+      look, like a CD-ROM catching sunlight.
+  - title: Bubbly Shapes
+    description: >
+      Oversized border-radius values turn rectangles into pills and
+      circles. Combined with glossy radial-gradient highlights,
+      elements look inflated and tactile.
+  - title: Translucent Panels
+    description: >
+      Semi-transparent backgrounds with backdrop-filter blur create
+      a frosted-plastic effect. Content floats behind tinted
+      polycarbonate surfaces.
+  - title: Electric Palette
+    description: >
+      Neon blue, hot pink, and silver dominate. The palette is
+      synthetic and high-key — colors you'd find on a Motorola
+      Razr or a bottle of Herbal Essences.
+  - title: Futuristic Typography
+    description: >
+      Wide, geometric display fonts with uniform stroke widths
+      channel the typography of sci-fi interfaces and millennium
+      countdown clocks.
+
+good_for:
+  - Portfolio sites for creative professionals
+  - Music and entertainment landing pages
+  - Fashion and lifestyle brands targeting nostalgia
+  - Event pages and launch announcements
+  - Experimental web projects and digital art
+
+not_for:
+  - Enterprise dashboards or admin panels
+  - Healthcare or government services
+  - Long-form reading or documentation
+  - Accessibility-first applications
+
+history: |
+  Y2K aesthetic emerged from the collision of millennium optimism and
+  consumer technology's first visual golden age. Between 1998 and 2003,
+  Apple released the translucent Bondi Blue iMac, Nokia phones came in
+  candy colors, and the web discovered Flash animation. Everything was
+  chrome, everything was rounded, and the future was arriving on
+  schedule.
+
+  The visual language drew from industrial design as much as graphic
+  design. Jonathan Ive's translucent plastics at Apple, Karim Rashid's
+  blobby furniture, and the chrome-heavy interiors of millennium-era
+  concept stores all fed the same aesthetic pipeline. On screen, this
+  became metallic gradients, lens flares, and interfaces that looked
+  like they were rendered in Bryce 3D.
+
+  After the dot-com crash and the rise of Web 2.0's cleaner sensibility,
+  Y2K fell out of fashion. But around 2020, a generation that grew up
+  with these textures began reclaiming them — partly as nostalgia,
+  partly as a rejection of flat design's austerity. Today Y2K lives
+  on TikTok mood boards, in Charli XCX album art, and across a wave
+  of websites that want the internet to feel shiny again.
+
+related:
+  - slug: vaporwave
+    relationship: Nostalgic sibling
+  - slug: frutiger-aero
+    relationship: Glossy successor
+  - slug: glassmorphism
+    relationship: Translucent cousin
+  - slug: cyberpunk
+    relationship: Darker future
+  - slug: skeuomorphism
+    relationship: Shared glossiness

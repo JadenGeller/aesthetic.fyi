@@ -1,0 +1,116 @@
+slug: organic-tech
+name: Organic Tech
+coined: true
+
+tagline: "Software that feels like it grew."
+
+prompt: |
+  Dark background (#0D0D1A) with large, soft radial-gradient blobs in blue
+  (rgba(100,180,255,0.08)) and purple (rgba(140,100,255,0.05)) positioned
+  fixed and slowly drifting via CSS keyframe animation over 20-30 seconds.
+  Content sits in panels with backdrop-filter: blur(12-16px), background
+  rgba(255,255,255,0.04-0.06), border: 1px solid rgba(255,255,255,0.08),
+  border-radius: 16-20px. Typography is Inter at weights 400, 500, 600 —
+  clean and premium, never decorative. Text is #F0F0F0 primary, muted at
+  60% opacity. Accent colors are #64B4FF (blue) and #8C64FF (purple), used
+  for gradient lines, subtle glows, and interactive highlights. Hover states
+  brighten borders and shift backgrounds slightly. The overall feel is
+  Linear, Raycast, Vercel — dark, alive, premium, organic-digital.
+
+about: |
+  Organic tech is what happens when software stops pretending to be a
+  document and starts behaving like a living thing. The background breathes.
+  Gradients drift. Panels float over color fields that shift so slowly you
+  only notice when you look away and back. Nothing is static, but nothing
+  demands attention either. The motion is ambient — weather, not animation.
+
+  The aesthetic descends from glassmorphism's translucent panels and dark
+  mode's luminance hierarchy, but it adds something neither parent has:
+  movement that feels biological. The gradient blobs behind the interface
+  are not decorative — they are the environment. The UI lives inside a
+  color field the way an organism lives inside an ecosystem. Tools like
+  Linear, Raycast, and Vercel popularized this feel, and it has become
+  the default look of premium developer-facing software in the 2020s.
+
+characteristics:
+  - title: Drifting Gradient Blobs
+    description: >
+      Large radial gradients (40-60vw) in blue and purple, positioned
+      fixed behind all content. They animate on slow CSS keyframes
+      (20-30s), translating and scaling subtly. The effect is a living
+      color field — ambient, never distracting.
+  - title: Glass-Over-Dark Panels
+    description: >
+      Content panels use backdrop-filter: blur(12-16px) over the dark
+      background, with rgba(255,255,255,0.04-0.06) fill and 1px borders
+      at rgba(255,255,255,0.08). They feel like frosted windows into the
+      gradient world behind them.
+  - title: Gradient Accent Lines
+    description: >
+      Thin lines and borders that shift from #64B4FF to #8C64FF provide
+      directional emphasis. Used on section dividers, card tops, and
+      interactive focus states. The gradient is the brand.
+  - title: Premium Sans-Serif Typography
+    description: >
+      Inter at 400, 500, and 600. No decorative fonts. Letter-spacing is
+      tight on headings, slightly open on labels. The type is confident
+      and invisible — it never competes with the environment.
+  - title: Luminance Elevation
+    description: >
+      Hierarchy is built through brightness, not shadow. Base background
+      is #0D0D1A, panels are slightly lighter, hover states brighten
+      further. Depth is felt as glow, not as drop-shadow.
+  - title: Slow Ambient Motion
+    description: >
+      All animation is CSS-only, long-duration (20-30s), and ease-in-out.
+      Nothing snaps, nothing bounces. Transitions are 0.3-0.4s. The
+      interface drifts rather than reacts.
+
+good_for:
+  - Developer tools and CLI companion apps
+  - SaaS dashboards with a premium feel
+  - AI and machine learning product interfaces
+  - Startup landing pages that want to signal sophistication
+  - Dark-mode-first applications
+
+not_for:
+  - Content-heavy editorial or blog sites
+  - Brands that need bright, colorful identity
+  - E-commerce product pages requiring high-contrast CTAs
+  - Accessibility-strict contexts — low-contrast panels can be a barrier
+
+history: |
+  The organic tech aesthetic emerged gradually from the convergence of
+  several trends in the early 2020s. Dark mode became a user expectation
+  after Apple and Google shipped system-wide implementations in 2018-19.
+  Glassmorphism brought translucent panels and backdrop-filter into the
+  design vocabulary. And a new generation of developer tools — Linear,
+  Raycast, Vercel, Supabase — needed a visual language that felt as
+  refined as the products themselves.
+
+  Linear's interface, launched in 2019, was arguably the inflection point.
+  Its dark background with soft gradient washes, glass-like panels, and
+  restrained typography set a standard that dozens of tools imitated.
+  Raycast followed with a similar palette and added the ambient gradient
+  motion that became the aesthetic's signature. Vercel's marketing pages
+  and dashboard refined the approach further, using animated gradient
+  meshes as hero backgrounds that made static screenshots feel alive.
+
+  The term "organic tech" captures what distinguishes this from plain dark
+  mode: the gradients are not decorative — they are environmental. They
+  drift, pulse, and blend in ways that feel biological rather than
+  mechanical. The interface does not sit on a dark background; it lives
+  inside one. By 2024, this had become the default visual language for
+  any product that wanted to signal "modern, premium, built for makers."
+
+related:
+  - slug: glassmorphism
+    relationship: Visual parent
+  - slug: dark-mode
+    relationship: Foundation
+  - slug: minimalism
+    relationship: Shares restraint
+  - slug: cyberpunk
+    relationship: Dark cousin
+  - slug: startup-minimal
+    relationship: Daytime counterpart

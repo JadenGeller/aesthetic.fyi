@@ -1,0 +1,102 @@
+slug: retro-terminal
+name: Retro Terminal
+coined: false
+
+tagline: "> system boot complete. awaiting input_"
+
+prompt: |
+  Black background (#0a0a0a), green monospace text (#00FF41). All type
+  is monospace — VT323 or IBM Plex Mono. CRT scanline overlay using
+  repeating-linear-gradient (transparent 0px, rgba(0,0,0,0.15) 2px).
+  Green text-shadow glow: 0 0 5px rgba(0,255,65,0.5). Blinking cursor
+  animation using opacity step. Sections prefixed with $ or > like
+  terminal output. Borders are 1px solid dim green (#00FF41 at 40%
+  opacity). No images, no gradients, no color beyond green and black.
+  Everything should feel like phosphor-green output on a CRT monitor.
+
+about: |
+  Retro Terminal is what happens when you strip the web back to its
+  most primitive interface — the command line. No images. No layout
+  tricks. Just monospaced characters on a black void, glowing faintly
+  like phosphor burning into a CRT screen.
+
+  It's not nostalgia for nostalgia's sake. The terminal aesthetic
+  signals competence, directness, and zero tolerance for decoration.
+  Every element earns its place. If it's on screen, it means something.
+  The blinking cursor is the only animation you need — it says the
+  system is alive and waiting for you.
+
+characteristics:
+  - title: Phosphor Green on Black
+    description: >
+      #00FF41 on #0a0a0a. The classic green-screen palette. Text glows
+      faintly with a green text-shadow, simulating phosphor bleed on a
+      CRT monitor.
+  - title: All Monospace
+    description: >
+      Every character occupies the same width. VT323 for display text,
+      IBM Plex Mono for body. No proportional fonts allowed — this is a
+      terminal, not a magazine.
+  - title: CRT Scanlines
+    description: >
+      A repeating-linear-gradient overlay of semi-transparent black
+      lines every 2px, simulating the horizontal scan lines of a
+      cathode-ray tube display.
+  - title: Blinking Cursor
+    description: >
+      A CSS animation that toggles opacity between 0 and 1 in a hard
+      step — no easing. The cursor blinks at the end of headings and
+      prompts, signaling the system is live.
+  - title: Prompt Prefixes
+    description: >
+      Sections begin with $ or > like command-line output. Content is
+      presented as if the machine is printing it, line by line.
+  - title: Minimal Borders
+    description: >
+      Thin 1px solid lines in dim green. No box-shadows, no rounded
+      corners, no fills. Separation is structural, not decorative.
+
+good_for:
+  - Developer portfolios and personal sites
+  - Hacker and security tool landing pages
+  - Tech blogs and dev logs
+  - CLI tool documentation sites
+  - Cybersecurity company branding
+
+not_for:
+  - E-commerce or product marketing
+  - Content-heavy editorial sites with images
+  - Healthcare, finance, or trust-dependent brands
+  - Audiences unfamiliar with command-line interfaces
+
+history: |
+  Before GUIs, every computer interaction happened through a terminal —
+  a black screen, a blinking cursor, and a line of monospaced text. The
+  dominant displays of the 1970s and 80s used phosphor-coated CRTs that
+  glowed green (IBM 5151) or amber (later models), burning text into
+  the screen with enough persistence that ghosting was a feature, not a
+  bug.
+
+  When the web arrived, it left the terminal behind. But the terminal
+  never really disappeared — it just moved into subculture. Hacker
+  culture, cyberpunk fiction, and movies like The Matrix (1999) and
+  WarGames (1983) turned the green-on-black terminal into a visual
+  shorthand for technical mastery and digital danger.
+
+  By the 2010s, developers started bringing the aesthetic back to the
+  web. Personal sites styled as terminal emulators, portfolio pages
+  that accepted typed commands, and landing pages for CLI tools all
+  leaned into the look. The retro terminal aesthetic became a way to
+  signal "I build things" without saying a word.
+
+related:
+  - slug: cyberpunk
+    relationship: Sibling
+  - slug: dark-mode
+    relationship: Shares darkness
+  - slug: dev-docs
+    relationship: Functional kin
+  - slug: old-web
+    relationship: Era neighbor
+  - slug: synthwave
+    relationship: Neon cousin

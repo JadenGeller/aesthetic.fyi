@@ -1,0 +1,114 @@
+slug: dev-docs
+name: Dev Docs
+coined: true
+
+tagline: "Read the docs. Trust the docs."
+
+prompt: |
+  Two-column layout: dark sidebar (#1E293B) 240px wide on the left, white
+  content area (#FAFAFA) on the right. Sans-serif type (Inter 400/500/600)
+  for prose, monospace (JetBrains Mono 400) for code blocks. Code blocks
+  use #F1F5F9 background with 1px #E2E8F0 border and border-radius: 6px.
+  Inline code uses #ECFDF5 background with #10B981 text. Links are #3B82F6
+  with no underline until hover. Sidebar nav links are muted gray
+  (#94A3B8) on dark, with active state in white. Headings in #0F172A,
+  body text in #334155. Section dividers use border-bottom: 1px solid
+  #E2E8F0. Breadcrumb navigation at the top. Clean, scannable,
+  developer-focused — the Stripe/Tailwind/Vercel docs look.
+
+about: |
+  Dev Docs is the visual language of the technical reference page. It
+  borrows its confidence from the tools it documents: precise, opinionated,
+  and quietly authoritative. A sidebar anchors you in the information
+  architecture. Monospace code blocks sit flush against paragraphs of
+  clean prose. Every element earns its place through utility.
+
+  The aesthetic emerged not from design studios but from engineering teams
+  who needed to ship documentation that developers would actually read.
+  Stripe set the standard, Tailwind refined the palette, and Vercel
+  compressed the whitespace. The result is a visual system so trusted
+  that its mere appearance signals credibility — if it looks like good
+  docs, people assume the underlying tool is good too.
+
+characteristics:
+  - title: Sidebar Navigation
+    description: >
+      A persistent left sidebar with a dark background (#1E293B) provides
+      hierarchical navigation. Links are muted (#94A3B8) by default with
+      the active page highlighted in white. The sidebar is the spine of
+      the entire information architecture.
+  - title: Monospace Code Blocks
+    description: >
+      Code snippets use a monospace font (JetBrains Mono) on a light gray
+      background (#F1F5F9) with a 1px border (#E2E8F0) and border-radius
+      of 6px. They are the centerpiece of the page — everything else
+      exists to contextualize them.
+  - title: Inline Code Tokens
+    description: >
+      Inline code uses a tinted background (#ECFDF5) and a green accent
+      color (#10B981) to visually separate technical terms from prose.
+      The effect is subtle but unmistakable — it trains the eye to parse
+      natural language and code simultaneously.
+  - title: Clean Heading Hierarchy
+    description: >
+      Headings step down in size and weight with disciplined consistency.
+      H1 is reserved for the page title. H2 marks major sections. H3
+      handles subsections. No decorative flourishes, no background
+      colors — just size, weight, and spacing doing the work.
+  - title: Breadcrumb Navigation
+    description: >
+      A breadcrumb trail at the top of the content area shows the user
+      exactly where they are in the hierarchy. Styled with muted
+      separators and link-blue text, it provides orientation without
+      demanding attention.
+  - title: Border-Separated Sections
+    description: >
+      Sections are divided by subtle 1px borders (#E2E8F0) rather than
+      background color changes or heavy spacing. The effect is calm and
+      continuous — a single long document rather than a stack of cards.
+
+good_for:
+  - API references and technical documentation
+  - Developer tools, SDKs, and framework sites
+  - Knowledge bases and internal wikis
+  - Open-source project landing pages
+  - Tutorial and onboarding flows for technical products
+
+not_for:
+  - Consumer marketing and lifestyle brands
+  - Visual portfolios or image-heavy galleries
+  - Playful or emotionally expressive interfaces
+  - Audiences who are not already comfortable reading documentation
+
+history: |
+  Developer documentation used to be an afterthought — auto-generated
+  Javadoc pages, dense man pages, or sprawling wikis with no visual
+  hierarchy. The docs were correct but hostile. Reading them felt like
+  punishment for not already knowing the answer.
+
+  Stripe changed this around 2012 by treating documentation as a product.
+  Their API reference used a split-pane layout with code examples on the
+  right and prose on the left, syntax-highlighted and copy-pasteable.
+  The design said: we respect your time. Suddenly, good docs became a
+  competitive advantage.
+
+  Tailwind CSS pushed the aesthetic further in 2019 with a clean sidebar,
+  searchable navigation, and inline code tokens that made skimming
+  effortless. Vercel and Next.js followed with even more compressed
+  layouts — tighter spacing, fewer colors, faster time-to-answer. By
+  the early 2020s, "looks like Stripe docs" had become shorthand for
+  developer trust. The aesthetic is now so codified that entire
+  documentation frameworks (Nextra, Docusaurus, Mintlify) ship it as
+  a default theme.
+
+related:
+  - slug: dark-mode
+    relationship: Often paired
+  - slug: minimalism
+    relationship: Shares restraint
+  - slug: startup-minimal
+    relationship: Sibling aesthetic
+  - slug: dashboard-realism
+    relationship: Adjacent pattern
+  - slug: dense-information
+    relationship: Shares information density

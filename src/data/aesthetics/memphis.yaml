@@ -1,0 +1,99 @@
+slug: memphis
+name: Memphis
+coined: false
+
+tagline: "Design is not a sober science. It's a wild party with confetti on the floor."
+
+prompt: |
+  Bold geometric shapes — triangles, circles, squiggles, zigzags — scattered
+  as decoration. Colors clash on purpose: hot pink, teal, bright yellow,
+  lavender, coral on a light or black background. Mix of pastel and neon.
+  Typography is playful and rounded. Use repeating-linear-gradient for
+  stripe and zigzag patterns. Elements are rotated at odd angles. Borders
+  are dotted or dashed. Some shapes are fully rounded, others are sharp
+  squares. The layout feels like a postmodern collage — nothing is aligned
+  because alignment is boring. Anti-minimalist, anti-rational, pure fun.
+
+about: |
+  Memphis is what happens when designers get bored with good taste. Born in
+  Milan in 1981, the Memphis Group declared war on the clean lines and muted
+  palettes of modernism. They mixed laminate with marble, pastels with neon,
+  zigzags with polka dots — and dared anyone to call it ugly.
+
+  On the web, Memphis means decorative excess as a design philosophy.
+  Geometric shapes float in the background. Colors refuse to coordinate.
+  Patterns stack on patterns. It's not chaos for its own sake — it's a
+  deliberate rejection of the idea that design must be rational, restrained,
+  or tasteful. If modernism said "less is more," Memphis replied "less is a
+  bore."
+
+characteristics:
+  - title: Clashing Colors
+    description: >
+      Hot pink next to teal next to yellow next to lavender. The palette
+      is deliberately dissonant — colors are chosen for energy, not harmony.
+  - title: Geometric Confetti
+    description: >
+      Triangles, circles, squiggles, and zigzags scattered across
+      backgrounds and borders. Every surface gets a pattern.
+  - title: Rotated Elements
+    description: >
+      Nothing sits straight. Cards, shapes, and decorative elements are
+      tilted at odd angles — 5, 12, -8 degrees — to break the grid.
+  - title: Playful Typography
+    description: >
+      Rounded, bubbly display fonts for headings. Type is big, bouncy,
+      and unapologetic. Seriousness is the enemy.
+  - title: Pattern on Pattern
+    description: >
+      Repeating stripes, dots, and zigzags via CSS gradients. Backgrounds
+      are never plain — they're decorated surfaces.
+  - title: Dotted & Dashed Borders
+    description: >
+      Borders are thick and decorative. Dotted, dashed, or double lines
+      replace solid strokes. Even the structure is playful.
+
+good_for:
+  - Creative portfolios and art projects
+  - Event and party landing pages
+  - Kids' brands and educational sites
+  - Music and entertainment marketing
+  - Design studio sites that want to make a statement
+
+not_for:
+  - Financial services or enterprise software
+  - Long-form reading — the visual noise is tiring
+  - Accessibility-focused products — contrast can suffer
+  - Minimalist or luxury brands
+
+history: |
+  In December 1981, Ettore Sottsass gathered a group of young designers in
+  Milan and founded the Memphis Group. Their first collection — shown at the
+  Salone del Mobile in September 1981 — featured furniture covered in bright
+  laminates, clashing patterns, and cartoon-like forms. The design world was
+  scandalized. David Bowie bought the whole collection.
+
+  Memphis drew on Pop Art, Art Deco, and 1950s kitsch, rejecting the austere
+  functionalism that had dominated design since the Bauhaus. The name itself
+  came from a Bob Dylan song playing during their first meeting — "Stuck
+  Inside of Mobile with the Memphis Blues Again."
+
+  The group dissolved in 1987, but their influence exploded through the late
+  '80s and '90s — in MTV graphics, Saved by the Bell set design, and the
+  patterns on every Trapper Keeper in America. On the web, Memphis resurfaces
+  whenever designers want to signal fun over function, chaos over order, and
+  decoration over restraint.
+
+related:
+  - slug: maximalism
+    relationship: Kindred spirit
+  - slug: neubrutalism
+    relationship: Color kin
+  - slug: vaporwave
+    relationship: Retro cousin
+  - slug: bauhaus
+    relationship: Sworn enemy
+  - slug: art-deco
+    relationship: Ancestor
+  - slug: y2k
+    relationship: Spiritual heir

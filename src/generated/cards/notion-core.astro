@@ -1,0 +1,134 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lora:wght@700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-icon" aria-hidden="true"></div>
+  <div class="card-properties">
+    <div class="card-prop-row">
+      <span class="card-prop-label">Type</span>
+      <span class="card-prop-value">Web Aesthetic</span>
+    </div>
+    <div class="card-prop-row">
+      <span class="card-prop-label">Status</span>
+      <span class="card-prop-tag">Active</span>
+    </div>
+  </div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #FFFFFF;
+    color: #37352F;
+    border: 1px solid #E9E5E0;
+    border-radius: 0;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.15s;
+  }
+
+  .card:hover {
+    background: #F7F6F3;
+  }
+
+  .card-icon {
+    position: absolute;
+    top: 22px;
+    left: 28px;
+    width: 32px;
+    height: 32px;
+    background: #F7F6F3;
+    border-radius: 3px;
+  }
+
+  .card-icon::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    width: 20px;
+    height: 3px;
+    background: #9B9A97;
+    border-radius: 1px;
+  }
+
+  .card-icon::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 6px;
+    width: 13px;
+    height: 3px;
+    background: #C4C2BF;
+    border-radius: 1px;
+  }
+
+  .card-properties {
+    position: absolute;
+    top: 22px;
+    right: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-end;
+  }
+
+  .card-prop-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card-prop-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.6rem;
+    color: #9B9A97;
+  }
+
+  .card-prop-value {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.6rem;
+    color: #37352F;
+  }
+
+  .card-prop-tag {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.55rem;
+    background: #DBEDDB;
+    color: #37352F;
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+
+  .card-name {
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 6px 0;
+    line-height: 1.2;
+    color: #37352F;
+  }
+
+  .card-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    margin: 0;
+    color: #9B9A97;
+    line-height: 1.5;
+  }
+</style>

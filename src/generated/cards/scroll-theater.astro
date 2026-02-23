@@ -1,0 +1,105 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-lines">
+    <div class="card-line card-line-1"></div>
+    <div class="card-line card-line-2"></div>
+    <div class="card-line card-line-3"></div>
+  </div>
+  <span class="card-label">Scroll Theater</span>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #000000;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .card:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  /* Decorative horizontal lines suggesting viewport-sized sections */
+  .card-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+
+  .card-line {
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .card-line-1 {
+    top: 30%;
+  }
+
+  .card-line-2 {
+    top: 55%;
+  }
+
+  .card-line-3 {
+    top: 75%;
+  }
+
+  .card-label {
+    position: absolute;
+    top: 28px;
+    left: 28px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #0071E3;
+  }
+
+  .card-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+  }
+</style>

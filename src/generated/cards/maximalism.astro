@@ -1,0 +1,182 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Space+Grotesk:wght@400&family=Pacifico&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-bg-pattern"></div>
+  <div class="accent-circle"></div>
+  <div class="accent-square"></div>
+  <div class="accent-diamond"></div>
+  <div class="accent-stripe"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  @keyframes cardBgScroll {
+    0% { background-position: 0 0; }
+    100% { background-position: 60px 60px; }
+  }
+
+  @keyframes cardWiggle {
+    0%, 100% { transform: rotate(12deg); }
+    50% { transform: rotate(-8deg) scale(1.1); }
+  }
+
+  @keyframes cardFloat {
+    0%, 100% { transform: translateY(0) rotate(-15deg); }
+    50% { transform: translateY(-6px) rotate(-5deg); }
+  }
+
+  @keyframes cardSpin {
+    0%, 100% { transform: rotate(45deg); }
+    50% { transform: rotate(55deg) scale(1.15); }
+  }
+
+  .card {
+    background:
+      linear-gradient(
+        135deg,
+        #FF1493 0%,
+        #8B00FF 35%,
+        #00BFFF 65%,
+        #32CD32 100%
+      );
+    color: #fff;
+    border: 3px solid #FFD700;
+    box-shadow:
+      5px 5px 0 #FF1493,
+      -3px -3px 0 #00BFFF,
+      8px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px 0 20px 0;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: rotate(-1deg) scale(1.03);
+    box-shadow:
+      7px 7px 0 #FF1493,
+      -4px -4px 0 #00BFFF,
+      11px 11px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .card-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 8px,
+        rgba(255, 255, 255, 0.07) 8px,
+        rgba(255, 255, 255, 0.07) 16px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 12px,
+        rgba(255, 215, 0, 0.08) 12px,
+        rgba(255, 215, 0, 0.08) 24px
+      );
+    animation: cardBgScroll 12s linear infinite;
+    pointer-events: none;
+  }
+
+  .accent-circle {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #FFD700, #FF6600);
+    border: 3px dashed #fff;
+    border-radius: 50%;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+    animation: cardWiggle 3s ease-in-out infinite;
+  }
+
+  .accent-square {
+    position: absolute;
+    top: 24px;
+    right: 72px;
+    width: 22px;
+    height: 22px;
+    background: #32CD32;
+    border: 2px solid #1a1a1a;
+    animation: cardFloat 4s ease-in-out infinite;
+  }
+
+  .accent-diamond {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    width: 18px;
+    height: 18px;
+    background: #FF1493;
+    border: 2px dotted #FFD700;
+    transform: rotate(45deg);
+    animation: cardSpin 5s ease-in-out infinite;
+  }
+
+  .accent-stripe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    background: repeating-linear-gradient(
+      180deg,
+      #FFD700 0px,
+      #FFD700 12px,
+      #FF1493 12px,
+      #FF1493 24px,
+      #00BFFF 24px,
+      #00BFFF 36px,
+      #32CD32 36px,
+      #32CD32 48px
+    );
+  }
+
+  .card-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: -0.5px;
+    margin: 0 0 8px 0;
+    color: #fff;
+    line-height: 1.1;
+    text-shadow:
+      2px 2px 0 #FF1493,
+      -1px -1px 0 #00BFFF;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-tagline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+    padding-left: 10px;
+    border-left: 2px solid #FFD700;
+  }
+</style>

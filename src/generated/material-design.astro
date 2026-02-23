@@ -1,0 +1,932 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+<div class="page">
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">aesthetic.fyi</a>
+      <div class="nav-links">
+        <a href={`/${aesthetic.slug}`} class="nav-link nav-link-active">{aesthetic.name}</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-overline">Web Aesthetic</span>
+      <h1 class="hero-title">{aesthetic.name}</h1>
+      <p class="hero-tagline">{aesthetic.tagline}</p>
+      <div class="hero-fab" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M7 10l5 5 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT THIS IS -->
+  <section class="section about-section">
+    <div class="section-inner">
+      <h2 class="section-overline">What This Is</h2>
+      <h3 class="section-heading">Philosophy</h3>
+      <div class="about-content">
+        {aesthetic.about.split('\n\n').map((paragraph: string) => (
+          <p class="about-paragraph">{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARACTERISTICS -->
+  <section class="section characteristics-section">
+    <div class="section-inner">
+      <h2 class="section-overline">Design Tokens</h2>
+      <h3 class="section-heading">Characteristics</h3>
+      <div class="characteristics-grid">
+        {aesthetic.characteristics.map((char: { title: string; description: string }, i: number) => (
+          <div class="char-card">
+            <div class="char-card-header">
+              <span class="char-icon" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            </div>
+            <div class="char-card-body">
+              <h4 class="char-title">{char.title}</h4>
+              <p class="char-description">{char.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- STYLE REFERENCE -->
+  <section class="section prompt-section">
+    <div class="section-inner">
+      <h2 class="section-overline">Copy & Paste</h2>
+      <h3 class="section-heading">Style Reference</h3>
+      <div class="prompt-card">
+        <div class="prompt-card-header">
+          <span class="prompt-label">PROMPT</span>
+          <button class="copy-button" data-prompt={aesthetic.prompt}>
+            <span class="copy-button-text">Copy</span>
+          </button>
+        </div>
+        <div class="prompt-card-body">
+          <p class="prompt-text">{aesthetic.prompt}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN TO USE -->
+  <section class="section use-section">
+    <div class="section-inner">
+      <h2 class="section-overline">When to Use</h2>
+      <h3 class="section-heading">Use Cases</h3>
+      <div class="use-grid">
+        <div class="use-card use-card-good">
+          <div class="use-card-header use-card-header-good">
+            <h4 class="use-card-heading">Good for</h4>
+          </div>
+          <ul class="use-list">
+            {aesthetic.good_for.map((item: string) => (
+              <li class="use-item use-item-good">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="use-card use-card-bad">
+          <div class="use-card-header use-card-header-bad">
+            <h4 class="use-card-heading">Not for</h4>
+          </div>
+          <ul class="use-list">
+            {aesthetic.not_for.map((item: string) => (
+              <li class="use-item use-item-bad">{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="section history-section">
+    <div class="section-inner">
+      <h2 class="section-overline">Origins</h2>
+      <h3 class="section-heading">History</h3>
+      <div class="history-content">
+        {aesthetic.history.split('\n\n').map((paragraph: string) => (
+          <p class="history-paragraph">{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED STYLES -->
+  <section class="section related-section">
+    <div class="section-inner">
+      <h2 class="section-overline">Explore</h2>
+      <h3 class="section-heading">Related Styles</h3>
+      <div class="related-grid">
+        {aesthetic.related.map((rel: { slug: string; relationship: string }) => (
+          <a href={`/${rel.slug}`} class="related-card">
+            <span class="related-chip">{rel.relationship}</span>
+            <span class="related-name">{rel.slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+            <span class="related-arrow">&rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">aesthetic.fyi</a>
+      <span class="footer-tagline">Every web aesthetic, demonstrated.</span>
+      <a href="/" class="footer-back">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="vertical-align: middle; margin-right: 6px;">
+          <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to all aesthetics
+      </a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.querySelector('.copy-button');
+    if (copyButton) {
+      copyButton.addEventListener('click', () => {
+        const prompt = copyButton.getAttribute('data-prompt') || '';
+        navigator.clipboard.writeText(prompt).then(() => {
+          const textEl = copyButton.querySelector('.copy-button-text');
+          if (textEl) {
+            const original = textEl.textContent;
+            textEl.textContent = 'Copied!';
+            copyButton.classList.add('copied');
+            setTimeout(() => {
+              textEl.textContent = original;
+              copyButton.classList.remove('copied');
+            }, 2000);
+          }
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  /* ========================================
+     RESET & BASE
+     ======================================== */
+  .page {
+    font-family: 'Roboto', sans-serif;
+    background-color: #FAFAFA;
+    color: #121212;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+  }
+
+  /* ========================================
+     NAV — App Bar (elevation 4dp)
+     ======================================== */
+  .nav {
+    background: #6200EE;
+    box-shadow:
+      0 2px 4px -1px rgba(0, 0, 0, 0.2),
+      0 4px 5px 0 rgba(0, 0, 0, 0.14),
+      0 1px 10px 0 rgba(0, 0, 0, 0.12);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    height: 64px;
+    gap: 24px;
+  }
+
+  .nav-logo {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    letter-spacing: 0.005em;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+  }
+
+  .nav-link {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.0892857em;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+  }
+
+  .nav-link-active {
+    color: #FFFFFF;
+  }
+
+  /* ========================================
+     HERO
+     ======================================== */
+  .hero {
+    background: #6200EE;
+    padding: 80px 24px 96px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(187, 134, 252, 0.3), transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(3, 218, 198, 0.15), transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-overline {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.166667em;
+    color: rgba(255, 255, 255, 0.6);
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1.05;
+    margin: 0 0 24px 0;
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+  }
+
+  .hero-tagline {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 600px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .hero-fab {
+    position: absolute;
+    bottom: -28px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    background: #03DAC6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 6px 10px 0 rgba(0, 0, 0, 0.14),
+      0 1px 18px 0 rgba(0, 0, 0, 0.12),
+      0 3px 5px -1px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+  }
+
+  .hero-fab:hover {
+    box-shadow:
+      0 12px 17px 2px rgba(0, 0, 0, 0.14),
+      0 5px 22px 4px rgba(0, 0, 0, 0.12),
+      0 7px 8px -4px rgba(0, 0, 0, 0.2);
+  }
+
+  /* ========================================
+     SECTIONS — SHARED
+     ======================================== */
+  .section {
+    padding: 80px 24px;
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-overline {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.166667em;
+    color: #6200EE;
+    margin: 0 0 8px 0;
+  }
+
+  .section-heading {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    line-height: 1.15;
+    margin: 0 0 48px 0;
+    letter-spacing: -0.01em;
+    color: #121212;
+  }
+
+  /* ========================================
+     ABOUT
+     ======================================== */
+  .about-section {
+    background: #FFFFFF;
+    box-shadow:
+      0 1px 3px 0 rgba(0, 0, 0, 0.12),
+      0 1px 2px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  .about-content {
+    max-width: 720px;
+  }
+
+  .about-paragraph {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    margin: 0 0 24px 0;
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  .about-paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     CHARACTERISTICS
+     ======================================== */
+  .characteristics-section {
+    background: #FAFAFA;
+  }
+
+  .characteristics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+  }
+
+  .char-card {
+    background: #FFFFFF;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow:
+      0 1px 3px 0 rgba(0, 0, 0, 0.12),
+      0 1px 2px 0 rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .char-card:hover {
+    box-shadow:
+      0 8px 10px 1px rgba(0, 0, 0, 0.14),
+      0 3px 14px 2px rgba(0, 0, 0, 0.12),
+      0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  }
+
+  .char-card-header {
+    background: #6200EE;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+  }
+
+  .char-icon {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.2);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.01em;
+  }
+
+  .char-card-body {
+    padding: 24px;
+  }
+
+  .char-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin: 0 0 8px 0;
+    color: #121212;
+    letter-spacing: 0.005em;
+  }
+
+  .char-description {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  /* ========================================
+     STYLE REFERENCE / PROMPT
+     ======================================== */
+  .prompt-section {
+    background: #FFFFFF;
+  }
+
+  .prompt-card {
+    background: #FFFFFF;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow:
+      0 3px 5px -1px rgba(0, 0, 0, 0.2),
+      0 6px 10px 0 rgba(0, 0, 0, 0.14),
+      0 1px 18px 0 rgba(0, 0, 0, 0.12);
+    max-width: 840px;
+  }
+
+  .prompt-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: #6200EE;
+  }
+
+  .prompt-label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.166667em;
+    color: #FFFFFF;
+  }
+
+  .copy-button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    background: transparent;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 8px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.0892857em;
+    transition: background 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .copy-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .copy-button:active {
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .copy-button.copied {
+    background: #03DAC6;
+    color: #000000;
+    border-color: #03DAC6;
+  }
+
+  .prompt-card-body {
+    padding: 32px 24px;
+    background: #1E1E1E;
+  }
+
+  .prompt-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.87);
+    margin: 0;
+    white-space: pre-wrap;
+  }
+
+  /* ========================================
+     WHEN TO USE
+     ======================================== */
+  .use-section {
+    background: #FAFAFA;
+  }
+
+  .use-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .use-card {
+    background: #FFFFFF;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow:
+      0 1px 3px 0 rgba(0, 0, 0, 0.12),
+      0 1px 2px 0 rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .use-card:hover {
+    box-shadow:
+      0 3px 5px -1px rgba(0, 0, 0, 0.2),
+      0 6px 10px 0 rgba(0, 0, 0, 0.14),
+      0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  .use-card-header {
+    padding: 16px 24px;
+  }
+
+  .use-card-header-good {
+    background: #03DAC6;
+  }
+
+  .use-card-header-bad {
+    background: #CF6679;
+  }
+
+  .use-card-heading {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.125rem;
+    margin: 0;
+    color: #000000;
+    letter-spacing: 0.005em;
+  }
+
+  .use-card-header-bad .use-card-heading {
+    color: #FFFFFF;
+  }
+
+  .use-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .use-item {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .use-item:last-child {
+    border-bottom: none;
+  }
+
+  .use-item-good::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #03DAC6;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .use-item-bad::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #CF6679;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ========================================
+     HISTORY
+     ======================================== */
+  .history-section {
+    background: #FFFFFF;
+    box-shadow:
+      0 1px 3px 0 rgba(0, 0, 0, 0.12),
+      0 1px 2px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  .history-content {
+    max-width: 720px;
+  }
+
+  .history-paragraph {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    margin: 0 0 24px 0;
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  .history-paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     RELATED STYLES
+     ======================================== */
+  .related-section {
+    background: #FAFAFA;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #121212;
+    box-shadow:
+      0 1px 3px 0 rgba(0, 0, 0, 0.12),
+      0 1px 2px 0 rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .related-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #6200EE;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .related-card:hover {
+    box-shadow:
+      0 8px 10px 1px rgba(0, 0, 0, 0.14),
+      0 3px 14px 2px rgba(0, 0, 0, 0.12),
+      0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  }
+
+  .related-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .related-chip {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.166667em;
+    color: #6200EE;
+    background: rgba(98, 0, 238, 0.08);
+    padding: 4px 12px;
+    border-radius: 16px;
+    display: inline-block;
+    align-self: flex-start;
+  }
+
+  .related-name {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.125rem;
+    letter-spacing: 0.005em;
+    color: #121212;
+  }
+
+  .related-arrow {
+    font-size: 1.125rem;
+    color: rgba(0, 0, 0, 0.38);
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    transition: color 0.2s;
+  }
+
+  .related-card:hover .related-arrow {
+    color: #6200EE;
+  }
+
+  /* ========================================
+     FOOTER
+     ======================================== */
+  .footer {
+    background: #121212;
+    padding: 64px 24px;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    letter-spacing: 0.005em;
+  }
+
+  .footer-tagline {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .footer-back {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #BB86FC;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.0892857em;
+    padding: 8px 24px;
+    border-radius: 4px;
+    border: 1px solid rgba(187, 134, 252, 0.3);
+    transition: background 0.2s;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .footer-back:hover {
+    background: rgba(187, 134, 252, 0.08);
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 768px) {
+    .nav-inner {
+      height: 56px;
+      padding: 0 16px;
+    }
+
+    .hero {
+      padding: 56px 16px 72px;
+    }
+
+    .hero-fab {
+      bottom: -24px;
+      right: 16px;
+      width: 48px;
+      height: 48px;
+    }
+
+    .section {
+      padding: 56px 16px;
+    }
+
+    .section-heading {
+      margin-bottom: 32px;
+    }
+
+    .characteristics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .use-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .prompt-card-header {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .prompt-card-body {
+      padding: 24px 16px;
+    }
+
+    .prompt-text {
+      font-size: 0.875rem;
+    }
+
+    .footer {
+      padding: 48px 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-inner {
+      gap: 16px;
+    }
+
+    .nav-logo {
+      font-size: 1.125rem;
+    }
+
+    .nav-link {
+      font-size: 0.75rem;
+      padding: 6px 12px;
+    }
+
+    .hero {
+      padding: 40px 16px 64px;
+    }
+
+    .section {
+      padding: 40px 16px;
+    }
+
+    .char-card-body {
+      padding: 16px;
+    }
+
+    .char-card-header {
+      padding: 12px 16px;
+    }
+
+    .use-item {
+      padding: 12px 16px;
+      font-size: 0.875rem;
+    }
+
+    .related-card {
+      padding: 16px;
+    }
+
+    .copy-button {
+      padding: 6px 16px;
+      font-size: 0.75rem;
+    }
+  }
+</style>

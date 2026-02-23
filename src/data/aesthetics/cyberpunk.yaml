@@ -1,0 +1,102 @@
+slug: cyberpunk
+name: Cyberpunk
+coined: false
+
+tagline: "The future already happened. It just wasn't distributed evenly."
+
+prompt: |
+  Dark near-black background (#0a0a0f). Neon accent colors — cyan (#00FFFF),
+  magenta (#FF00FF), yellow (#FFD700) — used for borders, text glow, and
+  highlights. Monospace typography (Share Tech Mono or IBM Plex Mono) for body
+  text, angular condensed type (Rajdhani) for headings. Clip-path polygons
+  to create cut-corner and angled panel shapes. Neon glow via text-shadow
+  and box-shadow with colored blur. Scanline overlay using repeating-linear-gradient.
+  Diagonal warning stripes on accent bars. Border-left accents in cyan.
+  Glitch animation using CSS transform and clip-path. Everything feels like
+  a dystopian terminal UI from 2077.
+
+about: |
+  Cyberpunk design treats the screen like a cracked heads-up display in a
+  city that never sleeps. It's all neon and concrete — interfaces that look
+  like they were soldered together from salvaged parts, running software
+  that's three exploits away from collapse.
+
+  The aesthetic doesn't pretend technology is friendly. It shows the wiring.
+  It flickers. Data streams across panels with cut corners and harsh angles,
+  lit by the glow of cyan and magenta against void-black backgrounds. It's
+  the visual language of a world where the network is everything and trust
+  is nothing.
+
+characteristics:
+  - title: Neon Glow
+    description: >
+      Text and borders radiate colored light via layered box-shadow and
+      text-shadow. Cyan, magenta, and yellow burn against near-black
+      surfaces like signs in a rain-soaked alley.
+  - title: Cut-Corner Geometry
+    description: >
+      Panels and sections use clip-path polygons to slice off corners at
+      sharp angles. Nothing is a clean rectangle — everything looks
+      manufactured, machined, deliberately imperfect.
+  - title: Scanline Overlay
+    description: >
+      A subtle repeating-linear-gradient of semi-transparent lines runs
+      over content, simulating a CRT monitor or damaged display output.
+  - title: Monospace Typography
+    description: >
+      Body text is set in monospace — Share Tech Mono or IBM Plex Mono —
+      evoking terminal readouts and data feeds. Headings use angular,
+      condensed type like Rajdhani.
+  - title: Warning Stripe Accents
+    description: >
+      Diagonal repeating stripes in yellow and black mark section borders
+      and dividers, borrowed from industrial caution tape and hazard zones.
+  - title: Glitch Effects
+    description: >
+      CSS animations shift elements via transform translate and clip-path
+      for brief moments, simulating signal corruption, data artifacts, and
+      unstable rendering.
+
+good_for:
+  - Gaming and esports sites
+  - Sci-fi and speculative fiction projects
+  - Hacker tools and security-focused products
+  - Music and nightlife event pages
+  - Tech demos and experimental portfolios
+
+not_for:
+  - Healthcare, finance, or government
+  - E-commerce requiring trust signals
+  - Accessibility-critical applications — glow and contrast can be hostile
+  - Corporate or enterprise SaaS
+  - Content-heavy editorial or long-form reading
+
+history: |
+  The word "cyberpunk" comes from Bruce Bethke's 1983 short story, but the
+  visual identity was forged by Ridley Scott's Blade Runner (1982) and
+  William Gibson's Neuromancer (1984). Rain-slicked streets, kanji neon,
+  layered urban density, CRT green — these became the genre's vocabulary.
+
+  On the web, cyberpunk aesthetics first appeared in the late-90s Flash
+  scene and early-2000s forum skins. The release of CD Projekt Red's
+  Cyberpunk 2077 in 2020 reignited mainstream interest, and designers began
+  translating the visual language into modern CSS — clip-path for angular
+  panels, layered box-shadows for neon glow, and repeating-linear-gradient
+  for scanlines.
+
+  Today it lives in gaming sites, demo pages, and creative portfolios that
+  want to feel dangerous. Its closest relatives are synthwave (which shares
+  the neon but swaps dystopia for nostalgia) and retro-terminal (which
+  strips out the color and goes full monochrome).
+
+related:
+  - slug: synthwave
+    relationship: Neon sibling
+  - slug: retro-terminal
+    relationship: Monochrome ancestor
+  - slug: vaporwave
+    relationship: Aesthetic cousin
+  - slug: dark-mode
+    relationship: Shares the void
+  - slug: steampunk
+    relationship: Analog counterpart

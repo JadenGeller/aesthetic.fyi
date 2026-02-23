@@ -1,0 +1,105 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-glow" aria-hidden="true"></div>
+  <div class="card-dots" aria-hidden="true">
+    <span class="card-dot card-dot-1"></span>
+    <span class="card-dot card-dot-2"></span>
+    <span class="card-dot card-dot-3"></span>
+  </div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #1C1C1E;
+    color: #F5F5F7;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .card-glow {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(10, 132, 255, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .card-dots {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .card-dot {
+    position: absolute;
+    border-radius: 50%;
+    background: #0A84FF;
+  }
+
+  .card-dot-1 {
+    width: 6px;
+    height: 6px;
+    top: 28px;
+    right: 28px;
+    opacity: 0.7;
+    box-shadow: 0 0 10px rgba(10, 132, 255, 0.5);
+  }
+
+  .card-dot-2 {
+    width: 4px;
+    height: 4px;
+    top: 48px;
+    right: 56px;
+    opacity: 0.4;
+    box-shadow: 0 0 8px rgba(10, 132, 255, 0.4);
+  }
+
+  .card-dot-3 {
+    width: 5px;
+    height: 5px;
+    top: 36px;
+    right: 80px;
+    opacity: 0.25;
+    box-shadow: 0 0 8px rgba(10, 132, 255, 0.3);
+  }
+
+  .card-name {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    font-size: 26px;
+    letter-spacing: -0.5px;
+    margin: 0 0 8px 0;
+    line-height: 1.1;
+    color: #F5F5F7;
+  }
+
+  .card-tagline {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    margin: 0;
+    color: #98989D;
+    line-height: 1.4;
+  }
+</style>

@@ -1,0 +1,111 @@
+slug: bauhaus
+name: Bauhaus
+coined: false
+
+tagline: "Form follows function. The function is to be unforgettable."
+
+prompt: |
+  Primary color palette: red (#EB4034), blue (#2D5DA1), yellow (#F5C518),
+  black, and white. Geometric shapes dominate — circles, squares, and
+  triangles used as structural and decorative elements. Typography is
+  geometric sans-serif (DM Sans, Futura, or similar) with strong weight
+  contrast between headings and body. Layouts use asymmetric grid
+  compositions with generous whitespace. Large-scale CSS shapes as
+  background accents via ::before/::after pseudo-elements — circles
+  with border-radius: 50%, triangles via clip-path, solid color blocks.
+  No gradients, no textures, no ornament. Every element earns its place.
+  The overall feel is rational, primary-colored, and architecturally
+  precise.
+
+about: |
+  Bauhaus treats the screen like a canvas where geometry is the only
+  language allowed. A circle is never decoration — it's a focal point.
+  A grid is never arbitrary — it's a system. Color is never ambient —
+  it's a signal. You use red, blue, and yellow because they're
+  irreducible. You use black and white because they're absolute.
+
+  Designing in Bauhaus means stripping away everything that doesn't
+  serve communication. There's no room for ornament, but there's
+  enormous room for composition. The tension between a large red
+  circle and a small blue square does more visual work than a page
+  full of drop shadows. Every pixel is deliberate. Every relationship
+  between elements is considered.
+
+characteristics:
+  - title: Primary Color Only
+    description: >
+      Red, blue, and yellow — plus black and white. No secondary
+      colors, no pastels, no gradients. Color is used in solid blocks
+      to create hierarchy and focal points.
+  - title: Geometric Shapes
+    description: >
+      Circles (border-radius: 50%), squares, and triangles
+      (clip-path: polygon) as first-class layout elements. Shapes
+      carry meaning, not just decoration.
+  - title: Asymmetric Grid
+    description: >
+      Compositions balance through tension, not symmetry. Elements
+      are offset deliberately — a large shape on the left countered
+      by small text on the right.
+  - title: Geometric Sans-Serif
+    description: >
+      Typefaces built from circles and straight lines — DM Sans,
+      Futura, or similar. Weight contrast between bold headings and
+      light body text.
+  - title: No Ornament
+    description: >
+      Zero decorative elements that don't serve function. No
+      drop shadows, no textures, no flourishes. If it doesn't
+      communicate, it doesn't exist.
+  - title: Strong Compositional Hierarchy
+    description: >
+      Scale contrast is extreme — hero type at 80px+, body at 16px.
+      Whitespace is generous and intentional. The eye moves through
+      the page on a designed path.
+
+good_for:
+  - Design agency and studio portfolios
+  - Architecture and interior design firms
+  - Art gallery and museum sites
+  - Typography and type foundry showcases
+  - Educational institutions with design programs
+
+not_for:
+  - E-commerce with large product catalogs
+  - Content-heavy blogs or news sites
+  - Children's products or playful brands
+  - Social platforms requiring dense UI
+  - Healthcare or finance where warmth matters
+
+history: |
+  The Bauhaus school opened in Weimar, Germany in 1919 under Walter
+  Gropius. Its mission was radical: unify art, craft, and technology
+  into a single discipline. The school attracted Kandinsky, Klee,
+  Moholy-Nagy, and other artists who believed that design should be
+  systematic, teachable, and rooted in geometric fundamentals.
+
+  The visual language that emerged — primary colors, geometric shapes,
+  sans-serif type, asymmetric composition — wasn't just an aesthetic
+  preference. It was an argument that good design is universal,
+  reducible to basic forms that transcend culture and taste. The
+  Nazis closed the school in 1933, but its ideas had already spread
+  worldwide through emigrating faculty.
+
+  Nearly every design movement since has either built on Bauhaus or
+  reacted against it. Swiss Design formalized its grid systems.
+  Flat Design inherited its hostility to ornament. Material Design
+  adopted its functional geometry. When you open a modern design tool
+  and reach for a geometric sans-serif on a clean grid, you're
+  working in the Bauhaus tradition whether you know it or not.
+
+related:
+  - slug: swiss-design
+    relationship: Direct descendant
+  - slug: de-stijl
+    relationship: Contemporary ally
+  - slug: flat-design
+    relationship: Spiritual heir
+  - slug: minimalism
+    relationship: Shares reduction
+  - slug: material-design
+    relationship: Functional geometry

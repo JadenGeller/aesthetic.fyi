@@ -1,0 +1,116 @@
+slug: steampunk
+name: Steampunk
+coined: false
+
+tagline: "Brass gears turn behind every pixel. The future was built in a Victorian workshop."
+
+prompt: |
+  Dark leather brown (#2C1810) backgrounds with brass/copper (#B87333, #CD9B1D)
+  accents. Victorian serif typography — Spectral for headings at weights 600-700,
+  Cutive Mono for mechanical labels and code-like elements. Gear motifs built
+  from CSS circles with borders and rotated pseudo-elements. Faux metal textures
+  via linear-gradient(135deg, #CD9B1D, #B8860B, #CD9B1D) for brass panels.
+  Leather texture via layered radial gradients in browns. Riveted panel patterns
+  using repeating-linear-gradient with small circles. Border styles use ridge
+  and double for ornamental Victorian framing. Inset box-shadows for embossed
+  and engraved text effects. Parchment (#E8D5B5) for lighter content areas.
+  The mood is Victorian industrial — elegant machinery, polished brass,
+  worn leather, and mechanical precision.
+
+about: |
+  Steampunk on the web is the collision of Victorian craft and imagined
+  machinery. Every surface tells you how it was made — the rivets that hold
+  the panel, the gears that drive the mechanism, the leather that wraps the
+  instrument. Nothing is hidden behind abstraction.
+
+  This is design that believes in the beauty of engineering. Brass gradients
+  catch the light. Typography carries the weight of Victorian letterpress.
+  Borders aren't decorative — they're structural, riveted and bolted into
+  place. When you build in steampunk, you're not just styling a page.
+  You're constructing a machine that happens to display information.
+
+characteristics:
+  - title: Brass & Copper Textures
+    description: >
+      Linear gradients simulate polished metal — brass via
+      linear-gradient(135deg, #CD9B1D, #B8860B, #CD9B1D), copper via
+      #B87333 tones. Surfaces catch light with directional highlights
+      and dark recesses. Every panel feels forged, not drawn.
+  - title: Gear Motifs
+    description: >
+      CSS circles with thick borders and rotated pseudo-elements form
+      mechanical gear shapes. They appear as decorative anchors in corners
+      and section dividers — spinning cogwheels of the design engine,
+      built entirely from border-radius and transforms.
+  - title: Victorian Serif Type
+    description: >
+      Spectral at weight 600-700 for headings delivers the gravity of
+      Victorian letterpress. Cutive Mono handles mechanical labels with
+      typewriter precision. Letter-spacing is generous. Text-shadows
+      create embossed and engraved effects on metal surfaces.
+  - title: Leather & Parchment
+    description: >
+      Dark leather backgrounds (#2C1810) use layered radial gradients
+      for texture. Parchment sections (#E8D5B5) provide contrast.
+      The material palette alternates between workshop bench and
+      engineer's notebook — always tactile, never flat.
+  - title: Riveted Panels
+    description: >
+      Repeating gradients create rows of rivet patterns along panel
+      edges. Border-style ridge and double simulate bolted metal frames.
+      Every container feels like it was assembled by hand in a workshop,
+      fastened with visible hardware.
+  - title: Industrial Ornamentation
+    description: >
+      Decorative elements serve a visual-mechanical purpose. Dividers
+      look like pipe fittings. Corner ornaments suggest bracket hardware.
+      The ornamentation follows the logic of machinery — every flourish
+      implies a function, even if that function is imagined.
+
+good_for:
+  - Games and interactive fiction with Victorian settings
+  - Creative portfolio sites for makers and artisans
+  - Event sites for conventions and themed gatherings
+  - Specialty retail for handcrafted or vintage goods
+  - Narrative-driven experiences and storytelling platforms
+
+not_for:
+  - Corporate enterprise or SaaS dashboards
+  - Minimalist productivity tools
+  - Medical or scientific data platforms — the ornamentation distracts
+  - E-commerce requiring fast, clean conversion flows
+  - Accessibility-critical applications — the texture-heavy style can reduce contrast
+
+history: |
+  Steampunk crystallized in the 1980s as a literary subgenre — K.W. Jeter
+  coined the term in 1987, half-joking about the wave of Victorian-era
+  science fiction he and fellow writers Tim Powers and James Blaylock were
+  producing. But the aesthetic roots run deeper: Jules Verne's submarines,
+  H.G. Wells's time machines, the real brass-and-iron engineering of the
+  Industrial Revolution.
+
+  The visual language solidified through film and fashion before it ever
+  reached screens. Terry Gilliam's Brazil, the costuming of maker culture,
+  the elaborate contraptions of World Maker Faire. By the 2010s, steampunk
+  had a fully developed design vocabulary: brass, gears, leather, rivets,
+  Victorian typography, and the patina of imagined antiquity.
+
+  On the web, steampunk remains a niche but committed aesthetic. It appears
+  in game interfaces, fan community sites, themed events, and the portfolios
+  of artists who build real clockwork. The challenge has always been the same:
+  translating physical texture — metal, leather, glass — into CSS. Gradients
+  do the heavy lifting. The best steampunk web design doesn't just look
+  Victorian-mechanical — it feels like you could reach through the screen
+  and turn a brass dial.
+
+related:
+  - slug: skeuomorphism
+    relationship: Shares material realism
+  - slug: art-deco
+    relationship: Shares ornamental geometry
+  - slug: gothic-web
+    relationship: Shares dark theatricality
+  - slug: cyberpunk
+    relationship: Alternate tech-future vision
+  - slug: dark-academia
+    relationship: Shares vintage intellectualism
