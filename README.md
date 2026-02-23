@@ -1,43 +1,16 @@
-# Astro Starter Kit: Minimal
+# aesthetic.fyi
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A visual reference for web design aesthetics — each page is built in the style it describes.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Background
 
-## 🚀 Project Structure
+Web design has aesthetics the same way music and fashion do. Styles emerge from communities, spread, get named, get copied, and eventually become references that designers point to when pitching a direction. Cyberpunk. Cottagecore. Vaporwave. Bauhaus. Neubrutalism. Most designers recognize these instinctively but can't always name them, or know the name but can't quite picture it.
 
-Inside of your Astro project, you'll see the following folders and files:
+This site tries to be useful for that. Each aesthetic gets a detail page with its history, defining characteristics, and guidance on when it works. The page itself is styled in the aesthetic — so you're not just reading a description, you're reading it off a surface that demonstrates the point.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## What each entry covers
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **History** — where the style came from and what produced it
+- **Characteristics** — the specific design elements that define it (typography, color, spacing, shape)
+- **Good for / Not for** — honest notes on context and fit
+- **Related aesthetics** — neighboring styles and how they connect
