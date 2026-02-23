@@ -1,0 +1,114 @@
+slug: constructivism
+name: Constructivism
+coined: false
+
+tagline: "Art must serve the revolution. Every line has a purpose. Every angle is a declaration."
+
+prompt: |
+  Red (#CC0000), black (#1A1A1A), and cream (#F5F0E8) palette evoking
+  Soviet propaganda posters. Angular, diagonal layouts using CSS
+  transforms (skewY, rotate) to break rigid grids. Bold condensed
+  sans-serif typography (Bebas Neue for headings, Oswald for body) —
+  all-caps, tightly tracked, commanding. Geometric shapes via CSS:
+  triangles, circles, wedges, thick bars as compositional elements.
+  Sharp borders (0px border-radius), hard shadows, no softness. Text
+  blocks set against bold color blocks. Diagonal dividers using
+  clip-path or skew transforms. Asymmetric layouts that feel like
+  poster compositions. The mood is urgent, structural, ideological —
+  design as a tool for social change, not decoration.
+
+about: |
+  Constructivism on the web is design as engineering. Every element
+  is load-bearing. There are no ornaments, no flourishes, no softness.
+  The diagonal lines cut across the page like steel beams. The red
+  screams. The black anchors. The cream breathes just enough to keep
+  you reading.
+
+  This is the aesthetic of conviction. It borrows from the Russian
+  avant-garde of the 1920s — Rodchenko, El Lissitzky, the Stenberg
+  brothers — artists who believed design could reshape society. On the
+  web, it translates into bold typography, aggressive geometry, and
+  layouts that feel like they are shouting at you through a megaphone.
+
+characteristics:
+  - title: Red / Black / Cream
+    description: >
+      #CC0000 red dominates as the accent of urgency. #1A1A1A black
+      provides structural weight. #F5F0E8 cream offers the only
+      breathing room. This is not a palette — it is a manifesto.
+      No gradients, no pastels, no ambiguity.
+  - title: Diagonal Energy
+    description: >
+      CSS transforms (skewY, rotate) break the horizontal monotony
+      of the web. Sections tilt. Bars slice across the viewport.
+      Clip-path creates angular dividers. Nothing sits still — the
+      layout has the kinetic energy of a poster plastered on a wall.
+  - title: Condensed Sans-Serif
+    description: >
+      Bebas Neue for headings — tall, compressed, commanding. Oswald
+      for body text — narrow, efficient, military in its discipline.
+      All uppercase where emphasis is needed. Tight letter-spacing
+      compresses words into blocks of visual force.
+  - title: Geometric Shapes
+    description: >
+      Circles, triangles, and thick bars built entirely with CSS.
+      These are not decorations — they are compositional anchors,
+      the visual bolts holding the structure together. They echo
+      the suprematist roots of the movement.
+  - title: Poster Composition
+    description: >
+      Layouts are asymmetric and bold, arranged like propaganda
+      posters. Large type dominates. Sections are stacked like
+      blocks in an architectural model. White space is deliberate,
+      not generous — it exists to make the content hit harder.
+  - title: Hard Edges
+    description: >
+      Zero border-radius. No rounded corners. No soft shadows. Every
+      element is cut with precision — rectangles, sharp angles,
+      clean intersections. The design has the uncompromising clarity
+      of a blueprint.
+
+good_for:
+  - Political campaigns and activist sites
+  - Art gallery and exhibition pages
+  - Bold editorial and magazine layouts
+  - Event and conference landing pages
+  - Brand identity showcases
+
+not_for:
+  - Children's products or playful brands
+  - Healthcare and wellness platforms
+  - Luxury e-commerce and fashion
+  - Social networking and community apps
+  - Financial services and banking
+
+history: |
+  Constructivism emerged in Russia around 1913-1920, born from the
+  collision of Cubism, Futurism, and revolutionary politics. Artists
+  like Vladimir Tatlin, Alexander Rodchenko, and El Lissitzky rejected
+  the idea of art for art's sake. Art must be useful. Art must serve
+  the people. Art must build the new world.
+
+  The movement produced some of the most iconic graphic design in
+  history — Rodchenko's bold photomontages, El Lissitzky's "Beat the
+  Whites with the Red Wedge," the Stenberg brothers' film posters.
+  The visual language was unmistakable: diagonal compositions, bold
+  sans-serif type, a restricted palette of red, black, and white.
+
+  Constructivism's influence echoes through the Bauhaus, Swiss design,
+  punk graphics, and brutalist web design. On the modern web, it
+  survives wherever designers choose conviction over comfort — bold
+  angles over rounded corners, red over gray, shouting over whispering.
+  It is design that refuses to be ignored.
+
+related:
+  - slug: brutalism
+    relationship: Shares raw structural honesty
+  - slug: bauhaus
+    relationship: Fellow modernist movement
+  - slug: de-stijl
+    relationship: Geometric abstraction roots
+  - slug: swiss-design
+    relationship: Typographic discipline descendant
+  - slug: neubrutalism
+    relationship: Bold visual confrontation

@@ -1,0 +1,151 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-shimmer"></div>
+  <div class="card-foil"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-rule">
+    <div class="card-rule-line"></div>
+    <span class="card-rule-diamond"></span>
+    <div class="card-rule-line"></div>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  @keyframes holo-card-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes holo-card-shimmer {
+    0%, 100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  .card {
+    background:
+      linear-gradient(
+        135deg,
+        #FF6B9D 0%,
+        #C98BDB 15%,
+        #9B59B6 25%,
+        #45B7D1 40%,
+        #7FDBCA 55%,
+        #F0C27F 70%,
+        #FF6B9D 85%,
+        #9B59B6 100%
+      );
+    background-size: 300% 300%;
+    animation: holo-card-shift 8s ease infinite;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 14px;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.4s, transform 0.4s;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .card:hover {
+    box-shadow:
+      0 8px 32px rgba(155, 89, 182, 0.2),
+      0 4px 16px rgba(69, 183, 209, 0.15),
+      0 2px 8px rgba(255, 107, 157, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .card-shimmer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(ellipse 200px 120px at 30% 40%, rgba(255, 255, 255, 0.3) 0%, transparent 70%),
+      radial-gradient(ellipse 150px 100px at 70% 60%, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    animation: holo-card-shimmer 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .card-foil {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 6px 0;
+    color: #fff;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 1px 8px rgba(155, 89, 182, 0.3);
+  }
+
+  .card-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-rule-line {
+    width: 20px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  .card-rule-diamond {
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    transform: rotate(45deg);
+  }
+
+  .card-tagline {
+    font-size: 13px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

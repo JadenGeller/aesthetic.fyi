@@ -1,0 +1,116 @@
+slug: blueprint
+name: Blueprint
+coined: false
+
+tagline: "Precision is not cold. It is the deepest form of care."
+
+prompt: |
+  Deep blueprint blue (#1B3F6B) background with white (#FFFFFF) text and
+  line work. Grid lines via repeating-linear-gradient creating a graph
+  paper pattern — thin white lines at ~40px intervals, opacity 0.12 for
+  minor grid, 0.25 for major grid. Monospace font (Roboto Mono or Source
+  Code Pro) for all text. Thin precise borders (1px solid
+  rgba(255,255,255,0.2)). Dimension lines with small serif marks at
+  endpoints, annotation-style labels in uppercase 0.7rem. Section
+  dividers styled as technical drawing title blocks. Corner marks (right
+  angles) on containers. The mood is precise, engineered, authoritative
+  — like a draftsman's table under fluorescent light. Nothing is
+  decorative. Everything is measured.
+
+about: |
+  Blueprint aesthetic on the web is the celebration of precision as a
+  visual language. Where other aesthetics soften edges and hide structure,
+  blueprint puts the scaffolding on display. The grid is not hidden — it
+  is the design. The measurements are not metadata — they are content.
+
+  This is design that borrows from the drafting table, from architectural
+  drawings, from the technical illustrations that built the modern world.
+  The deep blue background with white lines is not arbitrary — it comes
+  from the cyanotype printing process that gave blueprints their name.
+  Every element on the page carries the quiet confidence of something
+  that has been measured twice.
+
+characteristics:
+  - title: Cyanotype Palette
+    description: >
+      Deep blueprint blue (#1B3F6B) backgrounds with white (#FFFFFF) line
+      work and text. The palette comes directly from the cyanotype
+      reproduction process — Prussian blue paper with white lines. No
+      gradients, no color variation. Two colors, absolute discipline.
+  - title: Graph Paper Grid
+    description: >
+      Repeating-linear-gradient creates a visible grid across the entire
+      page — minor lines every 40px at low opacity, major lines every
+      200px slightly brighter. The grid is not decorative; it is structural,
+      the same way graph paper provides implicit measurement.
+  - title: Monospace Typography
+    description: >
+      Roboto Mono for all text — headings, body, labels. Monospace type
+      evokes technical documentation, terminal readouts, and engineering
+      spec sheets. Every character occupies the same width, reinforcing
+      the grid's precision.
+  - title: Dimension Lines
+    description: >
+      Thin horizontal and vertical lines with small perpendicular serif
+      marks at their endpoints, mimicking the dimension annotations found
+      on architectural and mechanical drawings. These appear as section
+      dividers and decorative elements.
+  - title: Corner Marks
+    description: >
+      Right-angle marks at the corners of containers and sections,
+      referencing the registration marks and crop marks of technical
+      printing. Created with ::before and ::after pseudo-elements using
+      border segments.
+  - title: Title Block Structure
+    description: >
+      Section headers styled as technical drawing title blocks — thin
+      bordered rectangles with uppercase labels, revision-style numbering,
+      and annotation text. Everything is labeled as if it must be
+      unambiguous to a stranger reading the document.
+
+good_for:
+  - Architecture and engineering firms
+  - Technical documentation sites
+  - Developer portfolios and resumes
+  - CAD and design tool marketing
+  - Construction and infrastructure projects
+
+not_for:
+  - Children's brands or playful products
+  - Food and lifestyle blogs
+  - Fashion and luxury e-commerce
+  - Healthcare and wellness platforms
+  - Social media and community sites
+
+history: |
+  The blueprint gets its name from the cyanotype process, invented by
+  John Herschel in 1842. The process used a photosensitive solution of
+  ferric ammonium citrate and potassium ferricyanide, which turned
+  Prussian blue when exposed to UV light. Unexposed areas, blocked by
+  the original drawing on translucent paper, remained white. The result:
+  white lines on a deep blue background.
+
+  For over a century, blueprints were the standard method for reproducing
+  architectural and engineering drawings. They were cheap, durable, and
+  infinitely reproducible. The format became so iconic that "blueprint"
+  became a metaphor for any detailed plan — a blueprint for success, a
+  blueprint for reform.
+
+  On the web, the blueprint aesthetic strips away ornamentation and
+  replaces it with precision. It says: this was engineered, not decorated.
+  The grid lines, dimension marks, and monospace type all communicate
+  competence and intentionality. It appeals to people who find beauty in
+  technical drawings — who see a well-dimensioned floor plan as more
+  elegant than any watercolor.
+
+related:
+  - slug: wireframe
+    relationship: Shares structural transparency
+  - slug: dev-docs
+    relationship: Values technical clarity
+  - slug: retro-terminal
+    relationship: Monospace precision
+  - slug: swiss-design
+    relationship: Grid-based discipline
+  - slug: minimalism
+    relationship: Reduction to essentials

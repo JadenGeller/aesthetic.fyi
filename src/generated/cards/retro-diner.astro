@@ -1,0 +1,118 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-checkerboard"></div>
+  <div class="card-chrome-border"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-diamonds">
+    <span class="card-diamond"></span>
+    <span class="card-chrome-line"></span>
+    <span class="card-diamond"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #1A1A1A;
+    color: #FFFFFF;
+    border: 2px solid #333;
+    border-radius: 12px;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, border-color 0.3s;
+  }
+
+  .card:hover {
+    border-color: #C0C0C0;
+    box-shadow:
+      0 0 15px rgba(211, 47, 47, 0.2),
+      0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .card-checkerboard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-conic-gradient(#1A1A1A 0% 25%, #222222 0% 50%) 0 0 / 16px 16px;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .card-chrome-border {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #888, #CCC, #FFF, #CCC, #888) 1;
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-family: 'Lobster', cursive;
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0 0 6px 0;
+    color: #D32F2F;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    text-shadow:
+      0 0 10px rgba(211, 47, 47, 0.5),
+      0 0 20px rgba(211, 47, 47, 0.3),
+      0 0 40px rgba(211, 47, 47, 0.15);
+  }
+
+  .card-diamonds {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-diamond {
+    width: 5px;
+    height: 5px;
+    background: #D32F2F;
+    transform: rotate(45deg);
+    box-shadow: 0 0 4px rgba(211, 47, 47, 0.5);
+  }
+
+  .card-chrome-line {
+    width: 24px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #C0C0C0, transparent);
+  }
+
+  .card-tagline {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    color: #AAAAAA;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

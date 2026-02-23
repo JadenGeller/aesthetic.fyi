@@ -1,0 +1,120 @@
+slug: data-viz
+name: Data Visualization
+coined: true
+
+tagline: "The data speaks for itself. Your job is to make sure it speaks clearly."
+
+prompt: |
+  Clean white (#FFFFFF) or light gray (#F8F9FA) background with dark
+  charcoal (#202124) text. Data-ink colors: blue (#4285F4), red (#EA4335),
+  green (#34A853), yellow (#FBBC04). Chart-like CSS elements — bar charts
+  via div heights, pie segments via conic-gradient, line graphs via
+  borders. Metric card layouts with large numeric displays. Clean
+  sans-serif typography (Inter or Roboto) with clear hierarchy — large
+  bold numbers, medium labels, small captions. Grid dashboard layout with
+  card-based sections. Thin 1px borders (#DADCE0), subtle shadows
+  (0 1px 3px rgba(0,0,0,0.08)). Minimal decoration — let the data be the
+  decoration. Everything is aligned, measured, and purposeful. The mood is
+  analytical, trustworthy, precise — like a well-designed report that
+  makes complexity legible.
+
+about: |
+  Data Visualization on the web treats information as the primary design
+  material. Where other aesthetics decorate, data viz illuminates. Every
+  pixel earns its place by conveying meaning — a bar's height, a line's
+  slope, a color's category. The style inherits from Edward Tufte's
+  principle of data-ink ratio: maximize the ink spent on data, minimize
+  everything else.
+
+  This is design in service of legibility. The grid is not decorative — it
+  organizes. The whitespace is not empty — it separates. The color palette
+  is not chosen for beauty — it encodes. When done well, a data
+  visualization page feels like clarity itself: complex information made
+  navigable, patterns made visible, decisions made possible.
+
+characteristics:
+  - title: Data-Ink Palette
+    description: >
+      Blue (#4285F4), red (#EA4335), green (#34A853), yellow (#FBBC04) —
+      a categorical palette designed for instant differentiation. These
+      colors carry meaning, not mood. They encode categories, status,
+      and change. The background stays neutral (#FFFFFF or #F8F9FA) so
+      the data pops.
+  - title: Chart Elements in CSS
+    description: >
+      Bar charts built from div heights, pie charts from conic-gradient,
+      sparklines from border tricks. No images, no SVG libraries — pure
+      CSS data marks that load instantly and scale perfectly. The charts
+      are not illustrations; they are functional representations.
+  - title: Metric Card Layout
+    description: >
+      Large bold numbers front and center — 42.7%, $1.2M, 98.6 — with
+      small labels above and trend indicators below. Each metric card is
+      a self-contained insight, scannable in under a second. The
+      dashboard is a grid of these atomic units.
+  - title: Clean Sans-Serif Type
+    description: >
+      Inter or Roboto for everything. Numbers in tabular figures for
+      alignment. Clear size hierarchy — 36px metrics, 14px labels, 12px
+      captions. No serifs, no script, no display faces. The typography
+      is invisible by design, letting the data speak.
+  - title: Dashboard Grid
+    description: >
+      CSS Grid organizes content into a dashboard layout — metric cards
+      across the top, charts in the middle, tables and lists below.
+      Every element snaps to the grid. The layout communicates structure
+      before you read a single number.
+  - title: Minimal Chrome
+    description: >
+      Thin 1px borders (#DADCE0), subtle shadows, no gradients, no
+      textures. Decoration is stripped to the minimum needed for
+      separation and grouping. The interface disappears, leaving only
+      the information.
+
+good_for:
+  - Analytics dashboards and reporting tools
+  - Business intelligence platforms
+  - Financial and investment interfaces
+  - Health and fitness tracking apps
+  - Scientific research presentations
+
+not_for:
+  - Brand-heavy marketing sites
+  - Creative portfolios and art galleries
+  - Children's apps and playful interfaces
+  - Luxury and fashion e-commerce
+  - Storytelling and editorial longform
+
+history: |
+  Data visualization has deeper roots than most web aesthetics. William
+  Playfair invented the bar chart in 1786 and the pie chart in 1801.
+  Florence Nightingale used polar area diagrams to convince Parliament to
+  improve military hospital conditions. Charles Joseph Minard mapped
+  Napoleon's Russian campaign in what Tufte called "the best statistical
+  graphic ever drawn."
+
+  Edward Tufte's 1983 book "The Visual Display of Quantitative
+  Information" codified the principles that still guide data viz today:
+  maximize data-ink ratio, avoid chartjunk, show the data. On the web,
+  D3.js (2011) democratized interactive visualization, while tools like
+  Tableau and Google Data Studio brought dashboard culture to every
+  business team.
+
+  The modern data viz aesthetic on the web crystallized through Google's
+  Material Design charts, Stripe's dashboard, and the proliferation of
+  SaaS analytics tools. It is now one of the most common interface
+  patterns on the internet — not because it is trendy, but because it
+  works. When the goal is understanding, this is what understanding
+  looks like.
+
+related:
+  - slug: dashboard-realism
+    relationship: Shares analytical structure
+  - slug: dense-information
+    relationship: Values information density
+  - slug: bento-grid
+    relationship: Grid-based layout kinship
+  - slug: swiss-design
+    relationship: Shares typographic precision
+  - slug: flat-design
+    relationship: Minimal decoration approach

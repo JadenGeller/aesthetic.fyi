@@ -1,0 +1,155 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-grid"></div>
+  <div class="card-corner card-corner-tl"></div>
+  <div class="card-corner card-corner-tr"></div>
+  <div class="card-corner card-corner-bl"></div>
+  <div class="card-corner card-corner-br"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-dimension">
+    <span class="card-dim-serif"></span>
+    <span class="card-dim-line"></span>
+    <span class="card-dim-serif"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #1B3F6B;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.07) 0px,
+        rgba(255, 255, 255, 0.07) 1px,
+        transparent 1px,
+        transparent 40px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.07) 0px,
+        rgba(255, 255, 255, 0.07) 1px,
+        transparent 1px,
+        transparent 40px
+      );
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+
+  .card-corner {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+  }
+
+  .card-corner-tl {
+    top: 10px;
+    left: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.45);
+    border-left: 1px solid rgba(255, 255, 255, 0.45);
+  }
+
+  .card-corner-tr {
+    top: 10px;
+    right: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.45);
+    border-right: 1px solid rgba(255, 255, 255, 0.45);
+  }
+
+  .card-corner-bl {
+    bottom: 10px;
+    left: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+    border-left: 1px solid rgba(255, 255, 255, 0.45);
+  }
+
+  .card-corner-br {
+    bottom: 10px;
+    right: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+    border-right: 1px solid rgba(255, 255, 255, 0.45);
+  }
+
+  .card-name {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0 0 8px 0;
+    color: #FFFFFF;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .card-dimension {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+    width: 60px;
+  }
+
+  .card-dim-serif {
+    display: block;
+    width: 1px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.35);
+    flex-shrink: 0;
+  }
+
+  .card-dim-line {
+    display: block;
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  .card-tagline {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px;
+    font-weight: 300;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+    letter-spacing: 0.02em;
+  }
+</style>

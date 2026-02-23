@@ -1,0 +1,145 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-sparkle card-sparkle-tl"></div>
+  <div class="card-sparkle card-sparkle-br"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-hearts">
+    <span class="card-heart">&hearts;</span>
+    <span class="card-star">&#9734;</span>
+    <span class="card-heart">&hearts;</span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: linear-gradient(135deg, #FFF5F8 0%, #FEF9FF 50%, #F5FFF8 100%);
+    color: #6B5B7B;
+    border: 2px solid #FFD6E5;
+    border-radius: 20px;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 32px rgba(255, 183, 197, 0.25);
+    border-color: #FFB7C5;
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  .card-sparkle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  .card-sparkle-tl {
+    top: 16px;
+    left: 16px;
+  }
+
+  .card-sparkle-tl::before {
+    content: '\2726';
+    font-size: 1rem;
+    color: #FFB7C5;
+    animation: twinkle 3s ease-in-out infinite;
+  }
+
+  .card-sparkle-tl::after {
+    content: '\2726';
+    font-size: 0.6rem;
+    color: #E6D5F5;
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    animation: twinkle 3s ease-in-out infinite 1s;
+  }
+
+  .card-sparkle-br {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .card-sparkle-br::before {
+    content: '\2726';
+    font-size: 0.8rem;
+    color: #B5EAD7;
+    animation: twinkle 3s ease-in-out infinite 0.5s;
+  }
+
+  .card-sparkle-br::after {
+    content: '\2726';
+    font-size: 0.5rem;
+    color: #FFF5BA;
+    position: absolute;
+    top: -8px;
+    left: -12px;
+    animation: twinkle 3s ease-in-out infinite 2s;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.15); }
+  }
+
+  .card-name {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 6px 0;
+    color: #D4789C;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-hearts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-heart {
+    font-size: 0.65rem;
+    color: #FFB7C5;
+  }
+
+  .card-star {
+    font-size: 0.75rem;
+    color: #FFF5BA;
+    filter: drop-shadow(0 0 2px rgba(255, 245, 186, 0.6));
+  }
+
+  .card-tagline {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+    color: #B68CB8;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

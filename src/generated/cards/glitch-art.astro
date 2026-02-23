@@ -1,0 +1,166 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-scanlines"></div>
+  <div class="card-artifact"></div>
+  <h3 class="card-name" data-text={aesthetic.name}>{aesthetic.name}</h3>
+  <div class="card-dots">
+    <span class="card-line"></span>
+    <span class="card-dot"></span>
+    <span class="card-line"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  @keyframes card-glitch {
+    0% {
+      text-shadow: -1px 0 #ff0040, 1px 0 #00ffff;
+    }
+    2% {
+      text-shadow: 2px 0 #ff0040, -2px 0 #00ffff;
+    }
+    4% {
+      text-shadow: -1px 0 #ff0040, 1px 0 #00ffff;
+    }
+    50% {
+      text-shadow: -1px 0 #ff0040, 1px 0 #00ffff;
+    }
+    52% {
+      text-shadow: 3px 0 #ff0040, -3px 0 #00ffff, 0 1px #00ff41;
+    }
+    53% {
+      text-shadow: -2px 0 #ff0040, 2px 0 #00ffff;
+    }
+    54% {
+      text-shadow: -1px 0 #ff0040, 1px 0 #00ffff;
+    }
+    100% {
+      text-shadow: -1px 0 #ff0040, 1px 0 #00ffff;
+    }
+  }
+
+  @keyframes card-flicker {
+    0% { opacity: 0.04; }
+    50% { opacity: 0.06; }
+    51% { opacity: 0.02; }
+    100% { opacity: 0.04; }
+  }
+
+  @keyframes artifact-slide {
+    0% { transform: translateX(-100%); opacity: 0; }
+    15% { transform: translateX(-100%); opacity: 0; }
+    16% { transform: translateX(0); opacity: 1; }
+    19% { transform: translateX(0); opacity: 1; }
+    20% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(100%); opacity: 0; }
+  }
+
+  .card {
+    background: #0a0a0a;
+    color: #e0e0e0;
+    border: 1px solid #222;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.15s;
+  }
+
+  .card:hover {
+    border-color: #ff0040;
+    box-shadow:
+      0 0 20px rgba(255, 0, 64, 0.1),
+      inset 0 0 30px rgba(255, 0, 64, 0.03);
+  }
+
+  .card-scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 255, 0.03) 2px,
+      rgba(0, 255, 255, 0.03) 4px
+    );
+    pointer-events: none;
+    animation: card-flicker 4s infinite;
+  }
+
+  .card-artifact {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ff0040, #00ffff, transparent);
+    pointer-events: none;
+    animation: artifact-slide 8s infinite;
+    opacity: 0;
+  }
+
+  .card-name {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0 0 6px 0;
+    color: #ffffff;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    animation: card-glitch 5s infinite;
+  }
+
+  .card-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-line {
+    width: 20px;
+    height: 1px;
+    background: linear-gradient(90deg, #ff0040, #00ffff);
+  }
+
+  .card-dot {
+    width: 4px;
+    height: 4px;
+    background: #00ff41;
+    box-shadow: 0 0 6px #00ff41;
+  }
+
+  .card-tagline {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+    letter-spacing: 0.02em;
+  }
+</style>

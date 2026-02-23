@@ -1,0 +1,121 @@
+slug: crypto-web3
+name: Crypto / Web3
+coined: true
+
+tagline: "Decentralized, trustless, and gradient-heavy. The future is on-chain and the UI glows."
+
+prompt: |
+  Dark purple-black (#0D0B1A) background with light gray-white (#E8E6F0) text.
+  Gradient accents from purple (#7B2FBE) to blue (#2962FF) to teal (#00BFA5)
+  applied to borders, highlights, and decorative elements. Geometric mesh and
+  grid patterns via CSS (repeating-linear-gradient, conic-gradient) as
+  background textures. Glowing accent borders using box-shadow with purple/teal
+  rgba values. Modern sans-serif typography — Space Grotesk for headings (700),
+  Inter for body text (400, 500). Glassmorphism-style cards with
+  backdrop-filter: blur, semi-transparent backgrounds (rgba white at 0.04-0.08),
+  and subtle 1px borders (rgba white at 0.1). Animated gradient backgrounds
+  using @keyframes on background-position. Border-radius 12-16px on containers.
+  Color scheme is cosmic and synthetic — deep space black, electric purple, neon
+  teal. The mood is futuristic, speculative, technically ambitious. Everything
+  hums with quiet computation.
+
+about: |
+  Crypto / Web3 design is the visual language of decentralized ambition. It
+  takes the dark-mode default of developer culture and dresses it in gradients,
+  glass, and geometric precision. The palette is cosmic — deep purples bleeding
+  into electric blues and neon teals — as if every interface is a portal to a
+  parallel financial system that runs on math and belief.
+
+  The glassmorphism cards, the subtle grid textures, the animated gradient
+  borders — they all serve the same rhetorical purpose: to make software feel
+  like infrastructure. These are not apps; they are protocols. The design says:
+  this is serious technology, but also, look how beautiful the future is. It is
+  simultaneously austere and seductive, technical and aspirational.
+
+characteristics:
+  - title: Dark Cosmic Palette
+    description: >
+      #0D0B1A deep space backgrounds with #E8E6F0 light text. The darkness
+      is not absence but depth — a canvas for luminous accents. Gradient
+      colors span from #7B2FBE purple through #2962FF blue to #00BFA5
+      teal, evoking blockchain diagrams and network visualizations.
+  - title: Gradient Accents
+    description: >
+      Linear gradients from purple to blue to teal applied to borders,
+      dividers, and decorative elements. These gradients are the signature
+      of the aesthetic — they suggest flow, connectivity, and the
+      movement of value through networks. Nothing is flat; everything
+      transitions.
+  - title: Glassmorphism Cards
+    description: >
+      Semi-transparent backgrounds (rgba white at 0.04-0.08) with
+      backdrop-filter blur, subtle 1px borders at rgba white 0.1, and
+      soft glowing shadows. The cards feel like floating panels in a
+      control room — layered, translucent, important.
+  - title: Geometric Grid Textures
+    description: >
+      CSS-generated mesh patterns using repeating-linear-gradient create
+      faint grid overlays that evoke blockchain node networks, circuit
+      boards, and coordinate systems. The grid is infrastructure made
+      visible — the scaffolding of the decentralized world.
+  - title: Sans-Serif Precision
+    description: >
+      Space Grotesk for headings — geometric, modern, slightly
+      condensed. Inter for body text — neutral, highly legible,
+      engineered for screens. No serifs anywhere. The typography is
+      technical, clean, and unapologetically digital.
+  - title: Animated Glow
+    description: >
+      Subtle CSS animations on gradient backgrounds and border glows
+      create a sense of liveness — as if the interface is actively
+      processing, mining, validating. The page breathes with quiet
+      computational energy. Nothing is static; everything hums.
+
+good_for:
+  - DeFi dashboards and token platforms
+  - NFT marketplaces and galleries
+  - DAO governance interfaces
+  - Blockchain explorers and analytics
+  - Web3 developer documentation
+
+not_for:
+  - Children's educational platforms
+  - Healthcare and accessibility-first apps
+  - Government and institutional sites
+  - Print-first or editorial publications
+  - Traditional banking and finance
+
+history: |
+  The Crypto / Web3 aesthetic emerged alongside the Ethereum ecosystem in
+  the mid-2010s, but crystallized as a recognizable visual language during
+  the DeFi Summer of 2020 and the NFT boom of 2021. Early crypto
+  interfaces were utilitarian — spreadsheets with wallet connections. As
+  the space attracted designers and venture capital, a distinct visual
+  identity formed.
+
+  The dark backgrounds came from developer culture — terminals, code
+  editors, the default mode of people who build in the dark. The gradients
+  came from a need to feel futuristic, to visually distinguish this new
+  financial layer from the blue-and-white conservatism of traditional
+  fintech. The glassmorphism came from Apple's design language, filtered
+  through the desire to make complex financial data feel premium and
+  approachable.
+
+  By 2022, the aesthetic was so codified that you could identify a crypto
+  project from a single screenshot: dark background, gradient accent,
+  glass card, Space Grotesk heading. It became both a genuine design
+  language and a mild parody of itself — a visual shorthand for
+  "we are building the future" that was as much about signaling as about
+  usability.
+
+related:
+  - slug: cyberpunk
+    relationship: Shares neon-on-dark energy
+  - slug: dark-mode
+    relationship: Born from the same darkness
+  - slug: glassmorphism
+    relationship: Core visual technique
+  - slug: synthwave
+    relationship: Fellow gradient maximalist
+  - slug: neon-noir
+    relationship: Shares luminous contrast

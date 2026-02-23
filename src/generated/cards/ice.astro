@@ -1,0 +1,135 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-frost"></div>
+  <div class="card-facet-tl"></div>
+  <div class="card-facet-br"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-diamonds">
+    <span class="card-diamond"></span>
+    <span class="card-diamond-line"></span>
+    <span class="card-diamond card-diamond-center"></span>
+    <span class="card-diamond-line"></span>
+    <span class="card-diamond"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: linear-gradient(170deg, #F0F5FA 0%, #E3EFF9 60%, #D6EAF8 100%);
+    color: #1B4F72;
+    border: 1px solid rgba(27, 79, 114, 0.12);
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 24px rgba(27, 79, 114, 0.12);
+    border-color: rgba(93, 173, 226, 0.3);
+  }
+
+  .card-frost {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      linear-gradient(135deg, rgba(168, 216, 234, 0.25) 0%, transparent 50%),
+      linear-gradient(315deg, rgba(93, 173, 226, 0.12) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  .card-facet-tl {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(168, 216, 234, 0.15), transparent);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    pointer-events: none;
+  }
+
+  .card-facet-br {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(315deg, rgba(93, 173, 226, 0.1), transparent);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    margin: 0 0 8px 0;
+    color: #1B4F72;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .card-diamonds {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-diamond {
+    width: 4px;
+    height: 4px;
+    background: #A8D8EA;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  .card-diamond-center {
+    width: 6px;
+    height: 6px;
+    background: linear-gradient(135deg, #A8D8EA, #5DADE2);
+  }
+
+  .card-diamond-line {
+    width: 16px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #A8D8EA, transparent);
+  }
+
+  .card-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0;
+    color: rgba(27, 79, 114, 0.55);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+    letter-spacing: 0.02em;
+  }
+</style>

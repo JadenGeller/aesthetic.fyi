@@ -1,0 +1,130 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-starfield"></div>
+  <div class="card-nebula"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-stars">
+    <span class="card-star"></span>
+    <span class="card-star card-star--bright"></span>
+    <span class="card-star"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #050510;
+    color: #E8E0F0;
+    border: 1px solid rgba(107,47,160,0.3);
+    border-radius: 10px;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.4s, border-color 0.4s;
+  }
+
+  .card:hover {
+    box-shadow:
+      0 0 20px rgba(200,80,192,0.15),
+      0 0 40px rgba(107,47,160,0.1);
+    border-color: rgba(200,80,192,0.5);
+  }
+
+  .card-starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle 1.5px at 10% 15%, #ffffff 50%, transparent 50%),
+      radial-gradient(circle 1px at 25% 40%, #ffffff 50%, transparent 50%),
+      radial-gradient(circle 1px at 50% 12%, #ffffff 50%, transparent 50%),
+      radial-gradient(circle 1.5px at 75% 25%, #ffffff 50%, transparent 50%),
+      radial-gradient(circle 1px at 90% 60%, #ffffff 50%, transparent 50%),
+      radial-gradient(circle 1px at 40% 70%, #ffffff 50%, transparent 50%),
+      radial-gradient(circle 1px at 65% 85%, #00CED1 50%, transparent 50%),
+      radial-gradient(circle 1px at 20% 75%, #C850C0 50%, transparent 50%),
+      radial-gradient(circle 0.5px at 15% 50%, rgba(255,255,255,0.4) 50%, transparent 50%),
+      radial-gradient(circle 0.5px at 55% 35%, rgba(255,255,255,0.3) 50%, transparent 50%),
+      radial-gradient(circle 0.5px at 80% 45%, rgba(255,255,255,0.35) 50%, transparent 50%),
+      radial-gradient(circle 0.5px at 35% 90%, rgba(255,255,255,0.3) 50%, transparent 50%);
+    opacity: 0.8;
+  }
+
+  .card-nebula {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 200px 150px at 25% 70%, rgba(107,47,160,0.2), transparent),
+      radial-gradient(ellipse 180px 120px at 75% 30%, rgba(200,80,192,0.12), transparent),
+      radial-gradient(ellipse 150px 100px at 60% 80%, rgba(0,206,209,0.08), transparent);
+  }
+
+  .card-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 6px 0;
+    color: #E8E0F0;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 20px rgba(200,80,192,0.3);
+  }
+
+  .card-stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-star {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #C850C0;
+    box-shadow: 0 0 4px rgba(200,80,192,0.6);
+  }
+
+  .card-star--bright {
+    width: 5px;
+    height: 5px;
+    background: #00CED1;
+    box-shadow: 0 0 8px rgba(0,206,209,0.8), 0 0 16px rgba(0,206,209,0.3);
+  }
+
+  .card-tagline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    color: rgba(232,224,240,0.5);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

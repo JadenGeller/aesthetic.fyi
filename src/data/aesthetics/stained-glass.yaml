@@ -1,0 +1,116 @@
+slug: stained-glass
+name: Stained Glass
+coined: false
+
+tagline: "Light passes through color and arrives transformed. Every panel holds a fragment of something sacred."
+
+prompt: |
+  Dark (#1a1a1a) background with light (#e8e0d0) text. Jewel-tone palette:
+  ruby (#9B1B30), sapphire (#1B3A8C), emerald (#1B6B4A), amber (#CC8800),
+  amethyst (#6B2FA0). Thick black borders (3-4px solid black) as lead
+  lines between colored panels. Translucent colored backgrounds using
+  rgba versions of jewel tones at 15-25% opacity, with colored glow via
+  box-shadow (0 0 20px rgba(color, 0.3)). Serif font — Cinzel for
+  headings (uppercase, letter-spaced, architectural weight) and
+  Cormorant Garamond for body text (elegant, readable). Sections
+  arranged as panels separated by lead-line borders. Decorative rosette
+  patterns via radial-gradient to evoke rose windows. The mood is
+  luminous, reverent, and jewel-like — as if each section of the page
+  is a pane of colored glass catching light from behind.
+
+about: |
+  Stained glass on the web is light made structural. Where most dark
+  themes simply reduce brightness, stained glass uses darkness as the
+  leading — the black framework that gives colored light its shape and
+  meaning. Each section becomes a panel, each border a came line, each
+  color a fragment of transmitted radiance.
+
+  This is not decoration for its own sake. The thick black borders are
+  load-bearing, architecturally necessary. The jewel tones — ruby,
+  sapphire, emerald, amber, amethyst — glow from within, as if
+  backlit by cathedral sun. The effect is not a dark mode with color
+  accents. It is a window made of light and structure, where every
+  element exists in tension between opacity and translucence.
+
+characteristics:
+  - title: Lead-Line Borders
+    description: >
+      3-4px solid black borders act as the came lines of traditional
+      stained glass. They separate panels with architectural weight,
+      giving the layout a structural skeleton. Every division is
+      deliberate, every boundary load-bearing.
+  - title: Jewel-Tone Palette
+    description: >
+      Ruby (#9B1B30), sapphire (#1B3A8C), emerald (#1B6B4A), amber
+      (#CC8800), amethyst (#6B2FA0). These are not pastel accents —
+      they are deep, saturated colors that glow against darkness like
+      light passing through colored glass.
+  - title: Translucent Glow
+    description: >
+      Colored backgrounds at 15-25% opacity create the illusion of
+      light shining through glass. Box-shadows in matching jewel tones
+      add a soft luminous halo around panels, as if each section is
+      backlit by distant sunlight.
+  - title: Cathedral Typography
+    description: >
+      Cinzel for headings — uppercase, letter-spaced, with the
+      monumental weight of carved stone inscriptions. Cormorant
+      Garamond for body text — elegant, old-world, readable. Together
+      they evoke the gravity of sacred architecture.
+  - title: Rose Window Motifs
+    description: >
+      Radial-gradient patterns suggest the circular geometry of rose
+      windows without literal illustration. These decorative elements
+      appear as subtle background textures — geometric, symmetrical,
+      reverent.
+  - title: Dark Ground
+    description: >
+      The #1a1a1a background is not merely dark mode. It is the
+      structural lead that holds the glass — the negative space that
+      makes color luminous. Without this darkness, the jewel tones
+      would lose their radiance.
+
+good_for:
+  - Art galleries and museum sites
+  - Religious and spiritual organizations
+  - Luxury and heritage brands
+  - Portfolio sites for visual artists
+  - Event and ceremony pages
+
+not_for:
+  - Casual social media platforms
+  - Developer tooling and documentation
+  - Children's or playful brands
+  - Fast-paced e-commerce stores
+  - Data-heavy dashboards
+
+history: |
+  Stained glass as an art form dates to at least the 7th century, but
+  it reached its zenith in the Gothic cathedrals of the 12th and 13th
+  centuries — Chartres, Notre-Dame, Sainte-Chapelle. These windows were
+  not merely decorative. They were theological instruments, transforming
+  sunlight into narrative, turning architecture into scripture that even
+  the illiterate could read.
+
+  The technique involves cutting colored glass into shapes, joining them
+  with lead came strips, and soldering the joints. The lead lines are
+  not an imperfection — they are essential to the structure, holding
+  each piece in place while defining the composition. The interplay of
+  dark leading and luminous glass is what gives stained glass its power.
+
+  On the web, this translates into dark backgrounds acting as lead,
+  colored translucent panels acting as glass, and thick borders giving
+  the layout its skeletal integrity. The aesthetic carries the weight
+  of centuries — sacred, structural, and unmistakably luminous.
+
+related:
+  - slug: art-nouveau
+    relationship: Shares ornamental craft
+  - slug: gothic-web
+    relationship: Cathedral architecture roots
+  - slug: dark-academia
+    relationship: Reverent, historical mood
+  - slug: art-deco
+    relationship: Geometric structure
+  - slug: maximalism
+    relationship: Rich visual density

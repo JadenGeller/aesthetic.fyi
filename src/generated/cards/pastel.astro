@@ -1,0 +1,127 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-clouds"></div>
+  <div class="card-glow"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-bubbles">
+    <span class="card-bubble card-bubble-1"></span>
+    <span class="card-bubble card-bubble-2"></span>
+    <span class="card-bubble card-bubble-3"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: linear-gradient(160deg, #FFFFFF 0%, #F9F0FE 40%, #FFF5F8 70%, #F0F8F4 100%);
+    color: #6B6087;
+    border: 1px solid rgba(232, 213, 245, 0.5);
+    border-radius: 18px;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.4s, transform 0.4s, border-color 0.4s;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 32px rgba(232, 213, 245, 0.35);
+    transform: translateY(-3px);
+    border-color: rgba(232, 213, 245, 0.7);
+  }
+
+  .card-clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(ellipse 80px 40px at 15% 25%, rgba(232, 213, 245, 0.35) 0%, transparent 100%),
+      radial-gradient(ellipse 70px 35px at 80% 20%, rgba(255, 209, 220, 0.3) 0%, transparent 100%),
+      radial-gradient(ellipse 60px 30px at 70% 75%, rgba(193, 240, 219, 0.25) 0%, transparent 100%),
+      radial-gradient(ellipse 50px 25px at 25% 70%, rgba(184, 212, 227, 0.25) 0%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .card-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(255, 218, 185, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 8px 0;
+    background: linear-gradient(135deg, #C9A6E3, #FFB8C9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-bubbles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-bubble {
+    border-radius: 50%;
+  }
+
+  .card-bubble-1 {
+    width: 6px;
+    height: 6px;
+    background: #E8D5F5;
+  }
+
+  .card-bubble-2 {
+    width: 8px;
+    height: 8px;
+    background: #FFD1DC;
+  }
+
+  .card-bubble-3 {
+    width: 6px;
+    height: 6px;
+    background: #C1F0DB;
+  }
+
+  .card-tagline {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    color: #9B8AAE;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

@@ -1,0 +1,116 @@
+slug: ukiyo-e
+name: Ukiyo-e
+coined: false
+
+tagline: "The floating world holds still. Every line is deliberate, every color is placed, and the wave never crashes."
+
+prompt: |
+  Cream (#F5ECD7) background with deep indigo (#2C3E6B) text. Bold dark
+  outlines (3-4px solid #1A1A2E) on containers and sections. Flat color
+  areas — no gradients within elements, only solid fills of indigo
+  (#2C3E6B), vermillion (#C73E1D), gold (#C9A84C), and cream (#F5ECD7).
+  Serif typography using Noto Serif JP (or similar) for headings and body.
+  Woodblock-inspired texture via subtle repeating CSS patterns. Wave-like
+  decorative borders using layered radial-gradients to evoke Hokusai.
+  No drop shadows — depth comes from layered outlines and overlapping
+  flat shapes. Border-radius 0 on most elements for sharp, printed edges.
+  The mood is composed, graphic, and timeless — like a woodblock print
+  pulled from the block, ink still fresh.
+
+about: |
+  Ukiyo-e on the web is the art of the decisive line. Where modern
+  interfaces blur boundaries with shadows and gradients, this aesthetic
+  draws them with ink. Every element has a clear edge, every color fills
+  its region completely, and nothing bleeds where it should not.
+
+  This is design that treats the screen as a woodblock — each layer
+  carved with intention, each color pressed flat and true. The palette
+  comes from the Edo period: indigo from aizuri prints, vermillion from
+  seals and accents, gold from screens and lacquerware, cream from the
+  washi paper itself. The result is graphic, bold, and unmistakably
+  deliberate.
+
+characteristics:
+  - title: Flat Color Fields
+    description: >
+      Solid fills of indigo (#2C3E6B), vermillion (#C73E1D), gold
+      (#C9A84C), and cream (#F5ECD7). No gradients within elements.
+      Each area is a single, unmodulated color — just as ink pressed
+      from a carved woodblock fills its region uniformly.
+  - title: Bold Outlines
+    description: >
+      3-4px solid borders in deep navy (#1A1A2E) define every container.
+      These are the carved lines of the woodblock — deliberate, visible,
+      structural. They do not fade or soften. Border-radius is 0 because
+      woodblocks cut straight.
+  - title: Wave Patterns
+    description: >
+      CSS-generated wave motifs using layered radial-gradients evoke
+      Hokusai's Great Wave. These appear as decorative borders and
+      section dividers — rhythmic, organic, and unmistakably Japanese.
+      They are ornamental, never distracting.
+  - title: Serif Typography
+    description: >
+      Noto Serif JP (or similar) for all text — headings and body alike.
+      The serifs carry the brush-stroke quality of Japanese calligraphy.
+      Text is set with generous spacing, unhurried, as if each character
+      were carved individually into the block.
+  - title: Woodblock Texture
+    description: >
+      Subtle repeating CSS patterns suggest the grain of wood or the
+      texture of handmade paper. These are never photographic — they are
+      geometric abstractions that reference the printing process without
+      imitating it literally.
+  - title: Layered Depth
+    description: >
+      No drop shadows. Depth is achieved through layered outlines,
+      overlapping flat shapes, and offset borders. This mirrors the
+      ukiyo-e technique of building dimension through successive
+      printings rather than illusionistic shading.
+
+good_for:
+  - Art galleries and museum sites
+  - Japanese cultural organizations
+  - Print and design portfolios
+  - Tea and ceramics shops
+  - Editorial and literary magazines
+
+not_for:
+  - High-velocity SaaS dashboards
+  - Social media and messaging apps
+  - Gaming and esports platforms
+  - Fintech and banking interfaces
+  - Children's educational sites
+
+history: |
+  Ukiyo-e — "pictures of the floating world" — emerged in 17th-century
+  Japan as a popular art form depicting kabuki actors, beautiful women,
+  landscapes, and scenes of urban pleasure. Artists like Hokusai and
+  Hiroshige elevated the woodblock print into high art, creating images
+  of such graphic power that they would reshape Western art when they
+  reached Europe in the 1860s.
+
+  The technique itself is a collaboration: the artist draws, the carver
+  cuts the blocks, and the printer presses ink to paper. Each color
+  requires a separate block, aligned with precision. The result is flat,
+  bold, and graphic — qualities that made ukiyo-e a natural ancestor of
+  modern poster design, Art Nouveau, and eventually flat digital design.
+
+  On the web, ukiyo-e translates into decisive outlines, flat color
+  fills, and a rejection of the soft gradients and drop shadows that
+  dominate contemporary UI. It is a reminder that flatness is not
+  minimalism — it can be rich, ornate, and deeply expressive. Every
+  line carries the weight of a carved block, and every color the
+  permanence of pressed ink.
+
+related:
+  - slug: wabi-sabi
+    relationship: Shares Japanese aesthetic roots
+  - slug: japandi
+    relationship: East-meets-West minimalism
+  - slug: flat-design
+    relationship: Shares flat color philosophy
+  - slug: art-nouveau
+    relationship: Historically cross-pollinated
+  - slug: stained-glass
+    relationship: Bold outlines and color fields

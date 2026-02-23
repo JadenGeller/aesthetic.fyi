@@ -1,0 +1,112 @@
+slug: grunge
+name: Grunge
+coined: false
+
+tagline: "Nothing here is clean. The edges are torn, the textures are filthy, and that's exactly the point."
+
+prompt: |
+  Dark charcoal (#2A2A2A) background with dirty off-white (#E8E0D0) text.
+  Dirty brown (#3E3229) and mustard (#B8860B) accents. Distressed textures
+  via noisy CSS gradients with random dot patterns. Torn/rough edges using
+  clip-path polygon with irregular vertices. Typography in Special Elite
+  (400) for headings — typewriter-damaged, imperfect. Courier Prime (400)
+  for body — raw monospace with grit. No border-radius anywhere — sharp,
+  broken edges only. Scratchy overlays via repeating-linear-gradient noise
+  at low opacity. Heavy borders (2-3px solid) in dirty brown. Box-shadows
+  that feel like smudges (spread, dark, offset). The mood is 90s
+  alternative, analog decay, photocopied zines. Nothing is polished.
+  Everything looks like it was dragged through a basement show.
+
+about: |
+  Grunge on the web is a refusal to be clean. Where most design seeks
+  clarity and precision, grunge tears the page apart and reassembles it
+  with duct tape and static. The rough textures, the torn edges, the
+  typewriter fonts — they reject the sterile perfection of corporate
+  design and embrace the noise.
+
+  This is the aesthetic of basement shows and photocopied zines, of
+  flannel and feedback. It does not ask to be liked. It does not optimize
+  for engagement. It exists because someone had something raw to say and
+  said it without cleaning up first. The web equivalent of a guitar amp
+  turned past ten.
+
+characteristics:
+  - title: Distressed Textures
+    description: >
+      Noisy CSS gradients and repeating-linear-gradient overlays create
+      a gritty, degraded surface. Every background feels like aged paper,
+      stained concrete, or a photocopy of a photocopy. Nothing is smooth.
+  - title: Torn Edges
+    description: >
+      Clip-path polygons with irregular vertices create jagged, torn
+      borders on sections and cards. No border-radius. No smooth curves.
+      Every edge looks ripped, like paper torn by hand.
+  - title: Dirty Palette
+    description: >
+      Charcoal (#2A2A2A), dirty brown (#3E3229), mustard (#B8860B), and
+      off-white (#E8E0D0). These are the colors of stained pages, old
+      tape, nicotine-yellowed walls, and thrift store finds. Nothing is
+      bright. Nothing is pure.
+  - title: Typewriter Typography
+    description: >
+      Special Elite for headings — damaged, uneven, like a typewriter
+      with a stuck key. Courier Prime for body text — raw monospace that
+      reads like a zine printed at 3am. The imperfection is the point.
+  - title: Scratchy Overlays
+    description: >
+      Low-opacity repeating gradients and pseudo-element noise layers
+      simulate film grain, scanner artifacts, and analog decay. They add
+      visual static to every surface, a constant reminder that this is
+      not digital perfection.
+  - title: Raw Energy
+    description: >
+      Heavy borders, smudgy shadows, aggressive spacing. Nothing is
+      gentle or inviting. The layout has the energy of a show flyer
+      stapled to a telephone pole — urgent, unapologetic, loud in its
+      refusal to be quiet.
+
+good_for:
+  - Music and band websites
+  - Zine and underground publishing
+  - Alternative fashion brands
+  - Punk and DIY communities
+  - Portfolio sites for raw, authentic work
+
+not_for:
+  - Corporate enterprise platforms
+  - Healthcare and wellness apps
+  - Children's educational content
+  - Luxury fashion and beauty brands
+  - Banking and financial services
+
+history: |
+  Grunge emerged from the Seattle music scene of the late 1980s and early
+  1990s, born from bands like Nirvana, Pearl Jam, Soundgarden, and Alice
+  in Chains. It was a reaction against the polished excess of 1980s hair
+  metal and pop — a deliberate embrace of distortion, noise, and raw
+  emotional honesty. The name itself comes from the word "grungy,"
+  meaning dirty and run-down.
+
+  The visual language of grunge was shaped by designer David Carson's
+  work in Ray Gun magazine, by photocopied zine culture, and by the DIY
+  ethos of punk. Typography was broken, layouts were chaotic, and the
+  messiness was intentional. It said: we reject your polish and your
+  rules.
+
+  On the web, grunge translates into distressed textures, torn edges,
+  and typewriter fonts. It rejects the clean grids of Swiss design and
+  the sleek minimalism of tech startups. Instead, it says: this page was
+  made in a hurry, on purpose, and it does not care if you think it is
+  ugly. The roughness is the message.
+
+related:
+  - slug: punk
+    relationship: Shares DIY rebellion
+  - slug: brutalism
+    relationship: Rejects polish and convention
+  - slug: collage
+    relationship: Torn, layered composition
+  - slug: old-web
+    relationship: Raw, unrefined digital energy
+  - slug: indie-web
+    relationship: Values authenticity over trends

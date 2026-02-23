@@ -1,0 +1,120 @@
+slug: chalkboard
+name: Chalkboard
+coined: false
+
+tagline: "Class is in session. The dust settles, the lesson begins, and every stroke carries weight."
+
+prompt: |
+  Dark green (#2D4A2D) background with chalk-white (#F0EBE3) text.
+  Handwritten heading font (Patrick Hand) for a casual, teacher's
+  handwriting feel. Clean serif body text (Lora, 400) for readability
+  against the dark board. Dashed and dotted borders in muted chalk
+  tones (#7A9A6D, #5C7A52) suggesting imprecise chalk lines. Subtle
+  CSS noise texture via layered radial-gradients to simulate chalk
+  dust on the board surface. A warm wood-frame border (#8B6914,
+  #6B4F12) around the outer edge using box-shadow or border styling.
+  Section dividers rendered as thin chalk rules with slight opacity
+  variation. Accent colors in pale yellow (#F5E6A3) for highlights
+  and soft red (#D4736C) for emphasis. Generous padding, educational
+  warmth. The mood is a late-afternoon classroom — focused, analog,
+  unhurried.
+
+about: |
+  The chalkboard aesthetic is a love letter to the classroom wall.
+  It carries the weight of handwritten lessons, the smell of chalk
+  dust, the satisfying clack of a pointer against green slate. In
+  a digital world obsessed with polish, this style embraces the
+  imperfect, the hand-drawn, the deliberately analog.
+
+  On the web, chalkboard design translates into dark green
+  backgrounds, chalk-white text, and typography that feels like it
+  was written by hand. The dashed borders are not precise — they
+  wobble like real chalk lines. The texture is not flat — it carries
+  the grain of a real board. Every element says: someone stood here
+  and wrote this, just for you.
+
+characteristics:
+  - title: Dark Green Board
+    description: >
+      #2D4A2D deep green background evokes the classic classroom
+      chalkboard. Alternating sections use slightly lighter (#2B5016)
+      or darker tones for visual rhythm, but the palette never
+      leaves the green family. The darkness provides contrast for
+      chalk-white text.
+  - title: Chalk-White Typography
+    description: >
+      #F0EBE3 warm white text — not pure white, but the slightly
+      dusty tone of real chalk. Headings use Patrick Hand for a
+      handwritten, casual feel. Body text uses Lora serif for
+      readability. The type feels written, not typeset.
+  - title: Chalk-Dust Texture
+    description: >
+      Subtle CSS noise via layered radial-gradients simulates the
+      dusty, slightly uneven surface of a real chalkboard. The
+      texture is never overwhelming — just enough to break the
+      flat digital surface and add tactile warmth.
+  - title: Dashed Chalk Lines
+    description: >
+      Borders use dashed and dotted styles in muted greens (#7A9A6D)
+      to suggest hand-drawn chalk lines. These are intentionally
+      imprecise-feeling, embracing the analog quality of chalk on
+      slate rather than digital perfection.
+  - title: Wood-Frame Border
+    description: >
+      A warm brown (#8B6914) border or shadow effect frames the
+      outer edge, evoking the wooden tray and frame of a real
+      chalkboard. This grounding element connects the digital
+      surface to its physical inspiration.
+  - title: Educational Warmth
+    description: >
+      Pale yellow (#F5E6A3) highlights and soft red (#D4736C)
+      accents recall underlined key terms and circled answers.
+      The overall mood is focused and warm — a classroom where
+      learning feels safe and unhurried.
+
+good_for:
+  - Educational platforms and course sites
+  - Teacher and tutor portfolios
+  - Study guides and academic notes
+  - Math and science explainers
+  - Workshop and tutorial landing pages
+
+not_for:
+  - Luxury brand or fashion sites
+  - Minimalist SaaS dashboards
+  - Photography portfolios
+  - Corporate enterprise platforms
+  - High-energy gaming or esports brands
+
+history: |
+  The chalkboard has been the centerpiece of education for over two
+  centuries. Green slate boards replaced black ones in the mid-20th
+  century, and their distinctive color became synonymous with
+  learning itself. Even as whiteboards and projectors took over
+  physical classrooms, the chalkboard image persisted in culture
+  as a symbol of teaching, thinking, and discovery.
+
+  On the web, chalkboard aesthetics emerged in the early 2010s,
+  often in educational apps, restaurant menus, and craft branding.
+  The style leveraged web fonts that mimicked handwriting and CSS
+  textures that simulated chalk dust. It was part of the broader
+  skeuomorphic movement — design that referenced physical materials
+  to create familiarity and warmth.
+
+  While flat design pushed chalkboard aesthetics out of mainstream
+  web design, they never fully disappeared. Today they persist in
+  educational tools, artisanal branding, and anywhere designers
+  want to evoke the handmade, the analog, and the personal. The
+  chalkboard says: this was made by a human hand, not a machine.
+
+related:
+  - slug: skeuomorphism
+    relationship: Physical material reference
+  - slug: dark-academia
+    relationship: Scholarly, studious mood
+  - slug: paper-craft
+    relationship: Handmade tactile quality
+  - slug: retro-terminal
+    relationship: Dark background, light text
+  - slug: grunge
+    relationship: Embraces imperfection

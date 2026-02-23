@@ -1,0 +1,114 @@
+slug: paper-craft
+name: Paper Craft
+coined: false
+
+tagline: "Cut it out, fold it over, layer it up. Every edge is torn by hand and nothing here is pixel-perfect."
+
+prompt: |
+  Paper-white (#FAF8F5) background with craft-brown (#C4A882) accents and
+  warm charcoal (#3D3229) text. Layered box-shadows stacked to suggest
+  paper depth (3-4 shadows at increasing offsets with low opacity). Subtle
+  paper texture via CSS noise using SVG filters or repeating gradients.
+  Torn/rough edges via clip-path polygon with irregular points. Warm
+  friendly sans-serif typography (Nunito, 400/700). Folded card shapes
+  with diagonal pseudo-element creases. Craft tape accents via ::before
+  and ::after pseudo-elements — rotated rectangles with semi-transparent
+  warm tones (#E8D5B8, #D4C4AA) placed at card corners. Responsive at
+  768px and 480px. The mood is handmade, tactile, and layered — like a
+  scrapbook page assembled with scissors and glue.
+
+about: |
+  Paper Craft on the web is design that remembers its hands. In a world
+  of smooth gradients and perfect vectors, it tears the edges, stacks the
+  layers, and lets you see the glue. Every element looks like it was cut
+  from cardstock and pinned to the page with a strip of washi tape.
+
+  This is not about imprecision — it is about warmth. The layered shadows
+  give depth that flat design deliberately erased. The rough edges say:
+  a person made this. The craft tape accents are playful without being
+  childish. It is the aesthetic of the maker's table, the zine workshop,
+  the handmade card — brought to screen with CSS that cares about texture.
+
+characteristics:
+  - title: Layered Paper Shadows
+    description: >
+      Multiple box-shadows stacked at increasing offsets create the
+      illusion of paper layers sitting atop one another. Each card and
+      container feels like a physical sheet — lifted, dimensional, and
+      tactile. The shadows use warm brown tones, never cold gray.
+  - title: Torn Edge Silhouettes
+    description: >
+      Clip-path polygons with slightly irregular points simulate the
+      look of hand-torn paper. Edges are not smooth curves or sharp
+      right angles — they wobble, jut, and dip like real cardstock
+      ripped along a fold.
+  - title: Craft Tape Accents
+    description: >
+      Pseudo-elements styled as small rotated rectangles with
+      semi-transparent warm tones mimic strips of masking tape or
+      washi tape. They appear at card corners and section headers —
+      functional decoration that suggests things are held together
+      by hand.
+  - title: Paper Texture
+    description: >
+      A subtle CSS noise pattern or fine grain overlay gives surfaces
+      the slight roughness of real paper. Backgrounds are not flat
+      white — they have the warmth and tooth of cream cardstock,
+      off-white construction paper, and recycled kraft board.
+  - title: Friendly Sans-Serif Type
+    description: >
+      Nunito provides round, approachable letterforms — the typographic
+      equivalent of neat handwriting on a craft project label. Bold
+      weights for headings feel confident; regular weight for body
+      text feels conversational and warm.
+  - title: Folded & Cut-Out Shapes
+    description: >
+      Diagonal pseudo-element creases on cards suggest folded paper
+      corners. Decorative cut-out shapes — circles, triangles, and
+      simple geometric forms — appear as section dividers and
+      background accents, evoking paper punches and craft scissors.
+
+good_for:
+  - DIY and craft tutorial sites
+  - Children's education platforms
+  - Personal portfolios with a tactile feel
+  - Handmade product shops and marketplaces
+  - Event invitations and greeting card builders
+
+not_for:
+  - Enterprise SaaS dashboards
+  - Financial and banking interfaces
+  - Developer documentation and API references
+  - Luxury fashion or high-end brand sites
+  - Data-heavy analytics platforms
+
+history: |
+  Paper craft as a physical discipline is ancient — origami, papier-mache,
+  decoupage, and scrapbooking have centuries of tradition across cultures.
+  The idea of bringing paper's tactile qualities to screen emerged
+  alongside skeuomorphism in the early 2010s, when designers still
+  believed digital interfaces should reference physical materials.
+
+  Google's Material Design (2014) literalized the metaphor: every UI
+  element was a sheet of "material" with elevation and shadow. But
+  Material Design was clean and systematic. Paper Craft is its folk
+  cousin — messier, warmer, more personal. Where Material Design is
+  an architect's blueprint, Paper Craft is a child's collage.
+
+  The aesthetic found its community on Pinterest, Etsy, and craft
+  blogs, where handmade visuals were a natural extension of handmade
+  products. Today it thrives in indie web spaces, educational sites,
+  and anywhere that values the feeling of something made by hand over
+  the polish of something manufactured by committee.
+
+related:
+  - slug: collage
+    relationship: Shares layered composition
+  - slug: skeuomorphism
+    relationship: Physical material references
+  - slug: cottagecore
+    relationship: Handmade warmth and DIY spirit
+  - slug: claymorphism
+    relationship: Tactile dimensional surfaces
+  - slug: risograph
+    relationship: Textured print-inspired craft

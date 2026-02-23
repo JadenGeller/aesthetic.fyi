@@ -1,0 +1,100 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-stripe"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-rule"></div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #FFFFFF;
+    color: #000000;
+    border: 1px solid #E5E5E5;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .card:hover {
+    background: #000000;
+    border-color: #000000;
+  }
+
+  .card:hover .card-name {
+    color: #FFFFFF;
+  }
+
+  .card:hover .card-tagline {
+    color: #999999;
+  }
+
+  .card:hover .card-rule {
+    background: #FFFFFF;
+  }
+
+  .card:hover .card-stripe {
+    background: #FFFFFF;
+    opacity: 0.05;
+  }
+
+  .card-stripe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #000000;
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 8px 0;
+    color: #000000;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    position: relative;
+    z-index: 1;
+    transition: color 0.2s;
+  }
+
+  .card-rule {
+    width: 24px;
+    height: 2px;
+    background: #000000;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+    transition: background 0.2s;
+  }
+
+  .card-tagline {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    color: #666666;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+    transition: color 0.2s;
+  }
+</style>

@@ -1,0 +1,126 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-noise"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-scratch">
+    <span class="card-scratch-line"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #2A2A2A;
+    color: #E8E0D0;
+    border: 2px solid #3E3229;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    clip-path: polygon(
+      0% 0%, 97% 0%, 100% 3%, 100% 100%,
+      3% 100%, 0% 97%
+    );
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 1px,
+        rgba(62, 50, 41, 0.06) 1px,
+        rgba(62, 50, 41, 0.06) 2px
+      );
+    pointer-events: none;
+  }
+
+  .card:hover {
+    box-shadow: 4px 4px 0px #3E3229, -2px -2px 0px rgba(184, 134, 11, 0.2);
+    border-color: #B8860B;
+  }
+
+  .card-noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(circle 1px at 15% 20%, rgba(184, 134, 11, 0.25) 50%, transparent 50%),
+      radial-gradient(circle 1px at 30% 60%, rgba(232, 224, 208, 0.12) 50%, transparent 50%),
+      radial-gradient(circle 1px at 50% 15%, rgba(184, 134, 11, 0.2) 50%, transparent 50%),
+      radial-gradient(circle 1px at 70% 45%, rgba(232, 224, 208, 0.1) 50%, transparent 50%),
+      radial-gradient(circle 1px at 85% 25%, rgba(184, 134, 11, 0.18) 50%, transparent 50%),
+      radial-gradient(circle 1px at 40% 80%, rgba(62, 50, 41, 0.3) 50%, transparent 50%),
+      radial-gradient(circle 1px at 75% 75%, rgba(184, 134, 11, 0.15) 50%, transparent 50%),
+      radial-gradient(circle 2px at 20% 85%, rgba(62, 50, 41, 0.25) 50%, transparent 50%);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-family: 'Special Elite', cursive;
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0 0 6px 0;
+    color: #E8E0D0;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 0px rgba(62, 50, 41, 0.6);
+  }
+
+  .card-scratch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-scratch-line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: repeating-linear-gradient(
+      90deg,
+      #B8860B 0px,
+      #B8860B 4px,
+      transparent 4px,
+      transparent 8px
+    );
+  }
+
+  .card-tagline {
+    font-family: 'Courier Prime', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    color: #8A7A6A;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

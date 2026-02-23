@@ -1,0 +1,116 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-scanlines"></div>
+  <div class="card-frame"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-pixels">
+    <span class="card-pixel"></span>
+    <span class="card-pixel"></span>
+    <span class="card-pixel"></span>
+    <span class="card-pixel"></span>
+    <span class="card-pixel"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #0f0f23;
+    color: #c0c0d0;
+    border: 2px solid #3366ff;
+    border-radius: 0;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 4px 4px 0 #1a2a5c;
+    transition: box-shadow 0.15s, border-color 0.15s;
+  }
+
+  .card:hover {
+    box-shadow: 6px 6px 0 #1a2a5c;
+    border-color: #33ff66;
+  }
+
+  .card-scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.12) 2px,
+      rgba(0, 0, 0, 0.12) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .card-frame {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border: 1px solid #3366ff;
+    border-radius: 0;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .card-name {
+    font-family: 'Press Start 2P', monospace;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0 0 8px 0;
+    color: #33ff66;
+    line-height: 1.4;
+    position: relative;
+    z-index: 3;
+    text-shadow: 2px 2px 0 #1a5c30;
+  }
+
+  .card-pixels {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .card-pixel {
+    width: 6px;
+    height: 6px;
+    border-radius: 0;
+    background: #ffcc00;
+  }
+
+  .card-tagline {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    font-weight: 400;
+    margin: 0;
+    color: #7a7a9e;
+    line-height: 1.8;
+    position: relative;
+    z-index: 3;
+    max-width: 220px;
+  }
+</style>

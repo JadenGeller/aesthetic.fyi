@@ -1,0 +1,171 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-scanlines"></div>
+  <div class="card-corner card-corner-tl"></div>
+  <div class="card-corner card-corner-tr"></div>
+  <div class="card-corner card-corner-bl"></div>
+  <div class="card-corner card-corner-br"></div>
+  <div class="card-status">
+    <span class="card-status-dot"></span>
+    <span class="card-status-text">ONLINE</span>
+  </div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-bar">
+    <div class="card-bar-fill"></div>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: rgba(10, 10, 10, 0.95);
+    color: #c0c0c0;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+    clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px);
+  }
+
+  .card:hover {
+    border-color: rgba(0, 255, 65, 0.4);
+    box-shadow: 0 0 24px rgba(0, 255, 65, 0.1), inset 0 0 40px rgba(0, 255, 65, 0.03);
+    background: rgba(0, 255, 65, 0.04);
+  }
+
+  .card-scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 65, 0.02) 2px,
+      rgba(0, 255, 65, 0.02) 4px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .card-corner {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .card-corner::before,
+  .card-corner::after {
+    content: '';
+    position: absolute;
+    background: rgba(0, 255, 65, 0.4);
+  }
+
+  .card-corner-tl { top: 8px; left: 8px; }
+  .card-corner-tl::before { top: 0; left: 0; width: 14px; height: 1px; }
+  .card-corner-tl::after { top: 0; left: 0; width: 1px; height: 14px; }
+
+  .card-corner-tr { top: 8px; right: 8px; }
+  .card-corner-tr::before { top: 0; right: 0; width: 14px; height: 1px; }
+  .card-corner-tr::after { top: 0; right: 0; width: 1px; height: 14px; }
+
+  .card-corner-bl { bottom: 8px; left: 8px; }
+  .card-corner-bl::before { bottom: 0; left: 0; width: 14px; height: 1px; }
+  .card-corner-bl::after { bottom: 0; left: 0; width: 1px; height: 14px; }
+
+  .card-corner-br { bottom: 8px; right: 8px; }
+  .card-corner-br::before { bottom: 0; right: 0; width: 14px; height: 1px; }
+  .card-corner-br::after { bottom: 0; right: 0; width: 1px; height: 14px; }
+
+  .card-status {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 2;
+  }
+
+  .card-status-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #00FF41;
+    box-shadow: 0 0 6px rgba(0, 255, 65, 0.6);
+    animation: card-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes card-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .card-status-text {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.4rem;
+    font-weight: 700;
+    color: rgba(0, 255, 65, 0.5);
+    letter-spacing: 0.15em;
+  }
+
+  .card-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 8px 0;
+    color: #00FF41;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-shadow: 0 0 16px rgba(0, 255, 65, 0.25);
+  }
+
+  .card-bar {
+    width: 60px;
+    height: 3px;
+    background: rgba(0, 255, 65, 0.1);
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-bar-fill {
+    height: 100%;
+    width: 75%;
+    background: linear-gradient(90deg, #00FF41, rgba(0, 255, 65, 0.4));
+  }
+
+  .card-tagline {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+    color: rgba(192, 192, 192, 0.55);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+    letter-spacing: 0.02em;
+  }
+</style>

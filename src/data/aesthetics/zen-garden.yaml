@@ -1,0 +1,118 @@
+slug: zen-garden
+name: Zen Garden
+coined: true
+
+tagline: "The stones do not speak. The sand does not hurry. And yet, everything is exactly where it belongs."
+
+prompt: |
+  Warm sand (#F5F0E0) background with deep charcoal (#3A3A35) text. Raked
+  sand line patterns via repeating-linear-gradient (thin parallel lines in
+  #E8E0CC). Stone gray (#7A7A6D) and moss green (#6B7B5E) accents.
+  Headings in Cormorant Garamond (300, 400) — elegant, tall serif with
+  meditative calm. Body text in EB Garamond (400) — classical, readable,
+  unhurried. Circular stone shapes via border-radius: 50%. Abundant
+  whitespace, extreme simplicity, meditative spacing. No sharp edges, no
+  visual noise. Soft shadows with warm undertones. The mood is profound
+  stillness — a digital karesansui where every element is placed with
+  deliberate intention. Nothing is decorative. Everything is essential.
+
+about: |
+  A Zen garden on the web is not decoration. It is subtraction. Where
+  most aesthetics add — more color, more motion, more personality — the
+  Zen garden asks: what can be removed while preserving meaning? The
+  answer, almost always, is more than you think.
+
+  The raked sand patterns are not ornament. They are rhythm — parallel
+  lines that guide the eye without demanding attention. The stones are
+  not illustrations. They are anchors — points of visual weight in a
+  field of deliberate emptiness. The whitespace is not wasted space. It
+  is the most important element on the page.
+
+  This is design as meditation. Each element exists because it must, not
+  because it can. The typography is quiet but precise. The colors come
+  from earth and stone. The layout breathes with the patience of someone
+  who has nowhere else to be.
+
+characteristics:
+  - title: Raked Sand Patterns
+    description: >
+      Thin parallel lines via repeating-linear-gradient create the
+      impression of carefully raked sand — the signature texture of a
+      karesansui. These lines are subtle, never competing with content,
+      suggesting order and contemplation beneath every section.
+  - title: Stone Circles
+    description: >
+      Circular elements with border-radius: 50% evoke river stones
+      placed with deliberate care. Stone gray (#7A7A6D) provides weight
+      and grounding. These shapes are simple, heavy, and perfectly still
+      — anchors in a sea of negative space.
+  - title: Meditative Typography
+    description: >
+      Cormorant Garamond for headings — tall, thin, elegant, with the
+      quiet authority of brushwork calligraphy. EB Garamond for body
+      text — classical, warm, deeply readable. Both typefaces breathe
+      with generous letter-spacing and line-height.
+  - title: Extreme Whitespace
+    description: >
+      Spacing is not generous — it is abundant, almost extravagant. Padding
+      and margins are deliberately oversized, creating room for the eye to
+      rest. The layout refuses to crowd. Emptiness is treated as a design
+      element, not a gap to be filled.
+  - title: Earth Palette
+    description: >
+      Warm sand (#F5F0E0), stone gray (#7A7A6D), moss green (#6B7B5E),
+      and deep charcoal (#3A3A35). Every color exists in nature — in dry
+      gardens, on weathered rock, in patches of moss between stepping
+      stones. Nothing is synthetic. Nothing is bright.
+  - title: Deliberate Stillness
+    description: >
+      No animations, no hover effects that demand attention. Transitions
+      are slow and barely perceptible — like watching shadows move across
+      stone. The page does not perform. It simply is.
+
+good_for:
+  - Meditation and mindfulness apps
+  - Architecture and interior design portfolios
+  - Tea and ceramics shops
+  - Personal philosophy blogs
+  - Wellness and retreat websites
+
+not_for:
+  - E-commerce with aggressive conversion goals
+  - Social media platforms
+  - Children's products and entertainment
+  - Fast food and delivery services
+  - News aggregators and content feeds
+
+history: |
+  The karesansui — the dry landscape garden — emerged in Zen Buddhist
+  monasteries in medieval Japan, most famously at Ryoan-ji in Kyoto,
+  built around 1499. These gardens were not landscapes to walk through
+  but compositions to contemplate from a fixed point. Raked gravel
+  represented water. Stones represented mountains. The garden was a
+  koan rendered in earth and rock.
+
+  The aesthetic influence of Zen on Western design began in the mid-20th
+  century, touching everything from architecture (Tadao Ando) to
+  graphic design (Kenya Hara and Muji). On the web, it manifests as
+  radical simplicity — pages that reject the noise of modern interfaces
+  in favor of stillness, restraint, and meaning through absence.
+
+  Digital Zen gardens are not merely minimalist. Minimalism can be cold,
+  clinical, concerned with efficiency. The Zen garden aesthetic is warm
+  and grounded. Its simplicity comes not from removing everything
+  unnecessary but from understanding what is truly necessary. It is
+  the difference between an empty room and a room with one perfect
+  object.
+
+related:
+  - slug: wabi-sabi
+    relationship: Shared Japanese philosophy
+  - slug: japandi
+    relationship: East-meets-West restraint
+  - slug: minimalism
+    relationship: Parallel paths to simplicity
+  - slug: organic-tech
+    relationship: Nature as design language
+  - slug: nordic
+    relationship: Calm through reduction

@@ -1,0 +1,118 @@
+slug: wabi-sabi
+name: Wabi-Sabi
+coined: false
+
+tagline: "Nothing here is perfect. That is what makes it beautiful."
+
+prompt: |
+  Warm white (#F5F0EA) background with stone gray (#8B8680) text. Earth-tone
+  palette: moss green (#7A8B69), clay (#B5A18E), stone gray (#8B8680). Borders
+  are intentionally uneven — use slightly different border-radius values on
+  each corner (e.g. 2px 8px 4px 12px) to feel handmade and asymmetric.
+  Headings in EB Garamond (400, italic) — classical, weathered, wise. Body
+  text in Cormorant (400, 500) for an elegant yet organic feel. Rough
+  textures via subtle CSS noise gradients and stippled radial-gradient
+  patterns suggesting stone or handmade paper. Generous whitespace — let
+  elements breathe like a rock garden. Muted, desaturated color choices.
+  Layout is deliberately asymmetric — off-center headings, unequal grid
+  columns, varied spacing. The mood is contemplative, imperfect, aged — like
+  a cracked tea bowl mended with gold. Nothing is polished. Everything is
+  accepted.
+
+about: |
+  Wabi-sabi on the web is the refusal to sand down the edges. Where most
+  digital design strives for pixel-perfect symmetry, wabi-sabi finds
+  beauty in what is rough, uneven, and incomplete. The asymmetric borders,
+  the muted earth tones, the generous emptiness — they all say the same
+  thing: imperfection is not a flaw. It is the point.
+
+  This is design that values transience over permanence, simplicity over
+  complexity. The uneven corners feel shaped by hand and time, not by a
+  grid system. The palette comes from the natural world — stone, moss,
+  dried clay, weathered wood. Every element carries the quiet dignity of
+  something that does not need to be new to be meaningful.
+
+characteristics:
+  - title: Earth-Tone Palette
+    description: >
+      Stone gray (#8B8680), moss green (#7A8B69), clay (#B5A18E), warm white
+      (#F5F0EA). The colors are drawn from nature in its quietest state —
+      lichen on rock, dried earth, the underside of leaves. Nothing is
+      saturated. Nothing demands attention.
+  - title: Asymmetric Borders
+    description: >
+      Border-radius values differ on each corner — 2px 8px 4px 12px — so
+      no container is perfectly round or perfectly square. They feel shaped
+      by use, like a ceramic bowl turned slightly off-center on the wheel.
+      Imperfection is the design language.
+  - title: Organic Textures
+    description: >
+      Subtle CSS noise and stippled radial-gradients suggest stone, bark,
+      and handmade paper. These textures are never loud — they sit beneath
+      the content like the grain of an old wooden table, felt more than
+      seen.
+  - title: Serif Typography
+    description: >
+      EB Garamond for headings — classical, slightly weathered, with the
+      gravity of a philosophical text. Cormorant for body — elegant but
+      organic, like handwriting that has been refined over decades. The type
+      has presence without shouting.
+  - title: Generous Emptiness
+    description: >
+      Whitespace is not wasted space — it is the silence between notes.
+      Sections breathe deeply. Elements float in open fields. The layout
+      has the spaciousness of a Japanese rock garden, where what is absent
+      matters as much as what is present.
+  - title: Deliberate Asymmetry
+    description: >
+      Headings drift off-center. Grid columns are intentionally unequal.
+      Spacing varies. Nothing is perfectly aligned, because perfection is
+      a kind of death. The layout embraces the organic irregularity of
+      things made by hand and shaped by time.
+
+good_for:
+  - Meditation and mindfulness apps
+  - Artisan craft and ceramics shops
+  - Tea and specialty food brands
+  - Architecture and interior design portfolios
+  - Poetry and literary journals
+
+not_for:
+  - E-commerce with high conversion goals
+  - Data-heavy dashboards and analytics
+  - Fast-paced news or social media platforms
+  - Corporate enterprise software
+  - Gaming and entertainment sites
+
+history: |
+  Wabi-sabi has roots in 15th-century Japanese tea ceremony culture,
+  where tea master Sen no Rikyu elevated rustic, imperfect tea bowls over
+  the ornate Chinese ceramics that were fashionable at the time. The
+  philosophy draws from Buddhist teachings on impermanence (mujo) and
+  the acceptance of suffering — finding beauty not despite decay and
+  irregularity, but because of them.
+
+  The term itself combines two concepts: wabi, the beauty of simplicity
+  and solitude, and sabi, the beauty that comes with age and wear. A
+  cracked pot repaired with gold (kintsugi), a moss-covered stone, a
+  faded ink painting — these are wabi-sabi objects. They are beautiful
+  because they carry the marks of time, not despite them.
+
+  On the web, wabi-sabi is rare precisely because digital design tends
+  toward the flawless. But when it appears — in muted palettes, uneven
+  layouts, rough textures, and generous silence — it offers something
+  most websites cannot: the feeling that imperfection is not only
+  acceptable but sacred. It is the antithesis of the startup landing
+  page, and that is its power.
+
+related:
+  - slug: japandi
+    relationship: Shared Japanese minimalism
+  - slug: zen-garden
+    relationship: Contemplative stillness
+  - slug: minimalism
+    relationship: Values simplicity and restraint
+  - slug: organic-tech
+    relationship: Nature-inspired materiality
+  - slug: cottagecore
+    relationship: Handmade warmth

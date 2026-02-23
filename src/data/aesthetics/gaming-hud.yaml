@@ -1,0 +1,116 @@
+slug: gaming-hud
+name: Gaming HUD
+coined: true
+
+tagline: "HUD online. Vitals nominal. All systems tracking. Welcome to the overlay that never sleeps."
+
+prompt: |
+  Dark translucent (#0a0a0a with alpha) backgrounds with HUD-green
+  (#00FF41) and orange (#FF6600) accent colors. Health-bar-style
+  progress elements via CSS gradients. Angular HUD frames using
+  clip-path polygons. Monospace/tech font (Rajdhani for headings,
+  Orbitron for labels) for a tactical readout feel. Stat-box layouts
+  with grid structure. Crosshair-style decorative elements via ::before
+  and ::after pseudo-elements. Semi-transparent overlays with border
+  effects using rgba greens and oranges. Scanline effects via repeating
+  linear gradients. Corner bracket decorations on containers. The mood
+  is in-game, tactical, data-rich — like a heads-up display projected
+  onto your visor. Everything is a readout. Nothing is decoration.
+
+about: |
+  The Gaming HUD aesthetic takes the language of in-game interfaces and
+  maps it onto the web. Health bars become progress indicators. Ammo
+  counters become stats. The translucent overlays that float above game
+  worlds now float above dark backgrounds, giving every section the
+  feeling of a tactical readout layered on top of reality.
+
+  This is design that treats information as mission-critical. Every
+  element has a purpose, a status, a value. The angular clip-paths and
+  bracket corners say: this data is being monitored. The green-on-dark
+  palette comes from night-vision scopes and cockpit displays — designed
+  for readability under pressure, not for beauty. But it is beautiful,
+  in the way that all functional things are beautiful.
+
+characteristics:
+  - title: Dark Translucent Panels
+    description: >
+      #0a0a0a backgrounds with alpha transparency create layered panels
+      that feel like HUD overlays floating above a game world. Borders
+      use rgba green (#00FF41) at low opacity for a subtle glow effect.
+      Nothing is fully opaque — everything suggests depth.
+  - title: HUD Color Palette
+    description: >
+      Primary green (#00FF41) for active elements and key data. Warning
+      orange (#FF6600) for alerts, highlights, and secondary accents.
+      These two colors against near-black backgrounds create the classic
+      tactical display look — high contrast, high readability.
+  - title: Angular Clip-Paths
+    description: >
+      Containers use clip-path polygons to create angled corners and
+      beveled edges. These angular frames reference cockpit displays,
+      targeting reticles, and sci-fi interface panels. Nothing has
+      border-radius — every edge is cut with purpose.
+  - title: Stat-Box Layouts
+    description: >
+      Information is displayed in grid-based stat boxes with labels,
+      values, and status indicators. Health bars rendered as CSS
+      gradient strips. Data is always structured, always quantified,
+      always ready to be read at a glance during combat.
+  - title: Tech Typography
+    description: >
+      Rajdhani for headings — geometric, condensed, military. Orbitron
+      for labels and small text — a typeface that looks like it was
+      designed for a spacecraft console. All caps for labels with wide
+      letter-spacing. The type says: this is a system, not a story.
+  - title: Crosshair Decorations
+    description: >
+      Pseudo-elements create crosshair-style decorative marks at section
+      centers and container corners. Thin lines that intersect at right
+      angles, plus-sign markers, bracket corners — visual language
+      borrowed directly from targeting systems and scope overlays.
+
+good_for:
+  - Gaming and esports platforms
+  - Live streaming overlays and dashboards
+  - Sci-fi and cyberpunk themed sites
+  - Real-time data monitoring tools
+  - Game development portfolios
+
+not_for:
+  - Corporate or enterprise websites
+  - Healthcare and wellness platforms
+  - Children's educational content
+  - Legal or financial services
+  - Wedding and event planning sites
+
+history: |
+  The heads-up display originated in military aviation in the 1950s,
+  projecting flight data onto the windshield so pilots could read
+  instruments without looking down. The concept migrated to video games
+  in the 1990s, where health bars, ammo counters, and minimaps became
+  standard interface elements overlaid on the game world.
+
+  Games like Halo, Metroid Prime, and Crysis made the HUD itself a
+  design statement — Samus Aran's visor was as iconic as her armor.
+  The aesthetic solidified as sci-fi films adopted similar interfaces:
+  Iron Man's helmet display, Minority Report's gesture UI, and every
+  spaceship cockpit in every space opera.
+
+  On the web, the Gaming HUD aesthetic emerged from fan sites, esports
+  platforms, and streaming culture. It takes the visual language of
+  in-game interfaces — the translucent panels, the green-on-dark
+  readouts, the angular frames — and applies it to content that has
+  nothing to do with combat. But that is the point. Everything feels
+  more exciting when it looks like mission data.
+
+related:
+  - slug: cyberpunk
+    relationship: Shares sci-fi interface language
+  - slug: retro-terminal
+    relationship: Green-on-dark lineage
+  - slug: neon-noir
+    relationship: Dark palette, glowing accents
+  - slug: data-viz
+    relationship: Data-rich display philosophy
+  - slug: dark-mode
+    relationship: Dark-first design approach

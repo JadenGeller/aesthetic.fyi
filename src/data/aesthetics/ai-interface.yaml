@@ -1,0 +1,118 @@
+slug: ai-interface
+name: AI Interface
+coined: true
+
+tagline: "You are a helpful assistant. How can I help you today?"
+
+prompt: |
+  Clean white (#FFFFFF) or light gray (#F7F7F8) background. Message
+  bubbles with rounded corners (16-20px) — user messages right-aligned
+  in soft blue (#E8F0FE or #DCE8FC), AI messages left-aligned in white
+  (#FFFFFF) with subtle 1px border (#E5E5E5). Clean sans-serif
+  typography (Inter or system font stack), 15-16px body, #1A1A1A text.
+  Typing indicator with three animated dots in a bubble. Minimal
+  iconography — small avatar circles for user/AI. Conversational
+  vertical layout with comfortable spacing (12-16px between messages).
+  Subtle shadows on bubbles (0 1px 3px rgba(0,0,0,0.08)). Input bar
+  at bottom with rounded pill shape, light border, and send button.
+  The mood is polished, trustworthy, and utilitarian — the interface
+  disappears so the conversation can breathe.
+
+about: |
+  AI Interface is the aesthetic of the conversation that never
+  happened in a room. It is the visual language of talking to a
+  machine — clean, minimal, deliberately calming. Every pixel is
+  engineered to reduce friction between a question and its answer.
+
+  The design descends from messaging apps but strips away personality.
+  No stickers, no emoji reactions, no read receipts. Just alternating
+  bubbles on a quiet background, a blinking cursor, and the gentle
+  promise that something intelligent is listening. The rounded corners
+  say "friendly." The whitespace says "focused." The typing indicator
+  says "I am thinking about your problem right now."
+
+characteristics:
+  - title: Message Bubbles
+    description: >
+      Rounded rectangles (16-20px radius) alternating left and right.
+      User messages in soft blue (#E8F0FE), AI responses in white
+      with subtle borders. The asymmetry creates a conversational
+      rhythm — call and response, question and answer.
+  - title: Neutral Background
+    description: >
+      Light gray (#F7F7F8) or pure white backgrounds. No texture, no
+      gradients, no decoration. The background exists only to make the
+      conversation legible. It is negative space as philosophy — the
+      interface should be invisible.
+  - title: Clean Sans-Serif Type
+    description: >
+      Inter, system fonts, or similar geometric sans-serifs. Medium
+      weight, comfortable line-height (1.5-1.6). No flourishes. The
+      typography is optimized for rapid scanning of conversational
+      text. Readability is the only metric.
+  - title: Typing Indicator
+    description: >
+      Three dots pulsing in sequence inside a small bubble. The
+      universal signal that the AI is "thinking." It is a social cue
+      borrowed from human messaging — a way to make latency feel like
+      consideration rather than delay.
+  - title: Minimal Chrome
+    description: >
+      Thin borders (1px #E5E5E5), subtle shadows, muted icons. The
+      UI elements are barely there. Navigation is reduced to a
+      sidebar or a simple header. Every non-conversational element is
+      suppressed so the messages take center stage.
+  - title: Input Bar
+    description: >
+      A pill-shaped text field anchored to the bottom of the viewport.
+      Rounded corners, light border, a send button that activates on
+      input. It is the invitation to speak — always visible, always
+      ready. The shape echoes the message bubbles above it.
+
+good_for:
+  - AI chatbot and assistant interfaces
+  - Customer support and help desk tools
+  - Conversational onboarding flows
+  - Internal knowledge base query tools
+  - Lightweight messaging applications
+
+not_for:
+  - Data-heavy dashboards and analytics
+  - E-commerce and product catalogs
+  - Creative portfolios and galleries
+  - Long-form editorial and blogging
+  - Gaming and entertainment platforms
+
+history: |
+  The AI Interface aesthetic crystallized between 2022 and 2023 with
+  the release of ChatGPT. OpenAI's design — a centered conversation
+  column on a light background, alternating message blocks, a text
+  input at the bottom — became the template that every AI startup
+  copied. Within months, hundreds of products looked nearly identical.
+
+  The roots go deeper than ChatGPT. iMessage and WhatsApp established
+  the bubble metaphor. Intercom and Drift brought chat widgets to
+  SaaS. Slack normalized long-form conversational interfaces in
+  professional settings. But AI products distilled all of this into
+  something purer: no contact list, no channels, no threads. Just
+  you and the machine, talking.
+
+  The aesthetic is deliberately plain because trust is the design
+  goal. When you are asking an AI to write your emails, summarize
+  your documents, or explain your medical results, the last thing
+  you want is visual noise. The clean white background and gentle
+  rounded corners communicate competence and calm. It is the visual
+  equivalent of a doctor's white coat — clinical, reassuring, and
+  deliberately unsexy.
+
+related:
+  - slug: startup-minimal
+    relationship: Shares clean restraint
+  - slug: flat-design
+    relationship: Rejects ornamentation
+  - slug: notion-core
+    relationship: Similar tool-like clarity
+  - slug: minimalism
+    relationship: Whitespace as philosophy
+  - slug: material-design
+    relationship: Systematic UI patterns

@@ -1,0 +1,118 @@
+slug: ascii-art
+name: ASCII Art
+coined: false
+
+tagline: ">_ You don't need pixels when you have characters. Every glyph is a brushstroke."
+
+prompt: |
+  Dark background (#1a1a2e) with bright green (#33FF33) primary text and
+  amber (#FFB000) accent text. Monospace fonts ONLY — IBM Plex Mono or
+  Courier Prime, no other typefaces. ASCII box-drawing borders using
+  characters like ╔═╗║╚╝ or CSS border-style equivalents. Zero
+  border-radius anywhere — everything is sharp, rectangular, grid-aligned.
+  Terminal/DOS feel throughout. Section dividers made from repeated
+  characters (═══, ----, ****). Subtle scanline overlay effect via
+  repeating-linear-gradient. Blinking cursor accents. Text-shadow glow
+  on headings (0 0 10px rgba(51,255,51,0.5)). Dense, compact spacing.
+  The mood is late-night BBS, green-phosphor monitor, pre-GUI computing.
+  Nothing is rounded. Nothing is decorative. Everything is typed.
+
+about: |
+  ASCII Art on the web is a declaration of constraint as creative
+  freedom. When your entire palette is the character set — pipes and
+  dashes, slashes and dots, box-drawing glyphs and careful spacing —
+  every design decision becomes deliberate. There is no hiding behind
+  gradients or drop shadows. The grid is your canvas, and the monospace
+  font is your only tool.
+
+  This is design that remembers a time before pixels were cheap. When
+  bulletin board systems and terminal emulators were the internet, and
+  art meant arranging characters on an 80-column screen until something
+  emerged. The aesthetic carries that DNA forward — the phosphor glow,
+  the dark background, the green-on-black that burned itself into CRT
+  monitors and into the collective memory of early computing.
+
+characteristics:
+  - title: Monospace Only
+    description: >
+      IBM Plex Mono or Courier Prime — no proportional fonts allowed.
+      Every character occupies the same width, creating a rigid grid
+      that defines the entire visual language. Text alignment becomes
+      pixel-perfect. Columns line up. The typewriter discipline is
+      absolute.
+  - title: Box-Drawing Borders
+    description: >
+      Borders built from Unicode box-drawing characters — ╔═╗║╚╝ — or
+      CSS borders styled to feel like terminal output. No border-radius
+      anywhere. Every container is a sharp rectangle, like a DOS window
+      or a terminal pane. The grid never bends.
+  - title: Phosphor Palette
+    description: >
+      Dark backgrounds (#1a1a2e) with bright green (#33FF33) or amber
+      (#FFB000) text — the colors of early CRT monitors. Text-shadow
+      glow effects simulate the phosphor bleed of old displays. The
+      palette is minimal and functional, never decorative.
+  - title: Scanline Texture
+    description: >
+      Subtle horizontal lines via repeating-linear-gradient overlay,
+      simulating the scanline pattern of CRT displays. The effect is
+      barely visible but adds tactile depth — a reminder that this
+      surface once flickered at 60Hz.
+  - title: Character Dividers
+    description: >
+      Section breaks use repeated ASCII characters — rows of equals
+      signs (════), dashes (────), or asterisks (****). No SVG lines,
+      no decorative borders. Every visual element could theoretically
+      be typed on a keyboard.
+  - title: Terminal Rhythm
+    description: >
+      Dense, compact spacing with minimal padding. Content fills the
+      screen like a terminal buffer. There is no luxury of whitespace —
+      every row is used, every column is accounted for. The rhythm is
+      functional, urgent, efficient.
+
+good_for:
+  - Developer portfolios and personal sites
+  - CLI tool documentation and landing pages
+  - Retro computing tributes and museums
+  - Hacker and security conference sites
+  - Code-focused blogs and technical writing
+
+not_for:
+  - Luxury brand and fashion sites
+  - Children's education platforms
+  - Wedding and event invitations
+  - Photography portfolios
+  - Corporate enterprise dashboards
+
+history: |
+  ASCII art predates the internet itself. In the 1960s and 1970s,
+  programmers used line printers — the only output devices available —
+  to create images from text characters. The constraints were absolute:
+  a fixed-width grid, a limited character set, and no color. Yet within
+  those constraints, an entire art form emerged.
+
+  The golden age came with bulletin board systems in the 1980s and early
+  1990s. BBS culture elevated ASCII art to a competitive craft, with
+  groups like ACiD Productions and iCE creating elaborate pieces that
+  pushed the boundaries of what characters could depict. ANSI art added
+  color through escape codes, painting terminal screens in sixteen hues.
+
+  On the modern web, ASCII Art aesthetic is both nostalgia and
+  statement. It says: I do not need your frameworks, your design
+  systems, your component libraries. I can build something striking
+  with nothing but a monospace font and a dark background. It is the
+  punk rock of web design — raw, deliberate, and unapologetically
+  constrained.
+
+related:
+  - slug: retro-terminal
+    relationship: Shares terminal heritage
+  - slug: pixel-art
+    relationship: Grid-based constraint art
+  - slug: old-web
+    relationship: Early internet nostalgia
+  - slug: cyberpunk
+    relationship: Hacker visual language
+  - slug: brutalism
+    relationship: Raw, unpolished honesty

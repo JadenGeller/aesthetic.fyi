@@ -1,0 +1,164 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-pattern"></div>
+  <div class="card-pattern-overlay"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-divider">
+    <span class="card-diamond"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  @keyframes card-moire {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .card {
+    background: #FFFFFF;
+    color: #000000;
+    border: 2px solid #000000;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .card:hover {
+    background: #000000;
+    color: #FFFFFF;
+  }
+
+  .card-pattern {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        #000000 0px,
+        #000000 1px,
+        transparent 1px,
+        transparent 6px
+      );
+    opacity: 0.1;
+    pointer-events: none;
+    animation: card-moire 90s linear infinite;
+  }
+
+  .card:hover .card-pattern {
+    background:
+      repeating-linear-gradient(
+        0deg,
+        #FFFFFF 0px,
+        #FFFFFF 1px,
+        transparent 1px,
+        transparent 6px
+      );
+    opacity: 0.12;
+  }
+
+  .card-pattern-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      repeating-linear-gradient(
+        87deg,
+        #000000 0px,
+        #000000 1px,
+        transparent 1px,
+        transparent 6px
+      );
+    opacity: 0.08;
+    pointer-events: none;
+  }
+
+  .card:hover .card-pattern-overlay {
+    background:
+      repeating-linear-gradient(
+        87deg,
+        #FFFFFF 0px,
+        #FFFFFF 1px,
+        transparent 1px,
+        transparent 6px
+      );
+    opacity: 0.1;
+  }
+
+  .card-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 6px 0;
+    color: #000000;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+
+  .card:hover .card-name {
+    color: #FFFFFF;
+  }
+
+  .card-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-diamond {
+    width: 6px;
+    height: 6px;
+    background: #000000;
+    transform: rotate(45deg);
+    transition: background 0.2s;
+  }
+
+  .card:hover .card-diamond {
+    background: #FFFFFF;
+  }
+
+  .card-tagline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    color: #000000;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .card:hover .card-tagline {
+    color: #FFFFFF;
+  }
+</style>

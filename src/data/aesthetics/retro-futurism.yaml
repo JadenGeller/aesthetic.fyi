@@ -1,0 +1,116 @@
+slug: retro-futurism
+name: Retro Futurism
+coined: false
+
+tagline: "The future was chrome, curved, and full of possibility. We just forgot to build it."
+
+prompt: |
+  Cream (#FFF8E1) background with dark charcoal (#2D2D2D) text. Silver
+  (#C0C0C0) borders and burnt orange (#E65100) accents. Teal (#00838F)
+  for interactive elements and highlights. Headings in Orbitron or
+  Audiowide (600) — geometric, space-age, uppercase. Body text in Space
+  Grotesk (400) for clean, futuristic readability. Generous border-radius
+  (20-50px) on containers for rounded, capsule-like shapes. Starburst
+  and atom patterns via CSS radial-gradient and conic-gradient as
+  decorative motifs. Retro-futuristic dividers using ellipses and arcs.
+  Shadows with warm tones (rgba with orange). The mood is atomic-age
+  optimism — chrome dashboards, rocket fins, Googie architecture, and
+  the boundless confidence of mid-century futurism. Everything curves.
+  Nothing is sharp.
+
+about: |
+  Retro Futurism on the web is the future that never arrived — reimagined
+  as a design language. It pulls from the atomic age and space race era,
+  when the future meant flying cars, domed cities, and chrome everything.
+  The rounded shapes, the bold geometry, the warm metallic palette — they
+  all express a time when technology felt like pure possibility.
+
+  This is design that radiates confidence. The capsule-shaped containers
+  recall rocket pods and spacecraft control panels. The starburst motifs
+  echo the atomic symbol that defined an era. Every element says: the
+  future is bright, the future is beautiful, and we are building it
+  right now.
+
+characteristics:
+  - title: Atomic Palette
+    description: >
+      #FFF8E1 warm cream backgrounds, #C0C0C0 silver borders, #E65100
+      burnt orange accents, #00838F teal highlights. The colors come
+      from chrome, sunsets over launchpads, and the turquoise of
+      mid-century diners. Warm and metallic, never cold.
+  - title: Space-Age Curves
+    description: >
+      Border-radius 20-50px creates capsule and pill shapes on every
+      container. Nothing has sharp corners. The rounded forms recall
+      Googie architecture, Jetsons furniture, and the aerodynamic
+      curves of concept cars from 1959.
+  - title: Geometric Typography
+    description: >
+      Orbitron or Audiowide for headings — bold, geometric, uppercase,
+      engineered for the space age. Space Grotesk for body text — clean,
+      modern, readable. The type looks like it belongs on a mission
+      control display.
+  - title: Starburst Motifs
+    description: >
+      CSS starburst and atom patterns via conic-gradient and
+      radial-gradient suggest atomic energy and cosmic possibility.
+      These decorative elements appear as section dividers and
+      background accents — celebratory, never subtle.
+  - title: Chrome & Glow
+    description: >
+      Silver gradients and warm glowing shadows (rgba with orange tones)
+      give surfaces a polished, reflective quality. Elements feel like
+      they could be stamped from brushed aluminum or molded from
+      space-age plastic.
+  - title: Optimistic Energy
+    description: >
+      Spacing is generous but dynamic. Sections have momentum. The layout
+      has the rhythm of a World's Fair pavilion — each area reveals
+      something new, something exciting. Nothing is timid. Everything
+      looks forward.
+
+good_for:
+  - Retro-themed brands and products
+  - Space and science education sites
+  - Mid-century inspired portfolios
+  - Event and conference landing pages
+  - Creative agency showcases
+
+not_for:
+  - Minimalist SaaS applications
+  - Medical or healthcare platforms
+  - Legal or financial services
+  - Academic research publications
+  - E-commerce checkout flows
+
+history: |
+  Retro Futurism draws from the explosive optimism of the 1950s and 1960s,
+  when the Space Race, the Atomic Age, and postwar prosperity created a
+  vision of tomorrow that was sleek, chrome, and endlessly hopeful. This
+  was the era of Googie architecture, Populuxe design, and The Jetsons —
+  a future where every surface curved and every machine gleamed.
+
+  The aesthetic was rooted in real technological progress. Sputnik launched
+  in 1957. NASA was founded in 1958. By 1969 humans walked on the moon.
+  Designers responded with starbursts, boomerang shapes, and parabolic
+  arches. Diners looked like spaceships. Cars had tail fins. Everything
+  pointed upward.
+
+  On the web, Retro Futurism translates into rounded containers, bold
+  geometric type, warm metallics, and atomic-era decorative patterns. It
+  rejects both the flatness of modern minimalism and the darkness of
+  cyberpunk. Instead, it insists on something radical for the digital age:
+  optimism. The future, it says, is not something to fear. It is something
+  to design.
+
+related:
+  - slug: mid-century-modern
+    relationship: Shares atomic-age roots
+  - slug: synthwave
+    relationship: Another retro future
+  - slug: cosmic
+    relationship: Space-themed kinship
+  - slug: retro-diner
+    relationship: Same era, different venue
+  - slug: steampunk
+    relationship: Alternative history tech

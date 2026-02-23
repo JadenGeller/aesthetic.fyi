@@ -1,0 +1,990 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<div class="page">
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">aesthetic.fyi</a>
+      <div class="nav-sep"></div>
+      <a href={`/${aesthetic.slug}`} class="nav-current">{aesthetic.name}</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-avatar">
+        <div class="hero-avatar-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/></svg>
+        </div>
+      </div>
+      <span class="hero-label">A Web Aesthetic</span>
+      <h1 class="hero-title">{aesthetic.name}</h1>
+      <div class="hero-typing">
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+      </div>
+      <p class="hero-tagline">{aesthetic.tagline}</p>
+    </div>
+  </section>
+
+  <!-- WHAT THIS IS -->
+  <section class="section about-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule"></div>
+        <span class="section-label">What This Is</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2 class="section-heading">The Conversation Interface</h2>
+      <div class="about-chat">
+        <div class="chat-message chat-user">
+          <div class="chat-bubble chat-bubble-user">
+            <p>What is the AI Interface aesthetic?</p>
+          </div>
+          <div class="chat-avatar chat-avatar-user">You</div>
+        </div>
+        <div class="chat-message chat-ai">
+          <div class="chat-avatar chat-avatar-ai">AI</div>
+          <div class="chat-bubble chat-bubble-ai">
+            {aesthetic.about.split('\n\n').map((paragraph: string) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARACTERISTICS -->
+  <section class="section characteristics-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule"></div>
+        <span class="section-label">Design Tokens</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2 class="section-heading">Characteristics</h2>
+      <div class="characteristics-grid">
+        {aesthetic.characteristics.map((char: { title: string; description: string }, i: number) => (
+          <div class="char-card">
+            <div class="char-top">
+              <span class="char-number">{String(i + 1).padStart(2, '0')}</span>
+              <div class="char-indicator">
+                <span class="char-dot"></span>
+                <span class="char-dot"></span>
+                <span class="char-dot"></span>
+              </div>
+            </div>
+            <h3 class="char-title">{char.title}</h3>
+            <p class="char-description">{char.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- STYLE REFERENCE -->
+  <section class="section prompt-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule"></div>
+        <span class="section-label">Style Reference</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2 class="section-heading">Copy & Paste</h2>
+      <div class="prompt-block">
+        <div class="prompt-header">
+          <span class="prompt-header-label">Prompt</span>
+          <button class="copy-button" data-prompt={aesthetic.prompt}>Copy</button>
+        </div>
+        <p class="prompt-text">{aesthetic.prompt}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN TO USE -->
+  <section class="section use-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule"></div>
+        <span class="section-label">When to Use</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2 class="section-heading">Right Context, Wrong Context</h2>
+      <div class="use-grid">
+        <div class="use-column use-good">
+          <h3 class="use-column-heading">Good For</h3>
+          <ul class="use-list">
+            {aesthetic.good_for.map((item: string) => (
+              <li class="use-item use-item-good">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="use-column use-bad">
+          <h3 class="use-column-heading">Not For</h3>
+          <ul class="use-list">
+            {aesthetic.not_for.map((item: string) => (
+              <li class="use-item use-item-bad">{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="section history-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule"></div>
+        <span class="section-label">Origins</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2 class="section-heading">History</h2>
+      <div class="history-chat">
+        {aesthetic.history.split('\n\n').map((paragraph: string, i: number) => (
+          <div class={`chat-message ${i % 2 === 0 ? 'chat-ai' : 'chat-user'}`}>
+            {i % 2 === 0 && <div class="chat-avatar chat-avatar-ai">AI</div>}
+            <div class={`chat-bubble ${i % 2 === 0 ? 'chat-bubble-ai' : 'chat-bubble-user'}`}>
+              <p>{paragraph}</p>
+            </div>
+            {i % 2 !== 0 && <div class="chat-avatar chat-avatar-user">You</div>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED STYLES -->
+  <section class="section related-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule"></div>
+        <span class="section-label">Explore</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2 class="section-heading">Related Styles</h2>
+      <div class="related-grid">
+        {aesthetic.related.map((rel: { slug: string; relationship: string }) => (
+          <a href={`/${rel.slug}`} class="related-card">
+            <span class="related-relationship">{rel.relationship}</span>
+            <span class="related-name">{rel.slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+            <span class="related-arrow">&rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-line"></div>
+      <a href="/" class="footer-logo">aesthetic.fyi</a>
+      <span class="footer-tagline">Every web aesthetic, demonstrated.</span>
+      <a href="/" class="footer-back">&larr; Back to All Aesthetics</a>
+      <div class="footer-line"></div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.querySelector('.copy-button');
+    if (copyButton) {
+      copyButton.addEventListener('click', () => {
+        const prompt = copyButton.getAttribute('data-prompt') || '';
+        navigator.clipboard.writeText(prompt).then(() => {
+          const original = copyButton.textContent;
+          copyButton.textContent = 'Copied!';
+          copyButton.classList.add('copied');
+          setTimeout(() => {
+            copyButton.textContent = original;
+            copyButton.classList.remove('copied');
+          }, 2000);
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  /* ========================================
+     RESET & BASE
+     ======================================== */
+  .page {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F7F7F8;
+    color: #1A1A1A;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ========================================
+     NAV
+     ======================================== */
+  .nav {
+    border-bottom: 1px solid #E5E5E5;
+    background: #FFFFFF;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .nav-logo {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #1A1A1A;
+    text-decoration: none;
+    padding: 6px 16px;
+    border: 1px solid #E5E5E5;
+    border-radius: 20px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .nav-logo:hover {
+    background: #F7F7F8;
+    border-color: #D0D0D0;
+  }
+
+  .nav-sep {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #D0D0D0;
+  }
+
+  .nav-current {
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: #6B6B6B;
+    text-decoration: none;
+    padding: 6px 16px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    transition: border-color 0.2s;
+  }
+
+  .nav-current:hover {
+    border-color: #E5E5E5;
+  }
+
+  /* ========================================
+     HERO
+     ======================================== */
+  .hero {
+    background: #FFFFFF;
+    padding: 80px 32px 64px;
+    text-align: center;
+    border-bottom: 1px solid #E5E5E5;
+  }
+
+  .hero-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .hero-avatar {
+    margin-bottom: 28px;
+  }
+
+  .hero-avatar-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #E8F0FE, #DCE8FC);
+    color: #4A7BF7;
+  }
+
+  .hero-label {
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #8E8E93;
+    display: inline-block;
+    margin-bottom: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    font-weight: 600;
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    line-height: 1.1;
+    margin: 0 0 24px 0;
+    color: #1A1A1A;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-typing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 24px;
+    padding: 10px 20px;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 18px;
+    display: inline-flex;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+
+  .typing-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #8E8E93;
+    animation: typingPulse 1.4s ease-in-out infinite;
+  }
+
+  .typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes typingPulse {
+    0%, 60%, 100% {
+      opacity: 0.3;
+      transform: scale(0.85);
+    }
+    30% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .hero-tagline {
+    font-weight: 400;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 480px;
+    color: #6B6B6B;
+  }
+
+  /* ========================================
+     CHAT MESSAGES (shared between sections)
+     ======================================== */
+  .chat-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .chat-message:last-child {
+    margin-bottom: 0;
+  }
+
+  .chat-user {
+    flex-direction: row-reverse;
+  }
+
+  .chat-avatar {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-top: 4px;
+  }
+
+  .chat-avatar-ai {
+    background: linear-gradient(135deg, #E8F0FE, #DCE8FC);
+    color: #4A7BF7;
+  }
+
+  .chat-avatar-user {
+    background: #1A1A1A;
+    color: #FFFFFF;
+  }
+
+  .chat-bubble {
+    max-width: 540px;
+    padding: 14px 18px;
+    border-radius: 18px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .chat-bubble p {
+    margin: 0 0 10px 0;
+  }
+
+  .chat-bubble p:last-child {
+    margin-bottom: 0;
+  }
+
+  .chat-bubble-ai {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 18px 18px 18px 4px;
+    color: #1A1A1A;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+
+  .chat-bubble-user {
+    background: #E8F0FE;
+    border: 1px solid #DCE8FC;
+    border-radius: 18px 18px 4px 18px;
+    color: #1A1A1A;
+  }
+
+  /* ========================================
+     SECTIONS - SHARED
+     ======================================== */
+  .section {
+    padding: 80px 32px;
+    border-bottom: 1px solid #E5E5E5;
+  }
+
+  .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+
+  .section-rule {
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: #D0D0D0;
+  }
+
+  .section-label {
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: #8E8E93;
+    white-space: nowrap;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .section-heading {
+    font-weight: 600;
+    font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+    line-height: 1.15;
+    margin: 0 0 48px 0;
+    text-align: center;
+    color: #1A1A1A;
+    letter-spacing: -0.01em;
+  }
+
+  /* ========================================
+     ABOUT
+     ======================================== */
+  .about-section {
+    background: #FFFFFF;
+  }
+
+  .about-chat {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* ========================================
+     CHARACTERISTICS
+     ======================================== */
+  .characteristics-section {
+    background: #F7F7F8;
+  }
+
+  .characteristics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .char-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 16px;
+    padding: 24px;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .char-card:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border-color: #D0D0D0;
+  }
+
+  .char-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .char-number {
+    font-weight: 500;
+    font-size: 0.7rem;
+    color: #8E8E93;
+    letter-spacing: 0.08em;
+  }
+
+  .char-indicator {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .char-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #D0D0D0;
+  }
+
+  .char-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: 0 0 8px 0;
+    color: #1A1A1A;
+  }
+
+  .char-description {
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin: 0;
+    color: #6B6B6B;
+  }
+
+  /* ========================================
+     STYLE REFERENCE / PROMPT
+     ======================================== */
+  .prompt-section {
+    background: #FFFFFF;
+  }
+
+  .prompt-block {
+    border: 1px solid #E5E5E5;
+    border-radius: 16px;
+    max-width: 720px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  .prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid #E5E5E5;
+    background: #FAFAFA;
+  }
+
+  .prompt-header-label {
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #8E8E93;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .copy-button {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    background: #1A1A1A;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 20px;
+    padding: 7px 18px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .copy-button:hover {
+    background: #333333;
+  }
+
+  .copy-button.copied {
+    background: #4A7BF7;
+  }
+
+  .prompt-text {
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #1A1A1A;
+    padding: 24px 20px;
+    margin: 0;
+    white-space: pre-wrap;
+  }
+
+  /* ========================================
+     WHEN TO USE
+     ======================================== */
+  .use-section {
+    background: #F7F7F8;
+  }
+
+  .use-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .use-column {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .use-column-heading {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 16px 20px;
+    border-bottom: 1px solid #E5E5E5;
+  }
+
+  .use-good .use-column-heading {
+    background: #F0F7F0;
+    color: #2D6A2E;
+  }
+
+  .use-bad .use-column-heading {
+    background: #FFF5F5;
+    color: #C53030;
+  }
+
+  .use-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .use-item {
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 12px 20px;
+    border-bottom: 1px solid #F0F0F0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #1A1A1A;
+  }
+
+  .use-item:last-child {
+    border-bottom: none;
+  }
+
+  .use-item-good::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4CAF50;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .use-item-bad::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #E0E0E0;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  /* ========================================
+     HISTORY
+     ======================================== */
+  .history-section {
+    background: #FFFFFF;
+  }
+
+  .history-chat {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* ========================================
+     RELATED STYLES
+     ======================================== */
+  .related-section {
+    background: #F7F7F8;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 24px 20px;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 16px;
+    text-decoration: none;
+    color: #1A1A1A;
+    text-align: center;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .related-card:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border-color: #D0D0D0;
+  }
+
+  .related-relationship {
+    font-weight: 500;
+    font-size: 0.65rem;
+    color: #8E8E93;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .related-name {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #1A1A1A;
+  }
+
+  .related-arrow {
+    font-size: 0.9rem;
+    color: #D0D0D0;
+  }
+
+  /* ========================================
+     FOOTER
+     ======================================== */
+  .footer {
+    background: #FFFFFF;
+    padding: 56px 32px;
+    border-top: 1px solid #E5E5E5;
+  }
+
+  .footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .footer-line {
+    width: 60px;
+    height: 1px;
+    background: #E5E5E5;
+  }
+
+  .footer-logo {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #1A1A1A;
+    text-decoration: none;
+    padding: 7px 20px;
+    border: 1px solid #E5E5E5;
+    border-radius: 20px;
+    transition: background 0.2s;
+  }
+
+  .footer-logo:hover {
+    background: #F7F7F8;
+  }
+
+  .footer-tagline {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #8E8E93;
+  }
+
+  .footer-back {
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: #4A7BF7;
+    text-decoration: none;
+    padding: 6px 16px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    transition: border-color 0.2s;
+  }
+
+  .footer-back:hover {
+    border-color: #E5E5E5;
+  }
+
+  /* ========================================
+     RESPONSIVE - 768px
+     ======================================== */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 56px 24px 48px;
+    }
+
+    .section {
+      padding: 56px 24px;
+    }
+
+    .section-heading {
+      margin-bottom: 36px;
+    }
+
+    .characteristics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .use-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .chat-bubble {
+      max-width: 85%;
+    }
+
+    .prompt-text {
+      font-size: 0.88rem;
+      padding: 20px 16px;
+    }
+
+    .prompt-header {
+      padding: 12px 16px;
+    }
+
+    .nav-inner {
+      padding: 12px 20px;
+    }
+
+    .footer {
+      padding: 42px 24px;
+    }
+  }
+
+  /* ========================================
+     RESPONSIVE - 480px
+     ======================================== */
+  @media (max-width: 480px) {
+    .hero {
+      padding: 40px 16px 32px;
+    }
+
+    .section {
+      padding: 40px 16px;
+    }
+
+    .nav-inner {
+      padding: 10px 16px;
+      gap: 8px;
+    }
+
+    .nav-logo {
+      font-size: 0.8rem;
+      padding: 5px 12px;
+    }
+
+    .nav-current {
+      font-size: 0.75rem;
+      padding: 5px 10px;
+    }
+
+    .hero-avatar-icon {
+      width: 44px;
+      height: 44px;
+    }
+
+    .hero-avatar-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .chat-bubble {
+      max-width: 80%;
+      padding: 12px 14px;
+      font-size: 0.88rem;
+    }
+
+    .chat-avatar {
+      width: 26px;
+      height: 26px;
+      font-size: 0.55rem;
+    }
+
+    .char-card {
+      padding: 20px;
+    }
+
+    .copy-button {
+      padding: 6px 14px;
+      font-size: 0.75rem;
+    }
+
+    .use-item {
+      padding: 10px 16px;
+      font-size: 0.85rem;
+    }
+
+    .related-card {
+      padding: 20px 16px;
+    }
+
+    .section-header {
+      gap: 10px;
+    }
+
+    .section-rule {
+      max-width: 30px;
+    }
+  }
+</style>

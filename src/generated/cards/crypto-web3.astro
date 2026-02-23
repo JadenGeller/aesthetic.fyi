@@ -1,0 +1,142 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-grid"></div>
+  <div class="card-glow"></div>
+  <div class="card-border-glow"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-bar">
+    <span class="card-bar-inner"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  @keyframes cardGradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes cardGlowPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+
+  .card {
+    background: #0D0B1A;
+    color: #E8E6F0;
+    border: 1px solid rgba(123, 47, 190, 0.2);
+    border-radius: 14px;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, border-color 0.3s;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 30px rgba(123, 47, 190, 0.15), 0 0 20px rgba(41, 98, 255, 0.08);
+    border-color: rgba(123, 47, 190, 0.4);
+  }
+
+  .card-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      repeating-linear-gradient(0deg, rgba(123, 47, 190, 0.04) 0px, rgba(123, 47, 190, 0.04) 1px, transparent 1px, transparent 40px),
+      repeating-linear-gradient(90deg, rgba(123, 47, 190, 0.04) 0px, rgba(123, 47, 190, 0.04) 1px, transparent 1px, transparent 40px);
+    pointer-events: none;
+  }
+
+  .card-glow {
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(123, 47, 190, 0.15) 0%, rgba(41, 98, 255, 0.08) 40%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: cardGlowPulse 5s ease-in-out infinite;
+  }
+
+  .card-border-glow {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(123, 47, 190, 0.15), rgba(41, 98, 255, 0.08), rgba(0, 191, 165, 0.08), transparent);
+    background-size: 300% 300%;
+    animation: cardGradientShift 8s ease infinite;
+    pointer-events: none;
+    z-index: 0;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+    padding: 1px;
+  }
+
+  .card-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 6px 0;
+    background: linear-gradient(135deg, #E8E6F0, #7B2FBE, #2962FF);
+    background-size: 200% 200%;
+    animation: cardGradientShift 6s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-bar-inner {
+    width: 32px;
+    height: 2px;
+    background: linear-gradient(90deg, #7B2FBE, #2962FF, #00BFA5);
+    border-radius: 1px;
+    display: block;
+  }
+
+  .card-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    color: rgba(232, 230, 240, 0.5);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

@@ -1,0 +1,115 @@
+slug: glitch-art
+name: Glitch Art
+coined: false
+
+tagline: "The signal broke. The error stayed. Now it's the whole point."
+
+prompt: |
+  Dark background (#0a0a0a) with light text (#e0e0e0). RGB chromatic
+  aberration via text-shadow — red (#ff0040) offset left, cyan (#00ffff)
+  offset right, green (#00ff41) subtle offset. Monospace font (Space Mono)
+  for all text. Broken/corrupted visual artifacts via clip-path animations
+  and horizontal displacement glitch effects. Scanline overlays using
+  repeating-linear-gradient. Sharp CSS glitch animations with transform
+  skew and translate. Accent colors: #ff0040 (red), #00ffff (cyan),
+  #00ff41 (green/matrix). Borders are 1px solid #222 or #333, sometimes
+  with intermittent colored flickers. The mood is digital corruption —
+  broken pixels, data decay, signal interference. Nothing is polished.
+  Everything looks like it barely survived transmission.
+
+about: |
+  Glitch art on the web is the celebration of failure. Where every other
+  aesthetic tries to hide the seams, glitch art rips them open and frames
+  the wreckage. The broken pixels are not bugs — they are the entire
+  visual language. The chromatic aberration is not an accident — it is the
+  aesthetic signature.
+
+  This is design that treats digital corruption as beauty. The RGB offsets
+  recall cathode ray tubes losing sync. The scanlines reference analog
+  television decay. The horizontal displacement mimics data transmission
+  errors. Every visual artifact tells a story about the fragility of
+  digital systems — and finds something compelling in their breakdown.
+
+characteristics:
+  - title: Chromatic Aberration
+    description: >
+      RGB text-shadow offsets split text into red, cyan, and green
+      channels — like a display losing color alignment. The effect is
+      most pronounced on headings and creates the signature visual
+      identity of the aesthetic.
+  - title: Horizontal Displacement
+    description: >
+      Elements shift horizontally via transform translateX and skew,
+      creating the appearance of data corruption during transmission.
+      These micro-movements happen unpredictably, mimicking real
+      glitch behavior.
+  - title: Scanline Overlay
+    description: >
+      Thin repeating horizontal lines via repeating-linear-gradient
+      cover surfaces like a CRT monitor. They add texture and age,
+      connecting the digital present to analog broadcast history.
+  - title: Dark Void Background
+    description: >
+      Near-black (#0a0a0a) backgrounds create a void from which
+      glitched elements emerge. The darkness amplifies the intensity
+      of RGB accent colors and makes every artifact feel like a
+      signal breaking through noise.
+  - title: Monospace Typography
+    description: >
+      Space Mono — a fixed-width typeface that references terminal
+      output, raw data streams, and machine-readable text. Nothing
+      about it is decorative. It is functional, cold, and precise
+      even as everything around it corrupts.
+  - title: Data Decay Animations
+    description: >
+      CSS keyframe animations create sharp, sudden visual breaks —
+      skewing, clipping, and displacing content in unpredictable
+      bursts. These are not smooth transitions. They are violent
+      interruptions, like a signal being jammed.
+
+good_for:
+  - Experimental art portfolios
+  - Music and electronic artist pages
+  - Cybersecurity and hacker culture
+  - Digital art galleries
+  - Creative developer portfolios
+
+not_for:
+  - Healthcare and medical sites
+  - Banking and financial platforms
+  - Accessibility-focused products
+  - Children's educational content
+  - Corporate enterprise software
+
+history: |
+  Glitch art traces its roots to the mid-20th century when artists like
+  Nam June Paik began manipulating television signals to create visual
+  distortions. By the 1990s, digital artists were intentionally corrupting
+  file headers, bending data, and exploiting software errors to produce
+  images that existed in the space between intention and accident.
+
+  The aesthetic gained mainstream visibility in the 2010s through music
+  culture — Kanye West's Yeezus artwork, electronic music visualizers,
+  and the widespread adoption of glitch effects in video production. Tools
+  like datamoshing and hex editing became creative instruments rather than
+  debugging techniques.
+
+  On the web, glitch art translates into CSS animations that simulate
+  signal corruption, chromatic aberration through layered text-shadows,
+  and interfaces that appear to be actively breaking down. It rejects the
+  web's obsession with pixel-perfect polish and asks: what if the error
+  is the message? In a world of sanitized design systems, glitch art is
+  a reminder that digital systems are fragile — and that fragility can
+  be beautiful.
+
+related:
+  - slug: cyberpunk
+    relationship: Shares digital dystopia
+  - slug: vaporwave
+    relationship: Subverts digital media
+  - slug: retro-terminal
+    relationship: CRT nostalgia
+  - slug: neon-noir
+    relationship: Dark with vivid accents
+  - slug: brutalism
+    relationship: Rejects polish

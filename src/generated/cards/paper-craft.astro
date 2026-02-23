@@ -1,0 +1,138 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-texture"></div>
+  <div class="card-fold"></div>
+  <div class="card-tape"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-cut-line">
+    <span class="card-scissors">&#9986;</span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #FAF8F5;
+    color: #3D3229;
+    border: 1px solid #E8D5B8;
+    border-radius: 2px;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      1px 1px 0 rgba(196, 168, 130, 0.25),
+      3px 3px 0 rgba(196, 168, 130, 0.12),
+      5px 5px 0 rgba(196, 168, 130, 0.06),
+      7px 7px 14px rgba(196, 168, 130, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-3px) rotate(-0.5deg);
+    box-shadow:
+      1px 1px 0 rgba(196, 168, 130, 0.25),
+      3px 3px 0 rgba(196, 168, 130, 0.12),
+      5px 5px 0 rgba(196, 168, 130, 0.06),
+      8px 10px 20px rgba(196, 168, 130, 0.12);
+  }
+
+  /* Paper texture overlay */
+  .card-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='150' height='150' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Folded corner */
+  .card-fold {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(
+      225deg,
+      #F3EDE3 0%,
+      #F3EDE3 50%,
+      #E8D5B8 50%,
+      #DBC9A8 100%
+    );
+    clip-path: polygon(100% 0%, 0% 0%, 100% 100%);
+    z-index: 2;
+  }
+
+  /* Craft tape accent */
+  .card-tape {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    width: 56px;
+    height: 18px;
+    background: rgba(232, 213, 184, 0.6);
+    border: 1px solid rgba(196, 168, 130, 0.25);
+    z-index: 3;
+  }
+
+  .card-name {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 4px 0;
+    color: #3D3229;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-cut-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 0;
+    border-top: 1px dashed #C4A882;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-scissors {
+    font-size: 0.75rem;
+    color: #C4A882;
+    background: #FAF8F5;
+    padding: 0 4px;
+    line-height: 1;
+    margin-top: -1px;
+  }
+
+  .card-tagline {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    color: #8B7355;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

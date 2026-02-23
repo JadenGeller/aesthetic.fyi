@@ -1,0 +1,134 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-wedge"></div>
+  <div class="card-bar-top"></div>
+  <div class="card-bar-left"></div>
+  <div class="card-circle"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-rule">
+    <div class="card-rule-bar"></div>
+    <div class="card-rule-diamond"></div>
+    <div class="card-rule-bar"></div>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #1A1A1A;
+    color: #F5F0E8;
+    border: 2px solid #CC0000;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: skewY(-1deg);
+    box-shadow: 6px 6px 0 #CC0000;
+  }
+
+  .card-wedge {
+    position: absolute;
+    top: -20px;
+    right: -30px;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 80px solid #CC0000;
+    opacity: 0.2;
+    transform: rotate(15deg);
+  }
+
+  .card-bar-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #CC0000;
+  }
+
+  .card-bar-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #CC0000;
+  }
+
+  .card-circle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    border: 3px solid #CC0000;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+
+  .card-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    margin: 0 0 6px 0;
+    color: #F5F0E8;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-rule {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-rule-bar {
+    width: 20px;
+    height: 2px;
+    background: #CC0000;
+  }
+
+  .card-rule-diamond {
+    width: 6px;
+    height: 6px;
+    background: #CC0000;
+    transform: rotate(45deg);
+  }
+
+  .card-tagline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    color: #999;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+    letter-spacing: 0.02em;
+  }
+</style>

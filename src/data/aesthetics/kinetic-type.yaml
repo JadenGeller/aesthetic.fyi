@@ -1,0 +1,119 @@
+slug: kinetic-type
+name: Kinetic Typography
+coined: true
+
+tagline: "The text does not wait. It slides, rotates, scales, and demands your attention before you have finished reading."
+
+prompt: |
+  Dark (#111111) background with white (#FFFFFF) text. CSS-animated
+  typography using @keyframes for translateY, rotate, scale, and opacity
+  transitions. Staggered animation-delay on individual letters and words
+  to create wave-like, cascading motion. Font family: Space Grotesk
+  (400, 700) or Syne (400, 700, 800) for bold, modern sans-serif impact.
+  Motion blur simulated via text-shadow (0 0 8px rgba(255,255,255,0.4)).
+  Sliding and revealing text effects using overflow:hidden with
+  translateY animations. Scroll-triggered feel via progressive
+  animation-delay patterns (0.1s increments). Accent color: #00FF88
+  (electric green) for highlights. Some sections invert to white (#FFFFFF)
+  background with #111111 text. Responsive breakpoints at 768px and 480px
+  reducing font sizes and animation scale.
+
+about: |
+  Kinetic Typography is the web aesthetic where text is not static
+  content but a performance. Every heading slides into view, every word
+  rotates on an axis, every letter scales from nothing to full size with
+  a stagger that turns reading into choreography. The page is not read
+  -- it is watched.
+
+  This is design that treats typography as motion graphics. The
+  influences are title sequences, music videos, and motion design reels.
+  Text does not simply appear -- it arrives. It slides up from below the
+  baseline, fades in with a blur, or rotates into position one letter at
+  a time. The motion is the message: this brand moves, this product is
+  alive, this experience is not a document.
+
+characteristics:
+  - title: CSS Animation Choreography
+    description: >
+      @keyframes rules drive translateY, rotate, scale, and opacity
+      transitions on text elements. Every heading is an entrance. The
+      animation-fill-mode is forwards -- once the text arrives, it
+      stays. Nothing loops unless it is meant to pulse.
+  - title: Staggered Delays
+    description: >
+      Individual letters or words receive incrementing animation-delay
+      values (0.1s, 0.2s, 0.3s...) creating cascading wave effects.
+      The stagger turns a heading into a sequence, giving each word
+      its own moment of arrival.
+  - title: Motion Blur via Text-Shadow
+    description: >
+      Text-shadow with rgba white or accent color at low opacity creates
+      the illusion of motion blur during animations. As text moves, the
+      shadow trails behind, then fades as the element settles. It is
+      cinematic without canvas or WebGL.
+  - title: Overflow Reveal
+    description: >
+      Parent containers set overflow:hidden while child text elements
+      animate from translateY(100%) to translateY(0). The text appears
+      to slide up from behind a mask, revealing itself line by line.
+      This is the signature move of kinetic typography on the web.
+  - title: Bold Sans-Serif Type
+    description: >
+      Space Grotesk or Syne at heavy weights (700, 800). The letterforms
+      are geometric, wide, and confident. They need to be -- the motion
+      demands shapes that read clearly while moving. Thin type
+      disappears in motion. Bold type performs.
+  - title: Dark Stage
+    description: >
+      Dark backgrounds (#111) serve as the stage. White or accent-colored
+      text becomes the performer. The darkness creates contrast and focus,
+      turning the viewport into a theater where type is the only actor.
+
+good_for:
+  - Creative agency and studio portfolios
+  - Music and entertainment landing pages
+  - Brand launch and reveal experiences
+  - Motion design and video production sites
+  - Conference and event promotion pages
+
+not_for:
+  - Long-form reading or editorial content
+  - E-commerce product catalogs
+  - Documentation and developer tools
+  - Accessibility-critical applications
+  - Data dashboards and enterprise software
+
+history: |
+  Kinetic typography began in film title sequences. Saul Bass animated
+  text for Hitchcock in the 1950s, making words move with the same
+  intention as actors. The 1995 film Se7en, with Kyle Cooper's jittery,
+  hand-scratched titles, made typography itself feel dangerous. By the
+  2000s, motion graphics software like After Effects had made animated
+  text a staple of broadcast design.
+
+  On the web, kinetic typography had to wait for CSS animations and
+  transitions to mature. Early attempts relied on Flash, which could
+  animate text beautifully but died with the mobile web. When CSS3
+  @keyframes arrived, and browsers began hardware-accelerating transforms,
+  the web finally had the tools to move text without JavaScript libraries
+  or plugin dependencies.
+
+  Today, kinetic typography lives at the intersection of web design and
+  motion design. Studios like Active Theory, Locomotive, and Aristide
+  Benoist pushed the boundaries with scroll-driven text animations.
+  GSAP and Framer Motion industrialized the pattern, but pure CSS
+  animations remain the foundation -- proving that the browser itself
+  is a capable motion graphics engine when the designer understands
+  timing, easing, and the theater of the reveal.
+
+related:
+  - slug: brutalist-type
+    relationship: Shares typographic boldness
+  - slug: scroll-theater
+    relationship: Shares cinematic pacing
+  - slug: editorial
+    relationship: Opposite stillness
+  - slug: swiss-design
+    relationship: Shares typographic focus
+  - slug: maximalism
+    relationship: Shares sensory intensity

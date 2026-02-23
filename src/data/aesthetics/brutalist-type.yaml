@@ -1,0 +1,115 @@
+slug: brutalist-type
+name: Brutalist Typography
+coined: true
+
+tagline: "The letters are not decoration. The letters ARE the architecture. Read them or be crushed by them."
+
+prompt: |
+  Black (#000000) background with white (#FFFFFF) text. No color — only
+  contrast. Headings in Bebas Neue (400) or Anton (400) — tall, condensed,
+  aggressive. Body text in Inter (400, 700) for stark utilitarian contrast.
+  Hero text at clamp(6rem, 20vw, 12rem) — absurdly massive, filling the
+  viewport. Negative margins (-0.03em to -0.08em letter-spacing, negative
+  margin-top on stacked lines) to create overlapping, colliding text.
+  Mixed font sizes create hierarchy through raw scale contrast — 12px
+  labels next to 200px headlines. Text-transform uppercase everywhere.
+  No border-radius. No shadows. No gradients. Borders are thick (3-4px
+  solid white) or absent. Sections separated by heavy horizontal rules.
+  The mood is raw, confrontational, typographic — like a protest poster
+  or experimental magazine spread. Type IS the design. Nothing else.
+
+about: |
+  Brutalist Typography treats text not as content to be read but as
+  material to be wielded. Where conventional web design makes type
+  invisible — clean, readable, quietly serving the content — brutalist
+  typography makes type the entire point. Letters become architecture.
+  Scale becomes violence. The page screams before you read a word.
+
+  This is design that rejects the politeness of the readable web. It
+  takes the raw material of communication — letterforms — and pushes
+  them past function into pure visual force. Overlapping text, crushed
+  letter-spacing, type that bleeds off the edge of the viewport. Every
+  choice says: look at this. Not at some image. Not at some illustration.
+  At the type itself.
+
+characteristics:
+  - title: Massive Scale
+    description: >
+      Hero text at clamp(6rem, 20vw, 12rem) dominates the viewport. Headlines
+      are not read — they are experienced. The scale gap between heading and
+      body text is extreme, sometimes 20:1 or more. Size IS the hierarchy.
+  - title: Overlapping & Colliding Text
+    description: >
+      Negative margins pull lines of text into each other. Letters overlap,
+      words crash together. The collision is intentional — it creates density,
+      tension, visual weight. Readability is secondary to impact.
+  - title: Condensed Bold Type
+    description: >
+      Bebas Neue, Anton, or similar tall condensed faces pack maximum
+      presence into each line. The narrow letterforms allow massive sizes
+      while maintaining vertical density. Every letter stands at attention.
+  - title: Black & White Only
+    description: >
+      No color palette. Black and white exclusively. This is not minimalism
+      — it is confrontation. The contrast is absolute, binary, unyielding.
+      No grays, no tints, no comfort. Just the raw opposition of light
+      and void.
+  - title: Mixed Scale Hierarchy
+    description: >
+      Tiny labels sit next to enormous headlines. 12px utility text shares
+      space with 200px display type. The contrast in scale creates visual
+      rhythm without needing color, decoration, or imagery. Size does all
+      the work.
+  - title: All Caps Everything
+    description: >
+      Text-transform uppercase on headings, labels, navigation. Capital
+      letters are more geometric, more architectural, more aggressive.
+      They turn words into shapes, sentences into patterns, paragraphs
+      into texture.
+
+good_for:
+  - Design portfolios and agency sites
+  - Fashion and editorial brands
+  - Music and cultural event pages
+  - Art gallery and exhibition sites
+  - Experimental and avant-garde projects
+
+not_for:
+  - E-commerce product pages
+  - Healthcare and accessibility-first sites
+  - Children's apps and educational tools
+  - Legal or financial documents
+  - Long-form reading experiences
+
+history: |
+  Brutalist Typography descends from two traditions: the raw concrete
+  architecture of Brutalism and the experimental type work of 20th-century
+  graphic design. Designers like Wolfgang Weingart, David Carson, and Neville
+  Brody shattered typographic conventions in the 1980s and 90s — overlapping
+  text, destroying grids, making type that demanded attention rather than
+  quietly conveying information.
+
+  On the web, this aesthetic emerged alongside the broader brutalist web
+  movement in the mid-2010s, but focused specifically on typography as the
+  primary — often sole — design element. Sites like Bloomberg Businessweek's
+  digital experiments and numerous design agency portfolios proved that type
+  alone could carry an entire visual identity.
+
+  The approach gained momentum as variable fonts and viewport units made
+  extreme typographic scale practical in browsers. Suddenly designers could
+  set text at 20vw and have it respond fluidly to screen size. The technical
+  constraints that once limited web typography dissolved, and designers
+  rushed to fill the vacuum with type that was as loud and physical as
+  anything in print.
+
+related:
+  - slug: brutalism
+    relationship: Shares raw confrontational energy
+  - slug: neubrutalism
+    relationship: Softer typographic boldness
+  - slug: swiss-design
+    relationship: Grid-based type discipline
+  - slug: editorial
+    relationship: Magazine-inspired layouts
+  - slug: kinetic-type
+    relationship: Type as primary medium

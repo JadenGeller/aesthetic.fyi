@@ -1,0 +1,116 @@
+slug: tropical
+name: Tropical
+coined: false
+
+tagline: "Sun-soaked, salt-kissed, and unapologetically vibrant. This page was made to be viewed with sunglasses on."
+
+prompt: |
+  Warm sand (#FFF1E6) background with deep palm green (#2D6A4F) text.
+  Coral (#FF6B6B) and teal (#2EC4B6) accents, sunset orange (#FF9F1C)
+  highlights. Hero section with a CSS sunset gradient (warm orange to
+  coral to soft purple). Palm-leaf patterns via repeating CSS
+  conic-gradient and polygon clip-paths as decorative elements. Rounded
+  shapes (border-radius 16-24px) for a playful, organic feel.
+  Typography in Quicksand (500, 700) — bouncy, rounded, approachable.
+  Body text in Poppins (300, 400). Vibrant shadows with colored
+  rgba values (coral and teal tones). Generous whitespace, laid-back
+  rhythm. The mood is paradise — warm, joyful, abundant. Every
+  element glows like it is catching golden-hour light.
+
+about: |
+  Tropical on the web is pure warmth. It borrows from travel posters,
+  resort branding, and the saturated palette of a Caribbean sunset.
+  Where other aesthetics restrain themselves, tropical leans in —
+  more color, more warmth, more life. The coral and teal are not
+  subtle. The sunset gradients are not shy. This is design that
+  wants you to feel something immediately.
+
+  But tropical is not chaos. The rounded shapes, the generous spacing,
+  the soft sand backgrounds — they create a rhythm that feels relaxed
+  rather than frantic. It is vibrant the way a beach at golden hour
+  is vibrant: intense but deeply comfortable. You are not being
+  overwhelmed. You are being welcomed.
+
+characteristics:
+  - title: Sunset Gradients
+    description: >
+      Hero backgrounds sweep from warm orange (#FF9F1C) through coral
+      (#FF6B6B) to soft purple — mimicking the sky at golden hour.
+      These gradients are not decorative afterthoughts. They are the
+      emotional foundation of the page.
+  - title: Coral & Teal Palette
+    description: >
+      #FF6B6B coral and #2EC4B6 teal are the signature duo. They
+      vibrate against each other with warm-cool contrast, creating
+      energy without conflict. Sunset orange (#FF9F1C) adds depth.
+      Sand (#FFF1E6) grounds everything.
+  - title: Palm-Leaf Patterns
+    description: >
+      CSS-generated leaf shapes via conic-gradient and clip-path
+      create organic tropical textures without images. They appear
+      as background decorations — subtle enough to not compete with
+      content, bold enough to set the mood.
+  - title: Rounded Playfulness
+    description: >
+      Border-radius 16-24px on containers, buttons, and cards.
+      Nothing has sharp corners. The shapes feel organic and
+      approachable, like smooth stones worn by ocean waves. Even
+      dividers are curved.
+  - title: Bouncy Typography
+    description: >
+      Quicksand for headings — rounded, geometric, full of
+      personality. Poppins for body text — clean, modern, effortlessly
+      readable. Both are sans-serif, both feel warm and friendly.
+      No serifs, no formality.
+  - title: Warm Shadows
+    description: >
+      Shadows use colored rgba values — coral tones, teal tones —
+      not neutral grays. This gives depth a warmth that feels like
+      light filtering through tropical foliage. Even the shadows
+      feel sun-kissed.
+
+good_for:
+  - Travel and tourism sites
+  - Food and beverage brands
+  - Summer event pages
+  - Lifestyle and wellness blogs
+  - Resort and hospitality sites
+
+not_for:
+  - Corporate enterprise platforms
+  - Legal or financial services
+  - Developer documentation
+  - Minimalist portfolio sites
+  - Winter or cold-weather brands
+
+history: |
+  Tropical design has roots in the mid-20th century travel poster
+  tradition — bold colors, simplified natural forms, and an
+  aspirational vision of paradise. Airlines, cruise lines, and
+  resort hotels built entire visual identities around palm fronds,
+  sunsets, and turquoise waters.
+
+  The aesthetic resurfaced in the 2010s through Instagram culture,
+  where tropical leaves became the default backdrop for lifestyle
+  content. Monstera prints appeared on everything from phone cases
+  to shower curtains. Pantone named Living Coral the 2019 Color of
+  the Year, cementing the warm coral-teal combination in the design
+  zeitgeist.
+
+  On the web, tropical translates into sunset gradients, vibrant
+  accent colors, and organic rounded shapes. It rejects the cool
+  austerity of tech minimalism and the ironic detachment of
+  vaporwave. Instead, it says: this page is warm, this page is
+  alive, and you should feel good being here.
+
+related:
+  - slug: frutiger-aero
+    relationship: Shares vibrant optimism
+  - slug: vaporwave
+    relationship: Both use bold color palettes
+  - slug: maximalism
+    relationship: Embraces visual abundance
+  - slug: cottagecore
+    relationship: Nature-inspired warmth
+  - slug: retro-diner
+    relationship: Shares playful energy

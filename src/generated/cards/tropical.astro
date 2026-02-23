@@ -1,0 +1,115 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Poppins:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-sunset"></div>
+  <div class="card-palms"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-wave">
+    <svg viewBox="0 0 80 8" class="card-wave-svg">
+      <path d="M0 4 Q10 0 20 4 Q30 8 40 4 Q50 0 60 4 Q70 8 80 4" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.2"/>
+    </svg>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: linear-gradient(
+      160deg,
+      #FF9F1C 0%,
+      #FF6B6B 45%,
+      #c76bcc 85%,
+      #8E6FCE 100%
+    );
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.25), 0 4px 12px rgba(46, 196, 182, 0.15);
+    transform: translateY(-3px);
+  }
+
+  .card-sunset {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 241, 230, 0.6) 0%, rgba(255, 159, 28, 0.3) 50%, transparent 70%);
+    box-shadow: 0 0 24px rgba(255, 159, 28, 0.35);
+    pointer-events: none;
+  }
+
+  .card-palms {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background:
+      conic-gradient(from 210deg at 10% 0%, rgba(45, 106, 79, 0.2) 0deg, transparent 40deg),
+      conic-gradient(from 230deg at 15% 0%, rgba(45, 106, 79, 0.15) 0deg, transparent 35deg),
+      conic-gradient(from 190deg at 5% 5%, rgba(45, 106, 79, 0.12) 0deg, transparent 30deg),
+      conic-gradient(from 330deg at 92% 0%, rgba(45, 106, 79, 0.15) 0deg, transparent 35deg),
+      conic-gradient(from 310deg at 88% 5%, rgba(45, 106, 79, 0.12) 0deg, transparent 30deg);
+  }
+
+  .card-name {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 4px 0;
+    color: #fff;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 1px 8px rgba(255, 107, 107, 0.3);
+  }
+
+  .card-wave {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-wave-svg {
+    width: 80px;
+    height: 8px;
+  }
+
+  .card-tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    font-style: italic;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

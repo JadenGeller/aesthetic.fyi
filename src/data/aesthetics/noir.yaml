@@ -1,0 +1,117 @@
+slug: noir
+name: Noir
+coined: true
+
+tagline: "The city never sleeps. Neither do the shadows. Every frame tells a lie — beautifully."
+
+prompt: |
+  Black (#0a0a0a) background with off-white (#F5F5F5) text. Dramatic
+  shadow gradients via diagonal linear-gradient light beams cutting
+  across sections. Venetian-blind shadow stripes using
+  repeating-linear-gradient. High contrast throughout — no middle
+  grays. Elegant serif headings in Playfair Display (700) for a
+  cinematic, typographic presence. Clean body text in Lora (400, 400
+  italic) for readability against dark backgrounds. Narrow max-width
+  (760px) for a cinematic widescreen letterbox feel. Film-grain
+  overlay via CSS pseudo-elements with noise texture. Borders and
+  dividers in dark grays (#222, #333). Accent color: warm amber
+  (#C8A96E) for highlights and links — the glow of a streetlamp in
+  fog. Moody, atmospheric, suspenseful. Every element casts a shadow.
+
+about: |
+  Noir on the web is atmosphere as interface. It borrows from 1940s
+  and 50s cinema — the chiaroscuro lighting, the venetian blind
+  shadows, the tension between what is shown and what is hidden. Every
+  element exists in dramatic contrast: light against dark, revelation
+  against concealment.
+
+  This is not simply a dark theme. Dark themes are functional. Noir is
+  theatrical. The diagonal light beams, the film grain, the deep
+  blacks — they create a mood that ordinary dark mode never achieves.
+  Noir says: this page has a story to tell, and it will tell it in
+  shadow.
+
+characteristics:
+  - title: Absolute Darkness
+    description: >
+      #0a0a0a backgrounds — not dark gray, but near-black. The
+      darkness is deliberate, creating a void from which content
+      emerges like figures stepping out of shadow. Light is earned,
+      not given.
+  - title: Venetian Blind Shadows
+    description: >
+      Repeating-linear-gradient stripes simulate the iconic venetian
+      blind effect from film noir — horizontal bars of shadow cutting
+      across the page. They evoke a detective's office at midnight,
+      light filtering through half-closed blinds.
+  - title: Diagonal Light Beams
+    description: >
+      Linear gradients at steep angles create shafts of light that
+      slice across sections. These are the streetlamp through the
+      window, the headlights through rain. They give depth and drama
+      to flat surfaces.
+  - title: Film Grain Texture
+    description: >
+      A CSS-generated noise overlay adds the organic texture of
+      celluloid film. It softens the digital precision, making the
+      page feel like a frame from a black-and-white movie — analog,
+      imperfect, alive.
+  - title: Cinematic Typography
+    description: >
+      Playfair Display for headings — bold, elegant, with the
+      authority of a movie title card. Lora for body text — refined
+      and readable against dark backgrounds. The typography has
+      weight and presence, like dialogue in a screenplay.
+  - title: Amber Accents
+    description: >
+      Warm amber (#C8A96E) punctuates the monochrome palette — the
+      glow of a cigarette, the gleam of a streetlamp, the warmth of
+      whiskey in a glass. It is the only color, used sparingly, and
+      it means something every time it appears.
+
+good_for:
+  - Portfolio and photography sites
+  - Film and cinema review blogs
+  - Mystery and thriller book promotions
+  - Luxury and premium brand pages
+  - Storytelling and narrative experiences
+
+not_for:
+  - Children's or family-oriented sites
+  - Healthcare and wellness platforms
+  - E-commerce with bright product photography
+  - Government and accessibility-critical portals
+  - Educational platforms for young learners
+
+history: |
+  Film noir emerged in the 1940s as a cinematic movement defined by
+  shadow. Directors like Billy Wilder, Fritz Lang, and Orson Welles
+  used chiaroscuro lighting — extreme contrast between light and
+  dark — to create visual tension. The venetian blind became an icon:
+  bars of shadow across a detective's face, a femme fatale lit by a
+  single lamp, cigarette smoke curling into darkness.
+
+  The term itself was coined by French critic Nino Frank in 1946, who
+  saw in these American films a darkness that went beyond visual style
+  into narrative and moral territory. Noir was not just how the films
+  looked — it was how they felt. Anxious, fatalistic, beautiful.
+
+  On the web, noir translates into high-contrast dark interfaces with
+  dramatic lighting effects. It goes beyond standard dark mode by
+  adding texture, atmosphere, and narrative tension. The film grain,
+  the diagonal light beams, the venetian blind stripes — these are
+  not decorative. They are mood. They transform a webpage into a
+  scene, and every visitor into a character who just walked in from
+  the rain.
+
+related:
+  - slug: monochrome
+    relationship: Shares black-and-white palette
+  - slug: neon-noir
+    relationship: Noir's neon-lit sibling
+  - slug: dark-mode
+    relationship: Functional darkness, less drama
+  - slug: gothic-web
+    relationship: Shares dark atmosphere
+  - slug: editorial
+    relationship: Shares typographic authority

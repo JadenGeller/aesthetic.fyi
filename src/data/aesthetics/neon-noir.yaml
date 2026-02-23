@@ -1,0 +1,115 @@
+slug: neon-noir
+name: Neon Noir
+coined: false
+
+tagline: "The city never sleeps. Neon bleeds through rain-soaked glass, and every shadow tells a story no one asked to hear."
+
+prompt: |
+  Near-black (#0D0D12) background with cool gray (#A0A0B8) body text.
+  Hot pink (#FF2D7B) and electric blue (#00B4D8) neon accents for
+  headings, borders, and interactive elements. Noir shadows via dark
+  gradients (linear-gradient from #0D0D12 to #141420). Neon glow
+  effects using text-shadow (0 0 20px rgba(255,45,123,0.5)) and
+  box-shadow (0 0 15px rgba(0,180,216,0.3)). Headings in Barlow
+  Condensed (600, uppercase, wide letter-spacing) — sharp, condensed,
+  authoritative. Body text in Inter (400) for clean readability against
+  dark backgrounds. Borders in dark charcoal (#1E1E2E) with neon glow
+  on hover. Moody atmospheric gradients suggesting rain and city light.
+  The mood is cinematic, nocturnal, electric — like a detective's
+  office lit only by the sign across the street.
+
+about: |
+  Neon Noir on the web is the intersection of shadow and electric light.
+  It takes the moody cinematography of film noir — the venetian blind
+  shadows, the rain-streaked windows, the moral ambiguity — and wires
+  it with the buzzing energy of neon signage. The result is a digital
+  space that feels like a rain-soaked city at 2 AM.
+
+  This is design that embraces darkness not as absence but as atmosphere.
+  The near-black backgrounds are not voids — they are canvases for neon
+  to burn against. Every glow effect is deliberate, every shadow earned.
+  The condensed sans-serif type cuts through the darkness like a headline
+  on a tabloid. Nothing is accidental. Everything is staged.
+
+characteristics:
+  - title: Near-Black Canvas
+    description: >
+      #0D0D12 backgrounds with subtle gradient shifts to #141420 create
+      depth without flatness. The darkness is not uniform — it breathes
+      and shifts like shadows in an alley. Lighter elements emerge from
+      the black like figures stepping under a streetlight.
+  - title: Neon Glow Accents
+    description: >
+      Hot pink (#FF2D7B) and electric blue (#00B4D8) serve as the dual
+      neon signatures. They appear in headings, borders, and hover states
+      with text-shadow and box-shadow glow effects that simulate the
+      halation of real neon tubes buzzing in wet air.
+  - title: Condensed Typography
+    description: >
+      Barlow Condensed for headings — uppercase, tightly tracked, with
+      the authority of a noir title card. Inter for body text — clean,
+      legible, modern. The contrast between condensed display and open
+      body type creates visual tension.
+  - title: Atmospheric Gradients
+    description: >
+      Dark-to-darker gradients and semi-transparent overlays create the
+      layered depth of a rainy cityscape. Sections feel like different
+      depths of shadow — some closer to the neon, some receding into
+      the dark.
+  - title: Rain-Streaked Texture
+    description: >
+      Subtle vertical line patterns and translucent overlays evoke rain
+      on glass. Borders use dark charcoal (#1E1E2E) that catches neon
+      glow on interaction, like wet pavement reflecting a sign above.
+  - title: Cinematic Contrast
+    description: >
+      High contrast between the near-black backgrounds and neon accents
+      creates a dramatic, filmic quality. Nothing is mid-tone. Elements
+      are either deep in shadow or lit by electric light — the visual
+      grammar of chiaroscuro.
+
+good_for:
+  - Music and nightlife platforms
+  - Portfolio sites for photographers and filmmakers
+  - Gaming and entertainment brands
+  - Cybersecurity and hacker-adjacent tools
+  - Narrative and storytelling experiences
+
+not_for:
+  - Children's educational platforms
+  - Healthcare and wellness apps
+  - Government and institutional sites
+  - E-commerce for everyday goods
+  - Corporate enterprise dashboards
+
+history: |
+  Neon Noir draws from two deep wells. Film noir emerged in the 1940s
+  and 1950s — dark crime dramas shot in high-contrast black and white,
+  full of shadows, moral ambiguity, and rain-slicked streets. Directors
+  like Billy Wilder and Fritz Lang created a visual language of darkness
+  that still defines cinematic mood.
+
+  Neon entered the equation through cyberpunk and neo-noir films of the
+  1980s and beyond — Blade Runner, Drive, John Wick. These films took
+  noir's shadows and flooded them with electric color: pink, blue, purple,
+  the reflected glow of signs in languages you cannot read. The rain
+  remained, but now it caught light differently.
+
+  On the web, Neon Noir is the synthesis. It uses CSS gradients and glow
+  effects to recreate the interplay of darkness and electric light. It
+  rejects the bright, airy conventions of most web design in favor of
+  something moody, atmospheric, and deliberately cinematic. Every page
+  feels like a scene. Every scroll reveals something the shadows were
+  hiding.
+
+related:
+  - slug: cyberpunk
+    relationship: Shares neon-lit futurism
+  - slug: synthwave
+    relationship: Shares retro neon palette
+  - slug: dark-mode
+    relationship: Shares dark canvas philosophy
+  - slug: vaporwave
+    relationship: Shares neon color energy
+  - slug: gothic-web
+    relationship: Shares atmospheric darkness

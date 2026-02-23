@@ -1,0 +1,187 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<div class="card">
+  <div class="card-desktop-bg"></div>
+  <div class="card-window">
+    <div class="card-titlebar">
+      <div class="card-controls">
+        <span class="card-btn card-btn-close"></span>
+        <span class="card-btn card-btn-min"></span>
+        <span class="card-btn card-btn-max"></span>
+      </div>
+      <span class="card-titlebar-text">{aesthetic.name}</span>
+    </div>
+    <div class="card-window-body">
+      <h3 class="card-name">{aesthetic.name}</h3>
+      <p class="card-tagline">{aesthetic.tagline}</p>
+    </div>
+  </div>
+  <div class="card-taskbar">
+    <div class="card-start">
+      <span class="card-start-icon">&#9632;</span>
+      <span class="card-start-text">Start</span>
+    </div>
+    <div class="card-tray">12:00</div>
+  </div>
+</div>
+
+<style>
+  .card {
+    background: linear-gradient(135deg, #008080 0%, #006666 50%, #008080 100%);
+    color: #000;
+    border: 2px outset #DFDFDF;
+    min-height: 220px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+    font-family: -apple-system, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .card:hover {
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .card-desktop-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+
+  .card-window {
+    position: relative;
+    z-index: 2;
+    width: 80%;
+    max-width: 240px;
+    border: 2px outset #DFDFDF;
+    background: #C0C0C0;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    margin-top: 8px;
+  }
+
+  .card-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 4px;
+    background: linear-gradient(90deg, #000080 0%, #1084D0 100%);
+    min-height: 18px;
+  }
+
+  .card-controls {
+    display: flex;
+    gap: 4px;
+  }
+
+  .card-btn {
+    width: 10px;
+    height: 10px;
+    border-radius: 1px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  .card-btn-close {
+    background: #C75050;
+  }
+
+  .card-btn-min {
+    background: #D4AA00;
+  }
+
+  .card-btn-max {
+    background: #50A050;
+  }
+
+  .card-titlebar-text {
+    font-size: 10px;
+    font-weight: 700;
+    color: #FFFFFF;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+  }
+
+  .card-window-body {
+    background: #FFFFFF;
+    border: 2px inset #DFDFDF;
+    margin: 2px;
+    padding: 14px 12px;
+    text-align: center;
+  }
+
+  .card-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    color: #000080;
+    line-height: 1.2;
+  }
+
+  .card-tagline {
+    font-size: 11px;
+    margin: 0;
+    color: #444;
+    line-height: 1.4;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .card-taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    background: #C0C0C0;
+    border-top: 2px solid #FFFFFF;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+  }
+
+  .card-start {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 1px 8px;
+    height: 18px;
+    border: 2px outset #DFDFDF;
+    font-size: 10px;
+    font-weight: 700;
+    background: #C0C0C0;
+  }
+
+  .card-start-icon {
+    font-size: 10px;
+    color: #000080;
+  }
+
+  .card-start-text {
+    font-size: 10px;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .card-tray {
+    font-size: 10px;
+    color: #000;
+    padding: 1px 6px;
+    border: 2px inset #DFDFDF;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    background: #C0C0C0;
+  }
+</style>

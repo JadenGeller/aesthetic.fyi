@@ -1,0 +1,991 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<div class="page">
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">aesthetic.fyi</a>
+      <span class="nav-divider">&#x2215;</span>
+      <a href={`/${aesthetic.slug}`} class="nav-current">{aesthetic.name}</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-crystals"></div>
+    <div class="hero-frost"></div>
+    <div class="hero-inner">
+      <span class="hero-label">A Web Aesthetic</span>
+      <h1 class="hero-title">{aesthetic.name}</h1>
+      <div class="hero-rule">
+        <div class="hero-facet"></div>
+        <div class="hero-line"></div>
+        <div class="hero-diamond"></div>
+        <div class="hero-line"></div>
+        <div class="hero-facet"></div>
+      </div>
+      <p class="hero-tagline">{aesthetic.tagline}</p>
+    </div>
+  </section>
+
+  <!-- WHAT THIS IS -->
+  <section class="section about-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule"></div>
+        <span class="section-label">What This Is</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2 class="section-heading">Frozen Clarity</h2>
+      <div class="about-content">
+        {aesthetic.about.split('\n\n').map((paragraph: string) => (
+          <p class="about-paragraph">{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARACTERISTICS -->
+  <section class="section characteristics-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule"></div>
+        <span class="section-label">Design Tokens</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2 class="section-heading">Characteristics</h2>
+      <div class="characteristics-grid">
+        {aesthetic.characteristics.map((char: { title: string; description: string }, i: number) => (
+          <div class="char-card">
+            <span class="char-number">{String(i + 1).padStart(2, '0')}</span>
+            <div class="char-divider"></div>
+            <h3 class="char-title">{char.title}</h3>
+            <p class="char-description">{char.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- STYLE REFERENCE -->
+  <section class="section prompt-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule"></div>
+        <span class="section-label">Style Reference</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2 class="section-heading">Copy &amp; Paste</h2>
+      <div class="prompt-block">
+        <div class="prompt-header">
+          <span class="prompt-header-label">Prompt</span>
+          <button class="copy-button" data-prompt={aesthetic.prompt}>Copy</button>
+        </div>
+        <p class="prompt-text">{aesthetic.prompt}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN TO USE -->
+  <section class="section use-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule"></div>
+        <span class="section-label">When to Use</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2 class="section-heading">Right Climate, Wrong Climate</h2>
+      <div class="use-grid">
+        <div class="use-column use-good">
+          <h3 class="use-column-heading">Good For</h3>
+          <ul class="use-list">
+            {aesthetic.good_for.map((item: string) => (
+              <li class="use-item use-item-good">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="use-column use-bad">
+          <h3 class="use-column-heading">Not For</h3>
+          <ul class="use-list">
+            {aesthetic.not_for.map((item: string) => (
+              <li class="use-item use-item-bad">{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="section history-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule"></div>
+        <span class="section-label">Origins</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2 class="section-heading">History</h2>
+      <div class="history-content">
+        {aesthetic.history.split('\n\n').map((paragraph: string) => (
+          <p class="history-paragraph">{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED STYLES -->
+  <section class="section related-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule"></div>
+        <span class="section-label">Explore</span>
+        <div class="section-rule"></div>
+      </div>
+      <h2 class="section-heading">Related Styles</h2>
+      <div class="related-grid">
+        {aesthetic.related.map((rel: { slug: string; relationship: string }) => (
+          <a href={`/${rel.slug}`} class="related-card">
+            <span class="related-relationship">{rel.relationship}</span>
+            <span class="related-name">{rel.slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+            <span class="related-arrow">&rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-ornament"></div>
+      <a href="/" class="footer-logo">aesthetic.fyi</a>
+      <span class="footer-tagline">Every web aesthetic, demonstrated.</span>
+      <a href="/" class="footer-back">&larr; Back to All Aesthetics</a>
+      <div class="footer-ornament"></div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.querySelector('.copy-button');
+    if (copyButton) {
+      copyButton.addEventListener('click', () => {
+        const prompt = copyButton.getAttribute('data-prompt') || '';
+        navigator.clipboard.writeText(prompt).then(() => {
+          const original = copyButton.textContent;
+          copyButton.textContent = 'Copied!';
+          copyButton.classList.add('copied');
+          setTimeout(() => {
+            copyButton.textContent = original;
+            copyButton.classList.remove('copied');
+          }, 2000);
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  /* ========================================
+     RESET & BASE
+     ======================================== */
+  .page {
+    font-family: 'Inter', 'Outfit', sans-serif;
+    background: linear-gradient(180deg, #F0F5FA 0%, #E3EFF9 100%);
+    color: #1B4F72;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ========================================
+     NAV
+     ======================================== */
+  .nav {
+    border-bottom: 1px solid rgba(27, 79, 114, 0.1);
+    background: rgba(240, 245, 250, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .nav-logo {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #1B4F72;
+    text-decoration: none;
+    padding: 6px 18px;
+    border: 1px solid rgba(27, 79, 114, 0.15);
+    background: rgba(168, 216, 234, 0.1);
+    clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, calc(100% - 8px) 100%, 8px 100%, 0 100%, 0 8px);
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .nav-logo:hover {
+    background: rgba(168, 216, 234, 0.25);
+    border-color: rgba(27, 79, 114, 0.3);
+  }
+
+  .nav-divider {
+    font-size: 1.1rem;
+    color: rgba(27, 79, 114, 0.25);
+    margin: 0 2px;
+    font-weight: 300;
+  }
+
+  .nav-current {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: #5DADE2;
+    text-decoration: none;
+    padding: 6px 18px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+
+  .nav-current:hover {
+    border-color: rgba(27, 79, 114, 0.15);
+  }
+
+  /* ========================================
+     HERO
+     ======================================== */
+  .hero {
+    background: linear-gradient(170deg, #F0F5FA 0%, #E3EFF9 40%, #D6EAF8 100%);
+    padding: 96px 32px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(27, 79, 114, 0.1);
+  }
+
+  .hero-crystals {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      /* top-left crystal cluster */
+      linear-gradient(135deg, rgba(168, 216, 234, 0.3) 0%, transparent 50%),
+      /* top-right crystal shard */
+      linear-gradient(225deg, rgba(93, 173, 226, 0.15) 0%, transparent 40%),
+      /* bottom-left frost */
+      linear-gradient(45deg, rgba(168, 216, 234, 0.2) 0%, transparent 35%),
+      /* bottom-right glow */
+      linear-gradient(315deg, rgba(93, 173, 226, 0.12) 0%, transparent 45%);
+    pointer-events: none;
+  }
+
+  .hero-frost {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      /* frost fracture lines */
+      linear-gradient(60deg, transparent 48%, rgba(168, 216, 234, 0.12) 49%, rgba(168, 216, 234, 0.12) 51%, transparent 52%),
+      linear-gradient(120deg, transparent 48%, rgba(93, 173, 226, 0.08) 49%, rgba(93, 173, 226, 0.08) 51%, transparent 52%),
+      linear-gradient(30deg, transparent 45%, rgba(168, 216, 234, 0.06) 46%, rgba(168, 216, 234, 0.06) 54%, transparent 55%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-label {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: #5DADE2;
+    display: inline-block;
+    margin-bottom: 24px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: clamp(3.5rem, 10vw, 6.5rem);
+    line-height: 1.0;
+    margin: 0 0 28px 0;
+    color: #1B4F72;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .hero-facet {
+    width: 6px;
+    height: 6px;
+    background: #A8D8EA;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  .hero-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #A8D8EA, transparent);
+  }
+
+  .hero-diamond {
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(135deg, #A8D8EA, #5DADE2);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  .hero-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 520px;
+    color: rgba(27, 79, 114, 0.65);
+    letter-spacing: 0.02em;
+  }
+
+  /* ========================================
+     SECTIONS - SHARED
+     ======================================== */
+  .section {
+    padding: 88px 32px;
+    border-bottom: 1px solid rgba(27, 79, 114, 0.08);
+    position: relative;
+  }
+
+  .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .section-rule {
+    flex: 1;
+    max-width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(27, 79, 114, 0.15), transparent);
+  }
+
+  .section-label {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: #5DADE2;
+    white-space: nowrap;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .section-heading {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    line-height: 1.15;
+    margin: 0 0 48px 0;
+    text-align: center;
+    color: #1B4F72;
+    letter-spacing: 0.04em;
+  }
+
+  /* ========================================
+     ABOUT
+     ======================================== */
+  .about-section {
+    background: linear-gradient(180deg, #E3EFF9 0%, #EBF3FA 100%);
+  }
+
+  .about-section::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid rgba(27, 79, 114, 0.08);
+    pointer-events: none;
+    clip-path: polygon(16px 0, calc(100% - 16px) 0, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0 calc(100% - 16px), 0 16px);
+  }
+
+  .about-content {
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about-paragraph {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin: 0 0 24px 0;
+    color: #1B4F72;
+  }
+
+  .about-paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     CHARACTERISTICS
+     ======================================== */
+  .characteristics-section {
+    background: linear-gradient(180deg, #EBF3FA 0%, #F0F5FA 100%);
+  }
+
+  .characteristics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .char-card {
+    border: 1px solid rgba(27, 79, 114, 0.1);
+    padding: 32px 28px 28px;
+    position: relative;
+    text-align: center;
+    background: rgba(240, 245, 250, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: box-shadow 0.3s, border-color 0.3s, background 0.3s;
+    clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px);
+  }
+
+  .char-card:hover {
+    box-shadow: 0 4px 24px rgba(27, 79, 114, 0.1);
+    border-color: rgba(93, 173, 226, 0.3);
+    background: rgba(240, 245, 250, 0.85);
+  }
+
+  .char-number {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.7rem;
+    color: #5DADE2;
+    display: block;
+    margin-bottom: 10px;
+    letter-spacing: 0.15em;
+  }
+
+  .char-divider {
+    width: 24px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #A8D8EA, transparent);
+    margin: 0 auto 14px;
+  }
+
+  .char-title {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    margin: 0 0 12px 0;
+    color: #1B4F72;
+    letter-spacing: 0.03em;
+  }
+
+  .char-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    margin: 0;
+    color: rgba(27, 79, 114, 0.6);
+  }
+
+  /* ========================================
+     STYLE REFERENCE / PROMPT
+     ======================================== */
+  .prompt-section {
+    background: linear-gradient(180deg, #E3EFF9 0%, #EBF3FA 100%);
+  }
+
+  .prompt-block {
+    border: 1px solid rgba(27, 79, 114, 0.1);
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: rgba(240, 245, 250, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px);
+  }
+
+  .prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    border-bottom: 1px solid rgba(27, 79, 114, 0.08);
+    background: rgba(168, 216, 234, 0.1);
+    position: relative;
+    z-index: 1;
+  }
+
+  .prompt-header-label {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: #5DADE2;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .copy-button {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    background: rgba(168, 216, 234, 0.15);
+    color: #1B4F72;
+    border: 1px solid rgba(27, 79, 114, 0.15);
+    padding: 6px 20px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .copy-button:hover {
+    background: rgba(168, 216, 234, 0.3);
+    border-color: rgba(93, 173, 226, 0.4);
+  }
+
+  .copy-button.copied {
+    background: rgba(93, 173, 226, 0.2);
+    border-color: #5DADE2;
+  }
+
+  .prompt-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: #1B4F72;
+    padding: 28px 24px;
+    margin: 0;
+    white-space: pre-wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ========================================
+     WHEN TO USE
+     ======================================== */
+  .use-section {
+    background: linear-gradient(180deg, #EBF3FA 0%, #F0F5FA 100%);
+  }
+
+  .use-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .use-column {
+    border: 1px solid rgba(27, 79, 114, 0.1);
+    overflow: hidden;
+    position: relative;
+    background: rgba(240, 245, 250, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+  }
+
+  .use-column-heading {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 16px 22px;
+    text-align: center;
+    border-bottom: 1px solid rgba(27, 79, 114, 0.08);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .use-good .use-column-heading {
+    background: rgba(168, 216, 234, 0.15);
+    color: #1B4F72;
+  }
+
+  .use-bad .use-column-heading {
+    background: rgba(27, 79, 114, 0.04);
+    color: rgba(27, 79, 114, 0.5);
+  }
+
+  .use-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .use-item {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 13px 22px;
+    border-bottom: 1px solid rgba(27, 79, 114, 0.05);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #1B4F72;
+  }
+
+  .use-item:last-child {
+    border-bottom: none;
+  }
+
+  .use-item-good::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: linear-gradient(135deg, #A8D8EA, #5DADE2);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .use-item-bad::before {
+    content: '\2013';
+    color: rgba(27, 79, 114, 0.25);
+    flex-shrink: 0;
+  }
+
+  /* ========================================
+     HISTORY
+     ======================================== */
+  .history-section {
+    background: linear-gradient(180deg, #E3EFF9 0%, #EBF3FA 100%);
+  }
+
+  .history-section::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid rgba(27, 79, 114, 0.08);
+    pointer-events: none;
+    clip-path: polygon(16px 0, calc(100% - 16px) 0, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0 calc(100% - 16px), 0 16px);
+  }
+
+  .history-content {
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .history-paragraph {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin: 0 0 24px 0;
+    color: #1B4F72;
+  }
+
+  .history-paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     RELATED STYLES
+     ======================================== */
+  .related-section {
+    background: linear-gradient(180deg, #EBF3FA 0%, #F0F5FA 100%);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 28px 20px;
+    border: 1px solid rgba(27, 79, 114, 0.1);
+    text-decoration: none;
+    color: #1B4F72;
+    text-align: center;
+    position: relative;
+    background: rgba(240, 245, 250, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: box-shadow 0.3s, border-color 0.3s, background 0.3s;
+    clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
+  }
+
+  .related-card:hover {
+    box-shadow: 0 4px 20px rgba(27, 79, 114, 0.1);
+    border-color: rgba(93, 173, 226, 0.3);
+    background: rgba(240, 245, 250, 0.85);
+  }
+
+  .related-relationship {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.65rem;
+    color: #5DADE2;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .related-name {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #1B4F72;
+    letter-spacing: 0.03em;
+  }
+
+  .related-arrow {
+    font-size: 1rem;
+    color: #A8D8EA;
+  }
+
+  /* ========================================
+     FOOTER
+     ======================================== */
+  .footer {
+    background: linear-gradient(180deg, #E3EFF9 0%, #D6EAF8 100%);
+    padding: 64px 32px;
+    border-top: 1px solid rgba(27, 79, 114, 0.08);
+  }
+
+  .footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-ornament {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(27, 79, 114, 0.2), transparent);
+  }
+
+  .footer-logo {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #1B4F72;
+    text-decoration: none;
+    padding: 8px 24px;
+    border: 1px solid rgba(27, 79, 114, 0.15);
+    background: rgba(168, 216, 234, 0.1);
+    clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, calc(100% - 8px) 100%, 8px 100%, 0 100%, 0 8px);
+    transition: background 0.3s;
+  }
+
+  .footer-logo:hover {
+    background: rgba(168, 216, 234, 0.25);
+  }
+
+  .footer-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    color: rgba(27, 79, 114, 0.5);
+    letter-spacing: 0.03em;
+  }
+
+  .footer-back {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #5DADE2;
+    text-decoration: none;
+    padding: 6px 20px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+
+  .footer-back:hover {
+    border-color: rgba(27, 79, 114, 0.15);
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 64px 24px 56px;
+    }
+
+    .section {
+      padding: 64px 24px;
+    }
+
+    .section-heading {
+      margin-bottom: 36px;
+    }
+
+    .characteristics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .use-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .prompt-text {
+      font-size: 0.85rem;
+      padding: 22px 18px;
+    }
+
+    .prompt-header {
+      padding: 12px 18px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav-inner {
+      padding: 12px 20px;
+    }
+
+    .footer {
+      padding: 48px 24px;
+    }
+
+    .about-section::before,
+    .history-section::before {
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+    }
+
+    .hero-line {
+      width: 28px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 48px 16px 40px;
+    }
+
+    .section {
+      padding: 48px 16px;
+    }
+
+    .nav-inner {
+      padding: 10px 16px;
+      gap: 8px;
+    }
+
+    .nav-logo {
+      font-size: 0.85rem;
+      padding: 5px 14px;
+    }
+
+    .nav-current {
+      font-size: 0.8rem;
+      padding: 5px 12px;
+    }
+
+    .char-card {
+      padding: 24px 20px 20px;
+    }
+
+    .copy-button {
+      padding: 5px 14px;
+      font-size: 0.75rem;
+    }
+
+    .use-item {
+      padding: 11px 16px;
+      font-size: 0.85rem;
+    }
+
+    .related-card {
+      padding: 22px 16px;
+    }
+
+    .section-header {
+      gap: 10px;
+    }
+
+    .section-rule {
+      max-width: 40px;
+    }
+
+    .about-section::before,
+    .history-section::before {
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+    }
+
+    .hero-line {
+      width: 20px;
+    }
+
+    .hero-rule {
+      gap: 6px;
+    }
+  }
+</style>

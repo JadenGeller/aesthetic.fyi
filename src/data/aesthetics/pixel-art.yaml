@@ -1,0 +1,114 @@
+slug: pixel-art
+name: Pixel Art
+coined: false
+
+tagline: "Every pixel placed with purpose. No anti-aliasing. No gradients. Just the grid."
+
+prompt: |
+  Dark background (#1a1a2e) with bright pixel-green (#33ff66) primary text.
+  Use 'Press Start 2P' from Google Fonts for ALL text — headings and body.
+  Zero border-radius everywhere — every element is a sharp rectangle. Borders
+  use 2-3px solid lines in retro colors: #33ff66 green, #ff3366 red, #3366ff
+  blue, #ffcc00 yellow. Box-shadow uses stepped offsets (4px 4px 0) to
+  simulate pixel depth — no blur. Accent backgrounds in #0f0f23 deep navy.
+  Secondary text in #7a7a9e muted lavender. Decorative elements use CSS
+  box-shadow stacking to create pixel-art patterns. Layout uses rigid grid
+  alignment. The mood is retro gaming, 8-bit nostalgia, deliberate
+  constraint. Everything snaps to the grid. Nothing is smooth.
+
+about: |
+  Pixel art on the web is a celebration of constraint. In a world of
+  infinite resolution and smooth vector curves, pixel art says: give me
+  a grid, a handful of colors, and I will make something beautiful within
+  those limits. Every pixel is a deliberate choice. There is no
+  anti-aliasing to hide behind, no gradient to smooth over mistakes.
+
+  This aesthetic draws from the golden age of 8-bit and 16-bit computing,
+  when hardware limitations forced artists to think in blocks. The
+  constraints were not burdens — they were the art form itself. On the
+  modern web, pixel art styling is a conscious rejection of smoothness, a
+  nostalgia for the tactile crunch of early digital interfaces where you
+  could count every pixel on screen.
+
+characteristics:
+  - title: Blocky Typography
+    description: >
+      Press Start 2P font everywhere — a bitmap typeface that looks like it
+      was pulled from a game cartridge. No smooth serifs, no elegant curves.
+      Every letterform is built on a pixel grid, chunky and unapologetic.
+  - title: Zero Border-Radius
+    description: >
+      No rounded corners anywhere. Every container, button, and card is a
+      sharp rectangle. Softness is the enemy. The entire layout is built
+      from rigid blocks that snap to the grid like tiles on a sprite sheet.
+  - title: Stepped Box-Shadows
+    description: >
+      Shadows use hard pixel offsets (4px 4px 0) with no blur — creating a
+      retro 3D effect like buttons in early GUIs. Multiple stacked shadows
+      can build pixel-art patterns purely in CSS, block by block.
+  - title: Limited Retro Palette
+    description: >
+      A strict palette of 5-6 colors drawn from retro gaming: bright green
+      (#33ff66), hot red (#ff3366), electric blue (#3366ff), pixel yellow
+      (#ffcc00), all on deep dark backgrounds (#1a1a2e, #0f0f23). No
+      pastels, no earth tones.
+  - title: Dark Background Canvas
+    description: >
+      Deep navy and near-black backgrounds (#1a1a2e, #0f0f23) evoke CRT
+      monitors and old terminal screens. The dark canvas makes the bright
+      pixel colors pop like phosphors glowing on glass.
+  - title: Grid-Locked Layout
+    description: >
+      Everything aligns to a strict grid. Spacing is consistent and
+      deliberate — 8px, 16px, 24px, 32px. No organic flow, no overlapping
+      elements. The layout has the rigid precision of a tile map editor.
+
+good_for:
+  - Retro gaming portfolios and fan sites
+  - Indie game studios and dev blogs
+  - Creative coding and generative art showcases
+  - Nostalgic personal homepages
+  - Chiptune and retro music platforms
+
+not_for:
+  - Corporate enterprise applications
+  - Medical or healthcare platforms
+  - Luxury fashion and high-end brands
+  - Accessibility-focused applications (small bitmap fonts)
+  - Long-form reading and editorial content
+
+history: |
+  Pixel art began not as a style choice but as a hardware necessity. In
+  the 1970s and 1980s, displays could only render a limited number of
+  pixels in a limited number of colors. Artists working on games like
+  Space Invaders, Super Mario Bros, and The Legend of Zelda created
+  entire worlds within grids of 16x16 or 32x32 pixels. The constraints
+  were absolute, and the creativity within them was extraordinary.
+
+  As technology advanced, pixel art should have died. Higher resolutions,
+  more colors, and vector graphics made the pixel grid unnecessary. But
+  something unexpected happened: pixel art became a deliberate aesthetic
+  choice. Indie games like Minecraft, Undertale, Celeste, and Stardew
+  Valley proved that pixel art was not a limitation to escape but a
+  medium with its own expressive power. The constraints became the point.
+
+  On the web, pixel art aesthetics translate into blocky fonts, hard-edged
+  containers, stepped shadows, and strict color palettes. It is a rejection
+  of the smooth, polished interfaces that dominate modern design. Every
+  pixel-art website is a small act of rebellion — proof that beauty can
+  come from a grid, a handful of colors, and the discipline to place
+  every block with intention.
+
+related:
+  - slug: retro-terminal
+    relationship: Shares CRT nostalgia
+  - slug: old-web
+    relationship: Early internet aesthetics
+  - slug: gaming-hud
+    relationship: Game interface heritage
+  - slug: ascii-art
+    relationship: Character-grid constraint
+  - slug: glitch-art
+    relationship: Digital imperfection
+  - slug: vaporwave
+    relationship: Retro digital culture

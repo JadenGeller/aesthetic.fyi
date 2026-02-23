@@ -1,0 +1,117 @@
+slug: monochrome
+name: Monochrome
+coined: false
+
+tagline: "One hue. No distractions. Every shade of gray carries the weight that color never could."
+
+prompt: |
+  White (#FFFFFF) background with black (#000000) text. Full range of
+  grays for tonal depth — #333333 for headings, #666666 for body,
+  #999999 for secondary text, #CCCCCC and #E5E5E5 for borders and
+  dividers. Clean sans-serif typography (Inter) with strong weight
+  contrast — 700 for headings, 400 for body, 300 for labels. No color
+  whatsoever. All visual interest comes from typographic scale, weight
+  variation, and tonal contrast. Bold black-and-white sections alternate
+  for rhythm. Borders are crisp 1px solid lines. Shadows use pure black
+  at low opacity (rgba(0,0,0,0.06)). Generous whitespace, strict
+  alignment, no decoration. The mood is reductive, confident, and
+  absolute — everything unnecessary has been removed, and what remains
+  is only value.
+
+about: |
+  Monochrome is design stripped to its most honest material: light and
+  its absence. No hue competes for attention. No accent color signals
+  where to look. Instead, the entire hierarchy is built from weight —
+  the weight of black type against white space, the quiet recession of
+  gray into the background, the way a single heavy rule can anchor an
+  entire page.
+
+  This is not minimalism, though they share DNA. Minimalism removes
+  elements. Monochrome removes color but keeps everything else — drama,
+  density, texture, contrast. A monochrome page can be loud. It can be
+  dense with type. What it cannot be is distracted. Every design
+  decision is forced through a single channel, and that constraint
+  produces clarity that color can only approximate.
+
+characteristics:
+  - title: Pure Black & White
+    description: >
+      #000000 and #FFFFFF as the primary poles. No warm whites, no
+      blue-blacks. The palette is absolute — true black on true white,
+      with grays (#333, #666, #999, #CCC, #E5E5E5) filling the space
+      between. Every value is intentional.
+  - title: Typographic Hierarchy
+    description: >
+      Without color to create hierarchy, type does all the work. Weight
+      contrast between 700 headings and 400 body text creates clear
+      levels. Scale jumps are decisive — large titles, modest body,
+      small labels. The type system is the design system.
+  - title: Tonal Depth
+    description: >
+      Grays are not neutral filler — they are the palette. Light grays
+      (#E5E5E5) recede, mid-grays (#999) support, dark grays (#333)
+      anchor. The tonal range creates spatial depth without any
+      chromatic content. Value alone builds the visual field.
+  - title: Clean Sans-Serif
+    description: >
+      Inter or similar grotesque sans-serifs — neutral, highly legible,
+      with enough weight options to build hierarchy from a single
+      typeface. No serifs, no display faces. The type is a tool, not
+      a personality.
+  - title: Crisp Geometry
+    description: >
+      Borders are 1px solid, never dashed or rounded beyond function.
+      Lines are straight, spacing is systematic, alignment is strict.
+      Every element sits on a clear grid. The geometry is precise
+      because imprecision has nowhere to hide without color.
+  - title: Bold Contrast
+    description: >
+      The absence of color demands strong contrast. Black on white is
+      maximum contrast. Sections alternate between light and dark
+      backgrounds. Rules and dividers are definitive, not decorative.
+      Nothing is ambiguous.
+
+good_for:
+  - Photography and portfolio sites
+  - Editorial and magazine layouts
+  - Luxury and high-fashion brands
+  - Typography-focused publications
+  - Architecture and design studios
+
+not_for:
+  - Children's products and toy brands
+  - Food and restaurant marketing
+  - Social media and community platforms
+  - Gaming and entertainment sites
+  - Holiday and seasonal campaigns
+
+history: |
+  Monochrome design predates the screen. The printed page was black ink
+  on white paper for centuries before color printing became affordable.
+  Typography, the oldest design discipline, evolved entirely within
+  this constraint — proving that a single axis of value could carry
+  infinite expressive range.
+
+  In the digital era, monochrome became a deliberate choice rather than
+  a limitation. The Swiss Style of the 1950s and 60s demonstrated that
+  black, white, and gray could produce designs of extraordinary power
+  and clarity. Massimo Vignelli, Josef Muller-Brockmann, and their
+  successors built entire visual languages from value alone.
+
+  On the modern web, monochrome is both a reaction to and a rest from
+  the saturated chaos of digital media. When every brand screams in
+  color, a page that speaks only in black and white commands a
+  different kind of attention. It says: the content is enough. The
+  design does not need to perform. Presence alone is sufficient.
+
+related:
+  - slug: minimalism
+    relationship: Shares reductive philosophy
+  - slug: noir
+    relationship: Explores darkness and contrast
+  - slug: swiss-design
+    relationship: Typographic rigor and grids
+  - slug: brutalism
+    relationship: Raw, undecorated honesty
+  - slug: editorial
+    relationship: Type-driven layouts

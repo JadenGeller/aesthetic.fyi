@@ -1,0 +1,89 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-accent"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-rule">
+    <span class="card-line"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #F7F4EF;
+    color: #3D3834;
+    border: 1px solid #DDD0C0;
+    border-radius: 3px;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, border-color 0.3s;
+  }
+
+  .card:hover {
+    box-shadow: 0 2px 12px rgba(61, 56, 52, 0.05);
+    border-color: #9B9590;
+  }
+
+  .card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 10%, #DDD0C0 40%, #DDD0C0 60%, transparent 90%);
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    margin: 0 0 8px 0;
+    color: #3D3834;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .card-rule {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-line {
+    width: 24px;
+    height: 1px;
+    background: #DDD0C0;
+  }
+
+  .card-tagline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12.5px;
+    font-weight: 400;
+    margin: 0;
+    color: #9B9590;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+    letter-spacing: 0.01em;
+  }
+</style>

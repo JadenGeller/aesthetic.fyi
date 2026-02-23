@@ -1,0 +1,118 @@
+slug: cosmic
+name: Cosmic
+coined: false
+
+tagline: "You are stardust briefly aware of itself. The universe doesn't end — it just hasn't rendered yet."
+
+prompt: |
+  Deep void black (#050510) background with luminous off-white (#E8E0F0)
+  text. Nebula gradients using purple (#6B2FA0), deep blue (#1a0a3e),
+  magenta (#C850C0), and teal (#00CED1) for accent areas and decorative
+  elements. CSS starfield using scattered radial-gradient dots across
+  backgrounds — tiny white and colored points simulating distant stars.
+  Cosmic glow effects via box-shadow and text-shadow (0 0 30px
+  rgba(200,80,192,0.4)). Typography in Space Grotesk (500, 700) for a
+  clean, futuristic feel. Borders in subtle nebula tones
+  (rgba(107,47,160,0.3)). Cards and containers have translucent dark
+  backgrounds (rgba(10,5,30,0.6)) with soft purple/teal glow on hover.
+  Ethereal floating feel with generous spacing. The mood is vast,
+  contemplative, infinite — like drifting through a nebula. Nothing is
+  small. Everything implies scale.
+
+about: |
+  Cosmic design is what happens when you try to put infinity on a screen.
+  The deep void backgrounds aren't just dark — they're the darkness
+  between galaxies, the space that light hasn't reached yet. Every glow
+  effect is a distant star. Every gradient is a nebula being born.
+
+  This isn't dark mode with extra steps. Cosmic design carries weight
+  and wonder. The starfields aren't decoration — they're context. They
+  remind you that everything on this page exists inside something
+  incomprehensibly vast. The typography floats against the void like a
+  transmission from deep space, and the nebula gradients suggest that
+  even in darkness, there is color and motion and light.
+
+characteristics:
+  - title: Void Black Foundation
+    description: >
+      #050510 deep void background — not gray, not charcoal, but the
+      near-black of deep space. This isn't absence of design, it's the
+      canvas of the cosmos. Everything luminous is placed against this
+      infinite darkness.
+  - title: Nebula Gradients
+    description: >
+      Purple (#6B2FA0), magenta (#C850C0), deep blue (#1a0a3e), and
+      teal (#00CED1) blend in sweeping gradients that evoke interstellar
+      gas clouds. These colors appear in borders, accent areas, and
+      background washes — always blended, never flat.
+  - title: CSS Starfield
+    description: >
+      Tiny radial-gradient dots scattered across backgrounds simulate
+      star fields. Varying sizes (1px to 3px) and opacities create depth —
+      some stars are close and bright, others are distant and faint. Pure
+      CSS, no images needed.
+  - title: Cosmic Glow Effects
+    description: >
+      Box-shadow and text-shadow with purple, magenta, and teal create
+      the halo effect of light diffusing through interstellar medium.
+      Headings glow softly. Cards pulse with nebula light on hover.
+      Nothing has hard edges in space.
+  - title: Space Grotesk Typography
+    description: >
+      Space Grotesk — geometric, clean, subtly futuristic. Weights 500
+      and 700 for hierarchy. The letterforms feel engineered, like readouts
+      from a spacecraft console. Paired with generous letter-spacing for
+      labels, it reads like transmissions from deep space.
+  - title: Ethereal Floating Layout
+    description: >
+      Generous padding and spacing create the sensation of objects
+      floating in zero gravity. Elements don't feel anchored to a grid —
+      they drift in the void. The layout breathes like the space between
+      stars.
+
+good_for:
+  - Space and astronomy platforms
+  - Science fiction and speculative projects
+  - Music and ambient audio sites
+  - Portfolio sites for visual artists
+  - Meditation and contemplation apps
+
+not_for:
+  - E-commerce and retail platforms
+  - Corporate and enterprise dashboards
+  - News and content-heavy sites
+  - Government and institutional pages
+  - Children's educational platforms
+
+history: |
+  The cosmic aesthetic in digital design draws from humanity's oldest
+  fascination — the night sky. But its modern form emerged alongside
+  the space imagery revolution: Hubble photographs in the 1990s showed
+  the public that space wasn't just black and white, but full of
+  impossible color — purple nebulae, teal gas clouds, magenta stellar
+  nurseries.
+
+  As dark mode became mainstream in the late 2010s, designers began
+  pushing beyond simple dark backgrounds into richer, more atmospheric
+  darkness. Cosmic design took that darkness and filled it with depth —
+  starfields, nebula gradients, glow effects that made screens feel
+  like windows into space. The aesthetic found homes in music players,
+  meditation apps, and portfolio sites where atmosphere mattered more
+  than information density.
+
+  On the web, cosmic design is maximalist darkness. Where minimalism
+  strips away, cosmic adds layers — stars behind nebulae behind void.
+  It asks the user to feel small in the best way possible, to remember
+  that every pixel exists inside something infinite.
+
+related:
+  - slug: synthwave
+    relationship: Shares neon glow palette
+  - slug: dark-mode
+    relationship: Deep darkness foundation
+  - slug: cyberpunk
+    relationship: Futuristic luminescence
+  - slug: vaporwave
+    relationship: Ethereal color gradients
+  - slug: holographic
+    relationship: Iridescent light effects

@@ -1,0 +1,184 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-scrollwork"></div>
+  <div class="card-frame"></div>
+  <div class="card-frame-inner"></div>
+  <div class="card-corner card-corner-tl"></div>
+  <div class="card-corner card-corner-tr"></div>
+  <div class="card-corner card-corner-bl"></div>
+  <div class="card-corner card-corner-br"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-flourish">
+    <span class="card-flourish-wing"></span>
+    <span class="card-flourish-diamond"></span>
+    <span class="card-flourish-wing"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: linear-gradient(170deg, #FFF8F0, #F4C2C2 50%, #B5D8EB 80%, #FFF8F0);
+    color: #4A3728;
+    border: 2px solid #C9A84C;
+    border-radius: 8px;
+    min-height: 220px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 3px 16px rgba(201, 168, 76, 0.1);
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 32px rgba(201, 168, 76, 0.2), 0 2px 8px rgba(201, 168, 76, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .card-scrollwork {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(circle 6px at 8% 12%, rgba(201, 168, 76, 0.18) 50%, transparent 50%),
+      radial-gradient(circle 4px at 6% 10%, rgba(201, 168, 76, 0.12) 50%, transparent 50%),
+      radial-gradient(circle 4px at 10% 14%, rgba(201, 168, 76, 0.12) 50%, transparent 50%),
+      radial-gradient(circle 3px at 5% 16%, rgba(201, 168, 76, 0.1) 50%, transparent 50%),
+      radial-gradient(circle 6px at 92% 12%, rgba(201, 168, 76, 0.18) 50%, transparent 50%),
+      radial-gradient(circle 4px at 94% 10%, rgba(201, 168, 76, 0.12) 50%, transparent 50%),
+      radial-gradient(circle 4px at 90% 14%, rgba(201, 168, 76, 0.12) 50%, transparent 50%),
+      radial-gradient(circle 3px at 95% 16%, rgba(201, 168, 76, 0.1) 50%, transparent 50%),
+      radial-gradient(circle 4px at 8% 88%, rgba(201, 168, 76, 0.12) 50%, transparent 50%),
+      radial-gradient(circle 4px at 92% 88%, rgba(201, 168, 76, 0.12) 50%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .card-frame {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    right: 7px;
+    bottom: 7px;
+    border: 1.5px solid rgba(201, 168, 76, 0.6);
+    border-radius: 5px;
+    pointer-events: none;
+  }
+
+  .card-frame-inner {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 1px dashed rgba(201, 168, 76, 0.35);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .card-corner {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+  }
+
+  .card-corner-tl {
+    top: 16px;
+    left: 16px;
+    border-top: 2px solid #C9A84C;
+    border-left: 2px solid #C9A84C;
+    border-radius: 3px 0 0 0;
+  }
+
+  .card-corner-tr {
+    top: 16px;
+    right: 16px;
+    border-top: 2px solid #C9A84C;
+    border-right: 2px solid #C9A84C;
+    border-radius: 0 3px 0 0;
+  }
+
+  .card-corner-bl {
+    bottom: 16px;
+    left: 16px;
+    border-bottom: 2px solid #C9A84C;
+    border-left: 2px solid #C9A84C;
+    border-radius: 0 0 0 3px;
+  }
+
+  .card-corner-br {
+    bottom: 16px;
+    right: 16px;
+    border-bottom: 2px solid #C9A84C;
+    border-right: 2px solid #C9A84C;
+    border-radius: 0 0 3px 0;
+  }
+
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 24px;
+    margin: 0 0 6px 0;
+    color: #4A3728;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.03em;
+    text-shadow: 0 1px 3px rgba(201, 168, 76, 0.1);
+  }
+
+  .card-flourish {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-flourish-wing {
+    width: 20px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #C9A84C);
+  }
+
+  .card-flourish-wing:last-child {
+    background: linear-gradient(90deg, #C9A84C, transparent);
+  }
+
+  .card-flourish-diamond {
+    width: 5px;
+    height: 5px;
+    background: #C9A84C;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  .card-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    color: #6B5744;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

@@ -1,0 +1,119 @@
+slug: pop-art
+name: Pop Art
+coined: false
+
+tagline: "Everything is louder, bolder, and more. If it doesn't hit you in the face, it's not finished."
+
+prompt: |
+  Bright white (#FFFFFF) background with bold black (#000000) text and
+  thick black outlines on all containers (3-4px solid #000). Primary
+  color palette: vivid red (#E3242B), bright yellow (#FFD700), electric
+  blue (#005BBB), with hot pink (#FF1493) and bright green (#00C853)
+  accents. Halftone dot patterns via radial-gradient (small repeating
+  dots, 6-8px spacing) as background textures on sections. Headings in
+  Bangers (400) — bold, condensed, uppercase, comic-book style with
+  slight letter-spacing. Body text in Roboto Condensed (400, 700) for
+  tight, punchy readability. Hard drop-shadows (4px 4px 0px #000)
+  instead of soft shadows. Border-radius 0 — everything is sharp and
+  angular. Speech-bubble shapes and starburst accents via CSS. High
+  contrast, maximum saturation, zero subtlety. The mood is loud,
+  graphic, commercial, mass-produced — like a Warhol screen-print or a
+  Lichtenstein comic panel blown up to billboard scale.
+
+about: |
+  Pop Art on the web is design that refuses to whisper. It borrows from
+  advertising, comic books, and mass media — the visual language of
+  things designed to be seen from across the room. Every element is
+  amplified: colors are saturated to the point of vibration, outlines
+  are thick enough to feel structural, and typography screams rather
+  than speaks.
+
+  This is not design that asks for your attention. It takes it. The
+  thick black borders, the halftone dot patterns, the primary-color
+  explosions — they come from a tradition that understood one thing
+  perfectly: visibility is everything. Pop Art on screen is commercial
+  art that knows it is commercial art, and celebrates it.
+
+characteristics:
+  - title: Primary Color Explosions
+    description: >
+      Vivid red (#E3242B), bright yellow (#FFD700), electric blue
+      (#005BBB). The palette comes straight from commercial printing —
+      the colors of newspaper comics and advertising posters. Nothing
+      is muted. Nothing is tasteful. Everything is turned up to eleven.
+  - title: Halftone Dot Patterns
+    description: >
+      Repeating radial-gradient dots simulate the Ben-Day dot printing
+      technique that Lichtenstein made iconic. These patterns appear as
+      background textures, adding depth and visual noise — the digital
+      equivalent of looking at a comic panel under a magnifying glass.
+  - title: Thick Black Outlines
+    description: >
+      3-4px solid black borders on every container. Drop-shadows are
+      hard and flat (4px 4px 0 #000) — no blur, no subtlety. The
+      outlines give everything the weight of a comic-book panel, making
+      each element feel like it was drawn with a thick marker.
+  - title: Comic-Book Typography
+    description: >
+      Bangers for headings — bold, condensed, uppercase, with the
+      energy of a sound effect. Roboto Condensed for body text — tight,
+      efficient, built for impact. The type does not invite contemplation.
+      It demands immediate attention.
+  - title: Flat & Graphic
+    description: >
+      No gradients, no glass effects, no depth illusions. Everything is
+      flat, graphic, and two-dimensional — like a screen-print or a
+      poster. The design is all surface, and that surface is the point.
+      What you see is exactly what you get.
+  - title: Maximum Contrast
+    description: >
+      Black on white, white on red, yellow on blue. Every color
+      combination is chosen for maximum visual impact. There are no
+      neutral tones, no breathing room, no quiet corners. The entire
+      page operates at peak volume.
+
+good_for:
+  - Creative portfolios and art showcases
+  - Event and festival promotion sites
+  - Music and entertainment brands
+  - Bold product launches and campaigns
+  - Youth-oriented digital magazines
+
+not_for:
+  - Enterprise software and dashboards
+  - Healthcare and medical platforms
+  - Financial services and banking
+  - Long-form reading and documentation
+  - Accessibility-first applications
+
+history: |
+  Pop Art emerged in the 1950s in Britain and exploded in 1960s America
+  through Andy Warhol, Roy Lichtenstein, Jasper Johns, and others. It
+  was a deliberate provocation — fine art made from soup cans, comic
+  strips, and advertising. The movement argued that the boundary between
+  "high" art and "low" culture was arbitrary, and then gleefully erased it.
+
+  Lichtenstein's Ben-Day dots, borrowed from cheap comic-book printing,
+  became fine art when painted at massive scale. Warhol's screen-prints
+  of Marilyn Monroe and Campbell's Soup turned mass production into an
+  artistic method. The aesthetic was inherently democratic — its source
+  material was everywhere, seen by everyone, owned by no one.
+
+  On the web, Pop Art translates into maximum visual impact: primary
+  colors, thick outlines, halftone patterns, and typography that hits
+  like a headline. It rejects the quiet sophistication of minimalism and
+  the warm subtlety of organic design. Instead, it says: this is a
+  surface, and that surface should be as loud and vivid as a billboard
+  on Times Square.
+
+related:
+  - slug: comic-book
+    relationship: Shares visual language
+  - slug: neubrutalism
+    relationship: Bold outlines and flat color
+  - slug: maximalism
+    relationship: More is more philosophy
+  - slug: retro-diner
+    relationship: Mid-century Americana
+  - slug: memphis
+    relationship: Playful color and pattern

@@ -1,0 +1,110 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-sand"></div>
+  <div class="card-stone"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-dot-wrap">
+    <span class="card-dot"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #F5F0E0;
+    color: #3A3A35;
+    border: 1px solid #E0D8C4;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.5s;
+  }
+
+  .card:hover {
+    border-color: #7A7A6D;
+  }
+
+  .card-sand {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 11px,
+        #E8E0CC 11px,
+        #E8E0CC 12px
+      );
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .card-stone {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #918E80, #7A7A6D 60%, #6A6A5E);
+    margin-bottom: 20px;
+    opacity: 0.35;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 22px;
+    margin: 0 0 6px 0;
+    color: #3A3A35;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-dot-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #7A7A6D;
+    opacity: 0.35;
+  }
+
+  .card-tagline {
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    color: #7A7A6D;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

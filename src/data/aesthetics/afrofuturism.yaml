@@ -1,0 +1,119 @@
+slug: afrofuturism
+name: Afrofuturism
+coined: false
+
+tagline: "The ancestors coded the stars. The future is ancient. We have always been tomorrow."
+
+prompt: |
+  Deep purple (#2D1B69) and black (#0D0D0D) backgrounds with gold (#D4AF37)
+  accents and cosmic teal (#00CED1) highlights. African-inspired geometric
+  patterns via CSS — triangles and chevrons using linear-gradient, arranged
+  as decorative borders and section dividers. A starfield effect using
+  scattered radial-gradient dots in gold and white. Headings in Orbitron
+  (700) — bold, angular, futuristic. Body text in Nunito (400, 600) —
+  smooth and modern. Cosmic gradient backgrounds blending deep purple to
+  black with teal nebula glows. Angular clipped shapes using clip-path on
+  hero elements. Gold border accents (1px solid #D4AF37) on cards and
+  containers. The mood is regal, cosmic, and ancestral — a civilization
+  that never stopped building. Typography is uppercase and tracked-out for
+  labels, grounded and readable for body. Everything radiates power,
+  heritage, and infinite possibility.
+
+about: |
+  Afrofuturism on the web is a declaration: the future has always been
+  Black. It refuses the premise that technology and tradition are opposed.
+  The geometric patterns echo Kente cloth and Ndebele murals. The cosmic
+  palette — deep purple, gold, star-white — says this culture does not
+  merely participate in the future. It architects it.
+
+  This is design that carries weight. The bold typography commands
+  attention. The angular shapes suggest forward motion. The gold accents
+  are not decorative — they are regal. Every element says: we were here
+  before your timelines began, and we will be here long after they end.
+  The starfield is not escapism. It is a map home.
+
+characteristics:
+  - title: Cosmic Palette
+    description: >
+      #2D1B69 deep purple, #0D0D0D near-black, #D4AF37 gold, #00CED1
+      cosmic teal. The colors carry meaning — purple for royalty and
+      cosmos, black for the infinite void, gold for ancestral wealth,
+      teal for the electric future. Nothing is pastel. Nothing whispers.
+  - title: Geometric Patterns
+    description: >
+      African-inspired triangles, chevrons, and zigzags rendered in pure
+      CSS using linear-gradient. These are not decoration — they are
+      language. Kente geometry, Ndebele symmetry, Adinkra symbolism,
+      translated into the medium of the screen.
+  - title: Starfield Effects
+    description: >
+      Scattered dots via radial-gradient simulate a cosmic starfield
+      across hero sections and backgrounds. Stars in gold and white
+      against deep purple and black — a reminder that navigation by
+      stars is ancient technology, not science fiction.
+  - title: Bold Display Typography
+    description: >
+      Orbitron for headings — angular, geometric, unapologetically
+      futuristic. Nunito for body text — rounded, warm, deeply readable.
+      Labels are uppercase with wide letter-spacing, giving them the
+      weight of inscriptions. The contrast between display and body
+      creates visual authority.
+  - title: Angular Geometry
+    description: >
+      Clip-path polygons and angled borders create sharp, forward-leaning
+      shapes. Nothing is soft or rounded. The geometry suggests motion,
+      progress, a culture cutting through space-time. Containers have
+      gold borders that frame content like sacred architecture.
+  - title: Cosmic Gradients
+    description: >
+      Backgrounds blend deep purple into black with subtle teal nebula
+      glows. These are not flat colors — they are atmospheres. The
+      gradients suggest depth, dimension, the layered reality of
+      Afrofuturist thought where past and future coexist.
+
+good_for:
+  - Music and artist portfolio sites
+  - Cultural festivals and events
+  - Afrocentric fashion and lifestyle brands
+  - Sci-fi and speculative fiction platforms
+  - Technology companies centering Black innovation
+
+not_for:
+  - Minimalist corporate dashboards
+  - Cottagecore or pastoral themes
+  - Clinical medical or legal sites
+  - Muted, understated editorial designs
+  - Brands avoiding bold visual statements
+
+history: |
+  The term Afrofuturism was coined by cultural critic Mark Dery in 1993,
+  but the tradition runs far deeper. Sun Ra claimed Saturn as his
+  birthplace in the 1950s. Octavia Butler built futures where Black women
+  shaped civilizations. Parliament-Funkadelic landed the Mothership decades
+  before anyone called it an aesthetic.
+
+  The visual language draws from African geometric traditions — the
+  precise mathematics of Kente weaving, the bold murals of Ndebele
+  architecture, the symbolic density of Adinkra cloth — and projects
+  them through a lens of science fiction and cosmic imagination. Black
+  Panther brought this to global cinema in 2018, but the aesthetic had
+  been alive in music, literature, and art for generations.
+
+  On the web, Afrofuturism translates into deep cosmic palettes, bold
+  geometric patterns, and typography that commands rather than suggests.
+  It rejects the whitespace minimalism of Silicon Valley and the muted
+  palettes of Scandinavian design. Instead, it builds pages that feel
+  like temples — ancient and futuristic simultaneously, coded in gold
+  and starlight.
+
+related:
+  - slug: cyberpunk
+    relationship: Shares technological futurism
+  - slug: synthwave
+    relationship: Retro-futurist neon energy
+  - slug: cosmic
+    relationship: Deep space palette
+  - slug: retro-futurism
+    relationship: Reimagined futures
+  - slug: art-deco
+    relationship: Gold and geometric elegance

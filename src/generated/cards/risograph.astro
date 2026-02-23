@@ -1,0 +1,130 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-halftone"></div>
+  <div class="card-misreg"></div>
+  <div class="card-swatches">
+    <span class="card-sw card-sw-pink"></span>
+    <span class="card-sw card-sw-blue"></span>
+    <span class="card-sw card-sw-green"></span>
+  </div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #F5F0E8;
+    color: #2A2A2A;
+    border: 2px solid #3D5A99;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .card:hover {
+    background: #3D5A99;
+    border-color: #F5587B;
+  }
+
+  .card:hover .card-name {
+    color: #F5F0E8;
+  }
+
+  .card:hover .card-tagline {
+    color: rgba(245, 240, 232, 0.7);
+  }
+
+  .card:hover .card-misreg {
+    border-color: rgba(245, 88, 123, 0.4);
+  }
+
+  /* Halftone dot pattern */
+  .card-halftone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient(circle 1.5px, rgba(245, 88, 123, 0.12) 50%, transparent 50%);
+    background-size: 10px 10px;
+    pointer-events: none;
+  }
+
+  /* Misregistration border offset */
+  .card-misreg {
+    position: absolute;
+    top: 4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid rgba(245, 88, 123, 0.2);
+    pointer-events: none;
+    transition: border-color 0.2s;
+  }
+
+  /* Ink swatches */
+  .card-swatches {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-sw {
+    width: 20px;
+    height: 6px;
+  }
+
+  .card-sw-pink {
+    background: #F5587B;
+  }
+
+  .card-sw-blue {
+    background: #3D5A99;
+  }
+
+  .card-sw-green {
+    background: #5EBD73;
+  }
+
+  .card-name {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    margin: 0 0 6px 0;
+    color: #3D5A99;
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+
+  .card-tagline {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    color: #F5587B;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

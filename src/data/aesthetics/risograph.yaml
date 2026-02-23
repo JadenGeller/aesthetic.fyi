@@ -1,0 +1,119 @@
+slug: risograph
+name: Risograph
+coined: false
+
+tagline: "Offset the ink. Overlap the layers. Every misprint is a signature."
+
+prompt: |
+  Paper-white (#F5F0E8) background with riso pink (#F5587B), riso blue
+  (#3D5A99), and riso green (#5EBD73) as the limited ink palette. Clean
+  sans-serif typography (Work Sans or DM Sans). Halftone dot patterns
+  via radial-gradient to simulate screen printing texture. Slight
+  misregistration effects using offset pseudo-elements with
+  mix-blend-mode: multiply to mimic ink layers that don't quite align.
+  Paper-like texture overlay. Bold, graphic compositions with flat color
+  fills. No gradients beyond halftone simulation. Sections feel like
+  printed flats stacked on a light table. The mood is DIY, tactile,
+  zine-culture — like something pulled fresh off a drum printer with
+  ink still drying.
+
+about: |
+  Risograph on the web is the celebration of imperfection as craft.
+  Named after the Japanese stencil duplicator that became the darling
+  of independent publishers and zine-makers, this aesthetic embraces
+  everything that commercial printing tries to eliminate: misaligned
+  layers, halftone grain, limited spot-color palettes, and the visible
+  texture of ink on paper.
+
+  Where most digital design chases pixel-perfect precision, risograph
+  leans into the happy accidents of offset reproduction. Colors overlap
+  and blend through multiply mode, creating unexpected third colors
+  where pink meets blue or green meets pink. Every element feels like
+  it was laid down in a separate pass through the machine, slightly
+  off-register, gloriously imperfect.
+
+characteristics:
+  - title: Limited Ink Palette
+    description: >
+      Riso pink (#F5587B), riso blue (#3D5A99), riso green (#5EBD73)
+      on paper-white (#F5F0E8). Like a real risograph, you work with
+      a handful of spot colors — no full-spectrum CMYK, no arbitrary
+      hex values. The constraint is the aesthetic.
+  - title: Halftone Dot Patterns
+    description: >
+      Repeating radial-gradient dots simulate the halftone screens
+      used in actual riso printing. These patterns appear as texture
+      fills and background treatments, giving flat areas the visual
+      grain of printed ink absorbed into uncoated paper.
+  - title: Misregistration
+    description: >
+      Pseudo-elements offset by a few pixels with mix-blend-mode:
+      multiply create the signature riso look — layers that don't
+      quite line up. This deliberate misalignment transforms clean
+      digital type and shapes into something that feels mechanically
+      reproduced, imperfect, and alive.
+  - title: Paper Texture
+    description: >
+      The background carries a subtle grain or noise that evokes
+      uncoated stock — the slightly rough, absorbent paper that
+      risographs are printed on. Nothing here is glossy or smooth.
+      The surface has tooth.
+  - title: Flat Color & Multiply Blending
+    description: >
+      Colors are solid fills, not gradients. Where two ink layers
+      overlap, multiply blending creates a darker third color —
+      just like physical ink transparency. Pink over blue yields
+      a rich purple. The color interactions are emergent, not designed.
+  - title: Zine Typography
+    description: >
+      Clean sans-serif type (Work Sans or DM Sans) set bold and
+      direct. All-caps labels, tight tracking, functional hierarchy.
+      The typography is utilitarian — it's the printed texture and
+      color work that carry the expression, not decorative letterforms.
+
+good_for:
+  - Art and illustration portfolios
+  - Independent publisher and zine sites
+  - Music labels and band pages
+  - Creative studio and agency sites
+  - Event posters and festival promotions
+
+not_for:
+  - Corporate enterprise platforms
+  - Medical or healthcare portals
+  - Financial services and banking
+  - Government and institutional sites
+  - E-commerce with heavy product photography
+
+history: |
+  The Risograph duplicator was created by the Riso Kagaku Corporation
+  in Tokyo in 1986. Designed as a fast, affordable alternative to
+  offset printing for schools and offices, it works by burning a
+  stencil master onto a thermal plate and pushing ink through it via
+  a rotating drum — one color per pass.
+
+  By the 2010s, artists and independent publishers had rediscovered
+  the machine. Its limitations — spot colors only, slight
+  misregistration, halftone grain on uncoated paper — became its
+  appeal. Riso printing became the medium of choice for zines, art
+  prints, and small-run publications. Studios like Risotto in Glasgow,
+  Perfectly Acceptable in Philadelphia, and Knust in Nijmegen built
+  entire communities around the process.
+
+  On the web, the risograph aesthetic translates mechanical
+  imperfection into CSS: offset layers via pseudo-elements, multiply
+  blend modes for ink overlap, halftone dot patterns via radial
+  gradients, and limited palettes that honor the constraint of
+  spot-color printing. It is design that looks printed, not rendered.
+
+related:
+  - slug: collage
+    relationship: Layered composition
+  - slug: pop-art
+    relationship: Bold limited palette
+  - slug: grunge
+    relationship: Embraces imperfection
+  - slug: indie-web
+    relationship: DIY culture
+  - slug: brutalism
+    relationship: Raw graphic energy

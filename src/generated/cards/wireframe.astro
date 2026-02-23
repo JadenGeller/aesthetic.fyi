@@ -1,0 +1,167 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-placeholder">
+    <span class="card-x">&times;</span>
+  </div>
+  <div class="card-crosshair card-crosshair-tl"></div>
+  <div class="card-crosshair card-crosshair-br"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-divider">
+    <span class="card-dash"></span>
+    <span class="card-mark">&times;</span>
+    <span class="card-dash"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+  <span class="card-annotation">card / preview</span>
+</div>
+
+<style>
+  .card {
+    background: #F5F5F5;
+    color: #333;
+    border: 2px dashed #CCC;
+    min-height: 220px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .card:hover {
+    border-color: #999;
+    background: #F0F0F0;
+  }
+
+  .card-placeholder {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    height: 56px;
+    border: 1px dotted #CCC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      linear-gradient(to top right, transparent calc(50% - 0.5px), #E5E5E5 calc(50% - 0.5px), #E5E5E5 calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+      linear-gradient(to top left, transparent calc(50% - 0.5px), #E5E5E5 calc(50% - 0.5px), #E5E5E5 calc(50% + 0.5px), transparent calc(50% + 0.5px));
+  }
+
+  .card-x {
+    font-size: 1.2rem;
+    color: #CCC;
+    font-weight: 400;
+    background: #F5F5F5;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-crosshair {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    pointer-events: none;
+  }
+
+  .card-crosshair::before,
+  .card-crosshair::after {
+    content: '';
+    position: absolute;
+    background: #BBB;
+  }
+
+  .card-crosshair::before {
+    width: 12px;
+    height: 1px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .card-crosshair::after {
+    width: 1px;
+    height: 12px;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  .card-crosshair-tl { top: 6px; left: 6px; }
+  .card-crosshair-br { bottom: 6px; right: 6px; }
+
+  .card-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0 0 6px 0;
+    color: #333;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .card-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-dash {
+    width: 16px;
+    height: 0;
+    border-top: 1px dashed #CCC;
+  }
+
+  .card-mark {
+    font-size: 0.7rem;
+    color: #BBB;
+    line-height: 1;
+  }
+
+  .card-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    color: #999;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+
+  .card-annotation {
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 8px;
+    font-weight: 400;
+    color: #CCC;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    z-index: 1;
+  }
+</style>

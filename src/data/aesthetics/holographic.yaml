@@ -1,0 +1,118 @@
+slug: holographic
+name: Holographic
+coined: false
+
+tagline: "The surface shifts. The color moves. Nothing here is one thing — it is every color, depending on where you stand."
+
+prompt: |
+  Light silver (#F0F0F5) background with dark charcoal (#1A1A2E) text.
+  Rainbow iridescent gradients cycling through pink (#FF6B9D), blue
+  (#45B7D1), green (#7FDBCA), purple (#9B59B6), and gold (#F0C27F) using
+  linear-gradient with many color stops. Metallic shimmer via animated
+  background-position on key elements. Prismatic text effects on headings
+  using background-clip: text with shifting rainbow gradients. Frosted
+  glass panels with backdrop-filter: blur and semi-transparent white
+  backgrounds (rgba(255,255,255,0.6)). Clean sans-serif typography — Inter
+  or Plus Jakarta Sans. Thin iridescent borders (1px solid with
+  transparency). Soft prismatic shadows using multi-color box-shadow.
+  The mood is futuristic, dimensional, and luminous — like light caught
+  in a prism. Everything shifts. Nothing is static.
+
+about: |
+  Holographic design captures light in motion. It borrows from the
+  physics of diffraction — the way thin films split white light into its
+  component colors — and translates that phenomenon into pixels. The
+  result is an interface that feels alive, shimmering, never quite the
+  same color twice.
+
+  This is not maximalism and it is not minimalism. It is something else
+  entirely: a clean surface that contains multitudes. The frosted glass
+  panels suggest depth without clutter. The rainbow gradients shift and
+  breathe. The typography stays crisp and modern while the backgrounds
+  behind it dance with color. It is premium without being pretentious,
+  futuristic without being cold.
+
+characteristics:
+  - title: Iridescent Gradients
+    description: >
+      Linear gradients cycling through pink, blue, green, purple, and gold
+      with many color stops create the signature holographic shimmer. These
+      gradients animate via background-position shifts, producing the
+      illusion of light moving across a surface — the core of the entire
+      aesthetic.
+  - title: Frosted Glass Panels
+    description: >
+      Content containers use backdrop-filter: blur with semi-transparent
+      white backgrounds. This creates depth and layering — the iridescent
+      background glows through the glass, but the text remains readable.
+      Borders are thin and semi-transparent, catching the color underneath.
+  - title: Prismatic Text
+    description: >
+      Headings use background-clip: text with animated rainbow gradients,
+      making the typography itself shimmer. This effect is reserved for
+      display text — body copy stays solid for readability. The text
+      becomes a surface that refracts light.
+  - title: Animated Shimmer
+    description: >
+      CSS animations shift background-position across large gradient
+      backgrounds, creating continuous movement. The animation is slow and
+      smooth — never frantic. It mimics the way holographic foil changes
+      color as you tilt it, producing a living, breathing surface.
+  - title: Clean Sans-Serif Type
+    description: >
+      Inter or Plus Jakarta Sans provides the typographic foundation —
+      modern, geometric, highly legible. The clean type contrasts with the
+      organic shimmer of the backgrounds, grounding the design in
+      readability while everything else shifts and glows.
+  - title: Prismatic Shadows
+    description: >
+      Box shadows use multiple color values — pinks, blues, purples — to
+      create the impression that the light source itself is iridescent.
+      Elements do not cast gray shadows. They cast rainbow ones, extending
+      the holographic illusion into every layer of the design.
+
+good_for:
+  - Creative portfolios and design studios
+  - Beauty and cosmetics brands
+  - Music and entertainment platforms
+  - NFT and digital art marketplaces
+  - Product launches and landing pages
+
+not_for:
+  - Government and institutional sites
+  - Long-form reading and documentation
+  - Accessibility-critical applications
+  - Conservative corporate branding
+  - Data-heavy dashboards and analytics
+
+history: |
+  Holographic design traces its origins to physical holographic foil — the
+  rainbow-shifting material found on credit cards, stickers, and packaging
+  since the 1960s. For decades it existed purely in the physical world, a
+  security feature and decorative novelty that fascinated because it seemed
+  to contain impossible color.
+
+  The aesthetic entered digital design in the mid-2010s, accelerated by
+  CSS advances like backdrop-filter, background-clip: text, and smooth
+  keyframe animations. Designers could finally replicate the shifting
+  iridescence that was previously impossible on screen. Apple's use of
+  gradient shimmer effects in iOS and macOS helped legitimize the style as
+  premium rather than gimmicky.
+
+  By the early 2020s, holographic had become a staple of creative branding,
+  beauty packaging, and forward-looking tech products. It occupies a unique
+  position — it feels futuristic but also tactile, digital but also
+  physical. It is the aesthetic of light itself, captured and put to work
+  on a screen.
+
+related:
+  - slug: glassmorphism
+    relationship: Shares frosted glass techniques
+  - slug: y2k
+    relationship: Shares iridescent shimmer
+  - slug: vaporwave
+    relationship: Shares prismatic color
+  - slug: cosmic
+    relationship: Shares luminous depth
+  - slug: synthwave
+    relationship: Shares neon gradients

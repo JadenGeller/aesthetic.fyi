@@ -1,0 +1,145 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-ornament-tl"></div>
+  <div class="card-ornament-br"></div>
+  <div class="card-frame"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-flourish">
+    <span class="card-vine card-vine-left"></span>
+    <span class="card-diamond"></span>
+    <span class="card-vine card-vine-right"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: linear-gradient(180deg, #F5EFE0 0%, #EDE5D0 100%);
+    color: #4A3F35;
+    border: 2px solid #C8A951;
+    border-radius: 60% 40% 55% 45% / 6% 8% 6% 8%;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+
+  .card:hover {
+    box-shadow:
+      0 4px 24px rgba(200, 169, 81, 0.2),
+      0 0 0 1px rgba(200, 169, 81, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .card-ornament-tl {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 10px 14px at 16px 16px, transparent 55%, #C8A951 56%, #C8A951 60%, transparent 61%),
+      radial-gradient(ellipse 7px 10px at 12px 22px, transparent 55%, rgba(200, 169, 81, 0.4) 56%, rgba(200, 169, 81, 0.4) 60%, transparent 61%),
+      radial-gradient(ellipse 10px 7px at 22px 12px, transparent 55%, rgba(200, 169, 81, 0.4) 56%, rgba(200, 169, 81, 0.4) 60%, transparent 61%),
+      radial-gradient(circle 2px at 15px 15px, #C8A951 50%, transparent 50%);
+  }
+
+  .card-ornament-br {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 10px 14px at 24px 24px, transparent 55%, #C8A951 56%, #C8A951 60%, transparent 61%),
+      radial-gradient(ellipse 7px 10px at 28px 18px, transparent 55%, rgba(200, 169, 81, 0.4) 56%, rgba(200, 169, 81, 0.4) 60%, transparent 61%),
+      radial-gradient(ellipse 10px 7px at 18px 28px, transparent 55%, rgba(200, 169, 81, 0.4) 56%, rgba(200, 169, 81, 0.4) 60%, transparent 61%),
+      radial-gradient(circle 2px at 25px 25px, #C8A951 50%, transparent 50%);
+  }
+
+  .card-frame {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 1px solid rgba(200, 169, 81, 0.4);
+    border-radius: 55% 45% 50% 50% / 5% 7% 5% 7%;
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 6px 0;
+    color: #8B2252;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-flourish {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-vine {
+    width: 24px;
+    height: 2px;
+    display: block;
+  }
+
+  .card-vine-left {
+    background: linear-gradient(90deg, transparent, #C8A951);
+    border-radius: 0 50% 50% 0;
+  }
+
+  .card-vine-right {
+    background: linear-gradient(90deg, #C8A951, transparent);
+    border-radius: 50% 0 0 50%;
+  }
+
+  .card-diamond {
+    width: 6px;
+    height: 6px;
+    background: #C8A951;
+    border-radius: 50% 0 50% 0;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  .card-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    color: #6B7B3C;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

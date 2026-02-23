@@ -1,0 +1,130 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-rosette"></div>
+  <div class="card-panels"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-gems">
+    <span class="card-gem card-gem-ruby"></span>
+    <span class="card-gem card-gem-sapphire"></span>
+    <span class="card-gem card-gem-emerald"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #1a1a1a;
+    color: #e8e0d0;
+    border: 3px solid #000;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.4s;
+  }
+
+  .card:hover {
+    box-shadow:
+      0 0 24px rgba(155, 27, 48, 0.15),
+      0 0 24px rgba(27, 58, 140, 0.15),
+      0 0 24px rgba(204, 136, 0, 0.1);
+  }
+
+  .card-rosette {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    background:
+      radial-gradient(circle at center, transparent 25%, rgba(155, 27, 48, 0.08) 26%, rgba(155, 27, 48, 0.08) 28%, transparent 29%),
+      radial-gradient(circle at center, transparent 40%, rgba(27, 58, 140, 0.06) 41%, rgba(27, 58, 140, 0.06) 43%, transparent 44%),
+      radial-gradient(circle at center, transparent 55%, rgba(204, 136, 0, 0.05) 56%, rgba(204, 136, 0, 0.05) 58%, transparent 59%);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  .card-panels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      linear-gradient(to right, transparent 49%, rgba(0, 0, 0, 0.3) 49%, rgba(0, 0, 0, 0.3) 51%, transparent 51%),
+      linear-gradient(to bottom, transparent 44%, rgba(0, 0, 0, 0.3) 44%, rgba(0, 0, 0, 0.3) 46%, transparent 46%);
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  .card-name {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 8px 0;
+    color: #e8e0d0;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-shadow: 0 0 20px rgba(204, 136, 0, 0.2);
+  }
+
+  .card-gems {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-gem {
+    width: 6px;
+    height: 6px;
+    transform: rotate(45deg);
+  }
+
+  .card-gem-ruby {
+    background: #9B1B30;
+    box-shadow: 0 0 6px rgba(155, 27, 48, 0.6);
+  }
+
+  .card-gem-sapphire {
+    background: #1B3A8C;
+    box-shadow: 0 0 6px rgba(27, 58, 140, 0.6);
+  }
+
+  .card-gem-emerald {
+    background: #1B6B4A;
+    box-shadow: 0 0 6px rgba(27, 107, 74, 0.6);
+  }
+
+  .card-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    color: rgba(232, 224, 208, 0.6);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

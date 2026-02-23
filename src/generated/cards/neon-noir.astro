@@ -1,0 +1,151 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-rain"></div>
+  <div class="card-glow card-glow-pink"></div>
+  <div class="card-glow card-glow-blue"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-rule">
+    <span class="card-line card-line-pink"></span>
+    <span class="card-diamond"></span>
+    <span class="card-line card-line-blue"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: linear-gradient(180deg, #12121E 0%, #0D0D12 100%);
+    color: #A0A0B8;
+    border: 1px solid #1E1E2E;
+    border-radius: 4px;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .card:hover {
+    border-color: #FF2D7B;
+    box-shadow:
+      0 0 20px rgba(255, 45, 123, 0.12),
+      0 0 40px rgba(255, 45, 123, 0.05);
+  }
+
+  .card-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 4px,
+        rgba(160, 160, 184, 0.015) 4px,
+        rgba(160, 160, 184, 0.015) 5px
+      );
+    pointer-events: none;
+  }
+
+  .card-glow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    opacity: 0.12;
+    transition: opacity 0.3s;
+  }
+
+  .card:hover .card-glow {
+    opacity: 0.22;
+  }
+
+  .card-glow-pink {
+    background: #FF2D7B;
+    top: -40px;
+    right: -30px;
+  }
+
+  .card-glow-blue {
+    background: #00B4D8;
+    bottom: -40px;
+    left: -30px;
+  }
+
+  .card-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 22px;
+    margin: 0 0 8px 0;
+    color: #FF2D7B;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    text-shadow:
+      0 0 20px rgba(255, 45, 123, 0.35),
+      0 0 40px rgba(255, 45, 123, 0.1);
+  }
+
+  .card-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-line {
+    width: 20px;
+    height: 1px;
+  }
+
+  .card-line-pink {
+    background: linear-gradient(90deg, transparent, #FF2D7B);
+    box-shadow: 0 0 4px rgba(255, 45, 123, 0.3);
+  }
+
+  .card-line-blue {
+    background: linear-gradient(90deg, #00B4D8, transparent);
+    box-shadow: 0 0 4px rgba(0, 180, 216, 0.3);
+  }
+
+  .card-diamond {
+    width: 5px;
+    height: 5px;
+    background: #FF2D7B;
+    transform: rotate(45deg);
+    box-shadow: 0 0 6px rgba(255, 45, 123, 0.5);
+  }
+
+  .card-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0;
+    color: #7878A0;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

@@ -1,0 +1,117 @@
+slug: art-nouveau
+name: Art Nouveau
+coined: false
+
+tagline: "Nature does not draw straight lines. Neither should you."
+
+prompt: |
+  Cream (#F5EFE0) background with deep burgundy (#8B2252) text accents and
+  olive (#6B7B3C) body text. Gold (#C8A951) used for borders, ornamental
+  lines, and decorative accents. Headings in Playfair Display (700, italic)
+  for an ornate, poster-like presence. Body text in Playfair Display (400)
+  for elegant readability. Ornate borders via pseudo-elements using curved
+  gradients and layered box-shadows to suggest Mucha-style frames. Whiplash
+  curves rendered with border-radius asymmetry (e.g., 60% 40% 55% 45%).
+  Floral motifs via radial-gradient clusters suggesting stylized lilies and
+  irises. Color palette drawn from Alphonse Mucha posters: gold, olive,
+  cream, burgundy. Generous padding with vertical rhythm. Decorative
+  dividers using curved SVG-like shapes via CSS. The mood is organic,
+  luxurious, and handcrafted — like a gilded poster advertising a Parisian
+  exhibition. Every line curves. Every surface is adorned.
+
+about: |
+  Art Nouveau on the web is the insistence that beauty and function are not
+  opposites. Where modern design strips away ornament in the name of
+  efficiency, Art Nouveau layers it back on — not as excess, but as
+  meaning. The curved borders, the floral accents, the gilded palette —
+  they all declare that a webpage can be as considered as a Mucha poster.
+
+  This is design that treats the screen as a canvas, not a spreadsheet.
+  The whiplash lines reject the grid. The organic forms reject the machine.
+  Every ornamental detail is deliberate, drawn from the vocabulary of
+  nature — vines, petals, flowing water. It asks: if we can make something
+  beautiful, why wouldn't we?
+
+characteristics:
+  - title: Mucha Poster Palette
+    description: >
+      Gold #C8A951, olive #6B7B3C, cream #F5EFE0, burgundy #8B2252. The
+      colors come from Alphonse Mucha's lithographic posters — warm gold
+      leaf, muted botanical greens, parchment, and the deep reds of
+      theatrical curtains. Rich but never garish.
+  - title: Ornate Borders
+    description: >
+      Layered pseudo-elements create the effect of gilded frames. Double
+      and triple borders with rounded, asymmetric corners evoke the
+      hand-drawn quality of Art Nouveau architectural moldings. Every
+      container feels like a framed composition.
+  - title: Whiplash Curves
+    description: >
+      Asymmetric border-radius values (60% 40% 55% 45%) create the
+      signature "whiplash" curve of Art Nouveau. Nothing is perfectly
+      round or perfectly square. Shapes flow like vines climbing a
+      trellis, organic and alive.
+  - title: Decorative Serif Typography
+    description: >
+      Playfair Display for all text — bold italic for headings, regular
+      weight for body. The high-contrast serifs echo the lettering of
+      turn-of-the-century posters. Type is not merely readable; it is
+      ornamental, part of the decoration itself.
+  - title: Floral Flourishes
+    description: >
+      Radial gradients and pseudo-elements create stylized floral motifs
+      — abstract irises, lilies, and vine tendrils. These appear as
+      corner ornaments, dividers, and background textures. They are
+      geometric echoes of nature, not literal illustrations.
+  - title: Gilded Accents
+    description: >
+      Gold (#C8A951) appears in borders, dividers, ornamental details,
+      and hover states. It gives the interface the quality of gold leaf
+      on a printed poster — precious but functional. The gold catches
+      the eye and guides it through the composition.
+
+good_for:
+  - Art galleries and museum websites
+  - Luxury brand and boutique sites
+  - Theater and performing arts pages
+  - Wedding and special event invitations
+  - Portfolio sites for illustrators and artists
+
+not_for:
+  - Developer tooling and technical docs
+  - High-frequency trading dashboards
+  - Mobile-first utility apps
+  - Data-heavy enterprise software
+  - Fast-paced news or media platforms
+
+history: |
+  Art Nouveau emerged in the 1890s as a deliberate break from historical
+  revivalism. Its practitioners — Alphonse Mucha, Hector Guimard, Louis
+  Comfort Tiffany, Antoni Gaudi — believed that art should infuse every
+  aspect of life, from buildings to furniture to typography. The style
+  drew its vocabulary from nature: sinuous plant forms, flowing hair,
+  asymmetric curves that came to be called the "whiplash line."
+
+  The movement peaked around 1900 and faded by World War I, displaced
+  by the geometric rationality of Art Deco and modernism. But its
+  influence never fully disappeared. Every time a designer reaches for
+  organic curves over rigid grids, for ornament over minimalism, for
+  nature over machine — they are channeling Art Nouveau.
+
+  On the web, Art Nouveau translates into ornate borders, rich palettes,
+  decorative typography, and the rejection of the clean, flat aesthetic
+  that dominates modern UI. It says: this screen is not a tool. It is
+  a poster, a window, a work of art. And every curve, every gilded
+  accent, every floral motif is placed there with intention.
+
+related:
+  - slug: art-deco
+    relationship: Successor movement
+  - slug: rococo
+    relationship: Shares ornamental excess
+  - slug: fashion-luxury
+    relationship: Shares gilded elegance
+  - slug: stained-glass
+    relationship: Shares decorative craft
+  - slug: organic-tech
+    relationship: Nature-inspired forms

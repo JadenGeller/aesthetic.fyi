@@ -1,0 +1,90 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-texture"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-crack"></div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #F5F0EA;
+    color: #8B8680;
+    border: 1px solid #D6CFC6;
+    border-radius: 4px 12px 6px 10px;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.4s, border-color 0.4s;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 24px rgba(107, 101, 96, 0.06);
+    border-color: #B5A18E;
+  }
+
+  .card-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(circle 1px at 18% 25%, #C8C0B6 40%, transparent 40%),
+      radial-gradient(circle 1px at 72% 18%, #C8C0B6 40%, transparent 40%),
+      radial-gradient(circle 1px at 85% 55%, #C8C0B6 40%, transparent 40%),
+      radial-gradient(circle 1px at 40% 75%, #C8C0B6 40%, transparent 40%),
+      radial-gradient(circle 1px at 60% 88%, #C8C0B6 40%, transparent 40%),
+      radial-gradient(circle 1px at 25% 60%, #C8C0B6 40%, transparent 40%);
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0 0 8px 0;
+    color: #6B6560;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-crack {
+    width: 28px;
+    height: 1px;
+    background: linear-gradient(90deg, #B5A18E 50%, transparent 51%, transparent 60%, #B5A18E 61%);
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+    opacity: 0.6;
+  }
+
+  .card-tagline {
+    font-family: 'Cormorant', serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    color: #A39E96;
+    line-height: 1.55;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

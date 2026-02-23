@@ -1,0 +1,115 @@
+slug: ice
+name: Ice
+coined: true
+
+tagline: "Crystalline precision. Every surface fractures light. Nothing here melts."
+
+prompt: |
+  Icy white (#F0F5FA) to pale blue (#E3EFF9) gradient background with
+  deep ice blue (#1B4F72) text. Crystalline accents in #A8D8EA and
+  #5DADE2. Sharp geometric shapes via clip-path for faceted, angular
+  forms. Glass-like transparency using backdrop-filter: blur and
+  semi-transparent backgrounds. Thin precise borders (1px solid
+  rgba(27,79,114,0.15)). Clean sans-serif typography (Inter or Outfit)
+  — light weights for elegance, medium for headings. Frost-like CSS
+  gradients with cool/cold color temperature throughout. Decorative
+  crystalline patterns using CSS triangles and polygon clip-paths.
+  The mood is arctic, precise, and luminous — like sunlight refracting
+  through a frozen plane.
+
+about: |
+  Ice on the web is pure structure made visible. Where other aesthetics
+  soften or warm their interfaces, ice sharpens everything. Edges are
+  precise. Surfaces are translucent. Light passes through elements
+  rather than bouncing off them, creating depth through transparency
+  rather than shadow.
+
+  This is design that values clarity above all. The crystalline palette
+  — whites that lean blue, blues that lean silver — creates a world
+  that feels both fragile and architecturally exact. Every facet is
+  intentional. Every angle catches light differently. The result is
+  an interface that looks like it was carved, not drawn.
+
+characteristics:
+  - title: Frozen Gradient Palette
+    description: >
+      #F0F5FA icy white to #E3EFF9 pale blue backgrounds. #1B4F72
+      deep ice blue for text. Accent colors #A8D8EA and #5DADE2
+      evoke glacial pools and frozen sky. The palette never warms
+      beyond the coldest end of the spectrum.
+  - title: Crystalline Clip-Paths
+    description: >
+      Sharp geometric shapes via CSS clip-path create faceted,
+      angular forms. Hexagonal cards, angled section dividers, and
+      diamond motifs give the layout the structure of ice crystals
+      under magnification.
+  - title: Glass Transparency
+    description: >
+      backdrop-filter blur and semi-transparent rgba backgrounds
+      create glass-like depth. Elements layer over each other like
+      sheets of ice, each surface slightly refracting what lies
+      beneath.
+  - title: Precise Sans-Serif Type
+    description: >
+      Inter or Outfit in light and medium weights. The typography
+      is clean, geometric, and never ornamental. Letter-spacing is
+      generous. Every character sits with the exactness of an
+      etched inscription.
+  - title: Thin Exact Borders
+    description: >
+      1px borders in rgba(27,79,114,0.15) — barely visible, like
+      the edge of a frozen surface catching light. No rounded
+      corners. No dashed warmth. Every line is a fracture plane.
+  - title: Frost Gradients
+    description: >
+      Subtle linear and radial gradients simulate frost patterns
+      and light refraction. Cool-temperature whites shift to pale
+      blues across surfaces, creating the optical effect of
+      depth within frozen material.
+
+good_for:
+  - Luxury and high-end product showcases
+  - Architecture and design portfolios
+  - Scientific and data visualization platforms
+  - Premium SaaS landing pages
+  - Photography and visual art galleries
+
+not_for:
+  - Children's brands and playful apps
+  - Food and restaurant websites
+  - Community forums and social platforms
+  - Warm personal blogs and journals
+  - Budget or discount retail sites
+
+history: |
+  Ice as a digital aesthetic draws from multiple lineages. The
+  translucent interfaces of early macOS Aqua (2000) first proved that
+  software could look like frozen glass. Later, Microsoft's Aero theme
+  pushed frosted transparency further. But the true ice aesthetic goes
+  beyond glossy surfaces — it embraces the angular, faceted geometry
+  of actual ice crystals.
+
+  The rise of CSS clip-path, backdrop-filter, and advanced gradient
+  support made crystalline design achievable in the browser. Where
+  glassmorphism softened everything into frosted panels, ice kept its
+  edges sharp. The aesthetic found natural expression in luxury brands,
+  winter campaigns, and interfaces that wanted to communicate
+  precision without coldness becoming emptiness.
+
+  Ice sits at the intersection of minimalism and material expression.
+  It strips away ornamentation but replaces it with physical metaphor
+  — the way light moves through frozen water, the way a crystal's
+  geometry emerges from molecular structure. It is not decorative.
+  It is structural beauty made visible.
+
+related:
+  - slug: glassmorphism
+    relationship: Shares translucent surfaces
+  - slug: nordic
+    relationship: Cold climate inspiration
+  - slug: minimalism
+    relationship: Values precision and clarity
+  - slug: monochrome
+    relationship: Restrained color palette
+  - slug: holographic
+    relationship: Light refraction effects

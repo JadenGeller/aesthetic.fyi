@@ -1,0 +1,118 @@
+slug: op-art
+name: Op Art
+coined: false
+
+tagline: "Your eyes are not broken. The surface is moving. The grid is alive. Look again."
+
+prompt: |
+  Pure black (#000000) and white (#FFFFFF) only — no grays, no color.
+  Background white, text black. Moire and optical illusion patterns via
+  repeating-linear-gradient and repeating-radial-gradient as decorative
+  backgrounds. Geometric precision in all layout and spacing. Bold
+  geometric sans-serif type (Space Grotesk, 700 for headings, 400 for
+  body). Sharp borders (2px solid black), zero border-radius — everything
+  is hard-edged. Kinetic CSS animations: subtle pulsing, rotating, or
+  shifting patterns that create the illusion of movement. High contrast,
+  no shadows, no gradients except for pattern generation. The mood is
+  perceptual, mathematical, hypnotic — the screen vibrates. Every
+  element is precisely placed to trick the eye.
+
+about: |
+  Op Art on the web is visual perception as interface. Nothing here is
+  decorative in the traditional sense — every pattern exists to activate
+  your retina, to make the static screen seem to breathe and pulse. The
+  black-and-white constraint is absolute. Color would be a distraction
+  from the real subject: the war between figure and ground.
+
+  This is design that treats the browser as a canvas for perceptual
+  experiments. The repeating gradients create moire interference patterns
+  that shimmer at certain scales. The geometric precision means every
+  pixel matters — a line one degree off would break the illusion. There
+  is no warmth here, no personality, only the cold beauty of mathematics
+  made visible.
+
+characteristics:
+  - title: Absolute Black & White
+    description: >
+      #000000 and #FFFFFF only. No grays, no colors, no compromise. The
+      maximum contrast ratio creates visual tension on every surface. This
+      binary palette is the foundation of every optical illusion — the eye
+      cannot rest when extremes collide.
+  - title: Moire Patterns
+    description: >
+      Repeating-linear-gradient and repeating-radial-gradient create
+      interference patterns that shimmer and vibrate. Overlapping line
+      systems at slightly different angles produce moire effects — patterns
+      that exist only in perception, not in the code.
+  - title: Geometric Precision
+    description: >
+      Zero border-radius. 2px solid black borders. Mathematical spacing.
+      Every element is aligned to a rigid grid. The precision is the point
+      — Op Art requires exactness because even small deviations destroy
+      the perceptual effect.
+  - title: Kinetic Animation
+    description: >
+      Subtle CSS animations — slow rotations, pulsing scales, shifting
+      positions — make static patterns appear to move. The movement is
+      restrained, never flashy. It amplifies the optical illusion rather
+      than replacing it.
+  - title: Bold Geometric Type
+    description: >
+      Space Grotesk at heavy weights for headings, regular for body text.
+      The typeface is geometric, constructed, impersonal — it belongs to
+      the same mathematical world as the patterns. No serifs, no flourishes,
+      no handmade quality.
+  - title: Hard Edges Everywhere
+    description: >
+      No rounded corners, no soft shadows, no blur. Every boundary is a
+      sharp line. The hard edges reinforce the precision of the patterns
+      and create additional contrast boundaries where optical effects
+      can occur.
+
+good_for:
+  - Art galleries and exhibition sites
+  - Experimental design portfolios
+  - Visual perception research
+  - Creative agency landing pages
+  - Music and event promotion
+
+not_for:
+  - E-commerce and product pages
+  - Long-form reading experiences
+  - Accessibility-critical applications
+  - Children's educational platforms
+  - Corporate enterprise software
+
+history: |
+  Op Art — short for Optical Art — emerged in the 1960s as a movement
+  that treated the canvas as a perceptual instrument. Victor Vasarely,
+  Bridget Riley, and others created paintings that appeared to move,
+  pulse, and vibrate through precise geometric arrangements. The 1965
+  MoMA exhibition "The Responsive Eye" brought the movement to mass
+  attention and controversy — critics debated whether tricking the eye
+  counted as art.
+
+  The movement drew from earlier explorations in Bauhaus color theory,
+  Constructivism, and the geometric abstractions of De Stijl. But Op
+  Art was distinct in its single-minded focus on perceptual effect. The
+  artwork was not about expression or meaning — it was about what
+  happens in the space between the surface and the eye.
+
+  On the web, Op Art finds a natural home. CSS gradients can generate
+  the precise repeating patterns that painters once labored over by
+  hand. Animation adds a dimension that canvas never had. And the
+  backlit screen — emitting light rather than reflecting it — intensifies
+  every contrast. The browser becomes exactly what Op Art always wanted:
+  a surface that truly moves.
+
+related:
+  - slug: minimalism
+    relationship: Shares reductive palette
+  - slug: swiss-design
+    relationship: Shares geometric precision
+  - slug: bauhaus
+    relationship: Shares mathematical foundation
+  - slug: de-stijl
+    relationship: Shares geometric abstraction
+  - slug: brutalism
+    relationship: Shares aggressive contrast

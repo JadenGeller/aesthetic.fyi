@@ -1,0 +1,117 @@
+slug: nordic
+name: Nordic
+coined: false
+
+tagline: "Less, but better. Let the light in, let the space breathe, and find beauty in what remains."
+
+prompt: |
+  White (#FFFFFF) background with charcoal (#2C3E50) text. Light wood
+  accents (#E8DDD0) for cards and alternate sections. Clean sans-serif
+  typography — Inter for body text (400, 500) and Nunito Sans for headings
+  (600, 700) — functional, warm, legible. Muted blue-gray (#8FA5B2)
+  accent color for labels and secondary text. Border-radius 8-12px for
+  soft, approachable containers. Soft shadows (0 2px 12px rgba(0,0,0,0.04))
+  — barely there, like winter light through frosted glass. Generous
+  whitespace and padding throughout. Thin borders in #E8E8E8 for subtle
+  structure. The mood is calm, warm, functional — a well-lit room with
+  wooden floors and a wool blanket. Nothing is decorative for its own sake.
+  Everything earns its place.
+
+about: |
+  Nordic design on the web is the discipline of restraint with warmth.
+  Where minimalism can feel cold and clinical, the Nordic approach adds
+  natural materials — light wood, soft textures, warm whites — to create
+  spaces that feel human and inviting. Every element serves a purpose, but
+  that purpose includes making you feel at home.
+
+  This is the design tradition that gave us hygge — the untranslatable
+  Danish concept of cozy contentment. On screen, it translates to generous
+  whitespace that lets content breathe, typography that prioritizes
+  readability over style, and a palette drawn from Scandinavian winters:
+  white snow, pale wood, slate sky. The result is pages that feel like a
+  well-organized home — functional, beautiful, and deeply comfortable.
+
+characteristics:
+  - title: White & Wood Palette
+    description: >
+      Pure white (#FFFFFF) backgrounds paired with light wood (#E8DDD0)
+      accents. The palette evokes birch furniture and snow-covered
+      landscapes. Charcoal (#2C3E50) text is dark enough to read but softer
+      than pure black. Everything feels naturally lit.
+  - title: Clean Sans-Serif Type
+    description: >
+      Inter for body text and Nunito Sans for headings — both are warm,
+      humanist sans-serifs that prioritize readability. No decorative
+      flourishes. The typography is functional and friendly, like clear
+      signage in a well-designed public space.
+  - title: Soft Structural Shadows
+    description: >
+      Shadows are barely visible — rgba(0,0,0,0.04) — suggesting depth
+      without drama. Cards and containers lift gently off the page like
+      paper resting on a wooden desk. Nothing floats aggressively.
+      Everything stays grounded.
+  - title: Generous Whitespace
+    description: >
+      Padding is abundant and intentional. Sections breathe with 80-96px
+      of vertical space. Content never crowds the edges. The whitespace
+      itself is a design element — creating calm, reducing cognitive load,
+      inviting the eye to rest.
+  - title: Muted Blue-Gray Accents
+    description: >
+      #8FA5B2 appears in labels, secondary text, and subtle accents —
+      the color of a Scandinavian winter sky. It adds coolness without
+      coldness, complementing the warm wood tones. Used sparingly, it
+      creates visual hierarchy without competing for attention.
+  - title: Rounded Warmth
+    description: >
+      Border-radius of 8-12px softens every container and card. Combined
+      with thin borders (#E8E8E8), the shapes feel approachable and
+      handcrafted rather than sharp and mechanical. Corners are gentle,
+      like river stones worn smooth.
+
+good_for:
+  - Product and furniture e-commerce
+  - Architecture and interior design portfolios
+  - Wellness and lifestyle brands
+  - Personal blogs and journals
+  - SaaS landing pages and dashboards
+
+not_for:
+  - High-energy gaming or esports sites
+  - Maximalist editorial magazines
+  - Street culture and fashion brands
+  - Retro or vintage-themed projects
+  - Dark-mode-first applications
+
+history: |
+  Nordic design traces its roots to early 20th century Scandinavian
+  functionalism — the idea that beautiful things should also be useful,
+  and useful things should also be beautiful. Designers like Alvar Aalto,
+  Arne Jacobsen, and the Bauhaus-influenced Danish modernists established
+  a design language built on simplicity, natural materials, and democratic
+  accessibility. Good design, they believed, should not be a luxury.
+
+  On the web, the Nordic aesthetic gained prominence alongside the rise of
+  Scandinavian tech companies and design tools. Products like Spotify,
+  Notion, and Linear carry its DNA — clean layouts, restrained palettes,
+  generous spacing. The hygge movement of the mid-2010s brought wider
+  cultural awareness, and the aesthetic became associated not just with
+  visual cleanliness but with emotional warmth and intentional living.
+
+  Today, Nordic web design sits between pure minimalism and organic warmth.
+  It rejects ornament but embraces texture. It values efficiency but
+  refuses to sacrifice comfort. It is the design equivalent of a
+  well-made wooden chair — simple enough to disappear, beautiful enough
+  to notice, comfortable enough to stay.
+
+related:
+  - slug: japandi
+    relationship: Shared minimalist warmth
+  - slug: minimalism
+    relationship: Shares restraint and clarity
+  - slug: wabi-sabi
+    relationship: Values natural imperfection
+  - slug: cottagecore
+    relationship: Shares warmth and comfort
+  - slug: flat-design
+    relationship: Clean functional surfaces

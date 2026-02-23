@@ -1,0 +1,119 @@
+slug: japandi
+name: Japandi
+coined: false
+
+tagline: "Less, but better. Warm wood, quiet space, and the calm of things exactly where they belong."
+
+prompt: |
+  Off-white (#F7F4EF) background with charcoal (#3D3834) text. Warm gray
+  (#9B9590) for secondary text and muted elements. Light wood (#DDD0C0)
+  for borders, dividers, and subtle accents. Clean sans-serif typography
+  — DM Sans at 300/400 weights — with generous letter-spacing on labels
+  and uppercase headings. Minimal border-radius (2-4px) for containers,
+  conveying precision without coldness. No shadows or very faint ones
+  (0 1px 4px rgba(61,56,52,0.04)). Thin 1px solid borders in #DDD0C0.
+  Abundant whitespace, asymmetric but balanced layouts. Subtle horizontal
+  rules as section dividers. The mood is calm, intentional, unhurried —
+  Japanese minimalism softened by Scandinavian warmth. Nothing decorative.
+  Everything earned.
+
+about: |
+  Japandi is the quiet intersection of two design traditions that share
+  more than they differ. Japanese minimalism brings wabi-sabi — the beauty
+  of imperfection, the value of empty space, the discipline of restraint.
+  Scandinavian design brings hygge — warmth, comfort, the belief that
+  functional things should also feel good to use.
+
+  On the web, Japandi translates to pages that breathe. There are no
+  gratuitous gradients, no playful illustrations, no busy patterns. The
+  palette is drawn from natural materials — pale wood, warm stone, aged
+  linen. Typography is clean but never cold, set in weights so light they
+  seem to float. Every element has a reason. Every margin is deliberate.
+  The result is design that feels both precise and human.
+
+characteristics:
+  - title: Warm Neutral Palette
+    description: >
+      Off-white #F7F4EF backgrounds, charcoal #3D3834 text, warm gray
+      #9B9590 for secondary elements, light wood #DDD0C0 for borders.
+      The colors come from natural materials — birch, stone, clay, linen.
+      Nothing is pure white or pure black. Every tone carries warmth.
+  - title: Thin Sans-Serif Type
+    description: >
+      DM Sans at 300 and 400 weights — clean, geometric, but softened
+      by slightly rounded terminals. Headings use light weight with
+      generous letter-spacing. Body text is 400 weight for readability.
+      The typography whispers rather than shouts.
+  - title: Generous Whitespace
+    description: >
+      Ma — the Japanese concept of negative space as a design element,
+      not empty leftover. Sections have abundant padding. Elements are
+      spaced far apart. The breathing room is intentional, creating a
+      meditative rhythm as you scroll.
+  - title: Subtle Borders
+    description: >
+      Thin 1px solid lines in #DDD0C0 define containers and sections.
+      Minimal border-radius (2-4px) — precise enough for Japanese
+      sensibility, soft enough for Scandinavian warmth. No heavy outlines.
+      Structure is implied, not imposed.
+  - title: Minimal Shadows
+    description: >
+      Shadows are nearly absent — at most a faint 0 1px 4px at 4%
+      opacity. Depth comes from spacing and border hierarchy, not from
+      drop shadows. The flatness feels calm, like a still pond reflecting
+      nothing but light.
+  - title: Intentional Asymmetry
+    description: >
+      Layouts balance without mirroring. A heading might sit slightly
+      off-center. A label might align differently from its content.
+      This asymmetry comes from Japanese composition — controlled
+      imbalance that feels alive rather than rigid.
+
+good_for:
+  - Architecture and interior design portfolios
+  - Wellness and meditation apps
+  - Furniture and homeware e-commerce
+  - Photography and art galleries
+  - Boutique hotels and hospitality
+  - Premium stationery and lifestyle brands
+
+not_for:
+  - Children's entertainment platforms
+  - High-energy gaming or esports sites
+  - Dense data dashboards
+  - Fast-food or impulse-buy retail
+  - News or social media feeds
+
+history: |
+  Japandi emerged in the mid-2010s as interior designers noticed the deep
+  kinship between Japanese and Scandinavian aesthetics. Both traditions
+  prize simplicity, natural materials, and craftsmanship. Both reject
+  excess. The portmanteau itself — Japan plus Scandi — appeared in design
+  magazines around 2017, though the cross-pollination had been happening
+  for decades. Danish designers visited Japan in the 1950s and returned
+  home influenced by zen simplicity. Japanese architects studied Nordic
+  functionalism and found a mirror of their own values.
+
+  On the web, Japandi crystallized as designers grew weary of both cold
+  corporate minimalism and maximalist complexity. It offered a third way:
+  minimal, yes, but warm. Restrained, yes, but not sterile. The aesthetic
+  found a home in portfolios, lifestyle brands, and wellness platforms —
+  anywhere the goal was to feel calm and considered rather than loud and
+  urgent.
+
+  What makes Japandi distinct from plain minimalism is its material
+  warmth. Where minimalism can feel abstract and severe, Japandi always
+  references the physical world — wood grain, stone texture, the weight
+  of handmade ceramics. It is minimalism with a heartbeat.
+
+related:
+  - slug: wabi-sabi
+    relationship: Shares Japanese imperfection philosophy
+  - slug: minimalism
+    relationship: Shares reductive principles
+  - slug: nordic
+    relationship: Scandinavian design roots
+  - slug: zen-garden
+    relationship: Meditative spatial calm
+  - slug: organic-tech
+    relationship: Nature-informed design

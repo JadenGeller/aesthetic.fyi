@@ -1,0 +1,116 @@
+slug: underwater
+name: Underwater
+coined: false
+
+tagline: "Sink deeper. The light bends here, the silence hums, and everything moves at the pace of the current."
+
+prompt: |
+  Deep ocean blue (#0A1628) to teal (#0D4F4F) gradient backgrounds with
+  bioluminescent accents in cyan (#00FFD4) and soft aquamarine (#7FFFD4).
+  CSS bubble effects using animated radial-gradient circles that drift
+  upward. Flowing wave motion via CSS keyframes on decorative elements.
+  Translucent panels with backdrop-filter blur and rgba backgrounds.
+  Rounded sans-serif typography — Outfit for headings, DM Sans for body.
+  Watery glow effects using box-shadow and text-shadow with cyan tones.
+  Border-radius 12-16px on containers. The mood is deep, luminous,
+  weightless — like drifting through a bioluminescent reef at midnight.
+  Nothing is sharp. Everything flows.
+
+about: |
+  Underwater on the web is the surrender to depth. Where most digital
+  aesthetics cling to the surface — bright, fast, visible — this one
+  invites you to descend. The dark gradients, the translucent panels,
+  the soft bioluminescent glow: they all say the same thing. You are
+  somewhere else now. Somewhere quieter.
+
+  This is design that values immersion over legibility shortcuts,
+  atmosphere over convention. The bubbles are not decoration — they
+  are rhythm, rising slowly through the layout like breath. The glow
+  is not ornament — it is the only light source, the bioluminescence
+  of a world that makes its own illumination. Every element drifts
+  with intention, like kelp in a gentle current.
+
+characteristics:
+  - title: Abyssal Gradients
+    description: >
+      #0A1628 deep ocean blue fading to #0D4F4F teal. The backgrounds
+      are not flat — they shift like depth, darker at the top where
+      the surface is far above, lighter where bioluminescence gathers.
+      No pure black, no pure white. Only the spectrum of deep water.
+  - title: Bioluminescent Accents
+    description: >
+      Cyan (#00FFD4) and aquamarine (#7FFFD4) glow against the dark
+      depths. These colors appear in headings, borders, and hover
+      states — always with a soft glow via text-shadow or box-shadow.
+      They are the creatures that make their own light.
+  - title: Rising Bubbles
+    description: >
+      CSS radial-gradient circles animated to drift upward with
+      varying speeds and sizes. They appear in hero sections and
+      backgrounds — translucent, unhurried, hypnotic. Each one
+      catches the light differently as it ascends.
+  - title: Translucent Panels
+    description: >
+      Containers use rgba backgrounds with backdrop-filter blur,
+      creating the effect of looking through water at frosted glass.
+      Border-radius 12-16px softens every edge. Nothing is rigid
+      here — everything is eroded smooth by the current.
+  - title: Flowing Motion
+    description: >
+      CSS keyframe animations create gentle wave effects on borders
+      and decorative elements. Transitions are slow and eased —
+      nothing snaps, nothing jolts. The interface moves like
+      something alive, breathing in the deep.
+  - title: Luminous Typography
+    description: >
+      Outfit for headings — rounded, modern, clean even in darkness.
+      DM Sans for body — highly readable against deep backgrounds.
+      Key text carries a subtle cyan text-shadow, as if the letters
+      themselves are producing light from within.
+
+good_for:
+  - Marine biology and ocean science sites
+  - Meditation and ambient applications
+  - Aquarium and conservation organizations
+  - Atmospheric portfolio sites
+  - Music and ambient soundscape platforms
+
+not_for:
+  - E-commerce and retail storefronts
+  - Corporate dashboards and enterprise tools
+  - News and high-density content sites
+  - Print-focused or document-heavy platforms
+  - Accessibility-critical government services
+
+history: |
+  The underwater aesthetic draws from humanity's oldest fascination —
+  the ocean as the unknown. Long before we mapped the seafloor, we
+  imagined it: Jules Verne's Twenty Thousand Leagues, the abyssal
+  creatures that seemed invented by science fiction but were simply
+  real. Bioluminescence became the visual shorthand for alien beauty
+  hiding in plain sight.
+
+  On the web, the aesthetic crystallized alongside advances in CSS
+  that made translucency, animation, and gradient layering feasible
+  without JavaScript. Glassmorphism opened the door to frosted panels;
+  dark mode culture made deep backgrounds acceptable for long reading
+  sessions. The underwater aesthetic took these tools and gave them
+  narrative — not just dark and blurry, but deep and alive.
+
+  It resonates because the ocean is the last wilderness. In a digital
+  landscape obsessed with speed and clarity, underwater design says:
+  slow down, descend, let your eyes adjust. The information is here,
+  glowing softly in the dark, waiting for you to find it. There is
+  no rush. The current will carry you.
+
+related:
+  - slug: cosmic
+    relationship: Shares deep dark palettes
+  - slug: glassmorphism
+    relationship: Translucent panel techniques
+  - slug: dark-mode
+    relationship: Dark-first design philosophy
+  - slug: organic-tech
+    relationship: Nature-inspired interfaces
+  - slug: holographic
+    relationship: Luminous color effects

@@ -1,0 +1,117 @@
+slug: terracotta
+name: Terracotta
+coined: true
+
+tagline: "Sun-baked clay, olive groves, and the quiet patience of things shaped by hand and hardened by fire."
+
+prompt: |
+  Warm cream (#FFF5EB) background with deep clay brown (#A0522D) text.
+  Burnt orange (#CC5500) accents for headings, links, and interactive
+  elements. Olive (#6B7B3C) secondary color for labels, metadata, and
+  muted text. Warm sand (#E8D5B7) borders and dividers. Headings in DM
+  Serif Display (400) — sturdy, sun-warmed, Mediterranean. Body text in
+  Source Serif 4 (400, 400 italic) — warm, readable, grounded. Terracotta
+  orange-brown borders (2-3px solid #CC5500) on key containers for bold
+  warmth. Subtle clay-colored shadows (0 2px 12px rgba(160,82,45,0.08)).
+  Decorative tile-like patterns using repeating-linear-gradient or
+  box-shadow to evoke Mediterranean ceramics. Generous spacing, earthy
+  warmth. The mood is sun-baked, handcrafted, ancient — like a courtyard
+  in Tuscany at golden hour. Everything is warm. Nothing is cold.
+
+about: |
+  Terracotta on the web is the warmth of the ancient world brought
+  forward. It draws from sun-baked clay, Mediterranean earth, olive
+  groves, and the patient craft of pottery shaped by hand. The palette
+  is not decorative — it is geological. These are the colors of earth
+  and fire, of things that were made slowly and meant to last.
+
+  Where most web design reaches for cool neutrals and sharp edges,
+  terracotta leans into warmth without apology. The burnt oranges, the
+  olive greens, the sandy creams — they create a space that feels lived
+  in, sun-touched, ancient. This is design with the warmth of a clay
+  wall that has been absorbing sunlight for centuries.
+
+characteristics:
+  - title: Earth-Fired Palette
+    description: >
+      #FFF5EB warm cream backgrounds, #CC5500 burnt orange accents,
+      #A0522D clay brown text, #6B7B3C olive secondary, #E8D5B7 warm
+      sand borders. Every color is drawn from the earth — fired clay,
+      sun-bleached stone, olive leaves, desert sand. Nothing synthetic.
+  - title: Mediterranean Typography
+    description: >
+      DM Serif Display for headings — sturdy and warm with the gravitas
+      of carved stone. Source Serif 4 for body text — readable, grounded,
+      with a warmth that invites lingering. The type feels like
+      inscriptions on old buildings, worn smooth by centuries of sun.
+  - title: Terracotta Borders
+    description: >
+      Bold 2-3px solid borders in burnt orange (#CC5500) frame key
+      containers, evoking the fired edges of clay pottery. Warm sand
+      (#E8D5B7) for lighter dividers. The borders are structural, not
+      decorative — like the lip of a handmade bowl.
+  - title: Tile-Pattern Accents
+    description: >
+      Subtle geometric patterns using CSS gradients suggest Mediterranean
+      ceramic tiles and mosaic work. These appear as section dividers and
+      card decorations — ornamental but restrained, like a courtyard
+      floor glimpsed through a doorway.
+  - title: Sun-Baked Warmth
+    description: >
+      Shadows use warm brown tones (rgba with sienna, not gray). Backgrounds
+      alternate between warm cream and deeper sand. Everything radiates
+      warmth, as if the page itself has been sitting in afternoon sunlight.
+      The overall feeling is golden, unhurried, Mediterranean.
+  - title: Olive Accents
+    description: >
+      Labels, metadata, and secondary text use olive (#6B7B3C) — the
+      color of the groves that surround Mediterranean villages. It
+      grounds the warm oranges with a natural green that feels organic,
+      not digital. A quiet counterpoint to the fire tones.
+
+good_for:
+  - Artisan and handcraft brands
+  - Mediterranean food and travel sites
+  - Pottery and ceramics studios
+  - Architecture and interior design
+  - Wine and olive oil producers
+
+not_for:
+  - Cybersecurity and tech infrastructure
+  - Fast-paced social media platforms
+  - Neon-branded gaming companies
+  - Clinical healthcare portals
+  - High-frequency trading dashboards
+
+history: |
+  Terracotta — literally "baked earth" in Italian — is one of the oldest
+  materials in human civilization. From the terracotta armies of ancient
+  China to the rooftops of Tuscany, fired clay has been shaped into art,
+  architecture, and everyday vessels for millennia. The color itself
+  carries this history: it is the color of making, of transformation
+  through fire.
+
+  As a web aesthetic, terracotta emerged from the broader earthy design
+  movement of the early 2020s, when designers began rejecting the cold
+  blues and grays that had dominated digital interfaces for a decade.
+  Brands in food, travel, and artisan goods led the shift, discovering
+  that warm oranges and olive greens created interfaces that felt
+  welcoming rather than clinical.
+
+  The aesthetic draws on Mediterranean visual culture — the warm stone
+  of Greek islands, the burnt sienna of Italian hill towns, the ceramic
+  tiles of Spanish courtyards. On screen, it translates into interfaces
+  that feel grounded and human. In a world of glass and steel interfaces,
+  terracotta says: this was made from the earth, and it remembers the sun.
+
+related:
+  - slug: cottagecore
+    relationship: Shares handcrafted warmth
+  - slug: wabi-sabi
+    relationship: Values imperfection and age
+  - slug: organic-tech
+    relationship: Nature-rooted materials
+  - slug: mid-century-modern
+    relationship: Warm palette overlap
+  - slug: japandi
+    relationship: Natural material focus

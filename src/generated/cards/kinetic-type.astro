@@ -1,0 +1,183 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-bg-letter">K</div>
+  <div class="card-motion-lines">
+    <div class="card-motion-line card-motion-line-1"></div>
+    <div class="card-motion-line card-motion-line-2"></div>
+    <div class="card-motion-line card-motion-line-3"></div>
+  </div>
+  <span class="card-label">Kinetic</span>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  @keyframes cardTextSlide {
+    0% {
+      transform: translateY(8px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes cardLineExpand {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes cardLetterDrift {
+    0% {
+      transform: translateY(4px) rotate(-3deg);
+      opacity: 0.04;
+    }
+    50% {
+      opacity: 0.07;
+    }
+    100% {
+      transform: translateY(-4px) rotate(1deg);
+      opacity: 0.04;
+    }
+  }
+
+  .card {
+    background: #111111;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    border-color: #00FF88;
+    box-shadow: 0 0 24px rgba(0, 255, 136, 0.08);
+  }
+
+  .card:hover .card-name {
+    animation: cardTextSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .card:hover .card-motion-line {
+    animation: cardLineExpand 0.5s ease-out both;
+  }
+
+  .card:hover .card-motion-line-1 {
+    animation-delay: 0s;
+  }
+
+  .card:hover .card-motion-line-2 {
+    animation-delay: 0.08s;
+  }
+
+  .card:hover .card-motion-line-3 {
+    animation-delay: 0.16s;
+  }
+
+  .card-bg-letter {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 160px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.04);
+    pointer-events: none;
+    user-select: none;
+    animation: cardLetterDrift 6s ease-in-out infinite alternate;
+  }
+
+  .card-motion-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+
+  .card-motion-line {
+    position: absolute;
+    left: 28px;
+    height: 1px;
+    background: linear-gradient(90deg, #00FF88, transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    width: 40%;
+  }
+
+  .card-motion-line-1 {
+    top: 28%;
+    opacity: 0.5;
+  }
+
+  .card-motion-line-2 {
+    top: 45%;
+    opacity: 0.3;
+    width: 30%;
+  }
+
+  .card-motion-line-3 {
+    top: 60%;
+    opacity: 0.2;
+    width: 50%;
+  }
+
+  .card-label {
+    position: absolute;
+    top: 24px;
+    left: 28px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: #00FF88;
+    z-index: 1;
+  }
+
+  .card-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin: 0 0 6px 0;
+    color: #ffffff;
+    line-height: 1.15;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-tagline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

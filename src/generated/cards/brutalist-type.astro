@@ -1,0 +1,120 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-bg-text" aria-hidden="true">TYPE</div>
+  <span class="card-label">AESTHETIC</span>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-rule"></div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #000000;
+    color: #FFFFFF;
+    border: 3px solid #FFFFFF;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .card:hover {
+    background: #FFFFFF;
+    color: #000000;
+  }
+
+  .card:hover .card-label,
+  .card:hover .card-name,
+  .card:hover .card-tagline {
+    color: #000000;
+  }
+
+  .card:hover .card-rule {
+    background: #000000;
+  }
+
+  .card:hover .card-bg-text {
+    color: #000000;
+    opacity: 0.06;
+  }
+
+  .card-bg-text {
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: 10rem;
+    color: #FFFFFF;
+    opacity: 0.05;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .card-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    color: #FFFFFF;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    position: relative;
+    z-index: 1;
+    margin-bottom: auto;
+  }
+
+  .card-name {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    margin: 0 0 6px 0;
+    color: #FFFFFF;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-rule {
+    width: 32px;
+    height: 3px;
+    background: #FFFFFF;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    margin: 0;
+    color: #FFFFFF;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 240px;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

@@ -1,0 +1,116 @@
+slug: os-desktop
+name: OS Desktop
+coined: true
+
+tagline: "Windowed interface, title bars, taskbar, desktop icons — multitasking as a design language."
+
+prompt: |
+  Teal/blue desktop background (#008080 or gradient) evoking classic OS
+  wallpaper. Content blocks styled as draggable windows with gray gradient
+  title bars (linear-gradient #DFDFDF to #C0C0C0), close/minimize/maximize
+  dots (red, yellow, green or classic square buttons), and 1px solid #888
+  borders with subtle 3D bevel (outset border-style or box-shadow insets).
+  System font stack (-apple-system, 'Segoe UI', Tahoma, sans-serif) for
+  authentic OS feel. Taskbar at the bottom with #C0C0C0 background, raised
+  bevel, and start-button-like element. Window chrome uses classic outset
+  borders and inset content areas. Content lives inside "windows" —
+  sections are applications, not pages. Responsive at 768px and 480px.
+
+about: |
+  OS Desktop treats the browser as a computer within a computer. Every
+  section becomes a window. Every window has a title bar you want to
+  drag, buttons you want to click, and borders that feel solid enough to
+  grab. The metaphor is so complete that you forget you are on a webpage.
+
+  This is the aesthetic of the GUI revolution — the idea that computing
+  should look like a desk, that files should look like folders, and that
+  everything should exist inside a rectangular frame with a close button.
+  It is skeuomorphism taken to its logical conclusion: the entire screen
+  is a metaphor for a physical workspace.
+
+characteristics:
+  - title: Window Chrome
+    description: >
+      Every content block is a window with a title bar, control buttons
+      (close, minimize, maximize), and a distinct border. The title bar
+      uses a gray gradient (#DFDFDF to #C0C0C0) that immediately reads
+      as "system UI." Active windows have blue title bars; inactive ones
+      stay gray.
+  - title: 3D Bevel Borders
+    description: >
+      Borders are not flat lines — they are raised or sunken surfaces.
+      Outset borders on window frames and buttons create the illusion
+      of depth. Inset borders on text areas and content panels suggest
+      recessed surfaces. This is the visual language of physical buttons
+      and panels.
+  - title: System Font Stack
+    description: >
+      -apple-system, Segoe UI, Tahoma, sans-serif. No decorative
+      typefaces, no personality through font choice. The type is purely
+      functional, the same font your operating system uses for menus and
+      dialogs. It says: this is software, not a poster.
+  - title: Taskbar & Start Menu
+    description: >
+      A persistent bar at the bottom of the viewport anchors the
+      interface. It carries a "Start" button or equivalent, clock
+      display, and status indicators. It grounds the desktop metaphor
+      and provides navigation without breaking the illusion.
+  - title: Desktop Background
+    description: >
+      Teal (#008080) or a subtle gradient behind all windows. This is
+      the "wallpaper" — the empty desktop surface visible between
+      windows. It evokes Windows 95/98, classic Mac OS, and the era
+      when desktop color was a personal statement.
+  - title: Icon Grid & Pixel Precision
+    description: >
+      Elements are aligned to a rigid grid. Icons are small, labeled,
+      and evenly spaced. Nothing is organic or fluid — everything snaps
+      to position. Pixel-level precision is the entire point. Every
+      element knows exactly where it belongs.
+
+good_for:
+  - Retro computing showcases and museums
+  - Developer portfolios and personal sites
+  - Interactive art and experimental web projects
+  - Nostalgia-driven products and campaigns
+  - Educational sites about computing history
+
+not_for:
+  - Enterprise SaaS and business tools
+  - Mobile-first consumer apps
+  - E-commerce and shopping platforms
+  - Minimalist brand sites
+  - Content-heavy news or media sites
+
+history: |
+  The windowed desktop metaphor was born at Xerox PARC in the 1970s,
+  popularized by the Apple Macintosh in 1984, and made ubiquitous by
+  Microsoft Windows 3.1 and Windows 95. For two decades, the
+  overlapping-window paradigm was synonymous with "using a computer."
+  Every application lived in its own rectangle. Every rectangle had
+  a title bar. The desktop was a place.
+
+  On the web, the OS Desktop aesthetic emerged as both homage and
+  parody. Projects like Windows 93, Poolside FM, and countless
+  personal sites recreated the windowed interface in the browser —
+  sometimes faithfully, sometimes absurdly. It became a way to say:
+  I remember when computers looked like this, and I thought it was
+  beautiful.
+
+  Today the aesthetic persists as a nostalgic counterpoint to the
+  flat, borderless designs that dominate modern interfaces. Where
+  contemporary UI removes chrome and hides controls, OS Desktop
+  celebrates them. Every pixel of window decoration is a statement:
+  interfaces should be visible, tangible, and fun.
+
+related:
+  - slug: old-web
+    relationship: Shared retro computing roots
+  - slug: retro-terminal
+    relationship: CLI vs GUI computing eras
+  - slug: skeuomorphism
+    relationship: Physical metaphor in UI
+  - slug: flat-design
+    relationship: The reaction against this
+  - slug: pixel-art
+    relationship: Shared pixel-level precision

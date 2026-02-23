@@ -1,0 +1,115 @@
+slug: comic-book
+name: Comic Book
+coined: false
+
+tagline: "POW! Every page is a splash panel. Every heading screams. Nothing here whispers."
+
+prompt: |
+  White (#FFFFFF) background with bold black (#111111) text. Thick black
+  borders (3-4px solid #111) on all containers — panel-like grid layout
+  that evokes comic strip framing. Halftone dot patterns via
+  radial-gradient for shading and texture. Speech-bubble shapes using
+  border-radius and ::after pseudo-element triangles. Action lines via
+  repeating-linear-gradient radiating outward. Headings in Bangers
+  (400) — a bold, uppercase comic display font. Body text in Roboto
+  Condensed (400, 700) for readable, compact narration. Primary color
+  palette: red (#E53935), blue (#1E88E5), yellow (#FDD835). Black ink
+  outlines on everything. The mood is loud, kinetic, larger-than-life
+  — like flipping through a Sunday comic strip at full volume.
+
+about: |
+  Comic Book on the web is design that refuses to be quiet. Where most
+  aesthetics negotiate between subtlety and expression, comic book
+  style grabs you by the collar and shouts in your face. The thick
+  black borders are panel frames. The halftone dots are Ben-Day
+  printing. The bold primary colors are four-color process ink.
+
+  This is design that treats every element as a panel in a story.
+  Headings don't just label — they announce. Sections don't just
+  contain — they frame. The speech bubbles, action lines, and bold
+  typography all serve the same purpose: to make the page feel alive,
+  dynamic, and perpetually in motion. It is the opposite of restraint.
+
+characteristics:
+  - title: Panel Grid Layout
+    description: >
+      Thick 3-4px solid black borders divide content into distinct
+      panels, mimicking the grid structure of comic book pages. Every
+      section feels like a frame in a sequential narrative, with sharp
+      edges and rigid containment.
+  - title: Halftone Dot Patterns
+    description: >
+      CSS radial-gradient creates repeating dot patterns that simulate
+      the Ben-Day printing process used in classic comics. These
+      halftone textures add depth and shading without photographic
+      gradients — pure graphic reproduction.
+  - title: Speech Bubble Shapes
+    description: >
+      Rounded containers with triangular pseudo-element tails create
+      speech and thought bubbles. The generous border-radius paired
+      with pointed ::after triangles turns ordinary text blocks into
+      dialogue balloons.
+  - title: Action Lines
+    description: >
+      Repeating-linear-gradient creates radiating speed lines that
+      suggest motion, impact, and energy. These kinetic backgrounds
+      appear behind headings and hero sections — visual onomatopoeia
+      made from pure CSS.
+  - title: Bold Primary Colors
+    description: >
+      Red (#E53935), blue (#1E88E5), and yellow (#FDD835) — the
+      primary ink colors of classic four-color comic printing. Used
+      for accents, backgrounds, and highlights, they create maximum
+      contrast and visual punch against black outlines and white space.
+  - title: Display Typography
+    description: >
+      Bangers for headings — a bold, uppercase, comic-style display
+      font that looks like it was hand-lettered on the page. Every
+      heading feels like a sound effect or dramatic caption, loud and
+      unapologetic.
+
+good_for:
+  - Entertainment and pop culture blogs
+  - Gaming and fan community sites
+  - Children's educational platforms
+  - Event and convention landing pages
+  - Creative portfolio showcases
+
+not_for:
+  - Corporate enterprise dashboards
+  - Medical and healthcare platforms
+  - Legal and financial services
+  - Luxury and high-fashion brands
+  - Academic research publications
+
+history: |
+  The comic book visual language was codified in the 1930s and 1940s as
+  superhero comics established conventions that would persist for
+  decades: panel grids, speech bubbles, motion lines, bold primaries,
+  and Ben-Day halftone dots for color printing on cheap newsprint. These
+  weren't aesthetic choices — they were technical constraints that
+  became a visual vocabulary.
+
+  Roy Lichtenstein brought comic art into fine art galleries in the 1960s,
+  enlarging individual panels and their halftone dots to monumental scale.
+  Pop Art made the comic aesthetic self-aware — these weren't just
+  illustrations anymore, they were a style with cultural weight.
+
+  On the web, comic book aesthetics translate into bold borders, primary
+  color palettes, and CSS-generated halftone patterns. The style found
+  new life in web comics, fan sites, and superhero franchise marketing.
+  It is design that celebrates the loud, the kinetic, and the
+  unapologetically visual — every page a splash panel, every click a
+  new issue.
+
+related:
+  - slug: pop-art
+    relationship: Shares bold primaries and halftone
+  - slug: maximalism
+    relationship: Both reject visual restraint
+  - slug: retro-diner
+    relationship: Shares mid-century color energy
+  - slug: pixel-art
+    relationship: Grid-based visual structure
+  - slug: brutalism
+    relationship: Bold, uncompromising presence

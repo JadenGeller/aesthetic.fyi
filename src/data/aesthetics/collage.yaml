@@ -1,0 +1,117 @@
+slug: collage
+name: Collage
+coined: false
+
+tagline: "Rip it out. Tape it down. Nothing matches and that's the whole point."
+
+prompt: |
+  Off-white (#F5F0E8) background suggesting found paper. Mixed typography
+  combining serif (Georgia), sans-serif (Helvetica/system), and monospace
+  (Courier) together — deliberately mismatched. Elements rotated at slight
+  angles (1-3deg) via CSS transform for cut-and-paste energy. Layered
+  overlapping cards with visible borders and box-shadows suggesting depth.
+  Tape accents via ::before/::after pseudo-elements (semi-transparent
+  rectangles). Torn edge effects via polygon clip-path. Eclectic color
+  accents — coral (#E85D4A), mustard (#D4A843), teal (#3A8C8C), deep
+  navy (#2A2D3E). Mix of border styles: solid, dashed, double. Zine-like
+  rawness — nothing is perfectly aligned. Generous z-index stacking.
+  The mood is a desk covered in clippings, a zine photocopied at midnight,
+  a mood board held together with washi tape and conviction.
+
+about: |
+  Collage on the web is the art of deliberate imperfection. Where most
+  aesthetics strive for consistency — unified type scales, harmonious
+  palettes, pixel-perfect grids — collage says: grab what you find and
+  make it work together. The tension between mismatched elements is not
+  a flaw. It is the entire point.
+
+  This is design that feels assembled, not engineered. Rotated cards
+  suggest clippings taped to a wall. Mixed typefaces — serif next to
+  monospace next to sans-serif — create the visual rhythm of a zine
+  pasted together from magazine scraps. Nothing is precious. Everything
+  is alive.
+
+characteristics:
+  - title: Mixed Typography
+    description: >
+      Serif, sans-serif, and monospace typefaces used together on the same
+      page — deliberately clashing. Georgia for warmth, system sans-serif
+      for bluntness, Courier for rawness. The mismatch creates visual
+      texture, like text cut from different sources and pasted side by side.
+  - title: Rotated Elements
+    description: >
+      CSS transform rotate at slight angles (1-3 degrees) gives cards and
+      sections the feeling of being physically placed — cut out and taped
+      down at whatever angle they landed. Nothing sits perfectly straight.
+      The imperfection is the craft.
+  - title: Layered Depth
+    description: >
+      Elements overlap and stack via z-index and negative margins, creating
+      the illusion of paper layers on a physical surface. Box-shadows
+      suggest actual depth — clippings casting shadows on the paper beneath
+      them.
+  - title: Tape & Pin Accents
+    description: >
+      Semi-transparent rectangles via ::before and ::after pseudo-elements
+      simulate strips of tape holding elements in place. These small
+      details sell the illusion of physical assembly — the page as
+      corkboard, not screen.
+  - title: Torn Edges
+    description: >
+      CSS clip-path polygon creates irregular, torn-paper edges on sections
+      and containers. The jagged lines break the rectangle — the most
+      fundamental shape in web layout — and replace it with something
+      that feels ripped, not rendered.
+  - title: Eclectic Color Accents
+    description: >
+      Coral (#E85D4A), mustard (#D4A843), teal (#3A8C8C), and deep navy
+      (#2A2D3E) appear as accents — borders, highlights, labels. No single
+      palette dominates. The colors feel gathered from different sources,
+      unified only by proximity.
+
+good_for:
+  - Zines and independent publications
+  - Art and photography portfolios
+  - Music and band websites
+  - Creative agency landing pages
+  - Personal mood boards and inspiration sites
+
+not_for:
+  - Enterprise SaaS platforms
+  - Government and institutional sites
+  - E-commerce product pages
+  - Medical and healthcare portals
+  - Banking and financial applications
+
+history: |
+  Collage as a visual form predates the web by over a century. Picasso and
+  Braque introduced papier colle in 1912, gluing newspaper and wallpaper
+  into paintings. The Dadaists weaponized it — Hannah Hoch and Raoul
+  Hausmann used photomontage to dismantle political narratives. Collage
+  was always an act of recombination, of making new meaning from found
+  material.
+
+  The zine movement of the 1970s-90s brought collage to punk and DIY
+  culture. Cut-and-paste layouts, photocopied and stapled, became the
+  visual language of communities too independent (or too broke) for
+  professional printing. Riot Grrrl zines, punk flyers, and underground
+  comics all spoke in collage.
+
+  On the web, collage aesthetics challenge the tyranny of the grid. CSS
+  transforms, overlapping elements, and mixed typography recreate the
+  energy of physical cut-and-paste in a digital medium. It is a reminder
+  that the web does not have to be clean to be expressive — sometimes
+  the most honest design is the one that looks like it was assembled
+  at 2am with scissors and a glue stick.
+
+related:
+  - slug: risograph
+    relationship: Shares DIY print energy
+  - slug: grunge
+    relationship: Embraces imperfection
+  - slug: paper-craft
+    relationship: Physical material influence
+  - slug: indie-web
+    relationship: Values personal expression
+  - slug: maximalism
+    relationship: Rejects restraint

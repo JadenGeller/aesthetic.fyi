@@ -1,0 +1,120 @@
+slug: rococo
+name: Rococo
+coined: false
+
+tagline: "More is more is more. Every surface gilded, every curve adorned, every restraint abandoned in favor of exquisite excess."
+
+prompt: |
+  Soft pastel backgrounds (cream #FFF8F0, pink #F4C2C2, baby blue #B5D8EB)
+  with gold (#C9A84C) accents and ornate decorative borders. Headings in
+  Cormorant Garamond (600, 700) — elegant, high-contrast serif with a
+  calligraphic flourish. Body text in Cormorant Garamond (400, 400 italic)
+  for refined readability. Lavish gold borders via ::before and ::after
+  pseudo-elements with scrollwork-inspired CSS patterns using
+  radial-gradient and repeating motifs. Generous padding and spacing that
+  feels palatial. Box shadows with warm gold tones (rgba(201,168,76,0.15)).
+  Decorative corner flourishes using CSS borders and border-radius to
+  suggest carved ornament. Background textures via subtle radial-gradient
+  rosettes. The mood is 18th-century French aristocratic excess — gilded
+  mirrors, painted ceilings, porcelain shepherdesses. Nothing is plain.
+  Everything drips with ornament.
+
+about: |
+  Rococo on the web is the complete rejection of restraint. Where minimalism
+  strips away, Rococo piles on. Where brutalism embraces rawness, Rococo
+  demands refinement. Every border is doubled. Every corner is embellished.
+  Every surface receives another layer of decoration.
+
+  This is design that treats ornament as content. The gold borders, the pastel
+  gradients, the scrollwork patterns — they are not mere decoration. They are
+  the point. Rococo says that beauty itself is the function, that delight in
+  excess is a legitimate design philosophy. The page does not merely present
+  information. It presents information on a silver tray, garnished with gold
+  leaf, in a room full of mirrors.
+
+characteristics:
+  - title: Pastel & Gold Palette
+    description: >
+      Cream #FFF8F0, soft pink #F4C2C2, baby blue #B5D8EB as backgrounds,
+      with gold #C9A84C for accents, borders, and highlights. The palette
+      comes from the salons of Versailles — powder, porcelain, and gilt.
+      Nothing is stark or industrial.
+  - title: Ornate Borders
+    description: >
+      Double and triple borders via ::before and ::after pseudo-elements.
+      Gold solid lines nested inside gold dashed lines, with generous
+      insets and rounded corners. Every container is framed like a
+      painting in a gilded gallery.
+  - title: Scrollwork Patterns
+    description: >
+      CSS radial-gradient rosettes and repeating decorative motifs suggest
+      the carved scrollwork of Rococo furniture and architecture. These
+      appear as background textures, corner ornaments, and section
+      dividers — always intricate, never minimal.
+  - title: Decorative Serif Typography
+    description: >
+      Cormorant Garamond throughout — a high-contrast serif with the
+      elegance of hand-engraved letterforms. Headings are bold and large,
+      body text is refined and airy. Letter-spacing is generous, as
+      befitting text that considers itself important.
+  - title: Lavish Shadows & Depth
+    description: >
+      Box shadows with warm gold tones create a sense of layered depth,
+      as if each element floats above a gilded surface. Hover states
+      intensify the glow. Nothing sits flat. Everything has the weight
+      and presence of a decorated panel.
+  - title: Decorative Excess
+    description: >
+      Where other aesthetics ask "is this necessary?", Rococo asks "is
+      this ornate enough?" Corner flourishes, section dividers with
+      multiple elements, layered frames within frames. Restraint is
+      the only thing missing.
+
+good_for:
+  - Luxury brand and fashion sites
+  - Wedding and formal event platforms
+  - Art gallery and museum showcases
+  - High-end hospitality and dining
+  - Perfume and beauty campaigns
+
+not_for:
+  - Developer tools and technical documentation
+  - SaaS dashboards and admin panels
+  - E-commerce checkout flows
+  - Mobile-first utility apps
+  - Data-heavy enterprise platforms
+
+history: |
+  Rococo emerged in early 18th-century France as a reaction against the
+  heavy grandeur of Baroque. Where Baroque was monumental and dramatic,
+  Rococo was playful and intimate. It flourished in the salons of Paris
+  and the private apartments of Versailles — spaces designed not to
+  intimidate but to delight. Curved lines replaced straight ones. Pastels
+  replaced deep colors. Asymmetry replaced rigid symmetry.
+
+  The name itself may derive from "rocaille" — the shell-and-rock work
+  used in garden grottos. Artists like Boucher and Fragonard painted
+  scenes of aristocratic leisure in soft pinks and blues. Furniture makers
+  carved every surface with scrollwork, flowers, and cherubs. The entire
+  aesthetic was an argument that beauty, pleasure, and decorative excess
+  were worthy pursuits in themselves.
+
+  On the web, Rococo translates into layered borders, pastel gradients,
+  gold accents, and ornate typography. It is the opposite of every design
+  trend that values efficiency over beauty. A Rococo page loads not to
+  deliver content as quickly as possible, but to create an experience of
+  visual luxury — to make the visitor feel as though they have stepped
+  into a gilded salon where every surface has been considered, adorned,
+  and adorned again.
+
+related:
+  - slug: art-nouveau
+    relationship: Shares ornamental philosophy
+  - slug: maximalism
+    relationship: Embraces decorative excess
+  - slug: fashion-luxury
+    relationship: Values opulence and refinement
+  - slug: art-deco
+    relationship: Geometric vs. organic ornament
+  - slug: skeuomorphism
+    relationship: Shares material richness

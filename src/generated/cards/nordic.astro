@@ -1,0 +1,83 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito+Sans:wght@600;700&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-wood-accent"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-line"></div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #FFFFFF;
+    color: #2C3E50;
+    border: 1px solid #E8E8E8;
+    border-radius: 12px;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border-color: #E8DDD0;
+    transform: translateY(-2px);
+  }
+
+  .card-wood-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, #E8DDD0 20%, #DDD0C0 50%, #E8DDD0 80%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 8px 0;
+    color: #2C3E50;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .card-line {
+    width: 24px;
+    height: 2px;
+    background: #E8DDD0;
+    border-radius: 1px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    color: #8FA5B2;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

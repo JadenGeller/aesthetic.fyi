@@ -1,0 +1,131 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-blinds" aria-hidden="true"></div>
+  <div class="card-beam" aria-hidden="true"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-rule">
+    <span class="card-line"></span>
+    <span class="card-diamond"></span>
+    <span class="card-line"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #0a0a0a;
+    color: #F5F5F5;
+    border: 1px solid #222;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, border-color 0.3s;
+  }
+
+  .card:hover {
+    box-shadow:
+      0 4px 30px rgba(0, 0, 0, 0.6),
+      0 0 1px rgba(200, 169, 110, 0.3);
+    border-color: #333;
+  }
+
+  /* Venetian blind stripes */
+  .card-blinds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 14px,
+      rgba(245, 245, 245, 0.025) 14px,
+      rgba(245, 245, 245, 0.025) 16px
+    );
+    pointer-events: none;
+  }
+
+  /* Diagonal light beam */
+  .card-beam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      130deg,
+      transparent 0%,
+      transparent 25%,
+      rgba(245, 245, 245, 0.03) 30%,
+      rgba(245, 245, 245, 0.06) 38%,
+      rgba(245, 245, 245, 0.03) 46%,
+      transparent 50%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 6px 0;
+    color: #F5F5F5;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+    letter-spacing: 0.04em;
+  }
+
+  .card-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-line {
+    width: 20px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #C8A96E, transparent);
+  }
+
+  .card-diamond {
+    width: 5px;
+    height: 5px;
+    background: #C8A96E;
+    transform: rotate(45deg);
+    box-shadow: 0 0 6px rgba(200, 169, 110, 0.4);
+  }
+
+  .card-tagline {
+    font-family: 'Lora', serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    color: #888;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

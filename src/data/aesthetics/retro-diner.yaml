@@ -1,0 +1,118 @@
+slug: retro-diner
+name: Retro Diner
+coined: false
+
+tagline: "Pull up a stool, honey. The milkshake's cold, the jukebox is warm, and the neon never stops humming."
+
+prompt: |
+  Dark charcoal (#1A1A1A) background with red (#D32F2F) and teal (#00897B)
+  accents. Chrome silver (#C0C0C0) metallic gradients on borders and
+  decorative elements. White (#FFFFFF) primary text. Checkerboard patterns
+  via repeating-conic-gradient(#1A1A1A 0% 25%, #2A2A2A 0% 50%) at 20px
+  scale for subtle texture. Neon glow via text-shadow with layered red or
+  teal glows (0 0 10px, 0 0 20px, 0 0 40px). Headings in Pacifico or
+  Lobster — curvy, retro display script. Body text in Roboto — clean,
+  readable, slightly industrial. Chrome/metallic linear-gradient borders
+  (#888, #CCC, #FFF, #CCC, #888). Rounded pill shapes and bold dividers.
+  The mood is 1950s American roadside — vinyl booths, chrome stools,
+  neon-lit pie cases, and the hum of a Wurlitzer. Everything gleams.
+
+about: |
+  Retro Diner is the web aesthetic of American nostalgia at its most
+  chrome-plated and ketchup-red. It draws from the diners and drive-ins
+  of the 1950s — places where the counter was always polished, the
+  jukebox always playing, and the neon sign out front buzzed through
+  the night like a beacon for hungry travelers.
+
+  On the web, this translates into bold reds, glowing neon type, chrome
+  gradients, and checkerboard patterns that evoke linoleum floors and
+  racing flags. It is unapologetically loud, warm, and welcoming. There
+  is no subtlety here — just a good time, a strong cup of coffee, and
+  a slice of pie that never disappoints.
+
+characteristics:
+  - title: Neon Glow Typography
+    description: >
+      Headings pulse with layered text-shadow in red or teal — mimicking
+      the buzz of neon tube signs. The glow radiates outward in multiple
+      layers (10px, 20px, 40px), creating that unmistakable after-dark
+      roadside feeling. Display fonts like Pacifico add retro script flair.
+  - title: Chrome & Metallic Gradients
+    description: >
+      Borders and accents use linear-gradient sweeps from dark silver
+      through bright white and back — simulating polished chrome surfaces.
+      These gradients appear on dividers, card edges, and decorative
+      trim, evoking the gleaming countertops and stool bases of a real diner.
+  - title: Checkerboard Patterns
+    description: >
+      Repeating-conic-gradient creates classic black-and-white (or dark
+      charcoal) checkerboard floors. Used as subtle background texture,
+      this pattern immediately signals 1950s Americana — diners, race
+      flags, and checkered tablecloths.
+  - title: Bold Red & Teal Palette
+    description: >
+      #D32F2F cherry red dominates as the primary accent — booths, buttons,
+      highlights. #00897B teal provides cool contrast, referencing vintage
+      appliance colors and diner signage. Together with chrome silver and
+      dark backgrounds, they create a vivid, high-contrast palette.
+  - title: Vinyl Booth Layout
+    description: >
+      Cards and sections feel like padded booth seating — generous padding,
+      rounded corners, and solid borders that suggest tufted upholstery.
+      The layout is comfortable and inviting, not cramped. Everything has
+      the weight and presence of mid-century furniture.
+  - title: Retro Display Script
+    description: >
+      Pacifico or Lobster headings bring the hand-painted sign aesthetic
+      of 1950s commercial lettering. These curvy, informal scripts feel
+      like diner menus, bowling alley scoreboards, and roadside attraction
+      billboards — friendly, bold, and unmistakably vintage.
+
+good_for:
+  - Restaurant and food service websites
+  - Retro-themed event and party pages
+  - Music and jukebox streaming platforms
+  - Americana and nostalgia blogs
+  - Burger joints, ice cream shops, diners
+
+not_for:
+  - Corporate enterprise dashboards
+  - Minimalist personal portfolios
+  - Healthcare and medical platforms
+  - Legal and financial services
+  - Academic research publications
+
+history: |
+  The American diner emerged in the 1870s as horse-drawn lunch wagons,
+  but it was the post-World War II boom of the 1940s and 1950s that
+  crystallized the aesthetic we know today. Streamlined steel-and-chrome
+  prefab structures from companies like Kullman and Fodero lined
+  highways across the country, their neon signs glowing promises of
+  hot coffee and homemade pie.
+
+  The visual language was borrowed from the Space Age and automobile
+  culture — chrome curves, bright enamel colors, checkerboard tile
+  floors, and vinyl upholstery in cherry red or turquoise. Jukeboxes
+  from Wurlitzer and Rock-Ola became centerpieces, their bubble tubes
+  and rotating color wheels adding to the spectacle. The diner was
+  theater as much as it was a restaurant.
+
+  By the 1970s, fast food chains had displaced most roadside diners,
+  but the aesthetic never died. It lives on in retro revivals, in
+  movies like Grease and Pulp Fiction, in the eternal appeal of a
+  neon OPEN sign buzzing against a dark sky. On the web, it translates
+  into bold colors, glowing text, chrome textures, and the unmistakable
+  warmth of a place that is always open, always lit, always ready to
+  serve you.
+
+related:
+  - slug: retro-futurism
+    relationship: Shares Space Age chrome
+  - slug: skeuomorphism
+    relationship: Values material realism
+  - slug: pop-art
+    relationship: Bold color energy
+  - slug: y2k
+    relationship: Glossy metallic surfaces
+  - slug: vaporwave
+    relationship: Neon glow nostalgia

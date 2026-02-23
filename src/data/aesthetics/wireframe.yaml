@@ -1,0 +1,117 @@
+slug: wireframe
+name: Wireframe
+coined: false
+
+tagline: "This is not the final design. It never was. But somehow it says everything it needs to."
+
+prompt: |
+  Light gray (#F5F5F5) background with dark gray (#333) text. Medium gray
+  (#999) borders using dashed and dotted border styles to create a
+  skeleton UI feel. Placeholder boxes with centered x marks suggesting
+  image or content placeholders. Sans-serif typography (Inter, 400/500)
+  for clean, utilitarian readability. No color beyond grays — the entire
+  palette is #F5F5F5, #E5E5E5, #CCC, #999, #666, #333. Dashed borders
+  (2px dashed #CCC) on containers evoke hand-drawn sketch frames.
+  Annotation-style labels in small uppercase with letter-spacing, like
+  margin notes on a design spec. Corner crosshair marks via ::before
+  and ::after pseudo-elements. Generous whitespace, grid-visible
+  structure. The mood is deliberately unfinished — a design caught
+  mid-process, where structure is visible and decoration has not yet
+  arrived.
+
+about: |
+  Wireframe on the web is design stripped to its skeleton. It is the
+  blueprint before the building, the rough sketch before the painting.
+  Every element declares its purpose without dressing it up — a box
+  says "image goes here," a line says "text goes here," and nothing
+  pretends to be more than what it is.
+
+  This is not minimalism. Minimalism removes elements to achieve
+  elegance. Wireframe leaves elements unfinished to preserve honesty.
+  The dashed borders, the placeholder crosses, the gray-on-gray
+  palette — they all communicate the same thing: this is a work in
+  progress, and that is the point. There is beauty in the scaffolding.
+
+characteristics:
+  - title: Gray-Only Palette
+    description: >
+      #F5F5F5 background, #333 text, #999 borders, #CCC dividers,
+      #666 secondary text. No color exists here — not even a muted
+      accent. The entire page lives in grayscale, like a pencil sketch
+      on graph paper.
+  - title: Dashed & Dotted Borders
+    description: >
+      2px dashed #CCC container borders and 1px dotted #E5E5E5 inner
+      frames. These are not decorative — they signal incompleteness.
+      Dashed lines say "this edge is provisional." The border style
+      is the aesthetic itself.
+  - title: Placeholder Crosses
+    description: >
+      Empty boxes marked with diagonal lines or centered x symbols
+      stand in for images, icons, and media. They are the universal
+      language of "content pending" — the designer's shorthand that
+      became a visual style.
+  - title: Sans-Serif Typography
+    description: >
+      Inter in 400 and 500 weights. Clean, neutral, systemlike. No
+      serifs, no display fonts, no personality beyond pure function.
+      The type is a tool, not an ornament. Uppercase labels with wide
+      letter-spacing serve as annotations.
+  - title: Annotation Labels
+    description: >
+      Small uppercase text in #999 with generous letter-spacing marks
+      each section like a designer's note in the margin. These labels
+      feel instructional rather than decorative — they name parts of
+      the page as if explaining the layout to a colleague.
+  - title: Visible Structure
+    description: >
+      Grid lines, alignment guides, and crosshair marks at corners
+      make the page's underlying structure explicit. Nothing is hidden.
+      The bones of the layout are the design. Spacing is deliberate
+      and generous, letting each element breathe on the canvas.
+
+good_for:
+  - Design system documentation
+  - Prototyping and concept presentations
+  - Developer handoff documents
+  - UI pattern libraries
+  - Internal tools and admin panels
+
+not_for:
+  - Consumer-facing marketing sites
+  - Luxury or premium brand pages
+  - Photography and visual portfolios
+  - E-commerce storefronts
+  - Entertainment and media platforms
+
+history: |
+  Wireframing has been a fundamental step in design since the earliest
+  days of interface work. In the 1990s and 2000s, wireframes were
+  strictly internal artifacts — grayscale layouts sketched on paper or
+  built in tools like Balsamiq, Axure, and later Figma. They were never
+  meant to be seen by end users.
+
+  But somewhere along the way, the wireframe look became intentional.
+  Designers began to appreciate the honesty of the unfinished — the
+  way a dashed border communicates provisionality, the way a placeholder
+  box with an x is more transparent than a polished image. Brutalist
+  web design opened the door, and wireframe aesthetics walked through.
+
+  Today, wireframe as a style choice signals transparency, technical
+  literacy, and a willingness to show process. It says: we are not
+  hiding behind polish. The structure is the design. It appears in
+  design tool marketing, developer documentation, and the portfolios
+  of designers who want their craft — not just the output — to be
+  visible.
+
+related:
+  - slug: blueprint
+    relationship: Shares structural honesty
+  - slug: brutalism
+    relationship: Embraces raw exposure
+  - slug: flat-design
+    relationship: Shares minimal decoration
+  - slug: minimalism
+    relationship: Values restraint and reduction
+  - slug: dev-docs
+    relationship: Utilitarian design intent

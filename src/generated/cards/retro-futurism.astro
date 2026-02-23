@@ -1,0 +1,141 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="card-starburst"></div>
+  <div class="card-orbit"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <div class="card-atom">
+    <span class="card-atom-dot"></span>
+    <span class="card-atom-ring card-atom-ring-1"></span>
+    <span class="card-atom-ring card-atom-ring-2"></span>
+  </div>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: linear-gradient(135deg, #FFF8E1 0%, #F5EDD0 100%);
+    color: #2D2D2D;
+    border: 2px solid #C0C0C0;
+    border-radius: 24px;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+  }
+
+  .card:hover {
+    box-shadow: 0 6px 24px rgba(230, 81, 0, 0.12);
+    border-color: #E65100;
+    transform: translateY(-2px);
+  }
+
+  .card-starburst {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 120px;
+    height: 120px;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg, rgba(230, 81, 0, 0.06) 10deg, transparent 20deg,
+      transparent 40deg, rgba(230, 81, 0, 0.06) 50deg, transparent 60deg,
+      transparent 80deg, rgba(230, 81, 0, 0.06) 90deg, transparent 100deg,
+      transparent 120deg, rgba(230, 81, 0, 0.06) 130deg, transparent 140deg,
+      transparent 160deg, rgba(230, 81, 0, 0.06) 170deg, transparent 180deg,
+      transparent 200deg, rgba(230, 81, 0, 0.06) 210deg, transparent 220deg,
+      transparent 240deg, rgba(230, 81, 0, 0.06) 250deg, transparent 260deg,
+      transparent 280deg, rgba(230, 81, 0, 0.06) 290deg, transparent 300deg,
+      transparent 320deg, rgba(230, 81, 0, 0.06) 330deg, transparent 340deg
+    );
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .card-orbit {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 160px;
+    height: 60px;
+    border: 1px solid rgba(0, 131, 143, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(-20deg);
+    pointer-events: none;
+  }
+
+  .card-name {
+    font-family: 'Audiowide', cursive;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0 0 8px 0;
+    color: #E65100;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .card-atom {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 10px;
+    z-index: 1;
+  }
+
+  .card-atom-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: #E65100;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px rgba(230, 81, 0, 0.3);
+  }
+
+  .card-atom-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 22px;
+    height: 10px;
+    border: 1px solid #C0C0C0;
+    border-radius: 50%;
+  }
+
+  .card-atom-ring-1 {
+    transform: translate(-50%, -50%) rotate(30deg);
+  }
+
+  .card-atom-ring-2 {
+    transform: translate(-50%, -50%) rotate(-30deg);
+  }
+
+  .card-tagline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    color: #888;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    max-width: 220px;
+  }
+</style>

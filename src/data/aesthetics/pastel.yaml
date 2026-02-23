@@ -1,0 +1,117 @@
+slug: pastel
+name: Pastel
+coined: false
+
+tagline: "Everything here is gentle. The colors don't shout — they hum, they glow, they drift like clouds made of cotton candy."
+
+prompt: |
+  Soft pastel palette — lavender (#E8D5F5), peach (#FFDAB9), mint
+  (#C1F0DB), baby blue (#B8D4E3), soft pink (#FFD1DC), white (#FFFFFF)
+  background. Rounded corners (16-20px) on all containers. Soft
+  gradients between pastel colors as section backgrounds and accents.
+  Gentle shadows with color tint (e.g. rgba(232,213,245,0.4)) rather
+  than gray. Rounded sans-serif typography — Nunito (400, 700) or
+  Quicksand. Dreamy floating feel with generous padding and airy
+  spacing. Subtle pastel border accents. No harsh lines or sharp
+  edges. Everything should feel light, pillowy, and slightly ethereal
+  — like a nursery designed by a cloud.
+
+about: |
+  Pastel on the web is the aesthetic of softness as a design principle.
+  Where other styles assert themselves through contrast, weight, and
+  sharpness, pastel design whispers. It reaches for colors that exist
+  at the lightest end of the spectrum — lavenders, peaches, mints —
+  and lets them blend into one another like watercolors on wet paper.
+
+  This is not weakness. It takes discipline to design with restraint
+  this gentle. Every shadow is tinted, not gray. Every corner is
+  rounded, never sharp. The typography is friendly and open, the
+  spacing generous and unhurried. The result is a digital space that
+  feels safe, warm, and inviting — a place where nothing startles you
+  and everything is exactly as soft as it looks.
+
+characteristics:
+  - title: Pastel Color Palette
+    description: >
+      Lavender (#E8D5F5), peach (#FFDAB9), mint (#C1F0DB), baby blue
+      (#B8D4E3), soft pink (#FFD1DC) on white backgrounds. These are
+      not full-saturation colors — they are colors that have been
+      mixed with light until they glow rather than shout. Each one
+      carries warmth without weight.
+  - title: Soft Gradients
+    description: >
+      Colors melt into each other through gentle linear and radial
+      gradients. A section might drift from lavender to peach, or from
+      mint to baby blue. The transitions are slow and wide, never
+      abrupt. They create a sense of atmosphere rather than boundary.
+  - title: Rounded Everything
+    description: >
+      Border-radius of 16-20px on containers, cards, and buttons.
+      Nothing has a sharp corner. The shapes feel pillowy and organic,
+      like river stones worn smooth by water. Even dividers and
+      decorative elements prefer curves over straight lines.
+  - title: Tinted Shadows
+    description: >
+      Shadows are never gray. They take on the tint of their
+      surroundings — a lavender card casts a lavender shadow, a peach
+      button casts a peach glow. This keeps the palette cohesive and
+      prevents any element from feeling heavy or grounded.
+  - title: Friendly Typography
+    description: >
+      Rounded sans-serif fonts like Nunito or Quicksand. The
+      letterforms are open, geometric, and approachable — no sharp
+      serifs, no condensed weights. Text feels like it was written by
+      someone who genuinely wants you to feel comfortable reading it.
+  - title: Airy Spacing
+    description: >
+      Generous padding and margins create breathing room between
+      elements. Nothing is cramped. The layout floats rather than
+      stacks, with enough whitespace to let each pastel color sing
+      without competition. The page feels light enough to drift away.
+
+good_for:
+  - Children's and baby product sites
+  - Wellness and self-care brands
+  - Personal blogs and portfolios
+  - Wedding and event planning sites
+  - Creative and stationery shops
+
+not_for:
+  - Enterprise software and dashboards
+  - News and journalism platforms
+  - Developer tools and documentation
+  - Financial and legal services
+  - Heavy data visualization apps
+
+history: |
+  Pastel colors have deep roots in design history, from the rococo
+  interiors of 18th-century France to the mid-century modern palettes
+  of the 1950s. In both eras, pastels signified refinement, gentleness,
+  and a deliberate step away from the bold and the heavy. They were
+  the colors of leisure, of spaces designed for comfort rather than
+  productivity.
+
+  On the web, pastel design emerged as a counterpoint to the flat
+  design movement of the early 2010s. While flat design stripped away
+  texture and shadow, it often relied on bold, saturated colors. Pastel
+  web design kept the simplicity but softened the palette, creating
+  interfaces that felt less like tools and more like environments.
+
+  The rise of wellness culture, mindfulness apps, and self-care brands
+  in the late 2010s cemented pastel as a digital aesthetic in its own
+  right. Apps like Headspace and Calm used pastel palettes to signal
+  safety and tranquility. Today, pastel design continues to evolve,
+  blending with glassmorphism, neumorphism, and kawaii influences to
+  create ever-softer digital experiences.
+
+related:
+  - slug: kawaii
+    relationship: Shares soft, friendly warmth
+  - slug: glassmorphism
+    relationship: Both prize translucency
+  - slug: neumorphism
+    relationship: Soft surfaces and shadows
+  - slug: claymorphism
+    relationship: Rounded, pillowy forms
+  - slug: cottagecore
+    relationship: Gentle, comforting mood

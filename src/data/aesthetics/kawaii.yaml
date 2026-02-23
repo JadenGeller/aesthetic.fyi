@@ -1,0 +1,116 @@
+slug: kawaii
+name: Kawaii
+coined: false
+
+tagline: "Everything is round, everything is soft, and everything has a little face on it."
+
+prompt: |
+  White (#FFFFFF) background with pastel pink (#FFB7C5), lavender
+  (#E6D5F5), mint (#B5EAD7), and baby yellow (#FFF5BA) accents. Very
+  rounded corners (16-24px) on all containers. Bubbly sans-serif font
+  (Quicksand or Nunito) — bouncy, rounded letterforms. Cute CSS
+  decorative elements: stars and hearts via ::before and ::after
+  pseudo-elements using Unicode or CSS shapes. Soft pink shadows
+  (0 4px 16px rgba(255,183,197,0.25)). Bouncy hover animations
+  (scale transforms with cubic-bezier easing). Pastel gradient
+  backgrounds on alternating sections. The mood is adorable, bubbly,
+  and joyful — rooted in Japanese pop culture cuteness. Everything
+  is rounded, nothing has sharp edges, and the page feels like it
+  might giggle if you poked it.
+
+about: |
+  Kawaii design is the belief that cuteness is a legitimate design
+  language. Rooted in Japanese pop culture, kawaii treats rounded
+  corners not as a stylistic choice but as a worldview — softness
+  is kindness, and sharp edges are unwelcome. Every element on the
+  page should feel approachable, as if it might smile back at you.
+
+  On the web, kawaii translates into pastel palettes, ultra-rounded
+  containers, bouncy animations, and decorative elements that exist
+  purely for delight — stars, hearts, tiny faces. It rejects the
+  seriousness of corporate design and the austerity of minimalism.
+  Instead, it says: design can be joyful without being unserious.
+
+characteristics:
+  - title: Pastel Palette
+    description: >
+      Soft pinks (#FFB7C5), lavenders (#E6D5F5), mints (#B5EAD7),
+      and baby yellows (#FFF5BA) on white backgrounds. No dark
+      colors, no high contrast. The palette feels like a candy shop
+      in spring — every color is gentle and inviting.
+  - title: Ultra-Rounded Corners
+    description: >
+      Border-radius 16-24px on containers and cards. Nothing has
+      sharp edges. Buttons are pill-shaped, cards are plump, and
+      even dividers feel soft. The roundness communicates safety
+      and friendliness.
+  - title: Bubbly Typography
+    description: >
+      Quicksand or Nunito — sans-serif fonts with rounded terminals
+      and generous letter spacing. The type itself looks cute, with
+      soft curves instead of sharp serifs. Headings are playful,
+      body text is gentle and easy to read.
+  - title: Cute Decorative Elements
+    description: >
+      Stars, hearts, and sparkles created with CSS pseudo-elements
+      and Unicode characters. These decorations appear in headers,
+      between sections, and around interactive elements — adding
+      charm without requiring images.
+  - title: Bouncy Animations
+    description: >
+      Hover effects use scale transforms with spring-like easing
+      (cubic-bezier curves). Cards pop up slightly, buttons squish,
+      and transitions feel alive. The motion language says everything
+      on the page is excited to see you.
+  - title: Soft Pink Shadows
+    description: >
+      Box shadows use pink-tinted rgba values rather than gray.
+      Shadows are generous and diffused, giving elements a floating,
+      cloud-like quality. Nothing feels heavy or grounded — the
+      whole page hovers gently.
+
+good_for:
+  - Fan communities and fandom sites
+  - Sticker and stationery shops
+  - Kids and family-oriented apps
+  - Personal portfolio sites with personality
+  - Character and mascot branding
+
+not_for:
+  - Enterprise and B2B platforms
+  - Legal and financial services
+  - News and journalism sites
+  - Developer documentation
+  - Healthcare and medical interfaces
+
+history: |
+  Kawaii culture emerged in 1970s Japan as a youth rebellion expressed
+  through handwriting — students began writing in rounded, childlike
+  characters that teachers could barely read. What started as a form
+  of protest became a full cultural movement, eventually absorbed by
+  brands like Sanrio (Hello Kitty, 1974) and influencing everything
+  from fashion to food packaging.
+
+  By the 1990s and 2000s, kawaii had become a global export. The rise
+  of anime, manga, and Japanese pop culture brought kawaii aesthetics
+  to the web through fan sites, forums, and early social media. Pixel
+  art emoticons, sparkly GIF decorations, and pastel color schemes
+  became signatures of a certain kind of internet culture.
+
+  Today, kawaii design lives on in app interfaces, brand identities,
+  and web design that prioritizes emotional connection over efficiency.
+  It reminds us that design does not always need to be serious to be
+  effective — sometimes the most engaging interface is one that makes
+  you smile.
+
+related:
+  - slug: pastel
+    relationship: Shares soft color philosophy
+  - slug: y2k
+    relationship: Co-evolved in pop culture
+  - slug: frutiger-aero
+    relationship: Shares bubbly optimism
+  - slug: claymorphism
+    relationship: Rounded, friendly forms
+  - slug: vaporwave
+    relationship: Japanese cultural roots

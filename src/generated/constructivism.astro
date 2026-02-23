@@ -1,0 +1,1082 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<div class="page">
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">AESTHETIC.FYI</a>
+      <span class="nav-divider">//</span>
+      <a href={`/${aesthetic.slug}`} class="nav-current">{aesthetic.name}</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-wedge"></div>
+    <div class="hero-circle"></div>
+    <div class="hero-bar-top"></div>
+    <div class="hero-bar-bottom"></div>
+    <div class="hero-inner">
+      <span class="hero-label">A Web Aesthetic</span>
+      <h1 class="hero-title">{aesthetic.name}</h1>
+      <div class="hero-rule">
+        <div class="hero-rule-bar"></div>
+        <div class="hero-rule-triangle"></div>
+        <div class="hero-rule-bar"></div>
+      </div>
+      <p class="hero-tagline">{aesthetic.tagline}</p>
+    </div>
+  </section>
+
+  <!-- WHAT THIS IS -->
+  <section class="section about-section">
+    <div class="section-diagonal-top"></div>
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule-line"></div>
+        <span class="section-label">WHAT THIS IS</span>
+        <div class="section-rule-line"></div>
+      </div>
+      <h2 class="section-heading">A Structural Philosophy</h2>
+      <div class="about-content">
+        {aesthetic.about.split('\n\n').map((paragraph: string) => (
+          <p class="about-paragraph">{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARACTERISTICS -->
+  <section class="section characteristics-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule-line"></div>
+        <span class="section-label">DESIGN TOKENS</span>
+        <div class="section-rule-line"></div>
+      </div>
+      <h2 class="section-heading">Characteristics</h2>
+      <div class="characteristics-grid">
+        {aesthetic.characteristics.map((char: { title: string; description: string }, i: number) => (
+          <div class="char-card">
+            <span class="char-number">{String(i + 1).padStart(2, '0')}</span>
+            <div class="char-divider"></div>
+            <h3 class="char-title">{char.title}</h3>
+            <p class="char-description">{char.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- STYLE REFERENCE -->
+  <section class="section prompt-section">
+    <div class="section-diagonal-top"></div>
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule-line"></div>
+        <span class="section-label">STYLE REFERENCE</span>
+        <div class="section-rule-line"></div>
+      </div>
+      <h2 class="section-heading">Copy &amp; Paste</h2>
+      <div class="prompt-block">
+        <div class="prompt-header">
+          <span class="prompt-header-label">PROMPT</span>
+          <button class="copy-button" data-prompt={aesthetic.prompt}>COPY</button>
+        </div>
+        <p class="prompt-text">{aesthetic.prompt}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN TO USE -->
+  <section class="section use-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule-line"></div>
+        <span class="section-label">WHEN TO USE</span>
+        <div class="section-rule-line"></div>
+      </div>
+      <h2 class="section-heading">Right Context, Wrong Context</h2>
+      <div class="use-grid">
+        <div class="use-column use-good">
+          <h3 class="use-column-heading">Good For</h3>
+          <ul class="use-list">
+            {aesthetic.good_for.map((item: string) => (
+              <li class="use-item use-item-good">{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="use-column use-bad">
+          <h3 class="use-column-heading">Not For</h3>
+          <ul class="use-list">
+            {aesthetic.not_for.map((item: string) => (
+              <li class="use-item use-item-bad">{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="section history-section">
+    <div class="section-diagonal-top"></div>
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule-line"></div>
+        <span class="section-label">ORIGINS</span>
+        <div class="section-rule-line"></div>
+      </div>
+      <h2 class="section-heading">History</h2>
+      <div class="history-content">
+        {aesthetic.history.split('\n\n').map((paragraph: string) => (
+          <p class="history-paragraph">{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED STYLES -->
+  <section class="section related-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-rule-line"></div>
+        <span class="section-label">EXPLORE</span>
+        <div class="section-rule-line"></div>
+      </div>
+      <h2 class="section-heading">Related Styles</h2>
+      <div class="related-grid">
+        {aesthetic.related.map((rel: { slug: string; relationship: string }) => (
+          <a href={`/${rel.slug}`} class="related-card">
+            <span class="related-relationship">{rel.relationship}</span>
+            <span class="related-name">{rel.slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+            <span class="related-arrow">&rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-bar"></div>
+      <a href="/" class="footer-logo">AESTHETIC.FYI</a>
+      <span class="footer-tagline">Every web aesthetic, demonstrated.</span>
+      <a href="/" class="footer-back">&larr; BACK TO ALL AESTHETICS</a>
+      <div class="footer-bar"></div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.querySelector('.copy-button');
+    if (copyButton) {
+      copyButton.addEventListener('click', () => {
+        const prompt = copyButton.getAttribute('data-prompt') || '';
+        navigator.clipboard.writeText(prompt).then(() => {
+          const original = copyButton.textContent;
+          copyButton.textContent = 'COPIED!';
+          copyButton.classList.add('copied');
+          setTimeout(() => {
+            copyButton.textContent = original;
+            copyButton.classList.remove('copied');
+          }, 2000);
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  /* ========================================
+     RESET & BASE
+     ======================================== */
+  .page {
+    font-family: 'Oswald', sans-serif;
+    background-color: #F5F0E8;
+    color: #1A1A1A;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ========================================
+     NAV
+     ======================================== */
+  .nav {
+    border-bottom: 3px solid #1A1A1A;
+    background: #1A1A1A;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #F5F0E8;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    padding: 4px 16px;
+    border: 2px solid #CC0000;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .nav-logo:hover {
+    background: #CC0000;
+    color: #F5F0E8;
+  }
+
+  .nav-divider {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    color: #CC0000;
+    margin: 0 2px;
+  }
+
+  .nav-current {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #F5F0E8;
+    text-decoration: none;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 16px;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .nav-current:hover {
+    border-color: #CC0000;
+  }
+
+  /* ========================================
+     HERO
+     ======================================== */
+  .hero {
+    background: #1A1A1A;
+    padding: 100px 32px 90px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-wedge {
+    position: absolute;
+    top: 50%;
+    left: -60px;
+    width: 0;
+    height: 0;
+    border-top: 80px solid transparent;
+    border-bottom: 80px solid transparent;
+    border-left: 160px solid #CC0000;
+    transform: translateY(-50%) rotate(-15deg);
+    opacity: 0.35;
+  }
+
+  .hero-circle {
+    position: absolute;
+    top: 15%;
+    right: 8%;
+    width: 120px;
+    height: 120px;
+    border: 6px solid #CC0000;
+    border-radius: 50%;
+    opacity: 0.2;
+  }
+
+  .hero-bar-top {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #CC0000;
+    transform: skewY(-2deg);
+    opacity: 0.5;
+  }
+
+  .hero-bar-bottom {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #CC0000;
+    transform: skewY(2deg);
+    opacity: 0.5;
+  }
+
+  .hero-inner {
+    max-width: 750px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: #CC0000;
+    display: inline-block;
+    margin-bottom: 24px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    border: 1px solid #CC0000;
+    padding: 4px 16px;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: clamp(4rem, 12vw, 8rem);
+    line-height: 0.9;
+    margin: 0 0 28px 0;
+    color: #F5F0E8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .hero-rule-bar {
+    width: 60px;
+    height: 3px;
+    background: #CC0000;
+  }
+
+  .hero-rule-triangle {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 12px solid #CC0000;
+  }
+
+  .hero-tagline {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 540px;
+    color: #F5F0E8;
+    opacity: 0.8;
+    letter-spacing: 0.03em;
+  }
+
+  /* ========================================
+     SECTIONS - SHARED
+     ======================================== */
+  .section {
+    padding: 80px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-diagonal-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: inherit;
+    transform: skewY(-1.5deg);
+    transform-origin: top left;
+    z-index: 0;
+  }
+
+  .section-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .section-rule-line {
+    flex: 1;
+    max-width: 80px;
+    height: 2px;
+    background: #CC0000;
+  }
+
+  .section-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: #CC0000;
+    white-space: nowrap;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .section-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1;
+    margin: 0 0 48px 0;
+    text-align: center;
+    color: #1A1A1A;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* ========================================
+     ABOUT
+     ======================================== */
+  .about-section {
+    background: #F5F0E8;
+    border-left: 6px solid #CC0000;
+  }
+
+  .about-content {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .about-paragraph {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0 0 24px 0;
+    color: #1A1A1A;
+  }
+
+  .about-paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     CHARACTERISTICS
+     ======================================== */
+  .characteristics-section {
+    background: #1A1A1A;
+    clip-path: polygon(0 20px, 100% 0, 100% calc(100% - 20px), 0 100%);
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .characteristics-section .section-heading {
+    color: #F5F0E8;
+  }
+
+  .characteristics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .char-card {
+    border: 2px solid #CC0000;
+    padding: 28px 24px 24px;
+    position: relative;
+    background: #1A1A1A;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .char-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #CC0000;
+  }
+
+  .char-card:hover {
+    background: #222;
+    transform: skewY(-1deg);
+  }
+
+  .char-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: #CC0000;
+    display: block;
+    margin-bottom: 8px;
+    letter-spacing: 0.15em;
+  }
+
+  .char-divider {
+    width: 30px;
+    height: 2px;
+    background: #CC0000;
+    margin-bottom: 12px;
+  }
+
+  .char-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin: 0 0 10px 0;
+    color: #F5F0E8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .char-description {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin: 0;
+    color: #999;
+  }
+
+  /* ========================================
+     STYLE REFERENCE / PROMPT
+     ======================================== */
+  .prompt-section {
+    background: #F5F0E8;
+    border-right: 6px solid #CC0000;
+  }
+
+  .prompt-block {
+    border: 2px solid #1A1A1A;
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .prompt-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: #CC0000;
+  }
+
+  .prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px 14px 30px;
+    border-bottom: 2px solid #1A1A1A;
+    background: #1A1A1A;
+    position: relative;
+    z-index: 1;
+  }
+
+  .prompt-header-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #F5F0E8;
+    letter-spacing: 0.2em;
+  }
+
+  .copy-button {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    background: transparent;
+    color: #F5F0E8;
+    border: 2px solid #CC0000;
+    padding: 4px 20px;
+    cursor: pointer;
+    letter-spacing: 0.15em;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .copy-button:hover {
+    background: #CC0000;
+    color: #F5F0E8;
+  }
+
+  .copy-button.copied {
+    background: #CC0000;
+    color: #F5F0E8;
+  }
+
+  .prompt-text {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #1A1A1A;
+    padding: 24px 24px 24px 30px;
+    margin: 0;
+    white-space: pre-wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ========================================
+     WHEN TO USE
+     ======================================== */
+  .use-section {
+    background: #F5F0E8;
+  }
+
+  .use-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .use-column {
+    border: 2px solid #1A1A1A;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .use-column-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 14px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-bottom: 2px solid #1A1A1A;
+  }
+
+  .use-good .use-column-heading {
+    background: #CC0000;
+    color: #F5F0E8;
+  }
+
+  .use-bad .use-column-heading {
+    background: #1A1A1A;
+    color: #F5F0E8;
+  }
+
+  .use-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .use-item {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.15);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #1A1A1A;
+  }
+
+  .use-item:last-child {
+    border-bottom: none;
+  }
+
+  .use-item-good::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #CC0000;
+    flex-shrink: 0;
+    margin-top: 5px;
+    transform: rotate(45deg);
+  }
+
+  .use-item-bad::before {
+    content: '\2014';
+    color: #999;
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+
+  /* ========================================
+     HISTORY
+     ======================================== */
+  .history-section {
+    background: #1A1A1A;
+    clip-path: polygon(0 0, 100% 20px, 100% 100%, 0 calc(100% - 20px));
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+  }
+
+  .history-section .section-heading {
+    color: #F5F0E8;
+  }
+
+  .history-section::after {
+    content: '';
+    position: absolute;
+    bottom: 60px;
+    right: 5%;
+    width: 0;
+    height: 0;
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-right: 120px solid #CC0000;
+    opacity: 0.12;
+    transform: rotate(10deg);
+  }
+
+  .history-content {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .history-paragraph {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0 0 24px 0;
+    color: #ccc;
+  }
+
+  .history-paragraph:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     RELATED STYLES
+     ======================================== */
+  .related-section {
+    background: #F5F0E8;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 24px 20px;
+    border: 2px solid #1A1A1A;
+    text-decoration: none;
+    color: #1A1A1A;
+    position: relative;
+    transition: transform 0.2s, background 0.2s;
+    overflow: hidden;
+  }
+
+  .related-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #CC0000;
+  }
+
+  .related-card:hover {
+    background: #1A1A1A;
+    color: #F5F0E8;
+    transform: skewY(-1deg);
+  }
+
+  .related-card:hover .related-relationship {
+    color: #CC0000;
+  }
+
+  .related-card:hover .related-name {
+    color: #F5F0E8;
+  }
+
+  .related-card:hover .related-arrow {
+    color: #CC0000;
+  }
+
+  .related-relationship {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 0.7rem;
+    color: #CC0000;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .related-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: #1A1A1A;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .related-arrow {
+    font-size: 1.1rem;
+    color: #CC0000;
+    font-weight: 700;
+  }
+
+  /* ========================================
+     FOOTER
+     ======================================== */
+  .footer {
+    background: #1A1A1A;
+    padding: 56px 32px;
+    border-top: 4px solid #CC0000;
+  }
+
+  .footer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .footer-bar {
+    width: 80px;
+    height: 3px;
+    background: #CC0000;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #F5F0E8;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    padding: 6px 24px;
+    border: 2px solid #CC0000;
+    transition: background 0.2s;
+  }
+
+  .footer-logo:hover {
+    background: #CC0000;
+  }
+
+  .footer-tagline {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: #999;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-back {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #F5F0E8;
+    text-decoration: none;
+    letter-spacing: 0.12em;
+    padding: 4px 16px;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .footer-back:hover {
+    border-color: #CC0000;
+  }
+
+  /* ========================================
+     RESPONSIVE - 768px
+     ======================================== */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 72px 24px 64px;
+    }
+
+    .hero-circle {
+      width: 80px;
+      height: 80px;
+      border-width: 4px;
+    }
+
+    .hero-wedge {
+      border-top-width: 50px;
+      border-bottom-width: 50px;
+      border-left-width: 100px;
+    }
+
+    .section {
+      padding: 64px 24px;
+    }
+
+    .characteristics-section {
+      clip-path: polygon(0 10px, 100% 0, 100% calc(100% - 10px), 0 100%);
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .history-section {
+      clip-path: polygon(0 0, 100% 10px, 100% 100%, 0 calc(100% - 10px));
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .section-heading {
+      margin-bottom: 36px;
+    }
+
+    .characteristics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .use-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .prompt-text {
+      font-size: 0.88rem;
+      padding: 20px 20px 20px 26px;
+    }
+
+    .prompt-header {
+      padding: 12px 20px 12px 26px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav-inner {
+      padding: 12px 20px;
+    }
+
+    .footer {
+      padding: 44px 24px;
+    }
+
+    .about-section {
+      border-left-width: 4px;
+    }
+
+    .prompt-section {
+      border-right-width: 4px;
+    }
+  }
+
+  /* ========================================
+     RESPONSIVE - 480px
+     ======================================== */
+  @media (max-width: 480px) {
+    .hero {
+      padding: 56px 16px 48px;
+    }
+
+    .hero-circle {
+      display: none;
+    }
+
+    .hero-wedge {
+      border-top-width: 30px;
+      border-bottom-width: 30px;
+      border-left-width: 60px;
+    }
+
+    .section {
+      padding: 48px 16px;
+    }
+
+    .characteristics-section,
+    .history-section {
+      clip-path: none;
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+
+    .nav-inner {
+      padding: 10px 16px;
+      gap: 8px;
+    }
+
+    .nav-logo {
+      font-size: 0.9rem;
+      padding: 3px 12px;
+    }
+
+    .nav-current {
+      font-size: 0.85rem;
+      padding: 3px 10px;
+    }
+
+    .char-card {
+      padding: 22px 18px 18px;
+    }
+
+    .copy-button {
+      padding: 3px 14px;
+      font-size: 0.8rem;
+    }
+
+    .use-item {
+      padding: 10px 16px;
+      font-size: 0.9rem;
+    }
+
+    .related-card {
+      padding: 20px 16px;
+    }
+
+    .section-header {
+      gap: 10px;
+    }
+
+    .section-rule-line {
+      max-width: 40px;
+    }
+
+    .about-section {
+      border-left-width: 3px;
+    }
+
+    .prompt-section {
+      border-right-width: 3px;
+    }
+  }
+</style>
