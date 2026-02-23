@@ -2,9 +2,6 @@
 const { aesthetic } = Astro.props;
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Nunito:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
 
 <div class="card">
   <div class="card-starfield"></div>
@@ -19,6 +16,7 @@ const { aesthetic } = Astro.props;
 </div>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Nunito:ital,wght@0,400;0,600;1,400&display=swap');
   .card {
     background: linear-gradient(170deg, #2D1B69 0%, #1A0F3D 40%, #0D0D0D 100%);
     color: #E8E0D0;

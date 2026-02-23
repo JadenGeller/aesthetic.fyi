@@ -2,9 +2,6 @@
 const { aesthetic } = Astro.props;
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
 <div class="card">
   <div class="card-scanlines"></div>
@@ -19,6 +16,7 @@ const { aesthetic } = Astro.props;
 </div>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
   @keyframes card-glitch {
     0% {
       text-shadow: -1px 0 #ff0040, 1px 0 #00ffff;

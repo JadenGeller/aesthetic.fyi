@@ -2,9 +2,6 @@
 const { aesthetic } = Astro.props;
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;600&display=swap" rel="stylesheet" />
 
 <div class="aero-card">
   <div class="aero-shine" aria-hidden="true"></div>
@@ -13,6 +10,7 @@ const { aesthetic } = Astro.props;
 </div>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;600&display=swap');
   .aero-card {
     position: relative;
     overflow: hidden;

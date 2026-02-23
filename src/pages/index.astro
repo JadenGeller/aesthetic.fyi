@@ -36,23 +36,7 @@ const VIBE_LABELS: Record<string, string> = {
 const ERA_ORDER = ['fine-art','print-analog','early-web','2000s','2010s','contemporary','internet-culture'];
 const VIBE_ORDER = ['dark-moody','clean-minimal','colorful-playful','nostalgic','organic-natural','technical-functional','luxurious-editorial','raw-experimental'];
 
-// Pre-sort alphabetically for the default view
 const sorted = [...cardComponents].sort((a, b) => a.aesthetic.name.localeCompare(b.aesthetic.name));
-
-// Build per-group arrays for era and vibe
-type GroupedCards = { key: string; label: string; cards: typeof cardComponents }[];
-
-const byEra: GroupedCards = ERA_ORDER.map(key => ({
-  key,
-  label: ERA_LABELS[key],
-  cards: sorted.filter(c => c.aesthetic.era === key),
-}));
-
-const byVibe: GroupedCards = VIBE_ORDER.map(key => ({
-  key,
-  label: VIBE_LABELS[key],
-  cards: sorted.filter(c => c.aesthetic.vibe === key),
-}));
 ---
 
 <Base title="Every web aesthetic, demonstrated" description="A visual reference for web design aesthetics. Each page is designed in the style it describes.">
@@ -65,96 +49,97 @@ const byVibe: GroupedCards = VIBE_ORDER.map(key => ({
       <HomeHeader />
     </header>
 
-    <div class="picker" role="group" aria-label="Group aesthetics by">
+    <!-- Picker: hidden until JS runs -->
+    <div class="picker" role="group" aria-label="Group aesthetics by" hidden>
       <button class="pick-btn" data-mode="random">Randomized ↺</button>
       <button class="pick-btn" data-mode="alpha">Alphabetical</button>
       <button class="pick-btn" data-mode="era">By Era</button>
       <button class="pick-btn" data-mode="vibe">By Vibe</button>
     </div>
 
-    <!-- Random (populated by JS) -->
-    <div data-view="random" class="view">
-      <div class="grid" id="random-grid"></div>
-    </div>
-
-    <!-- Alphabetical (also serves as card source for random) -->
-    <div data-view="alpha" class="view">
-      <div class="grid" id="alpha-grid">
+    <!-- Cards rendered once, alphabetically. JS rearranges in place. -->
+    <div id="view">
+      <div class="grid" id="card-grid">
         {sorted.map(({ aesthetic, Card }) => (
-          <a href={`/${aesthetic.slug}`} class="card-link" data-era={aesthetic.era} data-vibe={aesthetic.vibe}>
+          <a
+            href={`/${aesthetic.slug}`}
+            class="card-link"
+            data-name={aesthetic.name}
+            data-era={aesthetic.era}
+            data-vibe={aesthetic.vibe}
+          >
             <Card aesthetic={aesthetic} />
           </a>
         ))}
       </div>
     </div>
-
-    <!-- By Era -->
-    <div data-view="era" class="view">
-      {byEra.map(({ key, label, cards }) => cards.length > 0 && (
-        <section class="group">
-          <h2 class="group-label">{label}</h2>
-          <div class="grid">
-            {cards.map(({ aesthetic, Card }) => (
-              <a href={`/${aesthetic.slug}`} class="card-link">
-                <Card aesthetic={aesthetic} />
-              </a>
-            ))}
-          </div>
-        </section>
-      ))}
-    </div>
-
-    <!-- By Vibe -->
-    <div data-view="vibe" class="view">
-      {byVibe.map(({ key, label, cards }) => cards.length > 0 && (
-        <section class="group">
-          <h2 class="group-label">{label}</h2>
-          <div class="grid">
-            {cards.map(({ aesthetic, Card }) => (
-              <a href={`/${aesthetic.slug}`} class="card-link">
-                <Card aesthetic={aesthetic} />
-              </a>
-            ))}
-          </div>
-        </section>
-      ))}
-    </div>
   </div>
 </Base>
 
-<script>
-  const buttons = document.querySelectorAll<HTMLButtonElement>('.pick-btn');
-  const views = document.querySelectorAll<HTMLElement>('[data-view]');
-  const randomGrid = document.getElementById('random-grid')!;
-  const alphaGrid = document.getElementById('alpha-grid')!;
+<script define:vars={{ ERA_ORDER, ERA_LABELS, VIBE_ORDER, VIBE_LABELS }}>
+  const view = document.getElementById('view');
+  const picker = document.querySelector('.picker');
+  const buttons = document.querySelectorAll('.pick-btn');
 
-  function shuffle() {
-    const cards = Array.from(alphaGrid.children) as HTMLElement[];
-    for (let i = cards.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [cards[i], cards[j]] = [cards[j], cards[i]];
+  // Capture all 86 card elements once — they live here regardless of view
+  const allCards = Array.from(document.getElementById('card-grid').children);
+
+  picker.hidden = false;
+
+  function makeGrid(cards) {
+    const grid = document.createElement('div');
+    grid.className = 'grid flat';
+    grid.append(...cards);
+    return grid;
+  }
+
+  function makeGroupedView(groupOrder, groupLabels, attr) {
+    const frag = document.createDocumentFragment();
+    for (const key of groupOrder) {
+      const cards = allCards.filter(c => c.dataset[attr] === key);
+      if (cards.length === 0) continue;
+      const section = document.createElement('section');
+      section.className = 'group';
+      const h2 = document.createElement('h2');
+      h2.className = 'group-label';
+      h2.textContent = groupLabels[key];
+      section.appendChild(h2);
+      section.appendChild(makeGrid(cards));
+      frag.appendChild(section);
     }
-    randomGrid.replaceChildren(...cards.map(c => c.cloneNode(true)));
+    return frag;
   }
 
-  function activate(mode: string) {
+  function shuffled(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function activate(mode) {
     buttons.forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
-    views.forEach(v => v.classList.toggle('active', v.dataset.view === mode));
+
+    if (mode === 'random') {
+      view.replaceChildren(makeGrid(shuffled(allCards)));
+    } else if (mode === 'alpha') {
+      const s = [...allCards].sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
+      view.replaceChildren(makeGrid(s));
+    } else if (mode === 'era') {
+      view.replaceChildren(makeGroupedView(ERA_ORDER, ERA_LABELS, 'era'));
+    } else if (mode === 'vibe') {
+      view.replaceChildren(makeGroupedView(VIBE_ORDER, VIBE_LABELS, 'vibe'));
+    }
   }
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const mode = btn.dataset.mode!;
-      if (mode === 'random') shuffle();
-      activate(mode);
-    });
-  });
+  buttons.forEach(btn => btn.addEventListener('click', () => activate(btn.dataset.mode)));
 
-  // Default to random on load
-  shuffle();
   activate('random');
 </script>
 
+<!-- Scoped: elements rendered by Astro -->
 <style>
   .page {
     background: #111;
@@ -170,7 +155,6 @@ const byVibe: GroupedCards = VIBE_ORDER.map(key => ({
     padding: 0 8px;
   }
 
-  /* ---- Picker ---- */
   .picker {
     max-width: 1200px;
     margin: 0 auto 32px;
@@ -202,16 +186,32 @@ const byVibe: GroupedCards = VIBE_ORDER.map(key => ({
     color: #111;
   }
 
-  /* ---- Views ---- */
-  .view {
-    display: none;
-  }
-
-  .view.active {
+  .card-link {
+    text-decoration: none;
+    color: inherit;
     display: block;
+    transition: transform 0.2s;
   }
 
-  /* ---- Groups ---- */
+  .card-link:hover {
+    transform: translateY(-4px);
+  }
+</style>
+
+<!-- Global: elements created by JS at runtime -->
+<style is:global>
+  .grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .grid.flat {
+    padding: 0 8px;
+  }
+
   .group {
     max-width: 1200px;
     margin: 0 auto 48px;
@@ -229,45 +229,13 @@ const byVibe: GroupedCards = VIBE_ORDER.map(key => ({
     border-bottom: 1px solid #222;
   }
 
-  /* ---- Grid ---- */
-  .grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-  }
-
-  .view[data-view="alpha"] .grid,
-  .view[data-view="random"] .grid {
-    padding: 0 8px;
-  }
-
-  @keyframes spin-once {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-  }
-
-  .pick-btn[data-mode="random"].spinning {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
+  .group .grid {
+    padding: 0;
   }
 
   @media (max-width: 660px) {
     .grid {
       grid-template-columns: 1fr;
     }
-  }
-
-  .card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    transition: transform 0.2s;
-  }
-
-  .card-link:hover {
-    transform: translateY(-4px);
   }
 </style>

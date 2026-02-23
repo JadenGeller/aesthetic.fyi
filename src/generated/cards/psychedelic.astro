@@ -2,9 +2,6 @@
 const { aesthetic } = Astro.props;
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Righteous&display=swap" rel="stylesheet" />
 
 <div class="psychedelic-card">
   <div class="spiral-bg"></div>
@@ -16,6 +13,7 @@ const { aesthetic } = Astro.props;
 </div>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Righteous&display=swap');
   @keyframes hue-cycle {
     0% { filter: hue-rotate(0deg); }
     100% { filter: hue-rotate(360deg); }

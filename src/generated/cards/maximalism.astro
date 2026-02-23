@@ -2,9 +2,6 @@
 const { aesthetic } = Astro.props;
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Space+Grotesk:wght@400&family=Pacifico&display=swap" rel="stylesheet" />
 
 <div class="card">
   <div class="card-bg-pattern"></div>
@@ -17,6 +14,7 @@ const { aesthetic } = Astro.props;
 </div>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Space+Grotesk:wght@400&family=Pacifico&display=swap');
   @keyframes cardBgScroll {
     0% { background-position: 0 0; }
     100% { background-position: 60px 60px; }

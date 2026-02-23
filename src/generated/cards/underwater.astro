@@ -2,9 +2,6 @@
 const { aesthetic } = Astro.props;
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;1,400&family=Outfit:wght@500;600&display=swap" rel="stylesheet" />
 
 <div class="card">
   <div class="card-bubbles"></div>
@@ -17,6 +14,7 @@ const { aesthetic } = Astro.props;
 </div>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;1,400&family=Outfit:wght@500;600&display=swap');
   @keyframes cardBubbleRise {
     0% {
       transform: translateY(0);

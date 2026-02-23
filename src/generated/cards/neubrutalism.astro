@@ -2,9 +2,6 @@
 const { aesthetic } = Astro.props;
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@900&family=Space+Mono:wght@400&display=swap" rel="stylesheet" />
 
 <div class="card">
   <div class="accent-circle"></div>
@@ -14,6 +11,7 @@ const { aesthetic } = Astro.props;
 </div>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@900&family=Space+Mono:wght@400&display=swap');
   .card {
     background: #FFFDF7;
     color: #1a1a1a;

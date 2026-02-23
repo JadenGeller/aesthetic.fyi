@@ -2,9 +2,6 @@
 const { aesthetic } = Astro.props;
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet" />
 
 <div class="card">
   <div class="card-starburst"></div>
@@ -19,6 +16,7 @@ const { aesthetic } = Astro.props;
 </div>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Grotesk:wght@400;500&display=swap');
   .card {
     background: linear-gradient(135deg, #FFF8E1 0%, #F5EDD0 100%);
     color: #2D2D2D;
