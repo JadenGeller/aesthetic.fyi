@@ -23,9 +23,11 @@ const canonicalUrl = slug ? `https://aesthetic.fyi/${slug}` : 'https://aesthetic
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
+    {slug && <meta property="og:image" content={`https://aesthetic.fyi/og/${slug}.png`} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`${title} — aesthetic.fyi`} />
     <meta name="twitter:description" content={description} />
+    {slug && <meta name="twitter:image" content={`https://aesthetic.fyi/og/${slug}.png`} />}
     <slot name="head" />
   </head>
   <body>

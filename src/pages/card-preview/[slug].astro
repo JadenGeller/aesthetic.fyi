@@ -1,0 +1,50 @@
+---
+import { loadAesthetic, loadAllAesthetics } from '../../lib/aesthetics';
+
+export function getStaticPaths() {
+  return loadAllAesthetics().map((a) => ({ params: { slug: a.slug } }));
+}
+
+const { slug } = Astro.params;
+const aesthetic = loadAesthetic(slug!);
+const Card = (await import(`../../generated/cards/${aesthetic.slug}.astro`)).default;
+---
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <style is:global>
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+      }
+      .wrap {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+      }
+      /* Stretch the card to fill the full viewport */
+      .wrap > * {
+        flex: 1;
+        width: 100% !important;
+        height: 100vh !important;
+        min-height: 0 !important;
+        border-radius: 0 !important;
+        border: none !important;
+      }
+      /* Hide Astro dev toolbar */
+      astro-dev-toolbar { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <Card aesthetic={aesthetic} />
+    </div>
+  </body>
+</html>
