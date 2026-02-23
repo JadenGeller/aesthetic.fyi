@@ -6,7 +6,7 @@ interface Props {
 }
 
 const { title, description, slug } = Astro.props;
-const canonicalUrl = slug ? `https://aesthetic.fyi/${slug}` : 'https://aesthetic.fyi';
+const canonicalUrl = slug ? `https://aesthetic.fyi/${slug}/` : 'https://aesthetic.fyi/';
 ---
 
 <html lang="en">
