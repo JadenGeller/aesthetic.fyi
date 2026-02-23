@@ -12,6 +12,9 @@ export interface Characteristic {
   description: string;
 }
 
+export type Era = 'fine-art' | 'print-analog' | 'early-web' | '2000s' | '2010s' | 'contemporary' | 'internet-culture';
+export type Vibe = 'dark-moody' | 'clean-minimal' | 'colorful-playful' | 'nostalgic' | 'organic-natural' | 'technical-functional' | 'luxurious-editorial' | 'raw-experimental';
+
 export interface Aesthetic {
   slug: string;
   name: string;
@@ -24,6 +27,8 @@ export interface Aesthetic {
   not_for: string[];
   history: string;
   related: RelatedStyle[];
+  era: Era;
+  vibe: Vibe;
 }
 
 const DATA_DIR = path.join(process.cwd(), 'src/data/aesthetics');

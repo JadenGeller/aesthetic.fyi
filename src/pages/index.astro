@@ -11,6 +11,48 @@ const cardComponents = await Promise.all(
     Card: (await import(`../generated/cards/${a.slug}.astro`)).default,
   }))
 );
+
+const ERA_LABELS: Record<string, string> = {
+  'fine-art':        'Fine Art Traditions',
+  'print-analog':    'Print & Analog',
+  'early-web':       'Early Web',
+  '2000s':           'The 2000s',
+  '2010s':           'The 2010s',
+  'contemporary':    'Contemporary',
+  'internet-culture':'Internet Culture',
+};
+
+const VIBE_LABELS: Record<string, string> = {
+  'dark-moody':           'Dark & Moody',
+  'clean-minimal':        'Clean & Minimal',
+  'colorful-playful':     'Colorful & Playful',
+  'nostalgic':            'Nostalgic',
+  'organic-natural':      'Organic & Natural',
+  'technical-functional': 'Technical & Functional',
+  'luxurious-editorial':  'Luxurious & Editorial',
+  'raw-experimental':     'Raw & Experimental',
+};
+
+const ERA_ORDER = ['fine-art','print-analog','early-web','2000s','2010s','contemporary','internet-culture'];
+const VIBE_ORDER = ['dark-moody','clean-minimal','colorful-playful','nostalgic','organic-natural','technical-functional','luxurious-editorial','raw-experimental'];
+
+// Pre-sort alphabetically for the default view
+const sorted = [...cardComponents].sort((a, b) => a.aesthetic.name.localeCompare(b.aesthetic.name));
+
+// Build per-group arrays for era and vibe
+type GroupedCards = { key: string; label: string; cards: typeof cardComponents }[];
+
+const byEra: GroupedCards = ERA_ORDER.map(key => ({
+  key,
+  label: ERA_LABELS[key],
+  cards: sorted.filter(c => c.aesthetic.era === key),
+}));
+
+const byVibe: GroupedCards = VIBE_ORDER.map(key => ({
+  key,
+  label: VIBE_LABELS[key],
+  cards: sorted.filter(c => c.aesthetic.vibe === key),
+}));
 ---
 
 <Base title="Every web aesthetic, demonstrated" description="A visual reference for web design aesthetics. Each page is designed in the style it describes.">
@@ -23,15 +65,95 @@ const cardComponents = await Promise.all(
       <HomeHeader />
     </header>
 
-    <div class="grid">
-      {cardComponents.map(({ aesthetic, Card }) => (
-        <a href={`/${aesthetic.slug}`} class="card-link">
-          <Card aesthetic={aesthetic} />
-        </a>
+    <div class="picker" role="group" aria-label="Group aesthetics by">
+      <button class="pick-btn" data-mode="random">Randomized ↺</button>
+      <button class="pick-btn" data-mode="alpha">Alphabetical</button>
+      <button class="pick-btn" data-mode="era">By Era</button>
+      <button class="pick-btn" data-mode="vibe">By Vibe</button>
+    </div>
+
+    <!-- Random (populated by JS) -->
+    <div data-view="random" class="view">
+      <div class="grid" id="random-grid"></div>
+    </div>
+
+    <!-- Alphabetical (also serves as card source for random) -->
+    <div data-view="alpha" class="view">
+      <div class="grid" id="alpha-grid">
+        {sorted.map(({ aesthetic, Card }) => (
+          <a href={`/${aesthetic.slug}`} class="card-link" data-era={aesthetic.era} data-vibe={aesthetic.vibe}>
+            <Card aesthetic={aesthetic} />
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- By Era -->
+    <div data-view="era" class="view">
+      {byEra.map(({ key, label, cards }) => cards.length > 0 && (
+        <section class="group">
+          <h2 class="group-label">{label}</h2>
+          <div class="grid">
+            {cards.map(({ aesthetic, Card }) => (
+              <a href={`/${aesthetic.slug}`} class="card-link">
+                <Card aesthetic={aesthetic} />
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <!-- By Vibe -->
+    <div data-view="vibe" class="view">
+      {byVibe.map(({ key, label, cards }) => cards.length > 0 && (
+        <section class="group">
+          <h2 class="group-label">{label}</h2>
+          <div class="grid">
+            {cards.map(({ aesthetic, Card }) => (
+              <a href={`/${aesthetic.slug}`} class="card-link">
+                <Card aesthetic={aesthetic} />
+              </a>
+            ))}
+          </div>
+        </section>
       ))}
     </div>
   </div>
 </Base>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.pick-btn');
+  const views = document.querySelectorAll<HTMLElement>('[data-view]');
+  const randomGrid = document.getElementById('random-grid')!;
+  const alphaGrid = document.getElementById('alpha-grid')!;
+
+  function shuffle() {
+    const cards = Array.from(alphaGrid.children) as HTMLElement[];
+    for (let i = cards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
+    randomGrid.replaceChildren(...cards.map(c => c.cloneNode(true)));
+  }
+
+  function activate(mode: string) {
+    buttons.forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
+    views.forEach(v => v.classList.toggle('active', v.dataset.view === mode));
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.dataset.mode!;
+      if (mode === 'random') shuffle();
+      activate(mode);
+    });
+  });
+
+  // Default to random on load
+  shuffle();
+  activate('random');
+</script>
 
 <style>
   .page {
@@ -44,16 +166,92 @@ const cardComponents = await Promise.all(
 
   header {
     max-width: 1200px;
-    margin: 0 auto 40px;
+    margin: 0 auto 32px;
     padding: 0 8px;
   }
 
+  /* ---- Picker ---- */
+  .picker {
+    max-width: 1200px;
+    margin: 0 auto 32px;
+    padding: 0 8px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .pick-btn {
+    background: transparent;
+    border: 1px solid #444;
+    color: #999;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+
+  .pick-btn:hover {
+    border-color: #888;
+    color: #ccc;
+  }
+
+  .pick-btn.active {
+    background: #eee;
+    border-color: #eee;
+    color: #111;
+  }
+
+  /* ---- Views ---- */
+  .view {
+    display: none;
+  }
+
+  .view.active {
+    display: block;
+  }
+
+  /* ---- Groups ---- */
+  .group {
+    max-width: 1200px;
+    margin: 0 auto 48px;
+    padding: 0 8px;
+  }
+
+  .group-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #666;
+    margin: 0 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #222;
+  }
+
+  /* ---- Grid ---- */
   .grid {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
+  }
+
+  .view[data-view="alpha"] .grid,
+  .view[data-view="random"] .grid {
+    padding: 0 8px;
+  }
+
+  @keyframes spin-once {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  .pick-btn[data-mode="random"].spinning {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
   }
 
   @media (max-width: 660px) {
