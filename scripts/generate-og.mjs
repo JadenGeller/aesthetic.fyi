@@ -43,12 +43,17 @@ const context = await browser.newContext({
   deviceScaleFactor: 3,
 });
 
-// Homepage OG card
-const homePage = await context.newPage();
+// Homepage OG card — use 2x scale so content isn't blown up as much
+const homeContext = await browser.newContext({
+  viewport: { width: 600, height: 315 },
+  deviceScaleFactor: 2,
+});
+const homePage = await homeContext.newPage();
 await homePage.goto(`${BASE_URL}/card-preview/`, { waitUntil: 'networkidle' });
 await homePage.evaluate(() => document.fonts.ready);
 await homePage.screenshot({ path: join(OUT_DIR, 'index.png') });
 await homePage.close();
+await homeContext.close();
 console.log('  ✓ index (homepage)');
 
 let done = 0;
