@@ -1,0 +1,95 @@
+slug: glassmorphism
+name: Glassmorphism
+coined: false
+
+tagline: "Light through frosted crystal."
+
+prompt: |
+  Translucent panels with background blur (backdrop-filter: blur 10-20px).
+  White or light backgrounds at 10-20% opacity. Subtle 1px borders in
+  white at 15-25% opacity to catch the light. Soft, diffused shadows.
+  Behind-the-glass gradient orbs in purple, blue, and pink provide color.
+  Typography is thin to regular weight sans-serif or elegant serif.
+  Border-radius 16-24px. Everything feels layered, airy, and luminous.
+  Color comes from the background, not the elements.
+
+about: |
+  Glassmorphism is about depth without weight. Panels float in front of
+  color, and the blur tells you there's a world behind the interface.
+  It's the opposite of flat design — everything has a z-axis — but it
+  never feels heavy. It whispers instead of shouting.
+
+  The style works because it borrows a material metaphor everyone
+  understands: frosted glass. You know what's behind it is real, you
+  just can't quite see it. That ambiguity creates a sense of polish
+  and sophistication that pure minimalism can't match.
+
+characteristics:
+  - title: Background Blur
+    description: >
+      backdrop-filter: blur(10-20px). The defining property. Without
+      blur, it's just transparency.
+  - title: Translucent Surfaces
+    description: >
+      background: rgba(255, 255, 255, 0.1-0.2). The panel must be
+      see-through enough that the blur has something to work with.
+  - title: Subtle Borders
+    description: >
+      1px solid rgba(255, 255, 255, 0.15-0.25). A fine edge that
+      catches light and separates the panel from the background.
+  - title: Gradient Orbs
+    description: >
+      Large radial gradients in purple, blue, pink, and teal float
+      behind the panels, providing color that bleeds through the blur.
+  - title: Soft Shadows
+    description: >
+      box-shadow with large spread and low opacity. Shadows are diffused,
+      not directional. They create lift, not offset.
+  - title: Generous Radius
+    description: >
+      border-radius 16-24px. Rounded corners soften every panel.
+      Sharp corners would break the glass illusion.
+
+good_for:
+  - iOS and macOS-style interfaces
+  - Landing pages with strong visual backgrounds
+  - Music and media players
+  - Dashboard widgets over data visualizations
+  - Portfolio hero sections
+
+not_for:
+  - Text-heavy sites — blur behind body text is unreadable
+  - Low-contrast accessibility requirements
+  - Older browsers without backdrop-filter support
+  - Sites that need to work without JavaScript or CSS filters
+
+history: |
+  Apple has been using translucent surfaces since Mac OS X Leopard in
+  2007, but the aesthetic didn't have a name or a web design movement
+  until around 2020. Microsoft's Fluent Design System (2017) called it
+  "acrylic material," and Apple's iOS 7 (2013) made translucency a
+  core UI pattern.
+
+  The term "glassmorphism" was popularized by Michal Malewicz in late
+  2020, who identified it as a distinct design trend and gave it a name.
+  It spread rapidly through Dribbble, Figma, and CSS tutorial channels.
+  By 2021, glassmorphism was one of the most searched design trends.
+
+  The style sits between skeuomorphism (which it borrows depth from) and
+  minimalism (which it borrows restraint from). Its opposite is
+  neubrutalism — everything glassmorphism dissolves, neubrutalism makes
+  solid.
+
+related:
+  - slug: neubrutalism
+    relationship: Opposite
+  - slug: neumorphism
+    relationship: Sibling
+  - slug: minimalism
+    relationship: Shares restraint
+  - slug: skeuomorphism
+    relationship: Ancestor
+  - slug: dark-mode
+    relationship: Pairs well
+  - slug: organic-tech
+    relationship: Visual cousin

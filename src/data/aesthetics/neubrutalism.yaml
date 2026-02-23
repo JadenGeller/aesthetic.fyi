@@ -1,0 +1,91 @@
+slug: neubrutalism
+name: Neubrutalism
+coined: false
+
+tagline: "The box model is not a bug. It's the whole point."
+
+prompt: |
+  Thick black borders (2-4px solid) on all elements. Colors are bold
+  and flat — bright yellow, pink, teal — on an off-white background.
+  Hard box-shadows with no blur, offset 4-8px, solid black. Typography
+  is chunky sans-serif at weight 900 for headings and monospace for
+  labels and UI. No gradients, no rounded corners, no transparency.
+  Elements feel like stacked paper cutouts. Playful but blunt.
+
+about: |
+  Neubrutalism is a refusal to hide the box model. You see where every
+  element starts and stops. You see the shadow that proves it's stacked
+  on something. There's no ambiguity about what's a button and what's a
+  card. Everything declares itself.
+
+  It's what happens when designers get tired of polite interfaces and
+  decide to make the structure loud. Not ugly — just honest. The
+  hierarchy is enforced by weight, not whispered through subtle spacing.
+
+characteristics:
+  - title: Thick Borders
+    description: >
+      2-4px solid black on everything. The border is not decoration —
+      it's structure made visible.
+  - title: Hard Shadows
+    description: >
+      Offset, no blur, solid black. Elements feel stacked on top of each
+      other like paper cutouts.
+  - title: Flat Bold Color
+    description: >
+      Bright yellow, pink, teal, lilac — used in blocks, never as
+      gradients. Color collides, it doesn't blend.
+  - title: Heavy Type
+    description: >
+      Font-weight 900. Tight letter-spacing. Oversized headings.
+  - title: No Rounding
+    description: >
+      Zero border-radius everywhere. Sharp corners only.
+  - title: Honest Interactions
+    description: >
+      Hover lifts the element up. Click pushes it down. The shadow
+      changes to match. No mystery about what's happening.
+
+good_for:
+  - Portfolios and personal sites
+  - SaaS landing pages that want to stand out
+  - Creative agency and studio sites
+  - Developer tools and dev-facing marketing
+  - Event sites and conference pages
+
+not_for:
+  - Finance, healthcare, or legal
+  - Long-form reading — the visual weight is tiring
+  - Luxury or high-fashion brands
+  - Complex dashboards — borders everywhere gets noisy
+
+history: |
+  By 2019, every website looked the same. Rounded cards, soft shadows,
+  safe sans-serifs, plenty of white space. Designers started rebelling —
+  not by going ugly, but by going loud. They took the ethos of web
+  brutalism (raw, structural, honest about being a webpage) and made it
+  fun.
+
+  Gumroad's 2021 redesign brought thick borders and hard shadows to a
+  product used by millions, and suddenly neubrutalism had a name and a
+  proof point. It spread fast through Figma community files and Dribbble
+  shots, and it's now one of the most recognizable web aesthetics of the
+  2020s.
+
+  Its ancestors are brutalist architecture, De Stijl, and the indie zine
+  tradition. Its opposite is glassmorphism — everything neubrutalism
+  makes visible, glassmorphism tries to dissolve.
+
+related:
+  - slug: brutalism
+    relationship: Ancestor
+  - slug: flat-design
+    relationship: Shares flatness
+  - slug: indie-web
+    relationship: Vibes with
+  - slug: memphis
+    relationship: Color kin
+  - slug: de-stijl
+    relationship: Grandparent
+  - slug: glassmorphism
+    relationship: Opposite

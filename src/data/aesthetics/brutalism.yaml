@@ -1,0 +1,96 @@
+slug: brutalism
+name: Brutalism
+coined: false
+
+tagline: "Raw concrete. No veneer."
+
+prompt: |
+  Monospaced or system-default typography. No decorative fonts. Colors
+  are black, white, and raw grays — maybe one accent. No rounded
+  corners, no shadows, no gradients. Borders are structural, not
+  decorative. Layout is intentionally raw — elements may overlap, break
+  alignment, or use unconventional sizing. Backgrounds are solid or
+  absent. The page looks like it was built, not designed. Hyperlinks
+  are underlined. Buttons look like buttons. No hover animations.
+
+about: |
+  Web brutalism is a rejection of polish. It says: this is a webpage,
+  and a webpage is a document, and a document doesn't need to pretend
+  to be an app or a magazine or a physical object. It strips away every
+  layer of styling that isn't strictly necessary.
+
+  The result is confrontational. Some people find it refreshing — finally,
+  a website that doesn't try to manipulate your attention with smooth
+  animations and carefully weighted color palettes. Other people find it
+  hostile. Both reactions are the point.
+
+characteristics:
+  - title: Raw Typography
+    description: >
+      System fonts, monospace, or Times New Roman. No font loading, no
+      typographic hierarchy beyond size. The browser's defaults are fine.
+  - title: Structural Borders
+    description: >
+      Borders exist to show structure. 1px solid black. No styling, no
+      double-borders, no decorative use.
+  - title: No Decoration
+    description: >
+      No shadows, no gradients, no rounded corners, no background images.
+      If a CSS property exists purely for aesthetics, it's not used.
+  - title: Black and White
+    description: >
+      The palette is black, white, and gray. Maybe one accent color,
+      used sparingly and without subtlety.
+  - title: Intentional Roughness
+    description: >
+      Elements may overlap, break the grid, or use unexpected sizes.
+      The layout feels constructed, not composed.
+  - title: Default Interactions
+    description: >
+      Links are blue and underlined. Buttons look like system buttons.
+      Hover states are the browser defaults or nothing at all.
+
+good_for:
+  - Artist portfolios and galleries
+  - Manifestos and opinion pieces
+  - Experimental design studios
+  - Anti-corporate branding
+  - Personal sites that want to feel authentic
+
+not_for:
+  - E-commerce — customers need visual trust signals
+  - Enterprise software — users need affordances
+  - Content sites with older audiences
+  - Brands that need to feel approachable
+
+history: |
+  Web brutalism takes its name from architectural brutalism, the
+  mid-century movement that left concrete raw and structure exposed.
+  The architectural movement was never about ugliness — "béton brut"
+  just means raw concrete — but it became associated with hostility
+  and decay.
+
+  Web brutalism emerged in the mid-2010s as a counter-movement to the
+  homogeneous, polished web. Sites like Craigslist and the Drudge
+  Report had always been brutalist by accident — they never added
+  styling because they didn't need it. But designers started doing
+  it on purpose: Bloomberg, Balenciaga, and dozens of studios and
+  agencies stripped their sites back to raw HTML.
+
+  The movement proved that you could make a powerful impression by
+  doing less. Neubrutalism is its friendlier descendant — it keeps
+  the structural honesty but adds color and playfulness.
+
+related:
+  - slug: neubrutalism
+    relationship: Descendant
+  - slug: minimalism
+    relationship: Shares reduction
+  - slug: indie-web
+    relationship: Shares ethos
+  - slug: retro-terminal
+    relationship: Shares rawness
+  - slug: dense-information
+    relationship: Shares function-first
+  - slug: swiss-design
+    relationship: Structural cousin

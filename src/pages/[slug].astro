@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { loadAesthetic, loadAllAesthetics } from '../lib/aesthetics';
+
+export function getStaticPaths() {
+  const aesthetics = loadAllAesthetics();
+  return aesthetics.map((a) => ({
+    params: { slug: a.slug },
+    props: { aesthetic: a },
+  }));
+}
+
+const { aesthetic } = Astro.props;
+const Page = (await import(`../generated/${aesthetic.slug}.astro`)).default;
+---
+
+<Base title={aesthetic.name} description={aesthetic.tagline} slug={aesthetic.slug}>
+  <Page aesthetic={aesthetic} />
+</Base>

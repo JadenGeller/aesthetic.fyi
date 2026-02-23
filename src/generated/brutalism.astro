@@ -1,0 +1,273 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<div class="page">
+  <nav>
+    <a href="/">aesthetic.fyi</a> | {aesthetic.name}
+  </nav>
+
+  <header class="hero">
+    <h1>{aesthetic.name}</h1>
+    <p>{aesthetic.tagline}</p>
+  </header>
+
+  <hr />
+
+  <section>
+    <h2>What This Is</h2>
+    {aesthetic.about.split('\n\n').map((p: string) => <p>{p.trim()}</p>)}
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>Characteristics</h2>
+    {aesthetic.characteristics.map((c: { title: string; description: string }, i: number) => (
+      <>
+        {i > 0 && <hr />}
+        <div class="characteristic">
+          <strong>{c.title}</strong>
+          <span>{c.description}</span>
+        </div>
+      </>
+    ))}
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>Style Reference</h2>
+    <div class="prompt-block">
+      <pre id="prompt-text">{aesthetic.prompt}</pre>
+      <button id="copy-btn" type="button">Copy</button>
+    </div>
+    <script>
+      document.getElementById('copy-btn')?.addEventListener('click', function () {
+        const text = document.getElementById('prompt-text')?.textContent || '';
+        navigator.clipboard.writeText(text).then(() => {
+          const btn = document.getElementById('copy-btn');
+          if (btn) {
+            btn.textContent = 'Copied';
+            setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+          }
+        });
+      });
+    </script>
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>When to Use</h2>
+    <h3>Good for</h3>
+    <ul>
+      {aesthetic.good_for.map((item: string) => <li>{item}</li>)}
+    </ul>
+    <h3>Not for</h3>
+    <ul>
+      {aesthetic.not_for.map((item: string) => <li>{item}</li>)}
+    </ul>
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>History</h2>
+    {aesthetic.history.split('\n\n').map((p: string) => <p>{p.trim()}</p>)}
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>Related Styles</h2>
+    <ul>
+      {aesthetic.related.map((r: { slug: string; relationship: string }) => (
+        <li>
+          <a href={`/${r.slug}`}>{r.slug}</a> ({r.relationship})
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <hr />
+
+  <footer>
+    <p>aesthetic.fyi — a reference for web design aesthetics</p>
+  </footer>
+</div>
+
+<style>
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+
+  .page {
+    font-family: 'Courier New', Courier, monospace;
+    background: #fff;
+    color: #000;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.5;
+  }
+
+  nav {
+    font-size: 14px;
+    padding: 12px 0;
+    letter-spacing: 0.05em;
+  }
+
+  nav a {
+    color: #0000EE;
+    text-decoration: underline;
+  }
+
+  .hero {
+    padding: 80px 0 40px;
+  }
+
+  .hero h1 {
+    font-size: clamp(60px, 12vw, 140px);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+  }
+
+  .hero p {
+    font-size: 18px;
+    margin-top: 16px;
+    font-style: normal;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 40px 0;
+  }
+
+  h2 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 24px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  h3 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+    margin-top: 24px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  h3:first-of-type {
+    margin-top: 0;
+  }
+
+  section {
+    margin: 0;
+  }
+
+  section p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .characteristic {
+    margin: 16px 0;
+  }
+
+  .characteristic strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .characteristic span {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .characteristic + hr {
+    margin: 20px 0;
+  }
+
+  .prompt-block {
+    border: 1px solid #000;
+    padding: 16px;
+    position: relative;
+  }
+
+  .prompt-block pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .prompt-block button {
+    margin-top: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 20px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  li {
+    margin-bottom: 4px;
+  }
+
+  li a {
+    color: #0000EE;
+    text-decoration: underline;
+  }
+
+  footer {
+    padding: 20px 0 40px;
+  }
+
+  footer p {
+    font-size: 13px;
+    color: #666;
+  }
+
+  @media (max-width: 480px) {
+    .page {
+      padding: 12px;
+    }
+
+    .hero {
+      padding: 40px 0 24px;
+    }
+
+    hr {
+      margin: 28px 0;
+    }
+  }
+</style>

@@ -1,0 +1,79 @@
+---
+const { aesthetic } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@900&family=Space+Mono:wght@400&display=swap" rel="stylesheet" />
+
+<div class="card">
+  <div class="accent-circle"></div>
+  <div class="accent-square"></div>
+  <h3 class="card-name">{aesthetic.name}</h3>
+  <p class="card-tagline">{aesthetic.tagline}</p>
+</div>
+
+<style>
+  .card {
+    background: #FFFDF7;
+    color: #1a1a1a;
+    border: 3px solid #1a1a1a;
+    box-shadow: 6px 6px 0px #1a1a1a;
+    border-radius: 0;
+    min-height: 220px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px #1a1a1a;
+  }
+
+  .accent-circle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    background: #FFE142;
+    border: 2px solid #1a1a1a;
+    border-radius: 50%;
+    box-shadow: 3px 3px 0px #1a1a1a;
+  }
+
+  .accent-square {
+    position: absolute;
+    top: 36px;
+    right: 80px;
+    width: 20px;
+    height: 20px;
+    background: #FF6B9D;
+    border: 2px solid #1a1a1a;
+    transform: rotate(12deg);
+  }
+
+  .card-name {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    letter-spacing: -1px;
+    margin: 0 0 8px 0;
+    color: #1a1a1a;
+    line-height: 1.1;
+  }
+
+  .card-tagline {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    color: #1a1a1a;
+    line-height: 1.5;
+  }
+</style>

@@ -1,17 +1,109 @@
 ---
+import Base from '../layouts/Base.astro';
+import { loadAllAesthetics } from '../lib/aesthetics';
 
+const aesthetics = loadAllAesthetics();
+
+const cardComponents = await Promise.all(
+  aesthetics.map(async (a) => ({
+    aesthetic: a,
+    Card: (await import(`../generated/cards/${a.slug}.astro`)).default,
+  }))
+);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base title="Every web aesthetic, demonstrated" description="A visual reference for web design aesthetics. Each page is designed in the style it describes.">
+  <link slot="head" rel="preconnect" href="https://fonts.googleapis.com" />
+  <link slot="head" rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link slot="head" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <div class="page">
+    <header>
+      <div class="site-name"><a href="/">aesthetic.fyi</a></div>
+      <h1>Every web aesthetic,<br />demonstrated.</h1>
+      <p>Each card is designed in the style it describes. Click to explore the full reference page.</p>
+    </header>
+
+    <div class="grid">
+      {cardComponents.map(({ aesthetic, Card }) => (
+        <a href={`/${aesthetic.slug}`} class="card-link">
+          <Card aesthetic={aesthetic} />
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>
+
+<style>
+  .page {
+    background: #111;
+    color: #eee;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 24px;
+  }
+
+  header {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 8px;
+  }
+
+  .site-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #888;
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+  }
+
+  .site-name a {
+    color: #888;
+    text-decoration: none;
+  }
+
+  .site-name a:hover {
+    color: #fff;
+  }
+
+  h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+
+  header p {
+    font-size: 16px;
+    color: #777;
+    font-weight: 400;
+    max-width: 500px;
+    line-height: 1.5;
+  }
+
+  .grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  @media (max-width: 660px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s;
+  }
+
+  .card-link:hover {
+    transform: translateY(-4px);
+  }
+</style>
