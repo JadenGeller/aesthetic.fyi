@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "WebSearch",
+      "WebFetch(domain:docs.astro.build)",
+      "Bash(tail:*)",
+      "Bash(git:*)",
+      "Bash(grep:*)"
+    ]
+  }
+}

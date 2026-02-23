@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import HomeHeader from '../components/HomeHeader.astro';
 import { loadAllAesthetics } from '../lib/aesthetics';
 
 const aesthetics = loadAllAesthetics();
@@ -19,9 +20,7 @@ const cardComponents = await Promise.all(
 
   <div class="page">
     <header>
-      <div class="site-name"><a href="/">aesthetic.fyi</a></div>
-      <h1>Every web aesthetic,<br />demonstrated.</h1>
-      <p>Each card is designed in the style it describes. Click to explore the full reference page.</p>
+      <HomeHeader />
     </header>
 
     <div class="grid">
@@ -47,39 +46,6 @@ const cardComponents = await Promise.all(
     max-width: 1200px;
     margin: 0 auto 40px;
     padding: 0 8px;
-  }
-
-  .site-name {
-    font-size: 15px;
-    font-weight: 600;
-    color: #888;
-    margin-bottom: 16px;
-    letter-spacing: -0.3px;
-  }
-
-  .site-name a {
-    color: #888;
-    text-decoration: none;
-  }
-
-  .site-name a:hover {
-    color: #fff;
-  }
-
-  h1 {
-    font-size: clamp(36px, 5vw, 56px);
-    font-weight: 700;
-    letter-spacing: -2px;
-    line-height: 1.05;
-    margin-bottom: 12px;
-  }
-
-  header p {
-    font-size: 16px;
-    color: #777;
-    font-weight: 400;
-    max-width: 500px;
-    line-height: 1.5;
   }
 
   .grid {

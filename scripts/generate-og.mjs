@@ -39,9 +39,17 @@ await mkdir(OUT_DIR, { recursive: true });
 
 const browser = await chromium.launch();
 const context = await browser.newContext({
-  viewport: { width: 600, height: 314 },
-  deviceScaleFactor: 2,
+  viewport: { width: 400, height: 210 },
+  deviceScaleFactor: 3,
 });
+
+// Homepage OG card
+const homePage = await context.newPage();
+await homePage.goto(`${BASE_URL}/card-preview/`, { waitUntil: 'networkidle' });
+await homePage.evaluate(() => document.fonts.ready);
+await homePage.screenshot({ path: join(OUT_DIR, 'index.png') });
+await homePage.close();
+console.log('  ✓ index (homepage)');
 
 let done = 0;
 async function screenshotSlug(slug) {

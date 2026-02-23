@@ -1,0 +1,42 @@
+---
+// Shared between the homepage and the OG preview page (card-preview/index.astro)
+---
+
+<div class="home-header">
+  <p class="label">aesthetic.fyi</p>
+  <h1>Every web aesthetic,<br />demonstrated.</h1>
+  <p class="desc">A visual reference for web design aesthetics. Each page is designed in the style it describes.</p>
+</div>
+
+<style>
+  .home-header {
+    font-family: 'Inter', sans-serif;
+    color: #eee;
+    padding: 32px;
+  }
+
+  .label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #888;
+    margin: 0 0 16px;
+    letter-spacing: -0.3px;
+  }
+
+  h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    margin: 0 0 12px;
+  }
+
+  .desc {
+    font-size: 16px;
+    color: #777;
+    font-weight: 400;
+    max-width: 500px;
+    line-height: 1.5;
+    margin: 0;
+  }
+</style>

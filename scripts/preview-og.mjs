@@ -44,8 +44,8 @@ await mkdir(OUT_DIR, { recursive: true });
 const browser = await chromium.launch();
 const context = await browser.newContext({
   // 600×314 logical px × deviceScaleFactor 2 = 1200×628 physical px (standard OG size)
-  viewport: { width: 600, height: 314 },
-  deviceScaleFactor: 2,
+  viewport: { width: 400, height: 210 },
+  deviceScaleFactor: 3,
 });
 
 console.log('\nScreenshotting...');
