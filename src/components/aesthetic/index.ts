@@ -1,0 +1,9 @@
+export { default as Nav } from './Nav.astro';
+export { default as Hero } from './Hero.astro';
+export { default as About } from './About.astro';
+export { default as Characteristics } from './Characteristics.astro';
+export { default as Prompt } from './Prompt.astro';
+export { default as Usage } from './Usage.astro';
+export { default as History } from './History.astro';
+export { default as Related } from './Related.astro';
+export { default as Footer } from './Footer.astro';

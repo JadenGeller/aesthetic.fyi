@@ -1,4 +1,5 @@
 ---
+import { Nav, Hero, About, Characteristics, Prompt, Usage, History, Related, Footer } from '../components/aesthetic';
 const { aesthetic } = Astro.props;
 ---
 
@@ -6,154 +7,23 @@ const { aesthetic } = Astro.props;
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet" />
 
-<div class="page">
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">aesthetic.fyi</a>
-      <span class="nav-divider">/</span>
-      <a href={`/${aesthetic.slug}`} class="nav-current">{aesthetic.name}</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <span class="hero-label">Web Aesthetic</span>
-      <h1 class="hero-title">{aesthetic.name}</h1>
-      <p class="hero-tagline">{aesthetic.tagline}</p>
-    </div>
-  </section>
-
-  <!-- WHAT THIS IS -->
-  <section class="section about-section">
-    <div class="section-inner">
-      <span class="section-label">What This Is</span>
-      <div class="about-content">
-        {aesthetic.about.split('\n\n').map((paragraph: string) => (
-          <p class="about-paragraph">{paragraph}</p>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CHARACTERISTICS -->
-  <section class="section characteristics-section">
-    <div class="section-inner">
-      <span class="section-label">Characteristics</span>
-      <div class="characteristics-grid">
-        {aesthetic.characteristics.map((char: { title: string; description: string }, i: number) => (
-          <div class="char-card">
-            <span class="char-number">{String(i + 1).padStart(2, '0')}</span>
-            <h3 class="char-title">{char.title}</h3>
-            <p class="char-description">{char.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- STYLE REFERENCE -->
-  <section class="section prompt-section">
-    <div class="section-inner">
-      <span class="section-label">Style Reference</span>
-      <div class="prompt-block">
-        <div class="prompt-header">
-          <span class="prompt-header-label">Prompt</span>
-          <button class="copy-button" data-prompt={aesthetic.prompt}>Copy</button>
-        </div>
-        <p class="prompt-text">{aesthetic.prompt}</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHEN TO USE -->
-  <section class="section use-section">
-    <div class="section-inner">
-      <span class="section-label">When to Use</span>
-      <div class="use-grid">
-        <div class="use-column">
-          <h3 class="use-column-heading">Good for</h3>
-          <ul class="use-list">
-            {aesthetic.good_for.map((item: string) => (
-              <li class="use-item">{item}</li>
-            ))}
-          </ul>
-        </div>
-        <div class="use-column">
-          <h3 class="use-column-heading">Not for</h3>
-          <ul class="use-list">
-            {aesthetic.not_for.map((item: string) => (
-              <li class="use-item">{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HISTORY -->
-  <section class="section history-section">
-    <div class="section-inner">
-      <span class="section-label">History</span>
-      <div class="history-content">
-        {aesthetic.history.split('\n\n').map((paragraph: string) => (
-          <p class="history-paragraph">{paragraph}</p>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- RELATED STYLES -->
-  <section class="section related-section">
-    <div class="section-inner">
-      <span class="section-label">Related Styles</span>
-      <div class="related-grid">
-        {aesthetic.related.map((rel: { slug: string; relationship: string }) => (
-          <a href={`/${rel.slug}`} class="related-card">
-            <span class="related-relationship">{rel.relationship}</span>
-            <span class="related-name">{rel.slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <a href="/" class="footer-logo">aesthetic.fyi</a>
-      <span class="footer-tagline">Every web aesthetic, demonstrated.</span>
-      <a href="/" class="footer-back">All aesthetics</a>
-    </div>
-  </footer>
+<div class="page" data-page="minimalism">
+  <Nav aesthetic={aesthetic} />
+  <Hero aesthetic={aesthetic} />
+  <About aesthetic={aesthetic} />
+  <Characteristics aesthetic={aesthetic} />
+  <Prompt aesthetic={aesthetic} />
+  <Usage aesthetic={aesthetic} />
+  <History aesthetic={aesthetic} />
+  <Related aesthetic={aesthetic} />
+  <Footer />
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const copyButton = document.querySelector('.copy-button');
-    if (copyButton) {
-      copyButton.addEventListener('click', () => {
-        const prompt = copyButton.getAttribute('data-prompt') || '';
-        navigator.clipboard.writeText(prompt).then(() => {
-          const original = copyButton.textContent;
-          copyButton.textContent = 'Copied';
-          copyButton.classList.add('copied');
-          setTimeout(() => {
-            copyButton.textContent = original;
-            copyButton.classList.remove('copied');
-          }, 2000);
-        });
-      });
-    }
-  });
-</script>
-
-<style>
+<style is:global>
   /* ========================================
      RESET & BASE
      ======================================== */
-  .page {
+  [data-page="minimalism"] {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     background-color: #ffffff;
@@ -168,7 +38,7 @@ const { aesthetic } = Astro.props;
   /* ========================================
      NAV
      ======================================== */
-  .nav {
+  [data-page="minimalism"] .nav {
     border-bottom: 1px solid #eeeeee;
     background: #ffffff;
     position: sticky;
@@ -176,7 +46,7 @@ const { aesthetic } = Astro.props;
     z-index: 100;
   }
 
-  .nav-inner {
+  [data-page="minimalism"] .nav-inner {
     max-width: 900px;
     margin: 0 auto;
     padding: 24px 32px;
@@ -185,7 +55,7 @@ const { aesthetic } = Astro.props;
     gap: 12px;
   }
 
-  .nav-logo {
+  [data-page="minimalism"] .nav-logo {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 0.8rem;
@@ -195,17 +65,17 @@ const { aesthetic } = Astro.props;
     text-decoration: none;
   }
 
-  .nav-logo:hover {
+  [data-page="minimalism"] .nav-logo:hover {
     color: #999999;
   }
 
-  .nav-divider {
+  [data-page="minimalism"] .nav-divider {
     font-weight: 300;
     font-size: 0.85rem;
     color: #cccccc;
   }
 
-  .nav-current {
+  [data-page="minimalism"] .nav-current {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 0.8rem;
@@ -215,24 +85,24 @@ const { aesthetic } = Astro.props;
     text-decoration: none;
   }
 
-  .nav-current:hover {
+  [data-page="minimalism"] .nav-current:hover {
     color: #222222;
   }
 
   /* ========================================
      HERO
      ======================================== */
-  .hero {
+  [data-page="minimalism"] .hero {
     padding: 120px 32px 100px;
     text-align: center;
   }
 
-  .hero-inner {
+  [data-page="minimalism"] .hero-inner {
     max-width: 900px;
     margin: 0 auto;
   }
 
-  .hero-label {
+  [data-page="minimalism"] .hero-label {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 0.7rem;
@@ -243,7 +113,7 @@ const { aesthetic } = Astro.props;
     margin-bottom: 40px;
   }
 
-  .hero-title {
+  [data-page="minimalism"] .hero-title {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: clamp(3rem, 8vw, 5.5rem);
@@ -254,7 +124,7 @@ const { aesthetic } = Astro.props;
     color: #222222;
   }
 
-  .hero-tagline {
+  [data-page="minimalism"] .hero-tagline {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 1.15rem;
@@ -267,16 +137,16 @@ const { aesthetic } = Astro.props;
   /* ========================================
      SECTIONS - SHARED
      ======================================== */
-  .section {
+  [data-page="minimalism"] .section {
     padding: 80px 32px;
   }
 
-  .section-inner {
+  [data-page="minimalism"] .section-inner {
     max-width: 900px;
     margin: 0 auto;
   }
 
-  .section-label {
+  [data-page="minimalism"] .section-label {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 0.65rem;
@@ -290,15 +160,15 @@ const { aesthetic } = Astro.props;
   /* ========================================
      ABOUT
      ======================================== */
-  .about-section {
+  [data-page="minimalism"] .about-section {
     border-top: 1px solid #eeeeee;
   }
 
-  .about-content {
+  [data-page="minimalism"] .about-content {
     max-width: 620px;
   }
 
-  .about-paragraph {
+  [data-page="minimalism"] .about-paragraph {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 1.1rem;
@@ -307,38 +177,38 @@ const { aesthetic } = Astro.props;
     color: #222222;
   }
 
-  .about-paragraph:last-child {
+  [data-page="minimalism"] .about-paragraph:last-child {
     margin-bottom: 0;
   }
 
   /* ========================================
      CHARACTERISTICS
      ======================================== */
-  .characteristics-section {
+  [data-page="minimalism"] .characteristics-section {
     border-top: 1px solid #eeeeee;
   }
 
-  .characteristics-grid {
+  [data-page="minimalism"] .characteristics-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
   }
 
-  .char-card {
+  [data-page="minimalism"] .char-card {
     padding: 40px 32px;
     border-bottom: 1px solid #eeeeee;
     border-right: 1px solid #eeeeee;
   }
 
-  .char-card:nth-child(2n) {
+  [data-page="minimalism"] .char-card:nth-child(2n) {
     border-right: none;
   }
 
-  .char-card:nth-last-child(-n+2) {
+  [data-page="minimalism"] .char-card:nth-last-child(-n+2) {
     border-bottom: none;
   }
 
-  .char-number {
+  [data-page="minimalism"] .char-number {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 0.7rem;
@@ -348,7 +218,7 @@ const { aesthetic } = Astro.props;
     margin-bottom: 16px;
   }
 
-  .char-title {
+  [data-page="minimalism"] .char-title {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 1rem;
@@ -357,7 +227,7 @@ const { aesthetic } = Astro.props;
     color: #222222;
   }
 
-  .char-description {
+  [data-page="minimalism"] .char-description {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 0.9rem;
@@ -369,15 +239,15 @@ const { aesthetic } = Astro.props;
   /* ========================================
      STYLE REFERENCE / PROMPT
      ======================================== */
-  .prompt-section {
+  [data-page="minimalism"] .prompt-section {
     border-top: 1px solid #eeeeee;
   }
 
-  .prompt-block {
+  [data-page="minimalism"] .prompt-block {
     border: 1px solid #eeeeee;
   }
 
-  .prompt-header {
+  [data-page="minimalism"] .prompt-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -385,7 +255,7 @@ const { aesthetic } = Astro.props;
     border-bottom: 1px solid #eeeeee;
   }
 
-  .prompt-header-label {
+  [data-page="minimalism"] .prompt-header-label {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 0.65rem;
@@ -394,7 +264,7 @@ const { aesthetic } = Astro.props;
     color: #999999;
   }
 
-  .copy-button {
+  [data-page="minimalism"] .copy-button {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 0.7rem;
@@ -408,17 +278,17 @@ const { aesthetic } = Astro.props;
     transition: color 0.2s, border-color 0.2s;
   }
 
-  .copy-button:hover {
+  [data-page="minimalism"] .copy-button:hover {
     color: #222222;
     border-color: #222222;
   }
 
-  .copy-button.copied {
+  [data-page="minimalism"] .copy-button.copied {
     color: #222222;
     border-color: #222222;
   }
 
-  .prompt-text {
+  [data-page="minimalism"] .prompt-text {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 0.9rem;
@@ -432,17 +302,17 @@ const { aesthetic } = Astro.props;
   /* ========================================
      WHEN TO USE
      ======================================== */
-  .use-section {
+  [data-page="minimalism"] .use-section {
     border-top: 1px solid #eeeeee;
   }
 
-  .use-grid {
+  [data-page="minimalism"] .use-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 64px;
   }
 
-  .use-column-heading {
+  [data-page="minimalism"] .use-column-heading {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 0.65rem;
@@ -452,13 +322,13 @@ const { aesthetic } = Astro.props;
     margin: 0 0 24px 0;
   }
 
-  .use-list {
+  [data-page="minimalism"] .use-list {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  .use-item {
+  [data-page="minimalism"] .use-item {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 0.95rem;
@@ -468,22 +338,22 @@ const { aesthetic } = Astro.props;
     color: #222222;
   }
 
-  .use-item:last-child {
+  [data-page="minimalism"] .use-item:last-child {
     border-bottom: none;
   }
 
   /* ========================================
      HISTORY
      ======================================== */
-  .history-section {
+  [data-page="minimalism"] .history-section {
     border-top: 1px solid #eeeeee;
   }
 
-  .history-content {
+  [data-page="minimalism"] .history-content {
     max-width: 620px;
   }
 
-  .history-paragraph {
+  [data-page="minimalism"] .history-paragraph {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 1rem;
@@ -492,24 +362,24 @@ const { aesthetic } = Astro.props;
     color: #222222;
   }
 
-  .history-paragraph:last-child {
+  [data-page="minimalism"] .history-paragraph:last-child {
     margin-bottom: 0;
   }
 
   /* ========================================
      RELATED STYLES
      ======================================== */
-  .related-section {
+  [data-page="minimalism"] .related-section {
     border-top: 1px solid #eeeeee;
   }
 
-  .related-grid {
+  [data-page="minimalism"] .related-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 0;
   }
 
-  .related-card {
+  [data-page="minimalism"] .related-card {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -521,15 +391,15 @@ const { aesthetic } = Astro.props;
     transition: background-color 0.2s;
   }
 
-  .related-card:hover {
+  [data-page="minimalism"] .related-card:hover {
     background-color: #fafafa;
   }
 
-  .related-card:last-child {
+  [data-page="minimalism"] .related-card:last-child {
     border-right: none;
   }
 
-  .related-relationship {
+  [data-page="minimalism"] .related-relationship {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 0.6rem;
@@ -538,7 +408,7 @@ const { aesthetic } = Astro.props;
     color: #999999;
   }
 
-  .related-name {
+  [data-page="minimalism"] .related-name {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 1rem;
@@ -549,12 +419,12 @@ const { aesthetic } = Astro.props;
   /* ========================================
      FOOTER
      ======================================== */
-  .footer {
+  [data-page="minimalism"] .footer {
     border-top: 1px solid #eeeeee;
     padding: 80px 32px;
   }
 
-  .footer-inner {
+  [data-page="minimalism"] .footer-inner {
     max-width: 900px;
     margin: 0 auto;
     display: flex;
@@ -564,7 +434,7 @@ const { aesthetic } = Astro.props;
     text-align: center;
   }
 
-  .footer-logo {
+  [data-page="minimalism"] .footer-logo {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 0.75rem;
@@ -574,11 +444,11 @@ const { aesthetic } = Astro.props;
     text-decoration: none;
   }
 
-  .footer-logo:hover {
+  [data-page="minimalism"] .footer-logo:hover {
     color: #999999;
   }
 
-  .footer-tagline {
+  [data-page="minimalism"] .footer-tagline {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 0.85rem;
@@ -586,7 +456,7 @@ const { aesthetic } = Astro.props;
     letter-spacing: 0.02em;
   }
 
-  .footer-back {
+  [data-page="minimalism"] .footer-back {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 0.65rem;
@@ -598,7 +468,7 @@ const { aesthetic } = Astro.props;
     transition: color 0.2s;
   }
 
-  .footer-back:hover {
+  [data-page="minimalism"] .footer-back:hover {
     color: #222222;
   }
 
@@ -606,107 +476,107 @@ const { aesthetic } = Astro.props;
      RESPONSIVE
      ======================================== */
   @media (max-width: 768px) {
-    .hero {
+    [data-page="minimalism"] .hero {
       padding: 80px 24px 64px;
     }
 
-    .section {
+    [data-page="minimalism"] .section {
       padding: 56px 24px;
     }
 
-    .section-label {
+    [data-page="minimalism"] .section-label {
       margin-bottom: 32px;
     }
 
-    .characteristics-grid {
+    [data-page="minimalism"] .characteristics-grid {
       grid-template-columns: 1fr;
     }
 
-    .char-card {
+    [data-page="minimalism"] .char-card {
       border-right: none;
       padding: 28px 0;
     }
 
-    .char-card:last-child {
+    [data-page="minimalism"] .char-card:last-child {
       border-bottom: none;
     }
 
-    .use-grid {
+    [data-page="minimalism"] .use-grid {
       grid-template-columns: 1fr;
       gap: 40px;
     }
 
-    .related-grid {
+    [data-page="minimalism"] .related-grid {
       grid-template-columns: 1fr;
     }
 
-    .related-card {
+    [data-page="minimalism"] .related-card {
       border-right: none;
     }
 
-    .related-card:last-child {
+    [data-page="minimalism"] .related-card:last-child {
       border-bottom: none;
     }
 
-    .prompt-text {
+    [data-page="minimalism"] .prompt-text {
       font-size: 0.85rem;
       padding: 20px 16px;
     }
 
-    .prompt-header {
+    [data-page="minimalism"] .prompt-header {
       padding: 14px 16px;
     }
 
-    .nav-inner {
+    [data-page="minimalism"] .nav-inner {
       padding: 18px 24px;
     }
 
-    .footer {
+    [data-page="minimalism"] .footer {
       padding: 56px 24px;
     }
   }
 
   @media (max-width: 480px) {
-    .hero {
+    [data-page="minimalism"] .hero {
       padding: 60px 20px 48px;
     }
 
-    .hero-label {
+    [data-page="minimalism"] .hero-label {
       margin-bottom: 28px;
     }
 
-    .section {
+    [data-page="minimalism"] .section {
       padding: 40px 20px;
     }
 
-    .nav-inner {
+    [data-page="minimalism"] .nav-inner {
       padding: 14px 20px;
       gap: 8px;
     }
 
-    .nav-logo {
+    [data-page="minimalism"] .nav-logo {
       font-size: 0.7rem;
     }
 
-    .nav-current {
+    [data-page="minimalism"] .nav-current {
       font-size: 0.7rem;
     }
 
-    .char-card {
+    [data-page="minimalism"] .char-card {
       padding: 24px 0;
     }
 
-    .copy-button {
+    [data-page="minimalism"] .copy-button {
       padding: 6px 14px;
       font-size: 0.65rem;
     }
 
-    .use-item {
+    [data-page="minimalism"] .use-item {
       padding: 10px 0;
       font-size: 0.9rem;
     }
 
-    .related-card {
+    [data-page="minimalism"] .related-card {
       padding: 24px 0;
     }
   }

@@ -1,0 +1,26 @@
+---
+import type { Aesthetic } from '../../lib/aesthetics';
+
+interface Props {
+  aesthetic: Aesthetic;
+  label?: string;
+  heading?: string;
+}
+
+const { aesthetic, label = 'Related Styles', heading } = Astro.props;
+---
+
+<section class="section related-section">
+  <div class="section-inner">
+    <span class="section-label">{label}</span>
+    {heading && <h2 class="section-heading">{heading}</h2>}
+    <div class="related-grid">
+      {aesthetic.related.map((rel) => (
+        <a href={`/${rel.slug}`} class="related-card">
+          <span class="related-relationship">{rel.relationship}</span>
+          <span class="related-name">{rel.slug.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

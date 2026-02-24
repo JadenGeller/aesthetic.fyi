@@ -1,0 +1,18 @@
+---
+import type { Aesthetic } from '../../lib/aesthetics';
+
+interface Props {
+  aesthetic: Aesthetic;
+  divider?: string;
+}
+
+const { aesthetic, divider = '/' } = Astro.props;
+---
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">aesthetic.fyi</a>
+    <span class="nav-divider">{divider}</span>
+    <a href={`/${aesthetic.slug}`} class="nav-current">{aesthetic.name}</a>
+  </div>
+</nav>

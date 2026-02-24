@@ -1,0 +1,15 @@
+---
+interface Props {
+  backText?: string;
+}
+
+const { backText = 'All aesthetics' } = Astro.props;
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="/" class="footer-logo">aesthetic.fyi</a>
+    <span class="footer-tagline">Every web aesthetic, demonstrated.</span>
+    <a href="/" class="footer-back">{backText}</a>
+  </div>
+</footer>

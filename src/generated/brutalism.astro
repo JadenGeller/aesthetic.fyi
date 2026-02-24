@@ -43,17 +43,29 @@ const { aesthetic } = Astro.props;
       <button id="copy-btn" type="button">Copy</button>
     </div>
     <script>
-      document.getElementById('copy-btn')?.addEventListener('click', function () {
-        const text = document.getElementById('prompt-text')?.textContent || '';
-        navigator.clipboard.writeText(text).then(() => {
-          const btn = document.getElementById('copy-btn');
-          if (btn) {
-            btn.textContent = 'Copied';
-            setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
-          }
-        });
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.querySelector('.copy-button');
+    if (copyButton) {
+      copyButton.addEventListener('click', () => {
+        const prompt = copyButton.getAttribute('data-prompt') || '';
+        const el = document.createElement('textarea');
+        el.value = prompt;
+        el.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        const original = copyButton.textContent;
+        copyButton.textContent = 'Copied!';
+        copyButton.classList.add('copied');
+        setTimeout(() => {
+          copyButton.textContent = original;
+          copyButton.classList.remove('copied');
+        }, 2000);
       });
-    </script>
+    }
+  });
+</script>
   </section>
 
   <hr />

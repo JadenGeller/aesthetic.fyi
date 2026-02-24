@@ -1,8 +1,9 @@
 ---
+import { Nav, About, Characteristics, Prompt, Usage, History, Related, Footer } from '../components/aesthetic';
 const { aesthetic } = Astro.props;
 ---
 
-<div class="page">
+<div class="page" data-page="os-desktop">
   <!-- TASKBAR (fixed at bottom) -->
   <div class="taskbar">
     <div class="taskbar-inner">
@@ -53,13 +54,11 @@ const { aesthetic } = Astro.props;
         <div class="window-controls-spacer"></div>
       </div>
       <div class="window-body nav-body">
-        <a href="/" class="nav-link">aesthetic.fyi</a>
-        <span class="nav-separator">&#9654;</span>
-        <a href={`/${aesthetic.slug}`} class="nav-link nav-link-current">{aesthetic.name}</a>
+        <Nav aesthetic={aesthetic} divider="&#9654;" />
       </div>
     </div>
 
-    <!-- HERO WINDOW -->
+    <!-- HERO WINDOW (kept as custom HTML — too page-specific for a generic component) -->
     <div class="window hero-window">
       <div class="window-titlebar titlebar-active">
         <div class="window-controls">
@@ -96,13 +95,7 @@ const { aesthetic } = Astro.props;
         <span class="menu-item">Help</span>
       </div>
       <div class="window-body about-body">
-        <div class="window-section-label">What This Is</div>
-        <h2 class="window-heading">A Digital Workspace</h2>
-        <div class="about-content">
-          {aesthetic.about.split('\n\n').map((paragraph: string) => (
-            <p class="about-paragraph">{paragraph}</p>
-          ))}
-        </div>
+        <About aesthetic={aesthetic} heading="A Digital Workspace" />
       </div>
     </div>
 
@@ -118,21 +111,7 @@ const { aesthetic } = Astro.props;
         <div class="window-controls-spacer"></div>
       </div>
       <div class="window-body characteristics-body">
-        <div class="window-section-label">Design Tokens</div>
-        <h2 class="window-heading">Characteristics</h2>
-        <div class="characteristics-grid">
-          {aesthetic.characteristics.map((char: { title: string; description: string }, i: number) => (
-            <div class="char-card">
-              <div class="char-titlebar">
-                <span class="char-number">{String(i + 1).padStart(2, '0')}</span>
-                <span class="char-title">{char.title}</span>
-              </div>
-              <div class="char-body">
-                <p class="char-description">{char.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Characteristics aesthetic={aesthetic} heading="Characteristics" />
       </div>
     </div>
 
@@ -154,17 +133,7 @@ const { aesthetic } = Astro.props;
         <span class="menu-item">Help</span>
       </div>
       <div class="window-body prompt-body">
-        <div class="window-section-label">Style Reference</div>
-        <h2 class="window-heading">Copy &amp; Paste</h2>
-        <div class="prompt-block">
-          <div class="prompt-header">
-            <span class="prompt-header-label">prompt.txt</span>
-            <button class="copy-button" data-prompt={aesthetic.prompt}>Copy</button>
-          </div>
-          <div class="prompt-text-area">
-            <p class="prompt-text">{aesthetic.prompt}</p>
-          </div>
-        </div>
+        <Prompt aesthetic={aesthetic} heading="Copy &amp; Paste" headerLabel="prompt.txt" />
       </div>
     </div>
 
@@ -180,32 +149,7 @@ const { aesthetic } = Astro.props;
         <div class="window-controls-spacer"></div>
       </div>
       <div class="window-body use-body">
-        <div class="window-section-label">When to Use</div>
-        <h2 class="window-heading">Good Fit, Bad Fit</h2>
-        <div class="use-grid">
-          <div class="use-column use-good">
-            <div class="use-column-header">
-              <span class="use-column-icon">&#9989;</span>
-              <h3 class="use-column-heading">Good For</h3>
-            </div>
-            <ul class="use-list">
-              {aesthetic.good_for.map((item: string) => (
-                <li class="use-item use-item-good">{item}</li>
-              ))}
-            </ul>
-          </div>
-          <div class="use-column use-bad">
-            <div class="use-column-header">
-              <span class="use-column-icon">&#10060;</span>
-              <h3 class="use-column-heading">Not For</h3>
-            </div>
-            <ul class="use-list">
-              {aesthetic.not_for.map((item: string) => (
-                <li class="use-item use-item-bad">{item}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <Usage aesthetic={aesthetic} heading="Good Fit, Bad Fit" goodLabel="Good For" badLabel="Not For" />
       </div>
     </div>
 
@@ -227,13 +171,7 @@ const { aesthetic } = Astro.props;
         <span class="menu-item">Help</span>
       </div>
       <div class="window-body history-body">
-        <div class="window-section-label">Origins</div>
-        <h2 class="window-heading">History</h2>
-        <div class="history-content">
-          {aesthetic.history.split('\n\n').map((paragraph: string) => (
-            <p class="history-paragraph">{paragraph}</p>
-          ))}
-        </div>
+        <History aesthetic={aesthetic} heading="History" />
       </div>
     </div>
 
@@ -249,17 +187,7 @@ const { aesthetic } = Astro.props;
         <div class="window-controls-spacer"></div>
       </div>
       <div class="window-body related-body">
-        <div class="window-section-label">Explore</div>
-        <h2 class="window-heading">Related Styles</h2>
-        <div class="related-grid">
-          {aesthetic.related.map((rel: { slug: string; relationship: string }) => (
-            <a href={`/${rel.slug}`} class="related-card">
-              <div class="related-icon">&#128193;</div>
-              <span class="related-name">{rel.slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
-              <span class="related-relationship">{rel.relationship}</span>
-            </a>
-          ))}
-        </div>
+        <Related aesthetic={aesthetic} heading="Related Styles" />
       </div>
     </div>
 
@@ -275,52 +203,17 @@ const { aesthetic } = Astro.props;
         <div class="window-controls-spacer"></div>
       </div>
       <div class="window-body footer-body">
-        <a href="/" class="footer-logo">aesthetic.fyi</a>
-        <span class="footer-tagline">Every web aesthetic, demonstrated.</span>
-        <div class="footer-divider"></div>
-        <a href="/" class="footer-back">&larr; Back to All Aesthetics</a>
-        <span class="footer-version">Version 1.0</span>
+        <Footer backText="&larr; Back to All Aesthetics" />
       </div>
     </div>
   </div>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const copyButton = document.querySelector('.copy-button');
-    if (copyButton) {
-      copyButton.addEventListener('click', () => {
-        const prompt = copyButton.getAttribute('data-prompt') || '';
-        navigator.clipboard.writeText(prompt).then(() => {
-          const original = copyButton.textContent;
-          copyButton.textContent = 'Copied!';
-          copyButton.classList.add('copied');
-          setTimeout(() => {
-            copyButton.textContent = original;
-            copyButton.classList.remove('copied');
-          }, 2000);
-        });
-      });
-    }
-
-    // Update clock in taskbar
-    function updateClock() {
-      const clock = document.querySelector('.tray-clock');
-      if (clock) {
-        const now = new Date();
-        clock.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-      }
-    }
-    updateClock();
-    setInterval(updateClock, 60000);
-  });
-</script>
-
-<style>
+<style is:global>
   /* ========================================
      RESET & BASE
      ======================================== */
-  .page {
+  [data-page="os-desktop"] {
     font-family: -apple-system, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #008080;
     color: #000000;
@@ -334,7 +227,7 @@ const { aesthetic } = Astro.props;
   /* ========================================
      TASKBAR
      ======================================== */
-  .taskbar {
+  [data-page="os-desktop"] .taskbar {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -346,7 +239,7 @@ const { aesthetic } = Astro.props;
     height: 36px;
   }
 
-  .taskbar-inner {
+  [data-page="os-desktop"] .taskbar-inner {
     display: flex;
     align-items: center;
     height: 100%;
@@ -354,7 +247,7 @@ const { aesthetic } = Astro.props;
     gap: 4px;
   }
 
-  .start-button {
+  [data-page="os-desktop"] .start-button {
     display: flex;
     align-items: center;
     gap: 4px;
@@ -369,21 +262,21 @@ const { aesthetic } = Astro.props;
     color: #000;
   }
 
-  .start-button:active {
+  [data-page="os-desktop"] .start-button:active {
     border-style: inset;
   }
 
-  .start-icon {
+  [data-page="os-desktop"] .start-icon {
     font-size: 14px;
     color: #000080;
   }
 
-  .start-label {
+  [data-page="os-desktop"] .start-label {
     font-weight: 700;
     letter-spacing: 0.02em;
   }
 
-  .taskbar-divider {
+  [data-page="os-desktop"] .taskbar-divider {
     width: 2px;
     height: 24px;
     border-left: 1px solid #808080;
@@ -391,14 +284,14 @@ const { aesthetic } = Astro.props;
     margin: 0 2px;
   }
 
-  .taskbar-items {
+  [data-page="os-desktop"] .taskbar-items {
     display: flex;
     gap: 2px;
     flex: 1;
     min-width: 0;
   }
 
-  .taskbar-item {
+  [data-page="os-desktop"] .taskbar-item {
     display: flex;
     align-items: center;
     padding: 2px 12px;
@@ -415,17 +308,17 @@ const { aesthetic } = Astro.props;
     max-width: 160px;
   }
 
-  .taskbar-item-active {
+  [data-page="os-desktop"] .taskbar-item-active {
     border-style: inset;
     background: #D4D0C8;
     font-weight: 700;
   }
 
-  .taskbar-spacer {
+  [data-page="os-desktop"] .taskbar-spacer {
     flex: 1;
   }
 
-  .taskbar-tray {
+  [data-page="os-desktop"] .taskbar-tray {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -435,14 +328,14 @@ const { aesthetic } = Astro.props;
     background: #C0C0C0;
   }
 
-  .tray-indicator {
+  [data-page="os-desktop"] .tray-indicator {
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background: #00AA00;
   }
 
-  .tray-clock {
+  [data-page="os-desktop"] .tray-clock {
     font-size: 11px;
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
     color: #000;
@@ -452,7 +345,7 @@ const { aesthetic } = Astro.props;
   /* ========================================
      DESKTOP
      ======================================== */
-  .desktop {
+  [data-page="os-desktop"] .desktop {
     background: linear-gradient(135deg, #008080 0%, #006666 40%, #007070 60%, #008080 100%);
     min-height: 100vh;
     padding: 24px 32px 56px;
@@ -463,10 +356,7 @@ const { aesthetic } = Astro.props;
     position: relative;
   }
 
-  /* ========================================
-     DESKTOP ICONS
-     ======================================== */
-  .desktop-icons {
+  [data-page="os-desktop"] .desktop-icons {
     position: absolute;
     top: 20px;
     left: 20px;
@@ -476,7 +366,7 @@ const { aesthetic } = Astro.props;
     z-index: 1;
   }
 
-  .desktop-icon {
+  [data-page="os-desktop"] .desktop-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -486,18 +376,18 @@ const { aesthetic } = Astro.props;
     padding: 4px;
   }
 
-  .desktop-icon:hover .icon-label {
+  [data-page="os-desktop"] .desktop-icon:hover .icon-label {
     background: #000080;
     color: #FFFFFF;
   }
 
-  .icon-img {
+  [data-page="os-desktop"] .icon-img {
     font-size: 32px;
     line-height: 1;
     filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.3));
   }
 
-  .icon-label {
+  [data-page="os-desktop"] .icon-label {
     font-size: 11px;
     color: #FFFFFF;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
@@ -509,7 +399,7 @@ const { aesthetic } = Astro.props;
   /* ========================================
      WINDOW CHROME
      ======================================== */
-  .window {
+  [data-page="os-desktop"] .window {
     width: 100%;
     max-width: 900px;
     border: 2px outset #DFDFDF;
@@ -519,7 +409,7 @@ const { aesthetic } = Astro.props;
     z-index: 2;
   }
 
-  .window-titlebar {
+  [data-page="os-desktop"] .window-titlebar {
     display: flex;
     align-items: center;
     padding: 3px 4px;
@@ -529,26 +419,26 @@ const { aesthetic } = Astro.props;
     user-select: none;
   }
 
-  .titlebar-active {
+  [data-page="os-desktop"] .titlebar-active {
     background: linear-gradient(90deg, #000080 0%, #1084D0 100%);
   }
 
-  .titlebar-active .window-title {
+  [data-page="os-desktop"] .titlebar-active .window-title {
     color: #FFFFFF;
   }
 
-  .window-controls {
+  [data-page="os-desktop"] .window-controls {
     display: flex;
     gap: 6px;
     padding: 0 2px;
   }
 
-  .window-controls-spacer {
+  [data-page="os-desktop"] .window-controls-spacer {
     width: 52px;
     flex-shrink: 0;
   }
 
-  .window-btn {
+  [data-page="os-desktop"] .window-btn {
     width: 14px;
     height: 14px;
     border-radius: 2px;
@@ -556,22 +446,11 @@ const { aesthetic } = Astro.props;
     cursor: pointer;
   }
 
-  .btn-close {
-    background: #C75050;
-    border-color: #A03030;
-  }
+  [data-page="os-desktop"] .btn-close { background: #C75050; border-color: #A03030; }
+  [data-page="os-desktop"] .btn-minimize { background: #D4AA00; border-color: #AA8800; }
+  [data-page="os-desktop"] .btn-maximize { background: #50A050; border-color: #308030; }
 
-  .btn-minimize {
-    background: #D4AA00;
-    border-color: #AA8800;
-  }
-
-  .btn-maximize {
-    background: #50A050;
-    border-color: #308030;
-  }
-
-  .window-title {
+  [data-page="os-desktop"] .window-title {
     flex: 1;
     text-align: center;
     font-size: 12px;
@@ -583,7 +462,7 @@ const { aesthetic } = Astro.props;
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
   }
 
-  .window-menubar {
+  [data-page="os-desktop"] .window-menubar {
     display: flex;
     gap: 0;
     padding: 2px 4px;
@@ -592,7 +471,7 @@ const { aesthetic } = Astro.props;
     border-top: 1px solid #FFFFFF;
   }
 
-  .menu-item {
+  [data-page="os-desktop"] .menu-item {
     font-size: 12px;
     padding: 2px 10px;
     color: #000;
@@ -600,29 +479,43 @@ const { aesthetic } = Astro.props;
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
   }
 
-  .menu-item:hover {
+  [data-page="os-desktop"] .menu-item:hover {
     background: #000080;
     color: #FFFFFF;
   }
 
-  .window-body {
+  [data-page="os-desktop"] .window-body {
     background: #FFFFFF;
     border: 2px inset #DFDFDF;
     margin: 2px;
     padding: 24px;
   }
 
-  .window-section-label {
+  /* ========================================
+     COMPONENT WRAPPER OVERRIDES
+     Suppress section padding/max-width inside windows.
+     ======================================== */
+  [data-page="os-desktop"] .window-body .section {
+    padding: 0;
+  }
+
+  [data-page="os-desktop"] .window-body .section-inner {
+    max-width: none;
+    margin: 0;
+  }
+
+  [data-page="os-desktop"] .window-body .section-label {
     font-size: 11px;
     color: #808080;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 8px;
     text-align: center;
+    display: block;
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
   }
 
-  .window-heading {
+  [data-page="os-desktop"] .window-body .section-heading {
     font-size: clamp(1.4rem, 4vw, 2rem);
     font-weight: 700;
     margin: 0 0 28px 0;
@@ -632,52 +525,66 @@ const { aesthetic } = Astro.props;
   }
 
   /* ========================================
-     NAV WINDOW
+     NAV WINDOW — override Nav component styles
      ======================================== */
-  .nav-window {
-    z-index: 10;
+  [data-page="os-desktop"] .nav-window .nav {
+    position: static;
+    border: none;
+    background: none;
+    backdrop-filter: none;
   }
 
-  .nav-body {
+  [data-page="os-desktop"] .nav-window .nav-inner {
+    max-width: none;
+    padding: 0;
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 16px;
-    background: #FFFFFF;
     font-size: 13px;
   }
 
-  .nav-link {
+  [data-page="os-desktop"] .nav-window .nav-logo {
     color: #000080;
     text-decoration: underline;
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
     font-size: 13px;
+    text-transform: none;
+    letter-spacing: 0;
   }
 
-  .nav-link:hover {
+  [data-page="os-desktop"] .nav-window .nav-logo:hover {
     color: #0000FF;
   }
 
-  .nav-link-current {
+  [data-page="os-desktop"] .nav-window .nav-divider {
+    font-size: 9px;
+    color: #808080;
+    font-weight: 400;
+  }
+
+  [data-page="os-desktop"] .nav-window .nav-current {
     color: #000;
     text-decoration: none;
     font-weight: 700;
+    font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
+    font-size: 13px;
+    text-transform: none;
+    letter-spacing: 0;
   }
 
-  .nav-separator {
-    font-size: 9px;
-    color: #808080;
+  [data-page="os-desktop"] .nav-window .nav-current:hover {
+    color: #000080;
   }
 
   /* ========================================
-     HERO WINDOW
+     HERO WINDOW — native to this page
      ======================================== */
-  .hero-body {
+  [data-page="os-desktop"] .hero-body {
     text-align: center;
     padding: 48px 32px;
   }
 
-  .hero-badge {
+  [data-page="os-desktop"] .hero-badge {
     display: inline-block;
     font-size: 11px;
     text-transform: uppercase;
@@ -689,7 +596,7 @@ const { aesthetic } = Astro.props;
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
   }
 
-  .hero-title {
+  [data-page="os-desktop"] .hero-title {
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 700;
     margin: 0 0 16px 0;
@@ -698,14 +605,14 @@ const { aesthetic } = Astro.props;
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
   }
 
-  .hero-divider {
+  [data-page="os-desktop"] .hero-divider {
     width: 60px;
     height: 3px;
     background: linear-gradient(90deg, #000080, #1084D0);
     margin: 0 auto 20px;
   }
 
-  .hero-tagline {
+  [data-page="os-desktop"] .hero-tagline {
     font-size: clamp(1rem, 2.5vw, 1.2rem);
     line-height: 1.7;
     margin: 0 auto;
@@ -715,18 +622,18 @@ const { aesthetic } = Astro.props;
   }
 
   /* ========================================
-     ABOUT WINDOW
+     ABOUT WINDOW — override About component
      ======================================== */
-  .about-body {
+  [data-page="os-desktop"] .about-body {
     padding: 32px;
   }
 
-  .about-content {
+  [data-page="os-desktop"] .about-content {
     max-width: 620px;
     margin: 0 auto;
   }
 
-  .about-paragraph {
+  [data-page="os-desktop"] .about-paragraph {
     font-size: 1rem;
     line-height: 1.8;
     margin: 0 0 20px 0;
@@ -734,83 +641,92 @@ const { aesthetic } = Astro.props;
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
   }
 
-  .about-paragraph:last-child {
+  [data-page="os-desktop"] .about-paragraph:last-child {
     margin-bottom: 0;
   }
 
   /* ========================================
-     CHARACTERISTICS
+     CHARACTERISTICS WINDOW
+     CSS grid replicates the titlebar+body window look
      ======================================== */
-  .characteristics-body {
+  [data-page="os-desktop"] .characteristics-body {
     padding: 32px;
   }
 
-  .characteristics-grid {
+  [data-page="os-desktop"] .characteristics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 16px;
   }
 
-  .char-card {
+  /* Style char-card as a mini-window using CSS grid */
+  [data-page="os-desktop"] .char-card {
     border: 2px outset #DFDFDF;
     background: #C0C0C0;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    padding: 0;
   }
 
-  .char-titlebar {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 10px;
+  [data-page="os-desktop"] .char-number {
+    grid-column: 1;
+    grid-row: 1;
     background: linear-gradient(90deg, #000080 0%, #1084D0 100%);
     color: #FFFFFF;
-    font-size: 12px;
-    font-weight: 700;
-    font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
-  }
-
-  .char-number {
     font-weight: 400;
     opacity: 0.7;
     font-size: 11px;
+    padding: 4px 4px 4px 10px;
+    font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
+    display: block;
+    margin: 0;
   }
 
-  .char-title {
+  [data-page="os-desktop"] .char-title {
+    grid-column: 2;
+    grid-row: 1;
+    background: linear-gradient(90deg, #000080 0%, #1084D0 100%);
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 4px 10px;
+    font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin: 0;
+    display: block;
   }
 
-  .char-body {
+  [data-page="os-desktop"] .char-description {
+    grid-column: 1 / -1;
+    grid-row: 2;
     background: #FFFFFF;
     border: 2px inset #DFDFDF;
     margin: 2px;
     padding: 16px;
-  }
-
-  .char-description {
     font-size: 0.9rem;
     line-height: 1.7;
-    margin: 0;
     color: #333;
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
   }
 
   /* ========================================
-     PROMPT / STYLE REFERENCE
+     PROMPT WINDOW — override Prompt component
      ======================================== */
-  .prompt-body {
+  [data-page="os-desktop"] .prompt-body {
     padding: 32px;
   }
 
-  .prompt-block {
+  [data-page="os-desktop"] .prompt-block {
     border: 2px inset #DFDFDF;
     background: #FFFFFF;
-    margin: 0 auto;
     overflow: hidden;
   }
 
-  .prompt-header {
+  [data-page="os-desktop"] .prompt-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -819,13 +735,13 @@ const { aesthetic } = Astro.props;
     border-bottom: 1px solid #808080;
   }
 
-  .prompt-header-label {
+  [data-page="os-desktop"] .prompt-header-label {
     font-size: 12px;
     color: #000;
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
   }
 
-  .copy-button {
+  [data-page="os-desktop"] .copy-button {
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
     font-size: 11px;
     font-weight: 400;
@@ -836,39 +752,37 @@ const { aesthetic } = Astro.props;
     cursor: pointer;
   }
 
-  .copy-button:active {
+  [data-page="os-desktop"] .copy-button:active {
     border-style: inset;
   }
 
-  .copy-button.copied {
+  [data-page="os-desktop"] .copy-button.copied {
     border-style: inset;
     background: #D4D0C8;
   }
 
-  .prompt-text-area {
-    padding: 16px;
-    background: #FFFFFF;
-    max-height: 300px;
-    overflow-y: auto;
-  }
-
-  .prompt-text {
+  /* max-height replaces the old .prompt-text-area wrapper */
+  [data-page="os-desktop"] .prompt-text {
     font-family: 'Courier New', Courier, monospace;
     font-size: 13px;
     line-height: 1.7;
     color: #000;
+    padding: 16px;
     margin: 0;
     white-space: normal;
+    max-height: 300px;
+    overflow-y: auto;
+    display: block;
   }
 
   /* ========================================
-     WHEN TO USE
+     WHEN TO USE WINDOW — override Usage component
      ======================================== */
-  .use-body {
+  [data-page="os-desktop"] .use-body {
     padding: 32px;
   }
 
-  .use-grid {
+  [data-page="os-desktop"] .use-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
@@ -876,51 +790,39 @@ const { aesthetic } = Astro.props;
     margin: 0 auto;
   }
 
-  .use-column {
+  [data-page="os-desktop"] .use-column {
     border: 2px outset #DFDFDF;
     background: #C0C0C0;
     overflow: hidden;
   }
 
-  .use-column-header {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  [data-page="os-desktop"] .use-column-heading {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0;
     padding: 6px 12px;
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
   }
 
-  .use-good .use-column-header {
+  [data-page="os-desktop"] .use-good .use-column-heading {
     background: linear-gradient(90deg, #000080 0%, #1084D0 100%);
     color: #FFFFFF;
   }
 
-  .use-bad .use-column-header {
+  [data-page="os-desktop"] .use-bad .use-column-heading {
     background: linear-gradient(180deg, #808080, #A0A0A0);
     color: #FFFFFF;
   }
 
-  .use-column-icon {
-    font-size: 12px;
-  }
-
-  .use-column-heading {
-    font-size: 13px;
-    font-weight: 700;
-    margin: 0;
-    font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
-  }
-
-  .use-list {
+  [data-page="os-desktop"] .use-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 2px;
     background: #FFFFFF;
     border: 2px inset #DFDFDF;
-    margin: 2px;
   }
 
-  .use-item {
+  [data-page="os-desktop"] .use-item {
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
     font-size: 13px;
     line-height: 1.5;
@@ -932,11 +834,11 @@ const { aesthetic } = Astro.props;
     color: #000;
   }
 
-  .use-item:last-child {
+  [data-page="os-desktop"] .use-item:last-child {
     border-bottom: none;
   }
 
-  .use-item-good::before {
+  [data-page="os-desktop"] .use-item-good::before {
     content: '\25B6';
     font-size: 8px;
     color: #000080;
@@ -944,25 +846,25 @@ const { aesthetic } = Astro.props;
     margin-top: 4px;
   }
 
-  .use-item-bad::before {
+  [data-page="os-desktop"] .use-item-bad::before {
     content: '\2013';
     color: #808080;
     flex-shrink: 0;
   }
 
   /* ========================================
-     HISTORY
+     HISTORY WINDOW — override History component
      ======================================== */
-  .history-body {
+  [data-page="os-desktop"] .history-body {
     padding: 32px;
   }
 
-  .history-content {
+  [data-page="os-desktop"] .history-content {
     max-width: 620px;
     margin: 0 auto;
   }
 
-  .history-paragraph {
+  [data-page="os-desktop"] .history-paragraph {
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
     font-size: 1rem;
     line-height: 1.8;
@@ -970,18 +872,18 @@ const { aesthetic } = Astro.props;
     color: #222;
   }
 
-  .history-paragraph:last-child {
+  [data-page="os-desktop"] .history-paragraph:last-child {
     margin-bottom: 0;
   }
 
   /* ========================================
-     RELATED STYLES
+     RELATED WINDOW — override Related component
      ======================================== */
-  .related-body {
+  [data-page="os-desktop"] .related-body {
     padding: 32px;
   }
 
-  .related-grid {
+  [data-page="os-desktop"] .related-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 16px;
@@ -989,7 +891,7 @@ const { aesthetic } = Astro.props;
     margin: 0 auto;
   }
 
-  .related-card {
+  [data-page="os-desktop"] .related-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1001,46 +903,54 @@ const { aesthetic } = Astro.props;
     text-align: center;
   }
 
-  .related-card:hover {
+  [data-page="os-desktop"] .related-card:hover {
     background: #000080;
     color: #FFFFFF;
   }
 
-  .related-card:hover .related-relationship {
+  [data-page="os-desktop"] .related-card:hover .related-relationship {
     color: #C0C0FF;
   }
 
-  .related-icon {
-    font-size: 32px;
-    margin-bottom: 4px;
-  }
-
-  .related-name {
+  [data-page="os-desktop"] .related-name {
     font-size: 12px;
     font-weight: 700;
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
     line-height: 1.3;
   }
 
-  .related-relationship {
+  [data-page="os-desktop"] .related-relationship {
     font-size: 10px;
     color: #808080;
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
   }
 
   /* ========================================
-     FOOTER WINDOW
+     FOOTER WINDOW — override Footer component
      ======================================== */
-  .footer-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+  [data-page="os-desktop"] .footer-body {
     padding: 32px;
     text-align: center;
   }
 
-  .footer-logo {
+  /* Reset footer element's own padding/border */
+  [data-page="os-desktop"] .footer-body .footer {
+    background: none;
+    padding: 0;
+    border: none;
+  }
+
+  [data-page="os-desktop"] .footer-body .footer-inner {
+    max-width: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  [data-page="os-desktop"] .footer-logo {
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
     font-weight: 700;
     font-size: 14px;
@@ -1051,52 +961,38 @@ const { aesthetic } = Astro.props;
     background: #C0C0C0;
   }
 
-  .footer-logo:hover {
+  [data-page="os-desktop"] .footer-logo:hover {
     border-style: inset;
     background: #D4D0C8;
   }
 
-  .footer-tagline {
+  [data-page="os-desktop"] .footer-tagline {
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
     font-size: 12px;
     color: #666;
   }
 
-  .footer-divider {
-    width: 100%;
-    max-width: 200px;
-    height: 2px;
-    border-top: 1px solid #808080;
-    border-bottom: 1px solid #FFFFFF;
-  }
-
-  .footer-back {
+  [data-page="os-desktop"] .footer-back {
     font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
     font-size: 13px;
     color: #000080;
     text-decoration: underline;
   }
 
-  .footer-back:hover {
+  [data-page="os-desktop"] .footer-back:hover {
     color: #0000FF;
-  }
-
-  .footer-version {
-    font-size: 11px;
-    color: #808080;
-    font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
   }
 
   /* ========================================
      RESPONSIVE - 768px
      ======================================== */
   @media (max-width: 768px) {
-    .desktop {
+    [data-page="os-desktop"] .desktop {
       padding: 16px 16px 48px;
       gap: 16px;
     }
 
-    .desktop-icons {
+    [data-page="os-desktop"] .desktop-icons {
       position: relative;
       top: auto;
       left: auto;
@@ -1107,44 +1003,44 @@ const { aesthetic } = Astro.props;
       margin-bottom: 8px;
     }
 
-    .window-body {
+    [data-page="os-desktop"] .window-body {
       padding: 20px;
     }
 
-    .hero-body {
+    [data-page="os-desktop"] .hero-body {
       padding: 32px 20px;
     }
 
-    .about-body,
-    .characteristics-body,
-    .prompt-body,
-    .use-body,
-    .history-body,
-    .related-body {
+    [data-page="os-desktop"] .about-body,
+    [data-page="os-desktop"] .characteristics-body,
+    [data-page="os-desktop"] .prompt-body,
+    [data-page="os-desktop"] .use-body,
+    [data-page="os-desktop"] .history-body,
+    [data-page="os-desktop"] .related-body {
       padding: 24px 20px;
     }
 
-    .characteristics-grid {
+    [data-page="os-desktop"] .characteristics-grid {
       grid-template-columns: 1fr;
     }
 
-    .use-grid {
+    [data-page="os-desktop"] .use-grid {
       grid-template-columns: 1fr;
     }
 
-    .related-grid {
+    [data-page="os-desktop"] .related-grid {
       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     }
 
-    .window-controls-spacer {
+    [data-page="os-desktop"] .window-controls-spacer {
       display: none;
     }
 
-    .taskbar-items {
+    [data-page="os-desktop"] .taskbar-items {
       display: none;
     }
 
-    .prompt-text-area {
+    [data-page="os-desktop"] .prompt-text {
       max-height: none;
     }
   }
@@ -1153,115 +1049,107 @@ const { aesthetic } = Astro.props;
      RESPONSIVE - 480px
      ======================================== */
   @media (max-width: 480px) {
-    .desktop {
+    [data-page="os-desktop"] .desktop {
       padding: 10px 8px 44px;
       gap: 12px;
     }
 
-    .desktop-icons {
+    [data-page="os-desktop"] .desktop-icons {
       gap: 16px;
     }
 
-    .icon-img {
+    [data-page="os-desktop"] .icon-img {
       font-size: 24px;
     }
 
-    .icon-label {
+    [data-page="os-desktop"] .icon-label {
       font-size: 10px;
     }
 
-    .window-body {
+    [data-page="os-desktop"] .window-body {
       padding: 14px;
     }
 
-    .hero-body {
+    [data-page="os-desktop"] .hero-body {
       padding: 24px 14px;
     }
 
-    .about-body,
-    .characteristics-body,
-    .prompt-body,
-    .use-body,
-    .history-body,
-    .related-body {
+    [data-page="os-desktop"] .about-body,
+    [data-page="os-desktop"] .characteristics-body,
+    [data-page="os-desktop"] .prompt-body,
+    [data-page="os-desktop"] .use-body,
+    [data-page="os-desktop"] .history-body,
+    [data-page="os-desktop"] .related-body {
       padding: 16px 14px;
     }
 
-    .window-heading {
+    [data-page="os-desktop"] .window-body .section-heading {
       font-size: 1.2rem;
       margin-bottom: 20px;
     }
 
-    .window-menubar {
+    [data-page="os-desktop"] .window-menubar {
       display: none;
     }
 
-    .window-title {
+    [data-page="os-desktop"] .window-title {
       font-size: 11px;
     }
 
-    .window-btn {
+    [data-page="os-desktop"] .window-btn {
       width: 12px;
       height: 12px;
     }
 
-    .start-label {
+    [data-page="os-desktop"] .start-label {
       display: none;
     }
 
-    .taskbar-tray {
+    [data-page="os-desktop"] .taskbar-tray {
       padding: 2px 4px;
     }
 
-    .tray-indicator {
+    [data-page="os-desktop"] .tray-indicator {
       display: none;
     }
 
-    .related-grid {
+    [data-page="os-desktop"] .related-grid {
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
       gap: 8px;
     }
 
-    .related-card {
+    [data-page="os-desktop"] .related-card {
       padding: 14px 8px 12px;
     }
 
-    .related-icon {
-      font-size: 24px;
-    }
-
-    .related-name {
+    [data-page="os-desktop"] .related-name {
       font-size: 11px;
     }
 
-    .related-relationship {
+    [data-page="os-desktop"] .related-relationship {
       font-size: 9px;
     }
 
-    .nav-body {
-      padding: 8px 10px;
+    [data-page="os-desktop"] .nav-window .nav-inner {
       font-size: 12px;
     }
 
-    .char-body {
+    [data-page="os-desktop"] .char-description {
       padding: 12px;
-    }
-
-    .char-description {
       font-size: 0.85rem;
     }
 
-    .prompt-header {
+    [data-page="os-desktop"] .prompt-header {
       flex-wrap: wrap;
       gap: 6px;
     }
 
-    .use-item {
+    [data-page="os-desktop"] .use-item {
       padding: 6px 10px;
       font-size: 12px;
     }
 
-    .footer-body {
+    [data-page="os-desktop"] .footer-body {
       padding: 20px 14px;
     }
   }

@@ -1,0 +1,23 @@
+---
+import type { Aesthetic } from '../../lib/aesthetics';
+
+interface Props {
+  aesthetic: Aesthetic;
+  label?: string;
+  heading?: string;
+}
+
+const { aesthetic, label = 'What This Is', heading } = Astro.props;
+---
+
+<section class="section about-section">
+  <div class="section-inner">
+    <span class="section-label">{label}</span>
+    {heading && <h2 class="section-heading">{heading}</h2>}
+    <div class="about-content">
+      {aesthetic.about.split('\n\n').map((paragraph) => (
+        <p class="about-paragraph">{paragraph}</p>
+      ))}
+    </div>
+  </div>
+</section>

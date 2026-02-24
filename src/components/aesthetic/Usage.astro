@@ -1,0 +1,38 @@
+---
+import type { Aesthetic } from '../../lib/aesthetics';
+
+interface Props {
+  aesthetic: Aesthetic;
+  label?: string;
+  heading?: string;
+  goodLabel?: string;
+  badLabel?: string;
+}
+
+const { aesthetic, label = 'When to Use', heading, goodLabel = 'Good for', badLabel = 'Not for' } = Astro.props;
+---
+
+<section class="section use-section">
+  <div class="section-inner">
+    <span class="section-label">{label}</span>
+    {heading && <h2 class="section-heading">{heading}</h2>}
+    <div class="use-grid">
+      <div class="use-column use-good">
+        <h3 class="use-column-heading">{goodLabel}</h3>
+        <ul class="use-list">
+          {aesthetic.good_for.map((item) => (
+            <li class="use-item use-item-good">{item}</li>
+          ))}
+        </ul>
+      </div>
+      <div class="use-column use-bad">
+        <h3 class="use-column-heading">{badLabel}</h3>
+        <ul class="use-list">
+          {aesthetic.not_for.map((item) => (
+            <li class="use-item use-item-bad">{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

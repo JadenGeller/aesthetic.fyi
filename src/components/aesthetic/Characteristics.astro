@@ -1,0 +1,27 @@
+---
+import type { Aesthetic } from '../../lib/aesthetics';
+
+interface Props {
+  aesthetic: Aesthetic;
+  label?: string;
+  heading?: string;
+}
+
+const { aesthetic, label = 'Characteristics', heading } = Astro.props;
+---
+
+<section class="section characteristics-section">
+  <div class="section-inner">
+    <span class="section-label">{label}</span>
+    {heading && <h2 class="section-heading">{heading}</h2>}
+    <div class="characteristics-grid">
+      {aesthetic.characteristics.map((char, i) => (
+        <div class="char-card">
+          <span class="char-number">{String(i + 1).padStart(2, '0')}</span>
+          <h3 class="char-title">{char.title}</h3>
+          <p class="char-description">{char.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

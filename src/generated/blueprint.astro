@@ -200,15 +200,20 @@ const { aesthetic } = Astro.props;
     if (copyButton) {
       copyButton.addEventListener('click', () => {
         const prompt = copyButton.getAttribute('data-prompt') || '';
-        navigator.clipboard.writeText(prompt).then(() => {
-          const original = copyButton.textContent;
-          copyButton.textContent = 'COPIED';
-          copyButton.classList.add('copied');
-          setTimeout(() => {
-            copyButton.textContent = original;
-            copyButton.classList.remove('copied');
-          }, 2000);
-        });
+        const el = document.createElement('textarea');
+        el.value = prompt;
+        el.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        const original = copyButton.textContent;
+        copyButton.textContent = 'COPIED';
+        copyButton.classList.add('copied');
+        setTimeout(() => {
+          copyButton.textContent = original;
+          copyButton.classList.remove('copied');
+        }, 2000);
       });
     }
   });

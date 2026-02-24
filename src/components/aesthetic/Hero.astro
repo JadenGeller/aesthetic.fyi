@@ -1,0 +1,19 @@
+---
+import type { Aesthetic } from '../../lib/aesthetics';
+
+interface Props {
+  aesthetic: Aesthetic;
+  label?: string;
+}
+
+const { aesthetic, label = 'Web Aesthetic' } = Astro.props;
+---
+
+<section class="hero">
+  <slot name="decoration" />
+  <div class="hero-inner">
+    <span class="hero-label">{label}</span>
+    <h1 class="hero-title" data-text={aesthetic.name}>{aesthetic.name}</h1>
+    <p class="hero-tagline">{aesthetic.tagline}</p>
+  </div>
+</section>

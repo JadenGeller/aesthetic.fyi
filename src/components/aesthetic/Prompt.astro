@@ -1,0 +1,52 @@
+---
+import type { Aesthetic } from '../../lib/aesthetics';
+
+interface Props {
+  aesthetic: Aesthetic;
+  label?: string;
+  heading?: string;
+  headerLabel?: string;
+  copyText?: string;
+}
+
+const { aesthetic, label = 'Style Reference', heading, headerLabel = 'Prompt', copyText = 'Copy' } = Astro.props;
+---
+
+<section class="section prompt-section">
+  <div class="section-inner">
+    <span class="section-label">{label}</span>
+    {heading && <h2 class="section-heading">{heading}</h2>}
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <span class="prompt-header-label">{headerLabel}</span>
+        <button class="copy-button" data-prompt={aesthetic.prompt}>{copyText}</button>
+      </div>
+      <p class="prompt-text">{aesthetic.prompt}</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.querySelector('.copy-button');
+    if (copyButton) {
+      copyButton.addEventListener('click', () => {
+        const prompt = copyButton.getAttribute('data-prompt') || '';
+        const el = document.createElement('textarea');
+        el.value = prompt;
+        el.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        const original = copyButton.textContent;
+        copyButton.textContent = 'Copied';
+        copyButton.classList.add('copied');
+        setTimeout(() => {
+          copyButton.textContent = original;
+          copyButton.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  });
+</script>

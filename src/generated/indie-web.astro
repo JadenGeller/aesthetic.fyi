@@ -139,38 +139,24 @@ const { aesthetic } = Astro.props;
 
 <script>
   document.addEventListener('astro:page-load', () => {
-    const copyButton = document.querySelector('.copy-btn');
+    const copyButton = document.querySelector('.copy-button');
     if (copyButton) {
-      copyButton.addEventListener('click', async () => {
-        const prompt = copyButton.getAttribute('data-prompt');
-        if (prompt) {
-          try {
-            await navigator.clipboard.writeText(prompt);
-            const original = copyButton.textContent;
-            copyButton.textContent = 'copied!!';
-            copyButton.classList.add('copied');
-            setTimeout(() => {
-              copyButton.textContent = original;
-              copyButton.classList.remove('copied');
-            }, 2000);
-          } catch {
-            const textarea = document.createElement('textarea');
-            textarea.value = prompt || '';
-            textarea.style.position = 'fixed';
-            textarea.style.opacity = '0';
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            const original = copyButton.textContent;
-            copyButton.textContent = 'copied!!';
-            copyButton.classList.add('copied');
-            setTimeout(() => {
-              copyButton.textContent = original;
-              copyButton.classList.remove('copied');
-            }, 2000);
-          }
-        }
+      copyButton.addEventListener('click', () => {
+        const prompt = copyButton.getAttribute('data-prompt') || '';
+        const el = document.createElement('textarea');
+        el.value = prompt;
+        el.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        const original = copyButton.textContent;
+        copyButton.textContent = 'copied!!';
+        copyButton.classList.add('copied');
+        setTimeout(() => {
+          copyButton.textContent = original;
+          copyButton.classList.remove('copied');
+        }, 2000);
       });
     }
   });
